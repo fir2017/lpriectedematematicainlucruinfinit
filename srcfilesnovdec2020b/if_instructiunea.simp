@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="12.70" multi-file="no" uid="simp6554a383545e4257af8089af0bf8dff0">
+  <meta>
+    <name>if_instructiunea</name>
+    <authors>razvan99x alex</authors>
+    <description />
+  </meta>
+  <counters diagrams="1" models="1">
+    <entity-names>
+      <counter>
+        <item-type type-id="drawing-parallelogram" type="Parallelogram" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type type-id="drawing-shape" type="Simple Shape" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="drawing-line" type="Line" />
+        <value>5</value>
+      </counter>
+      <counter>
+        <item-type type-id="text" type="Text" />
+        <value>1</value>
+      </counter>
+    </entity-names>
+    <entity-ids>
+      <counter>
+        <item-type type-id="group" type="Group" />
+        <value>129</value>
+      </counter>
+      <counter>
+        <item-type type-id="drawing-parallelogram" type="Parallelogram" />
+        <value>5</value>
+      </counter>
+      <counter>
+        <item-type type-id="drawing-shape" type="Simple Shape" />
+        <value>4</value>
+      </counter>
+      <counter>
+        <item-type type-id="drawing-line" type="Line" />
+        <value>13</value>
+      </counter>
+      <counter>
+        <item-type type-id="universal-connector" type="Universal Connector" />
+        <value>14</value>
+      </counter>
+      <counter>
+        <item-type type-id="text" type="Text" />
+        <value>14</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlCompositeStructureDiagram</type>
+        <value>2</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlUseCaseDiagram</type>
+        <value>1</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlActivityDiagram</type>
+        <value>1</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlStateMachineDiagram</type>
+        <value>1</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlInteractionOverviewDiagram</type>
+        <value>1</value>
+      </counter>
+    </diagrams>
+    <fields />
+  </counters>
+  <alias-groups />
+  <management uid="md-274842860e9b46208b67c7d0096b2946" name="" task-id-sequence="0">
+    <persons>
+      <person id="">
+        <first-name>razvan99x</first-name>
+        <last-name>alex</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <teams />
+    <sprints />
+    <projects />
+    <modules />
+    <tasks />
+    <to-dos />
+  </management>
+  <glossary id="glsr-01231c6b2dc3476d8920a6bf23550ccc" />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types />
+  </types>
+  <items />
+  <models>
+    <model id="p54ce363c7be3425a9854e8c68bdf4285_168940239" name="Model1" namespace="" order-index="1">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>11/21/2020 08:11:40</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items />
+      <sub-models />
+      <diagram type="uml-composite-structure" id="p79b8da314696415684be48f5a07feeaf_867761790" name="CompositeStructureDiagram1" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="-100,-100">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>11/21/2020 08:11:40</creation-date>
+          <change-date>11/21/2020 08:11:40</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items />
+        <layer id="268669b3866240429c773b5c3e48dd98" name="Default" visible="true" enabled="true" locked="false" />
+      </diagram>
+      <diagram type="uml-usecase" id="pf1f392f0403347b9a3415a2c61f0e8ce_340261869" name="UseCaseDiagram1" order-index="2" overview-order-index="0" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="-100,-100">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>11/21/2020 08:11:57</creation-date>
+          <change-date>11/21/2020 08:11:57</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items />
+        <layer id="1f0e2de87146472b9099eaeb3c76fae6" name="Default" visible="true" enabled="true" locked="false" />
+      </diagram>
+      <diagram type="uml-activity" id="p71902325e3a6435c8063df5567b8286f_410019161" name="ActivityDiagram1" order-index="3" overview-order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="-100,-100">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>11/21/2020 08:12:05</creation-date>
+          <change-date>11/21/2020 08:12:05</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items />
+        <layer id="5509be0016b94fa4aeb621151888dc5a" name="Default" visible="true" enabled="true" locked="false" />
+      </diagram>
+      <diagram type="uml-statechart" id="pcec882c5f4cc4446b5b4cbc0822b0434_614009316" name="StateMachineDiagram1" order-index="4" overview-order-index="2" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="-100,-100">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>11/21/2020 08:12:16</creation-date>
+          <change-date>11/21/2020 08:12:16</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items />
+        <layer id="d9dc76d80a03474a855de507fe8374a8" name="Default" visible="true" enabled="true" locked="false" />
+      </diagram>
+      <diagram type="uml-interaction-overview" id="p19ff999815144322936301c23fe200f3_281228582" name="InteractionOverviewDiagram1" order-index="5" overview-order-index="3" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="-100,-100">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>11/21/2020 08:12:28</creation-date>
+          <change-date>11/21/2020 08:12:28</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items />
+        <layer id="eed965ad05074b5ca892c4e145203e40" name="Default" visible="true" enabled="true" locked="false" />
+      </diagram>
+      <diagram type="uml-composite-structure" id="pbefd1f0a1d1349a2b27ceb742d362866_344930570" name="CompositeStructureDiagram2" order-index="6" overview-order-index="4" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="-100,-100">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>11/21/2020 08:12:35</creation-date>
+          <change-date>11/21/2020 08:12:35</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items />
+        <layer id="b98ecfc96dcd4dc28b60b16a41bcdffb" name="Default" visible="true" enabled="true" locked="false" />
+      </diagram>
+      <diagram type="uml-information-flow" id="pba514c8295194e129f26ee3823de9339_149914066" name="Diagram1" order-index="7" overview-order-index="5" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="-131,-102">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>11/21/2020 08:13:06</creation-date>
+          <change-date>11/21/2020 08:16:08</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="9a3441d32b234f998dad74cde3d75759" cid="ELEM001" type="drawing-parallelogram" name="Parallelogram1" style-class="" change-tracking-state="added" creator="" creation-date="11/21/2020 08:13:19">
+            <drawing>
+              <text>Nu e 100</text>
+            </drawing>
+            <drawing-parallelogram slope="0.25" />
+          </item>
+          <item id="f8d83c110b3e45f092f8151663a53c17" cid="ELEM002" type="drawing-shape" name="SimpleShape1" style-class="" change-tracking-state="added" creator="" creation-date="11/21/2020 08:13:23">
+            <drawing>
+              <text>if i == 100</text>
+            </drawing>
+            <drawing-shape type="Diamond" />
+          </item>
+          <item id="0523f5fcf13146cf9d5d079835b7908b" cid="ELEM003" type="drawing-shape" name="SimpleShape2" style-class="" change-tracking-state="added" creator="" creation-date="11/21/2020 08:13:27">
+            <drawing>
+              <text> int i = 100;</text>
+            </drawing>
+            <drawing-shape type="Rectangle" />
+          </item>
+          <item id="diddfdb3a516ec4a10a4249a42ca3ea58e4704" cid="ELEM004" type="drawing-parallelogram" name="Parallelogram1" style-class="" change-tracking-state="added" creator="" creation-date="11/21/2020 08:13:19">
+            <drawing>
+              <text>E 100</text>
+            </drawing>
+            <drawing-parallelogram slope="0.25" />
+          </item>
+          <item id="Line1" cid="ELEM005" type="drawing-line" name="di47bdd34dfa9040a2be5f756cb853038b5353" style-class="" change-tracking-state="added" creator="" creation-date="11/21/2020 08:14:19">
+            <drawing />
+          </item>
+          <item id="Line2" cid="ELEM006" type="drawing-line" name="die5e99a4966ab4e288f825442e4ef559c4735" style-class="" change-tracking-state="added" creator="" creation-date="11/21/2020 08:14:22">
+            <drawing />
+          </item>
+          <item id="Line3" cid="ELEM007" type="drawing-line" name="di78d8e84bca974496a77e045e5f36dfd69230" style-class="" change-tracking-state="added" creator="" creation-date="11/21/2020 08:14:28">
+            <drawing />
+          </item>
+          <item id="Line4" cid="ELEM009" type="drawing-line" name="di818d1b0f128b4daa8672c50d5a9635a64501" style-class="" change-tracking-state="added" creator="" creation-date="11/21/2020 08:15:48">
+            <drawing />
+          </item>
+          <item id="Line5" cid="ELEM012" type="drawing-line" name="di39fbb20d0cef43ca946711149ba60acd3696" style-class="" change-tracking-state="added" creator="" creation-date="11/21/2020 08:15:53">
+            <drawing />
+          </item>
+          <item id="a359cd1dde9c42ed983cb320c039ed94" cid="ELEM013" type="text" name="Text1" style-class="Transparent" change-tracking-state="added" creator="" creation-date="11/21/2020 08:16:02">
+            <style class="Transparent" />
+            <drawing-text />
+          </item>
+        </abstract-items>
+        <layer id="ebca7715760e45c98227706bd2e9d86e" name="Default" visible="true" enabled="true" locked="false">
+          <item id="9a3441d32b234f998dad74cde3d75759" iid="9adfecbdf0464d62a14a5d45c8d873f7" creation-date="11/21/2020 08:13:19" order-index="0" type="drawing-paralellogram">
+            <layout ax="-23" ay="256" awidth="140" aheight="73" x="-23" y="256" width="140" height="73" rotation-center="40,23.5" />
+          </item>
+          <item id="f8d83c110b3e45f092f8151663a53c17" iid="6a6e5d0588b74735a1cd0dea9bf8a5e9" creation-date="11/21/2020 08:13:23" order-index="1" type="entity">
+            <layout ax="102" ay="78" awidth="105" aheight="103" x="102" y="78" width="105" height="103" rotation-center="17.5,28.5" />
+          </item>
+          <item id="0523f5fcf13146cf9d5d079835b7908b" iid="f8aecf91b7b64902a05d8c6c8610007f" creation-date="11/21/2020 08:13:27" order-index="2" type="entity">
+            <layout ax="84.5" ay="-68" awidth="140" aheight="57" x="84.5" y="-68" width="140" height="57" rotation-center="0,51.5" />
+          </item>
+          <item id="diddfdb3a516ec4a10a4249a42ca3ea58e4704" iid="aba308250b5547488f4304d9dd4c3c27" creation-date="11/21/2020 08:13:19" order-index="0" type="drawing-paralellogram">
+            <layout ax="159" ay="256" awidth="140" aheight="73" x="159" y="256" width="140" height="73" rotation-center="40,23.5" />
+          </item>
+          <item id="Line3" iid="a09935c0e57d4e61889e6c16ccf7420e" creation-date="11/21/2020 08:14:28" order-index="5" type="entity">
+            <layout ax="207" ay="124" awidth="43" aheight="133" x="50" y="50" width="140" height="160" rotation-center="-228.5,-190.5" />
+            <drawing-line start-point="207,124" end-point="249,256" />
+          </item>
+          <item id="Line4" iid="fd2255bd7ae14a239742f8129e6630ed" creation-date="11/21/2020 08:15:48" order-index="6" type="entity">
+            <layout ax="154.5" ay="-11" awidth="1" aheight="90" x="50" y="50" width="140" height="160" rotation-center="-155,-34" />
+            <drawing-line start-point="154.5,-11" end-point="154.5,78" />
+          </item>
+          <item id="Line5" iid="0a6bb8cb023f44259631065fecdcf598" creation-date="11/21/2020 08:15:53" order-index="7" type="entity">
+            <layout ax="61" ay="124" awidth="42" aheight="133" x="50" y="50" width="140" height="160" rotation-center="-82,-190.5" />
+            <drawing-line start-point="102,124" end-point="61,256" />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+</sim-project>

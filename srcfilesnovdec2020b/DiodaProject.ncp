@@ -1,0 +1,794 @@
+<Project>
+  <Name>DiodaProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Diode</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Dioda</Name>
+        <Access>Public</Access>
+        <Location left="13" top="15" />
+        <Size width="162" height="485" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Structura structuraDioda</Member>
+        <Member type="Field">Polarizare polarizareDirecta</Member>
+        <Member type="Field">Polarizare polarizareInversa</Member>
+        <Member type="Field">Anod anod</Member>
+        <Member type="Field">Katod catod</Member>
+        <Member type="Field">Simbol simbol</Member>
+        <Member type="Field">Conectare conectare</Member>
+        <Member type="Field">Tensiune TensiuneDirecta</Member>
+        <Member type="Field">Tensiune TensiuneInversa</Member>
+        <Member type="Field">Curent CurentDirect</Member>
+        <Member type="Field">Curent CurentInvers</Member>
+        <Member type="Field">Tensiune TensiuneDePrag</Member>
+        <Member type="Field">Model ModelIdeal</Member>
+        <Member type="Field">Capsula capsula</Member>
+        <Member type="Field">Grafic grafic</Member>
+        <Member type="Field">Circuit circuitEchivalent</Member>
+        <Member type="Field">Model ModelPractic</Member>
+        <Member type="Field">Model ModelComplex</Member>
+        <Member type="Field">Rezistenta rezistentaDinamica</Member>
+        <Member type="Field">Rezistenta RezistentaDeLimitare</Member>
+        <Member type="Field">Masura MasurareDioda</Member>
+        <Member type="Field">Functionare FunctionareDioda</Member>
+        <Member type="Field">List &lt;Defect&gt; DefectiuniDioda</Member>
+        <Member type="Field">Verificare VerificareDioda</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>AplicatiiCuDiode</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Circuit</Name>
+        <Access>Public</Access>
+        <Location left="44" top="19" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Graph circuit</Member>
+        <Member type="Field">Tree tree</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RedresorMonoAlternanta</Name>
+        <Access>Public</Access>
+        <Location left="213" top="20" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Tensiune ValoareMedieATensiuniiDeIesirePulsatorie</Member>
+        <Member type="Field">Tensiune ValoareaDeVarfATensiuniiDeIntrare</Member>
+        <Member type="Field">Potential PotentialDeBariera</Member>
+        <Member type="Field">Tensiune TensiuneaDeVarfDeIesire</Member>
+        <Member type="Field">Tensiune TensiuneaInversaDeVarf</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SursaDeAlimentareCC</Name>
+        <Access>Public</Access>
+        <Location left="384" top="22" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CurentContinuu</Name>
+        <Access>Public</Access>
+        <Location left="555" top="22" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CurentAlternativ</Name>
+        <Access>Public</Access>
+        <Location left="582" top="76" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TensiuneContinua</Name>
+        <Access>Public</Access>
+        <Location left="616" top="131" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TensiuneAlternativa</Name>
+        <Access>Public</Access>
+        <Location left="638" top="184" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Semnal</Name>
+        <Access>Public</Access>
+        <Location left="40" top="263" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DiagramaBloc</Name>
+        <Access>Public</Access>
+        <Location left="211" top="264" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SchemaElectrica</Name>
+        <Access>Public</Access>
+        <Location left="382" top="268" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DiagramaPCB</Name>
+        <Access>Public</Access>
+        <Location left="387" top="496" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RedresorDublaAlternanta</Name>
+        <Access>Public</Access>
+        <Location left="211" top="496" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Tensiune TensiuneaInversaDeVarf</Member>
+        <Member type="Field">Tensiune TensiuneaMedieDeIesire</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RedresorMonoAlternantaCuplatPrinTransformatorLaTensiuneaDeIntrare</Name>
+        <Access>Public</Access>
+        <Location left="238" top="137" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Tensiune TensiuneaDeVarfInPrima</Member>
+        <Member type="Field">Tensiune TensiuneaDeVarfInSecundar</Member>
+        <Member type="Field">Tensiune TensiuneaDeVarfDeIesire</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RedresorDublaAlternantaCuPrizaMediana</Name>
+        <Access>Public</Access>
+        <Location left="169" top="596" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float RaportDeTransformare</Member>
+        <Member type="Field">Tensiune TensiuneInversaDeVarf</Member>
+        <Member type="Field">Tensiune TensiuneaDeVarfDinSecundar</Member>
+        <Member type="Field">Tensiune TensiuneaTotalaDeVarfDinSecundar</Member>
+        <Member type="Field">ForaDeUnda formaDeUnda</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RedresorDublaAlternantaInPunte</Name>
+        <Access>Public</Access>
+        <Location left="123" top="652" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>FiltrePentruSurseDeAlimentare</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>FiltruCapacitiv</Name>
+        <Access>Public</Access>
+        <Location left="39" top="14" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Tensiune TensiuneaPulsatorie</Member>
+        <Member type="Field">Frecventa FrecventaMonoAlternanta</Member>
+        <Member type="Field">Tensiune TensiuneaDublaAlternanta</Member>
+        <Member type="Field">Frecventa FrecventaDublaAlternanta</Member>
+        <Member type="Field">float FactorDeOndulatie</Member>
+        <Member type="Field">Tensiune tensiuneaDeVarfRedresataLaIntrareaFiltrului</Member>
+        <Member type="Field">Tensiune TensiuneAproximativaDeIesireContinua</Member>
+        <Member type="Field">Tensiune TensiunePulsatorieDeIEsireVarfLaVarfAproximativa</Member>
+        <Member type="Field">Procent OndulatiaProcentuala</Member>
+        <Member type="Field">Curent CurentulDeSupraSarcina</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FiltrulLC</Name>
+        <Access>Public</Access>
+        <Location left="213" top="15" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Tensiune TensiuneaPulsatorieLAIEsireaFiltrului</Member>
+        <Member type="Field">Tensiune TensiuneaDeIesireCC</Member>
+        <Member type="Field">Tensiune TrnasiunePulsatorieDeIntrareValoareEficare</Member>
+        <Member type="Field">Reactanta ReactantaCapacitiva</Member>
+        <Member type="Field">Reactanta ReactantaInductiva</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FiltruInPI</Name>
+        <Access>Public</Access>
+        <Location left="386" top="16" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FiltruInT</Name>
+        <Access>Public</Access>
+        <Location left="562" top="15" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Circuit</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Circuit</Name>
+        <Access>Public</Access>
+        <Location left="73" top="6" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>LimitatoareCuDiode</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>LimitatorCuDioda</Name>
+        <Access>Public</Access>
+        <Location left="28" top="21" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Tensiune TensiuneDeIesire</Member>
+        <Member type="Field">Rezistenta Rezistenta1</Member>
+        <Member type="Field">Tensiune TensiuneIntrare</Member>
+        <Member type="Field">Dioda dioda</Member>
+        <Member type="Field">Rezistenta RezistentaSarcina</Member>
+        <Member type="Field">Curent Curentul</Member>
+        <Member type="Field">Tensiune ValoareDeVarfTensiuneDeIesire</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LimitatorCuReferintaDeTensiune</Name>
+        <Access>Public</Access>
+        <Location left="197" top="22" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Tensiune TensiuneDeReferinta</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ReferintaDeTensiune</Name>
+        <Access>Public</Access>
+        <Location left="365" top="23" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ReferintaDeTensiuneCuDivizorDeTensiune</Name>
+        <Access>Public</Access>
+        <Location left="385" top="76" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DivizorDeTensiune</Name>
+        <Access>Public</Access>
+        <Location left="423" top="123" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>CircuiteDeAxareCuDiode</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>CircuitDeAxareCuDioda</Name>
+        <Access>Public</Access>
+        <Location left="44" top="19" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Tensiune TensiuneDeAlimentareCC</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CircuitDeRefacereAComponenteiContinue</Name>
+        <Access>Public</Access>
+        <Location left="223" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>MultiplicatoareDeTensiune</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>MultiplicatorDeTensiune</Name>
+        <Access>Public</Access>
+        <Location left="21" top="20" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DublorDeTensiune</Name>
+        <Access>Public</Access>
+        <Location left="188" top="22" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TriplorDeTensiune</Name>
+        <Access>Public</Access>
+        <Location left="361" top="20" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CvadruplorDeTensiune</Name>
+        <Access>Public</Access>
+        <Location left="538" top="20" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DublorDeTensiuneMonoAlternanta</Name>
+        <Access>Public</Access>
+        <Location left="188" top="77" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DublorDeTensiuneDublaAlternanta</Name>
+        <Access>Public</Access>
+        <Location left="188" top="151" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Cataloage</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Catalog</Name>
+        <Access>Public</Access>
+        <Location left="31" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataSheet</Name>
+        <Access>Public</Access>
+        <Location left="205" top="15" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Tensiune</Name>
+        <Access>Public</Access>
+        <Location left="381" top="16" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Curent</Name>
+        <Access>Public</Access>
+        <Location left="552" top="14" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Rezistenta</Name>
+        <Access>Public</Access>
+        <Location left="396" top="66" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Putere</Name>
+        <Access>Public</Access>
+        <Location left="568" top="70" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Energie</Name>
+        <Access>Public</Access>
+        <Location left="430" top="123" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Timp</Name>
+        <Access>Public</Access>
+        <Location left="604" top="127" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CatalogDioda</Name>
+        <Access>Public</Access>
+        <Location left="49" top="78" />
+        <Size width="162" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Tensiune TensiuneaMaximaInversaDeVarf</Member>
+        <Member type="Field">Tensiune TensiuneContinuaInversaMaxima</Member>
+        <Member type="Field">Tensiune TensiuneDeVarfMaximaInversaNerpetitiva</Member>
+        <Member type="Field">Curent CurentDirectValoareMedieMaxima</Member>
+        <Member type="Field">int CurentDirectNerepetitivDeSuprasarcinaValoareDeVarf</Member>
+        <Member type="Field">Temperatura TemperaturaMediuluiInconjurator</Member>
+        <Member type="Field">Temperatura TemperaruraDeFunctionareAJonctiunii</Member>
+        <Member type="Field">Tempe TemperaturaDeStocareAJonctiunii</Member>
+        <Member type="Field">Tensiune CadereaDeTensiuneDirectaMEdiataPeOPerioada</Member>
+        <Member type="Field">Curent CurentulMAximCuDiodaPolarizataInversCuOTensiuneContinua</Member>
+        <Member type="Field">Curent CurentulMaximInversMediatPeOPerioada</Member>
+        <Member type="Field">Temperatura TemperaturaTerminalelor</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Temperatura</Name>
+        <Access>Public</Access>
+        <Location left="454" top="181" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Perioada</Name>
+        <Access>Public</Access>
+        <Location left="626" top="185" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ValoriLimitaAbsoluta</Name>
+        <Access>Public</Access>
+        <Location left="41" top="287" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Grafic</Name>
+        <Access>Public</Access>
+        <Location left="75" top="333" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CaracteristiciElectrice</Name>
+        <Access>Public</Access>
+        <Location left="104" top="391" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Tabel</Name>
+        <Access>Public</Access>
+        <Location left="150" top="431" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Depanari</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Depanare</Name>
+        <Access>Public</Access>
+        <Location left="29" top="19" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Simptom</Name>
+        <Access>Public</Access>
+        <Location left="201" top="20" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Cauza</Name>
+        <Access>Public</Access>
+        <Location left="374" top="20" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Tehnica</Name>
+        <Access>Public</Access>
+        <Location left="547" top="20" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Verificare</Name>
+        <Access>Public</Access>
+        <Location left="33" top="245" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Observare</Name>
+        <Access>Public</Access>
+        <Location left="202" top="250" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Componenta</Name>
+        <Access>Public</Access>
+        <Location left="376" top="252" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Inlocuire</Name>
+        <Access>Public</Access>
+        <Location left="545" top="256" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Urmarire</Name>
+        <Access>Public</Access>
+        <Location left="31" top="478" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Semnal</Name>
+        <Access>Public</Access>
+        <Location left="205" top="485" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FormaDeUnda</Name>
+        <Access>Public</Access>
+        <Location left="384" top="487" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Analiza</Name>
+        <Access>Public</Access>
+        <Location left="552" top="486" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Posibilitate</Name>
+        <Access>Public</Access>
+        <Location left="576" top="535" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Probabilitate</Name>
+        <Access>Public</Access>
+        <Location left="604" top="587" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Consecinta</Name>
+        <Access>Public</Access>
+        <Location left="639" top="644" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>AplicatiiPractice</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>SursaDeTensiuneContinua</Name>
+        <Access>Public</Access>
+        <Location left="17" top="10" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Circuit</Name>
+        <Access>Public</Access>
+        <Location left="192" top="11" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Componenta</Name>
+        <Access>Public</Access>
+        <Location left="366" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Schema</Name>
+        <Access>Public</Access>
+        <Location left="403" top="55" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PCB</Name>
+        <Access>Public</Access>
+        <Location left="454" top="102" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Testare</Name>
+        <Access>Public</Access>
+        <Location left="503" top="155" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Metoda</Name>
+        <Access>Public</Access>
+        <Location left="544" top="207" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Documentatii</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Document</Name>
+        <Access>Public</Access>
+        <Location left="35" top="36" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int DescriereFizicaACircuitului</Member>
+        <Member type="Field">int PrezentareModDeFunctionare</Member>
+        <Member type="Field">int ListaCaracteristici</Member>
+        <Member type="Field">int ListaCoponente</Member>
+        <Member type="Field">int ListaProbleme</Member>
+        <Member type="Field">int DescriereDetaliataAIdentificariiDefectului</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Capitole</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Rezumat</Name>
+        <Access>Public</Access>
+        <Location left="23" top="14" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Glosar</Name>
+        <Access>Public</Access>
+        <Location left="198" top="16" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Formula</Name>
+        <Access>Public</Access>
+        <Location left="373" top="19" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Test</Name>
+        <Access>Public</Access>
+        <Location left="545" top="20" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Probleme</Name>
+        <Access>Public</Access>
+        <Location left="570" top="68" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Raspuns</Name>
+        <Access>Public</Access>
+        <Location left="588" top="117" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

@@ -1,0 +1,317 @@
+<Project>
+  <Name>CristalMolecularProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Cristalul</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Atom</Name>
+        <Access>Public</Access>
+        <Location left="31" top="253" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float NumarAtomic</Member>
+        <Member type="Field">float MasaAtomica</Member>
+        <Member type="Field">string Denumire</Member>
+        <Member type="Field">string Simbol</Member>
+        <Member type="Field">string TipAtom</Member>
+        <Member type="Field">Orbital tipOrbital</Member>
+        <Member type="Field">StructuraAtom strcutura</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Legatura</Name>
+        <Access>Public</Access>
+        <Location left="220" top="34" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">PerecheDeElectroni pereche</Member>
+        <Member type="Field">TipDeLegatura tipdelegatura</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Cristal</Name>
+        <Access>Public</Access>
+        <Location left="393" top="35" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt;Atom&gt; atomi</Member>
+        <Member type="Field">List &lt;Legaturi&gt; legaturi</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ElementChimic</Name>
+        <Access>Public</Access>
+        <Location left="31" top="23" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>TipDeLegatura</Name>
+        <Access>Public</Access>
+        <Location left="218" top="265" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>covalenta</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>Strat</Name>
+        <Access>Public</Access>
+        <Location left="46" top="492" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float NivelEnergetic</Member>
+        <Member type="Field">string Valenta</Member>
+        <Member type="Field">string Ionizare</Member>
+        <Member type="Method">public void NumarDeElectroniPeStrat()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PerecheDeElectroni</Name>
+        <Access>Public</Access>
+        <Location left="395" top="265" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; Electron &gt; electroni</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Semiconductor</Name>
+        <Access>Public</Access>
+        <Location left="563" top="38" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Conductor</Name>
+        <Access>Public</Access>
+        <Location left="582" top="113" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Izolator</Name>
+        <Access>Public</Access>
+        <Location left="617" top="187" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Material</Name>
+        <Access>Public</Access>
+        <Location left="636" top="277" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Jonctiune</Name>
+        <Access>Public</Access>
+        <Location left="661" top="356" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DiagramaDeEnergie</Name>
+        <Access>Public</Access>
+        <Location left="684" top="441" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Banda</Name>
+        <Access>Public</Access>
+        <Location left="723" top="504" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StructuraAtom</Name>
+        <Access>Public</Access>
+        <Location left="222" top="497" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Orbital</Name>
+        <Access>Public</Access>
+        <Location left="401" top="500" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Foton</Name>
+        <Access>Public</Access>
+        <Location left="223" top="729" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Particula</Name>
+        <Access>Public</Access>
+        <Location left="392" top="732" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Subparticula</Name>
+        <Access>Public</Access>
+        <Location left="437" top="786" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ModelulAtomicStandard</Name>
+        <Access>Public</Access>
+        <Location left="41" top="731" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Mendeleev</Name>
+        <Access>Public</Access>
+        <Location left="19" top="812" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Covalenta</Name>
+        <Access>Public</Access>
+        <Location left="631" top="741" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Conductie</Name>
+        <Access>Public</Access>
+        <Location left="650" top="812" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CurentDeGoluri</Name>
+        <Access>Public</Access>
+        <Location left="660" top="864" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Purtator</Name>
+        <Access>Public</Access>
+        <Location left="681" top="921" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>P</Name>
+        <Access>Public</Access>
+        <Location left="761" top="46" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>N</Name>
+        <Access>Public</Access>
+        <Location left="783" top="98" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Dopare</Name>
+        <Access>Public</Access>
+        <Location left="804" top="156" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Saracire</Name>
+        <Access>Public</Access>
+        <Location left="817" top="212" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>jPN</Name>
+        <Access>Public</Access>
+        <Location left="937" top="277" />
+        <Size width="162" height="383" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Regiune RegiuneGolita</Member>
+        <Member type="Field">Polarizare PolarizareDirecta</Member>
+        <Member type="Field">Polarizare PolaizareInversa</Member>
+        <Member type="Field">Potential PotentialDeBariera</Member>
+        <Member type="Field">Curent CurentInvers</Member>
+        <Member type="Field">float StrapungereInversa</Member>
+        <Member type="Field">CaracteristicaCurentTensiune caracteristicaCurentTensiune</Member>
+        <Member type="Field">Rezistenta RezistentaDinamica</Member>
+        <Member type="Field">Temperatura temperatura</Member>
+        <Member type="Field">Regiune RegiuneaDirecta</Member>
+        <Member type="Field">Regiune RegiuneaInversa</Member>
+        <Member type="Field">Regiune RegiuneDeStrapungereInversa</Member>
+        <Member type="Field">Regiune RegiuneaDeBlocare</Member>
+        <Member type="Field">Regiunea RegiuneaDeStrapungereDirecta</Member>
+        <Member type="Field">Curent CurentDirect</Member>
+        <Member type="Field">Tensiune TensiuneaDirecta</Member>
+        <Member type="Field">Tensiune TensiuneaInversa</Member>
+        <Member type="Field">Tensiunea TensiuneaDePrag</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Valenta</Name>
+        <Access>Public</Access>
+        <Location left="711" top="978" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CaracteristicaCurentTensiune</Name>
+        <Access>Public</Access>
+        <Location left="758" top="555" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int CurbaIV</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Masurare</Name>
+        <Access>Public</Access>
+        <Location left="841" top="667" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Grafic</Name>
+        <Access>Public</Access>
+        <Location left="881" top="718" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

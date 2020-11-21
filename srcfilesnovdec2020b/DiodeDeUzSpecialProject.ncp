@@ -1,0 +1,379 @@
+<Project>
+  <Name>DiodeDeUzSpecialProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>DiodeDeUzSpecial</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>DiodaZener</Name>
+        <Access>Public</Access>
+        <Location left="31" top="14" />
+        <Size width="162" height="587" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Regiune RegiuneaDeStrapungere</Member>
+        <Member type="Field">Regiune RegiuneaDeFunctionareDirecta</Member>
+        <Member type="Field">Curent CurentDirect</Member>
+        <Member type="Field">Curent CurentInvers</Member>
+        <Member type="Field">Tensiune TensiuneDirecta</Member>
+        <Member type="Field">Tensiune TesiuneInversa</Member>
+        <Member type="Field">Curent CurentulDeControl</Member>
+        <Member type="Field">Tensiune TensiuneaDestabilizare</Member>
+        <Member type="Field">EfectFizic EfectualZener</Member>
+        <Member type="Field">Circuit CircuitEchivalentZener</Member>
+        <Member type="Field">Model ModelIdeal</Member>
+        <Member type="Field">Model ModelPractic</Member>
+        <Member type="Field">Grafic GraficulCaracteristicii</Member>
+        <Member type="Field">Regiune RegiuneaDeStabilizareInversa</Member>
+        <Member type="Field">Interval DeltaVz</Member>
+        <Member type="Field">Interval DeltaIz</Member>
+        <Member type="Field">Curent IZK</Member>
+        <Member type="Field">Curent IZN</Member>
+        <Member type="Field">Resistenta ZZ</Member>
+        <Member type="Field">Tensiune VZT</Member>
+        <Member type="Field">CoeficientDeTemperatura CT</Member>
+        <Member type="Field">Temperatura DiferentaDeTemperatura</Member>
+        <Member type="Field">Putere PutereDisipata</Member>
+        <Member type="Field">float CorectareaPuteriiDisipate</Member>
+        <Member type="Field">Putere PutereaMaximaDisipata</Member>
+        <Member type="Field">float CorectareaPDMAXInFunctieDeTemperatura</Member>
+        <Member type="Field">Curent CurentulRezidualInvers</Member>
+        <Member type="Field">Curent CurentulZenerMaxim</Member>
+        <Member type="Field">Curent IZT</Member>
+        <Member type="Field">Impedanta ImpedantaZener</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DiodaVaractor</Name>
+        <Access>Public</Access>
+        <Location left="210" top="15" />
+        <Size width="162" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Capacitate Capacitatea</Member>
+        <Member type="Field">Suprafata SuprafataArmaturilor</Member>
+        <Member type="Field">float diametrulArmaturilor</Member>
+        <Member type="Field">Constanta constantaDielectrica</Member>
+        <Member type="Field">int DomeniulDeTolerantaPentruCapacitate</Member>
+        <Member type="Field">int RaportulDeAcord</Member>
+        <Member type="Field">int FactorDeCalitate</Member>
+        <Member type="Field">int CoeficientDeTemperatura</Member>
+        <Member type="Field">Tensiune tensiuneaContinuaPeCatodulVaractorului</Member>
+        <Member type="Field">Tensiune TensiuneAnodMinim</Member>
+        <Member type="Field">Tensiune TensiuneAnodMaxim</Member>
+        <Member type="Field">Tensiune TensiuneInversa</Member>
+        <Member type="Field">int frecventaDeRezonanta</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DiodaOptica</Name>
+        <Access>Public</Access>
+        <Location left="386" top="18" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DiodaLASER</Name>
+        <Access>Public</Access>
+        <Location left="426" top="67" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DiodaLED</Name>
+        <Access>Public</Access>
+        <Location left="465" top="124" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">FenomenFizic EmisiaDeLumina</Member>
+        <Member type="Field">Grafic CaracteristicaTipicaDeRadiatie</Member>
+        <Member type="Field">Intensitate IntensitateaRadianta</Member>
+        <Member type="Field">Intensitate Iradierea</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Fotodioda</Name>
+        <Access>Public</Access>
+        <Location left="651" top="18" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Rezistenta RezistentaR</Member>
+        <Member type="Field">float Sensibilitate</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DiodaStabilizatoareDeCurent</Name>
+        <Access>Public</Access>
+        <Location left="224" top="324" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DiodaSchottky</Name>
+        <Access>Public</Access>
+        <Location left="257" top="366" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DiodaPIN</Name>
+        <Access>Public</Access>
+        <Location left="325" top="418" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DiodaUltrarapida</Name>
+        <Access>Public</Access>
+        <Location left="498" top="366" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DiodaTunel</Name>
+        <Access>Public</Access>
+        <Location left="546" top="423" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Rezistenta RF</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Numarator</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>SistemDeNumarareSiComanda</Name>
+        <Access>Public</Access>
+        <Location left="91" top="21" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SursaDeAlimentare</Name>
+        <Access>Public</Access>
+        <Location left="289" top="18" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Emitator</Name>
+        <Access>Public</Access>
+        <Location left="459" top="20" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DetectorIR</Name>
+        <Access>Public</Access>
+        <Location left="492" top="88" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Schema</Name>
+        <Access>Public</Access>
+        <Location left="670" top="23" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PCB</Name>
+        <Access>Public</Access>
+        <Location left="695" top="76" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Layout</Name>
+        <Access>Public</Access>
+        <Location left="746" top="133" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Cartela</Name>
+        <Access>Public</Access>
+        <Location left="781" top="189" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Circuit</Name>
+        <Access>Public</Access>
+        <Location left="814" top="241" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Cataloage</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>CatalogZener</Name>
+        <Access>Public</Access>
+        <Location left="46" top="15" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int CaracteristiciElectrice</Member>
+        <Member type="Field">int InformatiiGrafice</Member>
+        <Member type="Field">int ValoriLimitaAbsolute</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>InformatiiGrafice</Name>
+        <Access>Public</Access>
+        <Location left="232" top="13" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float CorectareaValoriiMaximeAPuterii</Member>
+        <Member type="Field">CoeficientDeTemperatura CoeficientulDeTemperatura</Member>
+        <Member type="Field">float DependentaImpedanteiDinamiceDeCurentulZener</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CatalogVaractor</Name>
+        <Access>Public</Access>
+        <Location left="414" top="13" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CatalogLED</Name>
+        <Access>Public</Access>
+        <Location left="594" top="14" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CatalogFotodioda</Name>
+        <Access>Public</Access>
+        <Location left="625" top="68" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Aplicatii</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>StabilizareCuDiodaZenerInRaportCuVariatiaTensiuniiDeIntrare</Name>
+        <Access>Public</Access>
+        <Location left="20" top="14" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Tensiune TensiuneaRezistentei</Member>
+        <Member type="Field">Tensiune TensiuneaDeIntrare</Member>
+        <Member type="Field">Tensiune TensiuneZener</Member>
+        <Member type="Field">Tensiune TensiuneDeIntrareMinima</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StabilizareCuDiodaZenerInRaportCuVariatiaSarcinii</Name>
+        <Access>Public</Access>
+        <Location left="203" top="14" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StabilizareProcentuala</Name>
+        <Access>Public</Access>
+        <Location left="383" top="14" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LimitatorCuDiodaZener</Name>
+        <Access>Public</Access>
+        <Location left="548" top="16" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LimitatorCuDouaDiodeZener</Name>
+        <Access>Public</Access>
+        <Location left="570" top="62" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FiltruRezonantTreceBandaCuDiodaVaractor</Name>
+        <Access>Public</Access>
+        <Location left="203" top="245" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CelulaAfisajDigitalCuLED</Name>
+        <Access>Public</Access>
+        <Location left="383" top="247" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CircuitRezonantParalelRCL</Name>
+        <Access>Public</Access>
+        <Location left="567" top="291" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SursaDeAlimentareCuDiodaZener</Name>
+        <Access>Public</Access>
+        <Location left="200" top="641" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BlocCulegereSemnalCuDiodaLASER</Name>
+        <Access>Public</Access>
+        <Location left="377" top="640" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>INCOMPLET</Name>
+        <Access>Public</Access>
+        <Location left="22" top="257" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
