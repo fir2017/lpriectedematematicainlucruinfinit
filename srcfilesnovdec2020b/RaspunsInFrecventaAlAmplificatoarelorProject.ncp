@@ -1,0 +1,136 @@
+<Project>
+  <Name>RaspunsInFrecventaAlAmplificatoarelorProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>RaspunsInFrecventaAlAmplificatoarelor</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>RaspunsAmplicatoare</Name>
+        <Access>Public</Access>
+        <Location left="23" top="20" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int ComportareaConsensatoruluiDeCuplaj</Member>
+        <Member type="Field">int ComportareaCondensatoruluiDeDecuplare</Member>
+        <Member type="Field">int ComportareaCapacitatiiInterneATranzistorului</Member>
+        <Member type="Field">int ReferintaDeZeroDecibeli</Member>
+        <Member type="Field">Frecventa FrecventaDeTaiere</Member>
+        <Member type="Field">int MasurareaPuteriiIndBm</Member>
+        <Member type="Field">Capacitate CapacitateaMiller</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Decibel</Name>
+        <Access>Public</Access>
+        <Location left="221" top="19" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Bell</Name>
+        <Access>Public</Access>
+        <Location left="277" top="69" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RALaFrecventeJoase</Name>
+        <Access>Public</Access>
+        <Location left="460" top="24" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Circuit CircuitRCDeIntrare</Member>
+        <Member type="Field">Frecventa FrecventaDeTaiereInterioara</Member>
+        <Member type="Field">int PantaDeCadereACastiguluiInTensiune</Member>
+        <Member type="Field">int dbPerDecada</Member>
+        <Member type="Field">int dbPerOctava</Member>
+        <Member type="Field">DEfazare DefazareaCircuituluiRCDeIntrare</Member>
+        <Member type="Field">Circuit CircuitRCDeIEsire</Member>
+        <Member type="Field">DEfazare DefazareaCircuituluiRCDeIiesire</Member>
+        <Member type="Field">Circuit CircuitRCDeDecuplare</Member>
+        <Member type="Field">Diagrama DiagramaBode</Member>
+        <Member type="Field">int RaspunsGlobal</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RALaFJCuCuplajDirect</Name>
+        <Access>Public</Access>
+        <Location left="632" top="22" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TeoremaMiller</Name>
+        <Access>Public</Access>
+        <Location left="314" top="154" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RALaFrecventeInalte</Name>
+        <Access>Public</Access>
+        <Location left="507" top="67" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RaspunsulGlobalInFrecventaAlAmplifcatoarelor</Name>
+        <Access>Public</Access>
+        <Location left="73" top="71" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int LatimeDeBanda</Member>
+        <Member type="Field">int ProdusulCastigBanda</Member>
+        <Member type="Field">int FrecventaCorespunzatoareCastiguluiUnitar</Member>
+        <Member type="Field">int ImportantaValoriDeMinusTreiDB</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RaspunsInFrecventaAlAmplificatoarelorCuMaiMulteEtaje</Name>
+        <Access>Public</Access>
+        <Location left="549" top="120" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Frecventa FrecventeleDeTaiere</Member>
+        <Member type="Field">int LatimeaGlobalaDeBanda</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MasurareaRFA</Name>
+        <Access>Public</Access>
+        <Location left="117" top="226" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int MasurareaInFrecventaSiAmplitudine</Member>
+        <Member type="Field">int RALiniareLAImpulsuriDeIntrare</Member>
+        <Member type="Field">int InfluentaRJFAsupraFormeiImpulsurilor</Member>
+        <Member type="Field">int InfluentaRIFAsupraFormeiImpulsurilor</Member>
+        <Member type="Field">int MRLaSemnaTreapta</Member>
+        <Member type="Field">int MasurareLaFrecventeInalte</Member>
+        <Member type="Field">int MasurareLaFrecventeJoase</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>AplicatiePractica</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>AmplificatorCuDouaEtaje</Name>
+        <Access>Public</Access>
+        <Location left="89" top="29" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

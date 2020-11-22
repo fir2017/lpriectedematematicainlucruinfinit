@@ -3,13 +3,326 @@
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>jFET</Name>
     <Language>CSharp</Language>
-    <Entities />
+    <Entities>
+      <Entity type="Class">
+        <Name>JFET</Name>
+        <Access>Public</Access>
+        <Location left="44" top="7" />
+        <Size width="162" height="468" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Tensiune TensiuneDeStrangulare</Member>
+        <Member type="Field">Regiune RegiuneaOhmica</Member>
+        <Member type="Field">Regiune RegiuneaDeCurentConstant</Member>
+        <Member type="Field">Pin Poarta</Member>
+        <Member type="Field">Pin Drena</Member>
+        <Member type="Field">Pin Sursa</Member>
+        <Member type="Field">Tensiune UGS</Member>
+        <Member type="Field">Curent IDSS</Member>
+        <Member type="Field">Tensiune VGS</Member>
+        <Member type="Field">Regiune Strapungere</Member>
+        <Member type="Field">Tensiune VDD</Member>
+        <Member type="Field">Tensiune VGD</Member>
+        <Member type="Field">Curent ID</Member>
+        <Member type="Field">Rezistenta RD</Member>
+        <Member type="Field">Tensiune TensiuneDeBlocare</Member>
+        <Member type="Field">CaracteristicaDeTransfer CaracteristicaDeTransferFETJ</Member>
+        <Member type="Field">Rezistenta TranconductantaDirecta</Member>
+        <Member type="Field">Rezistenta RezistentaDeIntrare</Member>
+        <Member type="Field">Capacitate CapacitateaDeIntrare</Member>
+        <Member type="Field">Rezistenta rds</Member>
+        <Member type="Field">Interval DeltaVDS</Member>
+        <Member type="Field">Interval DeltaID</Member>
+        <Member type="Method">public void ComandaIDPrinVGS()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DispozitivSemiconductor</Name>
+        <Access>Public</Access>
+        <Location left="222" top="9" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>JFETCuCanalN</Name>
+        <Access>Public</Access>
+        <Location left="240" top="364" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>JFETCuCanalP</Name>
+        <Access>Public</Access>
+        <Location left="420" top="365" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CircuitEchivalentJFET</Name>
+        <Access>Public</Access>
+        <Location left="590" top="367" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
     <Relationships />
   </ProjectItem>
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>MOSFET</Name>
     <Language>CSharp</Language>
-    <Entities />
+    <Entities>
+      <Entity type="Class">
+        <Name>MOSFET</Name>
+        <Access>Public</Access>
+        <Location left="70" top="17" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Caracteristica Caracteristici</Member>
+        <Member type="Field">Parametru Parametrii</Member>
+        <Member type="Field">CaracteristicaDeTransfer caracteristicaDeTransfer</Member>
+        <Member type="Field">int PrecautiiLaManevrare</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MOSFETCuCanalInitialDeTipN</Name>
+        <Access>Public</Access>
+        <Location left="258" top="23" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MOSFETCuCanalInitialDeTipP</Name>
+        <Access>Public</Access>
+        <Location left="327" top="91" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Regim</Name>
+        <Access>Public</Access>
+        <Location left="504" top="23" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Saracire</Name>
+        <Access>Public</Access>
+        <Location left="550" top="69" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Imbogatire</Name>
+        <Access>Public</Access>
+        <Location left="578" top="111" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MOSFETCuCanalIndusDeTipN</Name>
+        <Access>Public</Access>
+        <Location left="29" top="358" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MOSFETCuCanalIndusDeTipP</Name>
+        <Access>Public</Access>
+        <Location left="133" top="491" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MOSFETDePutere</Name>
+        <Access>Public</Access>
+        <Location left="327" top="358" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MOSFETDePutereCuCanalN</Name>
+        <Access>Public</Access>
+        <Location left="366" top="445" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MOSFETDePutereCuCanalP</Name>
+        <Access>Public</Access>
+        <Location left="409" top="487" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MOSFETCuDublaDifuzieLaterala</Name>
+        <Access>Public</Access>
+        <Location left="602" top="374" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MOSFETCuFantaV</Name>
+        <Access>Public</Access>
+        <Location left="631" top="423" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MOSFETCuPoartaDubla</Name>
+        <Access>Public</Access>
+        <Location left="657" top="479" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>PolarizareJFET</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>PolarizareAutomata</Name>
+        <Access>Public</Access>
+        <Location left="68" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int Analiza</Member>
+        <Member type="Method">public void StabilitateaPSF()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PolarizarePrinDivizorDeTensiune</Name>
+        <Access>Public</Access>
+        <Location left="243" top="16" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>PolarizareMOSFET</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>PolarizareLaZero</Name>
+        <Access>Public</Access>
+        <Location left="84" top="27" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PolarizarePrinDivizorRezistiv</Name>
+        <Access>Public</Access>
+        <Location left="262" top="32" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PolarizareCuReactieInDrena</Name>
+        <Access>Public</Access>
+        <Location left="436" top="32" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>AplicatiePractica</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>InstalatieDeNeutralizareaApeiReziduale</Name>
+        <Access>Public</Access>
+        <Location left="106" top="24" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SenzoriDePH</Name>
+        <Access>Public</Access>
+        <Location left="283" top="24" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>AmplificatoareDeSemnalMic</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>AJFET</Name>
+        <Access>Public</Access>
+        <Location left="81" top="19" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int DependentaCastiguluiDeRDS</Member>
+        <Member type="Field">int DependentaCastiguluiDeREterioaraSursei</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AMOSFET</Name>
+        <Access>Public</Access>
+        <Location left="264" top="17" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SursaComuna</Name>
+        <Access>Public</Access>
+        <Location left="460" top="8" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Tensiune TensiuneaSemnalelorPePoarta</Member>
+        <Member type="Field">int DependentaCastiguluiInTensiuneDeSarcinaInCA</Member>
+        <Member type="Field">int InversareaFazei</Member>
+        <Member type="Field">Rezistenta RezistentaDeIntrare</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DrenaComuna</Name>
+        <Access>Public</Access>
+        <Location left="519" top="55" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PoartaComuna</Name>
+        <Access>Public</Access>
+        <Location left="565" top="102" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
     <Relationships />
   </ProjectItem>
 </Project>
