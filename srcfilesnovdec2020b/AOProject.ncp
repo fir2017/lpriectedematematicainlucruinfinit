@@ -3,6 +3,664 @@
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>AO</Name>
     <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>AOIdeal</Name>
+        <Access>Public</Access>
+        <Location left="14" top="23" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Terminal TerminalInversor</Member>
+        <Member type="Field">Terminal TerminalNeinversor</Member>
+        <Member type="Field">Terminal TerminalIesire</Member>
+        <Member type="Field">Terminal TerminalAlimentareVPozitiv</Member>
+        <Member type="Field">Terminal TerminalAlimentareVNegativ</Member>
+        <Member type="Field">Tensiune TensiuneDeIntrare</Member>
+        <Member type="Field">Rezistenta RezistentaDeIntrare</Member>
+        <Member type="Field">float CastigInTensiune</Member>
+        <Member type="Field">List &lt;Parametru&gt; Parametrii</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CI</Name>
+        <Access>Public</Access>
+        <Location left="241" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SMD</Name>
+        <Access>Public</Access>
+        <Location left="277" top="61" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SMT</Name>
+        <Access>Public</Access>
+        <Location left="301" top="115" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Capsula</Name>
+        <Access>Public</Access>
+        <Location left="321" top="162" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AOReal</Name>
+        <Access>Public</Access>
+        <Location left="41" top="70" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AmplificatorDiferential</Name>
+        <Access>Public</Access>
+        <Location left="74" top="146" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int PrincipiulDeFunctionare</Member>
+        <Member type="Field">int ModDeFunctionare</Member>
+        <Member type="Field">int IntrareNediferentiala</Member>
+        <Member type="Field">int IntrareDiferetiala</Member>
+        <Member type="Field">int IntrareInModulComun</Member>
+        <Member type="Field">int FactorulDeRejectiePeModulComun</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConfiguratieCuAO</Name>
+        <Access>Public</Access>
+        <Location left="138" top="194" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ParametriiAO</Name>
+        <Access>Public</Access>
+        <Location left="112" top="146" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int TensiuneDeDecalaj</Member>
+        <Member type="Field">int DerivaTermicaATensiuniiDeDecalajDeLaIntrare</Member>
+        <Member type="Field">int CurentulDePolarizareInvers</Member>
+        <Member type="Field">int ImpedantaDeIntrare</Member>
+        <Member type="Field">int CurentulDeDecalajDeLaIntrare</Member>
+        <Member type="Field">int ImpedantaDeIesire</Member>
+        <Member type="Field">int DomeniulDeTensiuniDeIntrareInModulComun</Member>
+        <Member type="Field">int CastigulInTensiuneInBuclaDeschis</Member>
+        <Member type="Field">int FactorulDeRejectiePeModulComun</Member>
+        <Member type="Field">int VitezaDeVariatieASemnaluluiDeIesire</Member>
+        <Member type="Field">int RAspunsulInFrecventa</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ReactiaNegativ</Name>
+        <Access>Public</Access>
+        <Location left="10" top="222" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int Utilizare</Member>
+        <Member type="Field">int Configuratie</Member>
+        <Member type="Field">int CastigulInBuclaInchisa</Member>
+        <Member type="Field">int ReactiaRNAsupraImpedantelorAO</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AmplificatorNeinversor</Name>
+        <Access>Public</Access>
+        <Location left="189" top="259" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AmplificatorInversor</Name>
+        <Access>Public</Access>
+        <Location left="208" top="331" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Repetor</Name>
+        <Access>Public</Access>
+        <Location left="238" top="385" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TeoremaLuiMiller</Name>
+        <Access>Public</Access>
+        <Location left="56" top="333" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CompensareaCurentuluiDePolarizare</Name>
+        <Access>Public</Access>
+        <Location left="41" top="421" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int EfectulCurentuluiDePolarizareDeIntrare</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CompensareaTensiuniiDeDecalaj</Name>
+        <Access>Public</Access>
+        <Location left="208" top="421" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int EfectulTensiuniiDeDecalajDeLaIntrare</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AOBIFET</Name>
+        <Access>Public</Access>
+        <Location left="385" top="420" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int EvitareaCompensariiCurentilorDePolarizare</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>AplicatiePractica</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>SistemOpticPentruDeterminareaSubstantelorDinSolutiiChimice</Name>
+        <Access>Public</Access>
+        <Location left="28" top="22" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PreamplificatorAudio</Name>
+        <Access>Public</Access>
+        <Location left="204" top="25" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int CastigulInTensiuneInBuclaDeschisa</Member>
+        <Member type="Field">int CastigulInTensiuneInBuclaInchisa</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CAD</Name>
+        <Access>Public</Access>
+        <Location left="151" top="97" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CircuitPentruSesizareaDepasiriiTemperaturii</Name>
+        <Access>Public</Access>
+        <Location left="187" top="135" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CADComparator</Name>
+        <Access>Public</Access>
+        <Location left="204" top="176" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DAC</Name>
+        <Access>Public</Access>
+        <Location left="236" top="225" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ElectrocardiografEKG</Name>
+        <Access>Public</Access>
+        <Location left="225" top="215" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MonitorRitmCardiac</Name>
+        <Access>Public</Access>
+        <Location left="194" top="257" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MoulatorDeAmplitudine</Name>
+        <Access>Public</Access>
+        <Location left="25" top="182" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TriggerSchmitt</Name>
+        <Access>Public</Access>
+        <Location left="34" top="225" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>RaspunsulInFrecventaAO</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>RaspunsulInFrecventaAO</Name>
+        <Access>Public</Access>
+        <Location left="44" top="17" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int DependentaCastiguluiDeFrecventa</Member>
+        <Member type="Field">int LatimeaDeBandaLa3dBInBuclaDeschisa</Member>
+        <Member type="Field">int LatimeaDeBandaLaCastigulUnitar</Member>
+        <Member type="Field">int AnalizaDependenteiCastigFrecventa</Member>
+        <Member type="Field">int Defazaj</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RaspunsulInBuclaDeschisa</Name>
+        <Access>Public</Access>
+        <Location left="154" top="47" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int RaspunsulInFrecventa</Member>
+        <Member type="Field">int RaspunsulInFaza</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RaspunsulInBuclaInchisa</Name>
+        <Access>Public</Access>
+        <Location left="197" top="110" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int EfectulRNAsupraLatimiiBenziiDeTrecere</Member>
+        <Member type="Field">int ProdusulCastigBanda</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ReactiaPozitiva</Name>
+        <Access>Public</Access>
+        <Location left="239" top="175" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int CastigulBuclei</Member>
+        <Member type="Field">int MargineaDeFaza</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>StabilitateaAO</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>AnalizaAO</Name>
+        <Access>Public</Access>
+        <Location left="41" top="17" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int AnalizaStabilitatii</Member>
+        <Member type="Field">DiagramaBode diagramaBode</Member>
+        <Member type="Field">int CriteriiDeStabilitate</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DiagramaBode</Name>
+        <Access>Public</Access>
+        <Location left="218" top="21" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>CompensareaAO</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>CompensareaAO</Name>
+        <Access>Public</Access>
+        <Location left="23" top="6" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int CompensareaIntarzieriiDeFaza</Member>
+        <Member type="Field">int CircuitDeCompensare</Member>
+        <Member type="Field">int ExtindereaCompensarii</Member>
+        <Member type="Field">int CompensareCuCondensatorUnic</Member>
+        <Member type="Field">int CompensareCuCuplajDirect</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>CircuiteCuAO</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Comparator</Name>
+        <Access>Public</Access>
+        <Location left="260" top="10" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int InfluentaZgomotuluiDeIntrare</Member>
+        <Member type="Field">int UtilizareaHisterezisuluiPentruReducereaZgomotului</Member>
+        <Member type="Field">int LimitareaTensiuniiDeIesire</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DetectorDeZero</Name>
+        <Access>Public</Access>
+        <Location left="65" top="76" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DetectorDePrag</Name>
+        <Access>Public</Access>
+        <Location left="100" top="124" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ComparatorCuFereastra</Name>
+        <Access>Public</Access>
+        <Location left="252" top="60" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Sumator</Name>
+        <Access>Public</Access>
+        <Location left="267" top="157" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SumatorCuCastigUnitar</Name>
+        <Access>Public</Access>
+        <Location left="282" top="206" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SumatorCuCastigSubunitar</Name>
+        <Access>Public</Access>
+        <Location left="300" top="243" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AmplificatorDeMediere</Name>
+        <Access>Public</Access>
+        <Location left="320" top="290" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SumatorPonderat</Name>
+        <Access>Public</Access>
+        <Location left="324" top="337" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Integrare</Name>
+        <Access>Public</Access>
+        <Location left="35" top="274" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>IncarcareCondensator</Name>
+        <Access>Public</Access>
+        <Location left="90" top="312" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Tensiune TensiuneCondensator</Member>
+        <Member type="Field">Tensiune TensiuneDeIesire</Member>
+        <Member type="Field">int VitezaDeVariatieASemnaluluiDeIesire</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Derivare</Name>
+        <Access>Public</Access>
+        <Location left="115" top="361" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Logaritmic</Name>
+        <Access>Public</Access>
+        <Location left="160" top="407" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LogaritmicElementar</Name>
+        <Access>Public</Access>
+        <Location left="217" top="437" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LogaritmicCuDioda</Name>
+        <Access>Public</Access>
+        <Location left="244" top="487" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LogaritmicCuTBj</Name>
+        <Access>Public</Access>
+        <Location left="272" top="534" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Antilogaritmic</Name>
+        <Access>Public</Access>
+        <Location left="307" top="577" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int ComprimareSemnal</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>AlteCircuiteCuAO</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>AmplificatorDeMasura</Name>
+        <Access>Public</Access>
+        <Location left="15" top="10" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AmplificatorDeMasuraElementar</Name>
+        <Access>Public</Access>
+        <Location left="35" top="30" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AD521</Name>
+        <Access>Public</Access>
+        <Location left="63" top="66" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int FixareaCastiguluiInTensiune</Member>
+        <Member type="Field">int AjustareaDecalajului</Member>
+        <Member type="Field">int ReglareaLatimiiDeBanda</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AmplificatorDeIzolare</Name>
+        <Access>Public</Access>
+        <Location left="114" top="108" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AmplificatorDeIzolareElementar</Name>
+        <Access>Public</Access>
+        <Location left="134" top="128" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AmplificatorDeIzolareSpecializat</Name>
+        <Access>Public</Access>
+        <Location left="152" top="170" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int TensiuneaDeIesireASurselorIzolate</Member>
+        <Member type="Field">int CastigulInTensiune</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AD295</Name>
+        <Access>Public</Access>
+        <Location left="192" top="212" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int AjustareDecalaj</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>AOT</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Transconductanta</Name>
+        <Access>Public</Access>
+        <Location left="47" top="10" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AOTransconductanta</Name>
+        <Access>Public</Access>
+        <Location left="229" top="24" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TransconductantaFunctieDeCurentulDePolarizare</Name>
+        <Access>Public</Access>
+        <Location left="65" top="73" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CircuiteDeBazaCuAOT</Name>
+        <Access>Public</Access>
+        <Location left="92" top="119" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Convertoare</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>SursaDeCurentConstant</Name>
+        <Access>Public</Access>
+        <Location left="38" top="23" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConvertorIU</Name>
+        <Access>Public</Access>
+        <Location left="78" top="66" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConvertorUI</Name>
+        <Access>Public</Access>
+        <Location left="126" top="114" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DetectorDeVarf</Name>
+        <Access>Public</Access>
+        <Location left="180" top="162" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>AlteCircuiteCuAO2</Name>
+    <Language>CSharp</Language>
     <Entities />
     <Relationships />
   </ProjectItem>

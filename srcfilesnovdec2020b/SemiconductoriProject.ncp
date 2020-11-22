@@ -3,55 +3,315 @@
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>Semiconductori</Name>
     <Language>CSharp</Language>
-    <Entities />
+    <Entities>
+      <Entity type="Class">
+        <Name>Semiconductor</Name>
+        <Access>Public</Access>
+        <Location left="27" top="13" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Diac</Name>
+        <Access>Public</Access>
+        <Location left="80" top="73" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Triac</Name>
+        <Access>Public</Access>
+        <Location left="149" top="117" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int FunctionareBilaterala</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
     <Relationships />
   </ProjectItem>
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>Tiristor</Name>
     <Language>CSharp</Language>
-    <Entities />
+    <Entities>
+      <Entity type="Class">
+        <Name>Tiristor</Name>
+        <Access>Public</Access>
+        <Location left="45" top="17" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int TrecereaInConductie</Member>
+        <Member type="Field">int BlocareaInConductie</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CircuitEchivalentTiristor</Name>
+        <Access>Public</Access>
+        <Location left="202" top="50" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
     <Relationships />
   </ProjectItem>
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>DiodaShockley</Name>
     <Language>CSharp</Language>
-    <Entities />
+    <Entities>
+      <Entity type="Class">
+        <Name>DiodaShockley</Name>
+        <Access>Public</Access>
+        <Location left="30" top="15" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Tensiune TensiuneaDirectaDeIntoarcere</Member>
+        <Member type="Field">Curent CurentulDeMentinere</Member>
+        <Member type="Field">Curent CurentulDeAmorsare</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
     <Relationships />
   </ProjectItem>
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>TDG</Name>
     <Language>CSharp</Language>
-    <Entities />
+    <Entities>
+      <Entity type="Class">
+        <Name>TiristorCuPoartaDubla</Name>
+        <Access>Public</Access>
+        <Location left="19" top="34" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
     <Relationships />
   </ProjectItem>
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>TUJ</Name>
     <Language>CSharp</Language>
-    <Entities />
+    <Entities>
+      <Entity type="Class">
+        <Name>TUJ</Name>
+        <Access>Public</Access>
+        <Location left="32" top="23" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int ConditiiDeInchidere</Member>
+        <Member type="Field">int ConditiiDeDeschidere</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
     <Relationships />
   </ProjectItem>
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>TUP</Name>
     <Language>CSharp</Language>
-    <Entities />
+    <Entities>
+      <Entity type="Class">
+        <Name>TUP</Name>
+        <Access>Public</Access>
+        <Location left="49" top="16" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
     <Relationships />
   </ProjectItem>
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>FotoTiristor</Name>
     <Language>CSharp</Language>
-    <Entities />
+    <Entities>
+      <Entity type="Class">
+        <Name>FotoTiristor</Name>
+        <Access>Public</Access>
+        <Location left="44" top="24" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
     <Relationships />
   </ProjectItem>
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>FotoTranzistor</Name>
     <Language>CSharp</Language>
-    <Entities />
+    <Entities>
+      <Entity type="Class">
+        <Name>FotoTranzistor</Name>
+        <Access>Public</Access>
+        <Location left="30" top="21" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FotoDarlington</Name>
+        <Access>Public</Access>
+        <Location left="99" top="59" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
     <Relationships />
   </ProjectItem>
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>CuplareOptice</Name>
     <Language>CSharp</Language>
-    <Entities />
+    <Entities>
+      <Entity type="Class">
+        <Name>CuplorOptic</Name>
+        <Access>Public</Access>
+        <Location left="19" top="41" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int TensiuneDeIzolare</Member>
+        <Member type="Field">int FactorDeTransferInCC</Member>
+        <Member type="Field">int CurentulPrinLEDPentruAmorsare</Member>
+        <Member type="Field">int CastigulDeTransfer</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FibraOptica</Name>
+        <Access>Public</Access>
+        <Location left="142" top="75" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>AplicatiiPractice</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>SistemDeReglareAVitezeiUneiBandeTransportoare</Name>
+        <Access>Public</Access>
+        <Location left="18" top="13" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorDeRelaxare</Name>
+        <Access>Public</Access>
+        <Location left="110" top="64" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ComandaConectariiDeconectarii</Name>
+        <Access>Public</Access>
+        <Location left="149" top="168" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ComandaRedresorDePutereMonoAlternanta</Name>
+        <Access>Public</Access>
+        <Location left="184" top="223" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SistemDeIluminatDeAvarie</Name>
+        <Access>Public</Access>
+        <Location left="211" top="265" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CircuitDeProtectieLaSupratensiune</Name>
+        <Access>Public</Access>
+        <Location left="241" top="306" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ComandaInFaza</Name>
+        <Access>Public</Access>
+        <Location left="74" top="521" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AmorsareTiristor</Name>
+        <Access>Public</Access>
+        <Location left="22" top="757" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AmorsareTriac</Name>
+        <Access>Public</Access>
+        <Location left="54" top="800" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorSemnaleNesinusoidale</Name>
+        <Access>Public</Access>
+        <Location left="117" top="842" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GeneratorDeTensiuneDinteDeFierastrau</Name>
+        <Access>Public</Access>
+        <Location left="143" top="895" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ReleeDeTimp</Name>
+        <Access>Public</Access>
+        <Location left="154" top="965" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorDeRelaxare</Name>
+        <Access>Public</Access>
+        <Location left="13" top="1167" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ReleuPentruComutareaIntensitatiiLuminii</Name>
+        <Access>Public</Access>
+        <Location left="96" top="1247" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ReleuCuAutoMentinere</Name>
+        <Access>Public</Access>
+        <Location left="82" top="1303" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
     <Relationships />
   </ProjectItem>
 </Project>
