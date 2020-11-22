@@ -1,0 +1,399 @@
+ 
+ //LITERA PATURII ELECTRONICE
+ enum Paturi { K , L , M , N , O , P , Q };
+ 
+ //lista multiplii si submultiplii
+ enum multipliisisubmultiplii{exa,peta,terra,giga,mega,kilo,centa,deca,unitate, deci, centi , mili, micro, nano, ato, femto};
+ 
+ 
+ //NR DE ELECTRONI PE O PATURA DE ELECTRONI 
+ float Ne(int n){return 2 * n*n;}
+ 
+ //rezistenta dinamica jonctiunepn
+ //rd
+ //VF tensiunea directa 
+ //VR tensiunea inversa
+ //IF curentul direct 
+ //IR curentul invers 
+ //VPol tensiuena de polarizare a jonctiunii
+ //RLim rezistenta de limitare a circuitului de polarizare 
+ 
+ float DeltaIF(float IF1, float IF2)
+ { return IF2-IF1;}
+ 
+ float DeltaVF(float V1, float VF2)
+ { return VF2-VF1;}
+ 
+ float rd(float DeltaVF, float DeltaIF)
+ {
+	DeltaVF / DeltaIF;
+ }
+ 
+ //Diode
+ 
+ //model ideal
+ float VFIdeal()
+ {return 0;}
+ 
+ float IFIdeal(float VPol, float RLim)
+ {return VPol / RLim;}
+ 
+ float IRIdeal()
+ {return 0;}
+ 
+ float VRIdeal(float VPol)
+ {return VPol;}
+ 
+ //model practic
+ float VFPractic(string tip="Siliciu")
+ {return 0.7;}
+ 
+ float VFPractic(string tip="Germaniu")
+ {return 0.3;}
+ 
+ float IFPractic(float VPol, float VFPractic, float RLim)
+ {return (VPol-VFPractic)/RLim;}
+ 
+ float IRPractic()
+ {return 0;}
+ 
+ float VRPractic(float VPol)
+ {return VPol;}
+ 
+ //model complex
+ float VFComplex(float potentialDeBarierea, float IFComplex, float rd)
+ {return potentialDeBarierea + (IFComplex * rd);}
+ 
+ float IFComplex(float VPol, float potentialDeBarierea,  float RLim, float rd)
+ {return (VPol - potentialDeBarierea )/ (RLim + rd);}
+ 
+ float IRComplex()
+ {return 0.1E-9;}
+ 
+ float VLimComplex(float IRComplex, float RLim)
+ {return IRComplex * RLim;}
+ 
+ float VRComplex(float VPol, float VLimComplex)
+ {return VPol-VLimComplex;}
+ 
+//aplicati ale diodelor 
+
+//redresor monoalternanta
+
+//tensiune alimentare
+float Vin(){}
+
+//Rezistenta Sarcinii
+float Rs() 
+
+
+//Curentul
+float I(){}
+
+
+//Tensiunea medie de iesire pulsatorie
+float VMed(float Vv)
+{return Vv/Math.PI;}
+
+//Tensiunea de varf 
+float Vv(){}
+
+//Efectvul potentialului de barierea asupra iesirii redresorului mon alternanta
+//Tensiunea maxima de iesire 
+float Vvout (float Vvin, vloat potentialDeBarierea)
+{ return Vvin - potentialDeBarierea;}
+
+
+//Tensiunea inversa de varf VRv
+float VRv(float Vvin)
+{return Vvin;}
+
+//Redresor monoalternanta cuplat prin transformator la tensiuena de intrare 
+
+//Tensiunea din secundar 
+//N numarul de spire din secundar sec si primar pri
+float Vsec(float Nsec, float Npri,float Vin)
+{return (Nsec/Npri)/Vin;}
+
+//testare tip de raport de transformare 
+string eRidicatorDeTensiune(float Nsec, float Npri)
+{
+	if(Nsec > Npri) { return "Transformator Ridicator";} 
+	else if(Nsec == Nprim) {return "Transformator Unitar";}
+	else if(Nsec > Nprim) {return "Transformator Coborator";}
+}
+
+//Tensiune Vvpr
+//Tensiune de varf in primar 
+float Vvpr(){}
+
+//Vvsec
+//Tensiune de varf in secundar 
+float Vvsec(){}
+
+//Tensiune de eisire de varf redresata
+float VVout(float Vvsec, float potentialDeBarierea)
+{
+	return Vvsec - potentialDeBarierea;
+}
+
+//Redresor dubla alternanta 
+
+//Tensiune medie 
+float Vmed (float Vv)
+{return (2*Vv)/Math.PI;}
+
+
+
+//Redresor dubla alternanta cu priza mediana
+
+
+//Tensiune de iesire 
+float Vout (float Vsec, float potentialDeBarierea)
+{return (Vsec/2) - potentialDeBarierea;}
+
+//Tensiune de iesire 
+float Vout2 (float Vvpr, float potentialDeBarierea)
+{return (Vvpr/2) - potentialDeBarierea;}
+
+//Tensiune de iesire pt raport de transf == 1
+float VoutUnitar(float Vvpr, float potentialDeBarierea)
+{return Vvpr - potentialDeBarierea;}
+
+//Tensiunea inversa de varf VRv
+
+float VRv(float Vvsec, float potentialDeBarierea)
+{return Vvsec - potentialDeBarierea;}
+
+float Vvsec(float Vvout,float potentialDeBarierea)
+{return 2 * Vvout + 2 * potentialDeBarierea;}
+
+float Vvout(float Vvsec, float potentialDeBarierea)
+{return (Vvsec / 2 ) - potentialDeBarierea;}
+
+float VRvi(float Vvout, float potentialDeBarierea)
+{return 2 * Vvout + potentialDeBarierea;}
+
+float Vrout(float Vvsec, float potentialDeBarierea)
+{return (Vvsec/2) - potentialDeBarierea;}
+
+
+//Redresor dubla alternanta in punte
+
+//Vout 
+float Vvout(float Vvsec)
+{return Vvsec;}
+
+float Vvout2(float Vvsec, float potentialDeBarierea, float nrdiode)
+{return Vvsec- (nrdiode*potentialDeBarierea);}
+
+
+float VRv(float Vvout)
+{
+ return Vvout;
+}
+
+float VRv2(float Vvout, float potentialDeBarierea)
+{
+ return Vvout + potentialDeBarierea;
+}
+
+
+float VRvDIdeala(float Vvout)
+{
+	return Vvout;
+}
+
+float VRvDPractica(float Vvout, float potentialDeBarierea)
+{
+	return Vvout + potentialDeBarierea;
+}
+
+float Vvsec(float Vef)
+{ return 1.414 * Vef;}
+
+
+float Vvout(float Vvsec)
+{ return Vvsec - 1.4;}
+
+
+float VRvi(float Vvout, float potentialDeBarierea)
+{ return Vvout + potentialDeBarierea;}
+
+
+
+//FILTRE PENTRU SURSE DE ALIMENTARE 
+//FILTRU CAPACITIV
+float Vvin(float Vvin, float potentialDeBarierea)
+{ return Vvin - potentialDeBarierea;}
+
+
+//TENSIUNEA PULSATORIE
+
+//f monoalternanta ma
+float fma(float Tma)
+{return 1/Tma;}
+
+//Tensiuena dubla alernanta da 
+float Tda ( float Tma ) 
+{ return Tma / 2;}
+
+//fr da 
+float fda(float Tda)
+{return 1/Tda;}
+
+
+//FACTOR DE ONDULATIE  r'
+//Vrvv ondulatia varf la varf a tensiunii
+//Vcc alimentare Vcc
+float r(float Vrvv, float Vcc)
+{return Vrvv / Vcc;}
+
+
+//Vrvv
+float Vrvv(float f, float Rs, float C, float Vvredr)
+{ return (1/(f*Rs*C))*Vvredr;}
+
+//Vcc
+float Vcc(float f, floar Rs, float C, float Vvredr)
+{ return (1-(1/(2 * f * Rs * C))*Vvredr;}
+
+//Vvpr 
+float Vvpr (float Vefm float potentialDeBarierea)
+{
+	return Vef * 2 * potentialDeBarierea;}
+		
+}
+
+//Vvsec 
+float Vvsec(float Vvsec, float Nsec, float Npr, float Vvpr)
+{
+	return Vvpr *(Nsec/ Npr);
+}
+
+//Vvredr 
+float Vvredr(float vvsec, float potentialDeBarierea)
+{
+	return Vvsec - 2 * potentialDeBarierea;
+}
+
+//factor de ondulatie 
+float r(float Vrvv , float Vcc)
+{ return Vrvv / Vcc;}
+
+
+//Rlim 
+//IFSM curentul direct de sarcina maxima sau suprasarcina
+float Rlim (float Vvsec, float potentialDeBarierea, float IFSM)
+{ return ( Vvsec - 2*potentialDeBarierea)/ IFSM;}
+
+
+
+//FILTRUL LC
+
+//tensiune redresor iesire Vrout 
+// intrare Vrin 
+//Reactanta capacitiva Xc sau inductiva Xl 
+float Vrout (float Xc, float Xl, float Vrin)
+{
+	return Vrin*(Xc/(Xl-Xc));
+}
+
+
+//reactante 
+float Xc(float f, float C)
+{
+	return 2 * Math.PI *f * C;
+}
+
+float Xl(float f, float L)
+{
+	return 2 * Math.PI *f * L;
+}
+
+
+float Vccout(float Rs, float Rl, float Vccin)
+{
+	Vccin*(Rs/(Rl+rs)));
+}
+
+float Vccin(float Vmed)
+{
+	return Vmed;
+}
+
+float Vccin(float Vv)
+{
+	return (2 * Vv)/Math.PI;
+}
+
+
+float Vrin(Vv)
+{ return 0.308 * Vv;}
+
+
+//PAGINA 47 
+//LIMITATOARE SI CIRCUITE DE AXARE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
