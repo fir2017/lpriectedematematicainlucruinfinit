@@ -3,7 +3,195 @@
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>Oscilatoare</Name>
     <Language>CSharp</Language>
-    <Entities />
+    <Entities>
+      <Entity type="Class">
+        <Name>Oscilator</Name>
+        <Access>Public</Access>
+        <Location left="36" top="15" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int ConditieDeAmorsare</Member>
+        <Member type="Field">int ConditieDeAmorsare</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorCuReactieRC</Name>
+        <Access>Public</Access>
+        <Location left="78" top="60" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorCuPuncteWien</Name>
+        <Access>Public</Access>
+        <Location left="110" top="111" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int ConditiiDeOscilareRP</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ReactiePozitiva</Name>
+        <Access>Public</Access>
+        <Location left="290" top="15" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorCuInsumareDeFaza</Name>
+        <Access>Public</Access>
+        <Location left="156" top="151" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorInDubluT</Name>
+        <Access>Public</Access>
+        <Location left="188" top="207" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorCuCircuiteDeReactieLC</Name>
+        <Access>Public</Access>
+        <Location left="223" top="257" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorColpitts</Name>
+        <Access>Public</Access>
+        <Location left="243" top="307" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int InfluentaNeadaptariiImpedanteiCRAsupraFrecventeiDeOscilatie</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorClapp</Name>
+        <Access>Public</Access>
+        <Location left="265" top="366" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorHartley</Name>
+        <Access>Public</Access>
+        <Location left="50" top="281" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorArmstrong</Name>
+        <Access>Public</Access>
+        <Location left="78" top="323" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorComandatCuCristale</Name>
+        <Access>Public</Access>
+        <Location left="110" top="366" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EfectPiezoElectric</Name>
+        <Access>Public</Access>
+        <Location left="37" top="348" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ModulDeOscilatieACristalului</Name>
+        <Access>Public</Access>
+        <Location left="17" top="389" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorNesinusoidal</Name>
+        <Access>Public</Access>
+        <Location left="59" top="438" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorCuSemnalTriunghiular</Name>
+        <Access>Public</Access>
+        <Location left="91" top="483" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GeneratorDeSemnalTriunghiular</Name>
+        <Access>Public</Access>
+        <Location left="131" top="531" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>OCT</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>OscilatorComandatInTensiune</Name>
+        <Access>Public</Access>
+        <Location left="25" top="13" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorComandatInTensiunePentruDinteDeFierastrau</Name>
+        <Access>Public</Access>
+        <Location left="45" top="33" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorCuSemnalRectangular</Name>
+        <Access>Public</Access>
+        <Location left="72" top="79" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OscilatorCuTemporizatorul555</Name>
+        <Access>Public</Access>
+        <Location left="102" top="123" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Temporizator555</Name>
+        <Access>Public</Access>
+        <Location left="138" top="168" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
     <Relationships />
   </ProjectItem>
 </Project>

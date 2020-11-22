@@ -1,0 +1,69 @@
+<Project>
+  <Name>CodulCulorilorRezistoriProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>CodulCulorilorRezistori</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>TabelValoriStandardAleRezistorilor</Name>
+        <Access>Public</Access>
+        <Location left="38" top="16" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Rezistor</Name>
+        <Access>Public</Access>
+        <Location left="91" top="78" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt;Banda&gt; banda</Member>
+        <Member type="Method">public void calculeazaValoarea()</Member>
+        <Member type="Method">public float calculeazaMaxim()</Member>
+        <Member type="Method">public float calculeazaMinim()</Member>
+        <Member type="Method">public void AlegeRezistorulCuValoareStandardCelMaiApropriat()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MarcajCulori</Name>
+        <Access>Public</Access>
+        <Location left="533" top="211" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt;Color&gt; marcar</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DictionarCuloareValoare</Name>
+        <Access>Public</Access>
+        <Location left="450" top="16" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; PerecheCuloareValoare&gt; intrari</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PerecheCuloareValoare</Name>
+        <Access>Public</Access>
+        <Location left="500" top="110" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Color culoare</Member>
+        <Member type="Field">float valoare</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Banda</Name>
+        <Access>Public</Access>
+        <Location left="280" top="136" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int numar</Member>
+        <Member type="Field">Color culoarea</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

@@ -3,7 +3,239 @@
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>StabilizatoareDeTensiune</Name>
     <Language>CSharp</Language>
-    <Entities />
+    <Entities>
+      <Entity type="Class">
+        <Name>StabilizareaTensiunii</Name>
+        <Access>Public</Access>
+        <Location left="9" top="18" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Variatia variatia</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>VariatiaTensiuniiDeIntrare</Name>
+        <Access>Public</Access>
+        <Location left="96" top="46" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>VariatiaSarcinii</Name>
+        <Access>Public</Access>
+        <Location left="121" top="97" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Variatia</Name>
+        <Access>Public</Access>
+        <Location left="163" top="151" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StabilizatorSerieElementar</Name>
+        <Access>Public</Access>
+        <Location left="22" top="105" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ProtectiaLaScurtcircuit</Name>
+        <Access>Public</Access>
+        <Location left="38" top="145" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ProtectiaLaSuprasarcina</Name>
+        <Access>Public</Access>
+        <Location left="57" top="196" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StabilizareCuLimitareACurentuluiDeIesirePrinIntoarcere</Name>
+        <Access>Public</Access>
+        <Location left="90" top="244" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Concept</Name>
+        <Access>Public</Access>
+        <Location left="134" top="294" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StabilizatorParalelElementar</Name>
+        <Access>Public</Access>
+        <Location left="134" top="339" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StabilizatorInComutatieElementar</Name>
+        <Access>Public</Access>
+        <Location left="148" top="382" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CoboratorDeTensiune</Name>
+        <Access>Public</Access>
+        <Location left="167" top="421" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Configuratie</Name>
+        <Access>Public</Access>
+        <Location left="185" top="461" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RidicatorDeTensiune</Name>
+        <Access>Public</Access>
+        <Location left="201" top="514" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>InversorDePolaritate</Name>
+        <Access>Public</Access>
+        <Location left="224" top="565" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>AplicatiePractica</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>SursaDePolarizareDubla</Name>
+        <Access>Public</Access>
+        <Location left="25" top="21" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TranzistorulExteriorDeDecuplare</Name>
+        <Access>Public</Access>
+        <Location left="58" top="66" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LimitatorDeCurent</Name>
+        <Access>Public</Access>
+        <Location left="87" top="108" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StabilizatorDeCurent</Name>
+        <Access>Public</Access>
+        <Location left="119" top="158" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConfiguratiiDeStabilizatoareInComutatie</Name>
+        <Access>Public</Access>
+        <Location left="148" top="200" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SursaDeAlimentareStabilizata</Name>
+        <Access>Public</Access>
+        <Location left="191" top="251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>StabilizatoareCI</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>StabiliatorCI</Name>
+        <Access>Public</Access>
+        <Location left="38" top="17" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StabilizatorLiniarDeTensiunePozitivaFixa</Name>
+        <Access>Public</Access>
+        <Location left="69" top="58" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StabilizatorLiniarDeTensiuneNegativaFixa</Name>
+        <Access>Public</Access>
+        <Location left="95" top="93" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StabilizatorLiniarDeTensiunePozitivaReglabila</Name>
+        <Access>Public</Access>
+        <Location left="124" top="130" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StabilizatorLiniarDeTensiuneNegativaReglabila</Name>
+        <Access>Public</Access>
+        <Location left="144" top="176" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StabilizatorDeTensiuneInComutatie</Name>
+        <Access>Public</Access>
+        <Location left="167" top="230" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
     <Relationships />
   </ProjectItem>
 </Project>
