@@ -213,5 +213,103 @@ float PDmaxCorectata(float PDmax, float deltaPDmax)
 	return PDmax - deltaPDmax;
 }
 
-//pagina 111 tbj
+// tbj
 //functia de amplificare
+
+
+//marimi de cc si de ca ale tbj
+//curenti , tensiuni , rezistente , potentiale 
+//Vinca, VBBcc Vb Vc
+//RC RB re
+//VCC
+
+
+//circutul tbj echivalent de curent alternativ
+
+float Ic(float Ie)
+{
+	return Ie;
+}
+
+float Ie(float Vb, float re)
+{
+ return Vb/re;
+}
+
+float Vc(float Ic, float RC)
+{
+	return Ic*RC;
+}
+//pt Ic aproximativ egal Ie
+float Vc(float Ie, float RC)
+{
+	return Ie*RC;
+}
+
+float Vb(float Vin, float Ib,float RB)
+{
+	return Vin - Ib*RB;
+}
+
+//amplificarea in tensiune in ca 
+//al tbjca
+float Av(float Vc, float Vb)
+{
+	return Vc/Vb;
+}
+
+float Av2(float Ie, float RC, float re)
+{
+	return (Ie*RC)/(Ie*re);
+}
+float Av3( float RC, float re)
+{
+	return RC/re;
+}
+
+//re rezistenta interna in emitor a tbjca
+
+//functionarea in comutatie 
+
+//conditii de blocare
+float VCEBlocare(float VCC)
+{
+	return VCC;
+}
+
+//conditia de saturare
+
+float ICsat(float VCC, float VCEsat, float RC)
+{
+return (VCC-VCEsat)/RC;
+}
+
+float IBmin(float ICsat, float betacc)
+{
+	return ICsat / betacc;
+
+}
+
+float VRB(float VIN, float VBE)
+{
+	return VIN - VBE;
+}
+
+
+float RBmax(float VRB, float IBmin)
+{
+	return VRB / IBmin;
+}
+
+float IB(float VRB, float RB)
+{
+	return VRB/RB;
+}
+
+float Vin(float IBmin, float RB, float potentialDeBariera)
+{
+	return 2 * IBmin * RB + potentialDeBariera;
+}
+
+//pagina 130
+//circuite de polarizare cu tbj
