@@ -1,0 +1,217 @@
+//pagina 101 tbj
+
+//tensiunile
+//vbe -vbc vce 
+//alimentari
+//vcc
+//curenti
+//ie ic ib
+//rezistente
+//rb rc
+//polarizare la npn
+//b +
+//e gnd - - 
+//c +
+
+
+
+//caracteristici si parametrii
+ 
+float betacc(float IC, float IB)
+{
+return IC/IB;
+}
+
+
+//parametrii hibrizi
+
+float hfe(float betacc)
+{
+	return betacc
+}
+
+//alfa subunitar
+float alfacc(float IC, float IE)
+{
+	return CI/IE;
+}
+
+//relatia intre betacc si alfacc
+
+float IE(float IC, float IB)
+{
+	return IC+IB;
+}
+
+bool relatieAlfaBeta(float alfacc, float betacc)
+{
+	if((1/alfacc) == (1+(1/betacc)))
+	{ 
+		return true;
+	}
+	else
+ 	{
+		return false;
+	}
+}
+
+float betacc(float alfacc)
+{
+	return alfacc/(1-alfacc);
+}
+
+//analza curentilor si a tensiunilor
+
+float VB(float potentialDeBariera)
+{
+	return potentialDeBariera;
+}
+
+float VRB(float VBB, float VBE)
+{
+	return VBB-VBE;
+}
+
+float VRB(float IB, float RB)
+{
+	return IB*RB;
+}
+
+float IB(float VBB, float VBEm float RB)
+{
+	return (VBB-VBE)/RB;
+}
+
+float VRC(float IC, float RC)
+{
+	return IC*RC;
+}
+
+float VCE(float VCC, float IC, float RC)
+{
+	return VCC-IC*RC;
+}
+
+float IC(float betacc,float IB)
+{
+	return betacc*IB;
+}
+
+float VCB(float VCE, float VBE)
+{
+	return VCE - VBE;
+}
+
+
+//caracteristicile curentului de colector IC
+//graficul IC si VCE
+//regiuni
+//saturatie 0 ... prag
+//activa prag ... vcemax
+//strapungere >vcemax
+//inversa <0
+
+
+//regim de glocare
+
+bool eBlocat(float IB=0, float ICEO, float VCE, float VCC)
+{
+	if(IB==0)
+	{
+	return true;
+	}
+	else if(ICEO/100<1)
+	{
+		return true;
+	}
+	else if(VCE==VCC)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
+//regimul de saturatie
+float VCE(float VCC, float betacc, float IB)
+{
+	return VCC-(betacc*IB);
+}
+
+float VCEsat(float VCC, float IC, float RC)
+{
+	return VCC-(IC*RC);	
+}
+
+//dreapat de sarcina 
+//saturatie VCEsat la ICsat 
+//blocare VCC pe VCE
+float ICsat(float VCC, float VCEsat, float RC)
+{
+	return (VCC-VCEsat)/RC;
+}
+
+
+float IB(float VBB, float VBE, float RB)
+{
+	return (VBB-VBE)/RB;
+}
+
+
+//beta cc variatia cu TJ
+//temperatura jonctiunii TJ
+
+
+//tbj valori limita absolute
+float IC(float PDMAX, float VCE)
+{
+	return PDMAX/VCE;
+}
+
+float VCE(float PDMAX, float IC)
+{
+	return PDMAX/IC;
+}
+
+//curba puterii disipate maxime
+//graficul icmax pe vce
+//limita icmax a b c d vcemax;
+
+float VRC(float IC, float RC)
+{
+	return IC*RC;
+}
+
+float VRC(float VCC, float VCE)
+{
+	return VCC-VCE;
+}
+
+float VCCmax(float VCEmax, float VRC)
+{
+	return VCEmax + VRC;
+}
+
+float PD(float VCEmax, float IC)
+{
+	return VCEmax*IC;
+}
+
+//corectare pdmax 
+//pdmax la 25oC
+
+float deltaPDmax(float CoefCorectie, float temp1, float temp25)
+{
+	return CoefCorectie*(temp1-temp25);
+}
+
+float PDmaxCorectata(float PDmax, float deltaPDmax)
+{
+	return PDmax - deltaPDmax;
+}
+
+//pagina 111 tbj
+//functia de amplificare
