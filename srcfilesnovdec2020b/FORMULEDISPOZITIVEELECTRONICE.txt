@@ -332,8 +332,118 @@ float Vrin(Vv)
 { return 0.308 * Vv;}
 
 
-//PAGINA 47 
-//LIMITATOARE SI CIRCUITE DE AXARE
+
+//LIMITATOARE CU DIODE 
+
+//Vout 
+//if R1 mai mica decat RS sau nu 
+//Vout pe alternanta pozitiva iar VpolarizareDioda pe cealalta alternanta 
+float Vout(float RS,float R1, float Vin)
+{
+ if(R1/10 >= RS)
+  {
+	return (RS/(R1+RS))*Vin;
+  }
+  else if(R1/10<RS)
+  {
+	return Vin;
+  }
+}
+
+float VpolarizareDioda(float potentialDeBarierea)
+{
+	return potentialDeBarierea;
+}
+
+//LIMITATOR CU REFERINTA DE TENSIUNE VREF
+float VoutAP(float Vref, float potentialDeBarierea)
+{
+	return Vref - potentialDeBarierea;
+}
+float VoutAN(float Vref, float potentialDeBarierea)
+{
+	return -Vref + potentialDeBarierea;
+}
+
+
+
+//Cu referinta data e un divizor rezistiv 
+float VREF(float R3, float R2, float VSursa)
+{
+	return (R3/(R2+R3))*Vsursa;
+}
+
+
+CIRCUITE DE AXARE CU DIODE 
+
+// -Vvin tensiune la valf negativa
+// Vvin tensiune la varf pozitiva 
+// Vvin - potentialDeBarierea energia inmagazinata in condensator
+
+float NivelulTensiuniiDeAxare(float Vvin, float potentialDeBarierea)
+{
+	return Vvin - potentialDeBarierea;
+}
+
+//Constanta de timp RC 
+
+float ctRC(float R, float C)
+{
+	return R*C;
+}
+
+
+//Vcc 
+
+float Vcc(float Vvin, float potentialDeBarierea)
+{
+	return -(Vvin-potentialDeBarierea);
+}
+
+//MULTIPLICATOR DE TENSIUNE 
+
+//DUBLOR DE TENSIUNE 
+
+//MONOALTERNANTA
+
+float VC2(float Vv, float VC1, float VD2)
+{
+	if(VC1==Vv || VD2/10 < Vv)
+	{
+		return 2 * Vv;
+	}
+	else
+	{
+		return Vv + VC1;
+	}
+}
+
+
+//DUBLA ALTERNANTA
+
+float Vout(float Vv) 
+{
+return 2 * Vv;
+}
+
+//TRIPLOR DE TENSIUNE 
+float Vout(float Vv) 
+{
+return 3 * Vv;
+}
+
+//CVADRUPLOR DE TENSIUNE 
+float Vout(float Vv) 
+{
+return 4 * Vv;
+}
+
+//PAGINA 69 DIODE DE UZ SPECIAL 
+
+
+
+
+
 
 
 
