@@ -313,3 +313,181 @@ float Vin(float IBmin, float RB, float potentialDeBariera)
 
 //pagina 130
 //circuite de polarizare cu tbj
+//psd punctul static de functionare
+//alimentarea in cc
+//amplificator cu tbj
+//taiere superioara la blocare si inferioara la saturare a vout
+//grafic ic la vce
+
+float VCE(float VCC, float IC, float RC)
+{
+return VCC-IC*RC;
+}
+
+//dreapta de sarcina in cc
+//dreapta de la IC A Q sau PSF centrat B VCE
+//PSD ICQ si VCEQ
+float IC(float VCC, float RC)
+{
+return VCC/RC;
+}
+
+float ICneliniar(float RC, float VCE, float VCC, float RC)
+{
+	return -(1/RC)*VCE+(VCC/RC);
+}
+
+//functionarea liniara
+
+float ICQ(float betacc, float IBQ)
+{
+	return betacc*IBQ;
+}
+
+float IBQ(float VBB, float potentialDeBariera, floar RB)
+{
+	return (VBB-potentialDeBariera)/RB;
+}
+
+float VCEQ(float VCC, float ICQ, float RC)
+{
+	return VCC - ICQ*RC;
+}
+
+//distorsionarea formelor de unda
+//tranzistor in saturatie
+//tbj in blocare
+//tbj atat in blocare cat si in saturatie
+
+float CrestereIC(float ICsat, float ICQ)
+{
+	return ICsat = ICQ;
+}
+
+float Ibvarf(float Icvarf, float betacc)
+{
+	return Icvarf / betacc;
+}
+
+
+
+//polarizarea bazei de la VCC
+
+float IB(float VCC, float VBE, float RB)
+{
+	return (VCC-VBE)/RB;	
+}
+
+ float VCE( float VCC,  float IC,  float RC)
+{
+	return VCC- IC*RC;
+}
+
+float IC( float betacc,  float  VBE,  float  RB)
+{
+	return betacc*((VCC-VBE)/RB);
+}
+
+//influenta betacc asupra PSF
+
+ float VCE( float VC,  float IC,  float RC)
+{
+	return VCC- IC*RC;
+}
+
+//variatia ic si vb cu temperatura
+float deltaIC(float IC75,  float IC25)
+{
+	return ((IC75-IC25)/IC25)*100;
+}
+
+ float deltaVCE(float VCE75,  float VCE25)
+{
+	return ((VC75-VC25)/VC25)*100;
+}
+
+//alti factori care influenteaza circuitul cu baza polarizata de la VCC
+
+ bool eMultMaiMAre( float a ,  float b ,  float N)
+{
+	if(a/N>b){ return true;}
+	else {return false;}
+}
+
+//polarizare emitor din sursa de tensiuen separata
+ float VEE( float IB,  float  RB,  float  IE,  float  RE,  float VBE)
+{
+	return -(IB*RB+ IE*RE + VBE);
+}
+
+float IB(float IE, float betacc)
+{
+return IE/betacc;
+}
+
+ float IE( float VBE,  float  VEE,  float RE,  float  RB,  float  betacc)
+{
+	return (VEE-VBE)/(RE+(RB/betacc));
+}
+
+ float VE( float VEE,  float  IE,  float  RE)
+{
+	return VEE + IE*RE;
+}
+
+ float VB( float VE,  float VBB)
+{
+	return VE+VBB;
+}
+
+ float VC( float VCC,  float IC,  float RC)
+{
+	return VCC-IC*RC;
+}
+
+ float VCE( float  VCC,  float VEE,  float IC,  float RC,  float RE)
+{
+	return VCC - VEE - IC*(RC+RE);
+}
+
+
+ float ICsat( float  VCC,  float  VEE,  float  RC,  float  RE)
+{
+	return (VCC-VEE)/(RC+RE);
+}
+
+ float VCEblocare( float VCC,  float  VEE)
+{
+	return VCC- VEE;
+}
+
+ float deltaICmax( float ICsat,  float IC)
+{
+
+return ICsat = IC;
+}
+
+//stabilitatea psf al circuitului cu emitor polarizat din sursa separata
+
+ float IE( float VEE,  float  VBE ,  float  RE,  float  RB,  float  betacc)
+{
+	if(eMultMaiMare(RE,RB/betacc,10)!=true)
+	{
+		return (-VEE-VBE)/(RE+(Rb/betacc));
+	}
+	else if(eMultMaiMare(VEE, VBE, 10)==true)
+	{
+		return VEE/RE;
+	}
+	else
+	{
+		return (-VEE-VBE)/RE;
+	}
+}
+
+//tbj pnp cu emitor polarizat din sursa separata
+//pagina 137
+
+
+
+
