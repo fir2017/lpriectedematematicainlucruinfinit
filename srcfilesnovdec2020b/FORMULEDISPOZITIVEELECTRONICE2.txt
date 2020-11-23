@@ -344,7 +344,7 @@ float ICQ(float betacc, float IBQ)
 	return betacc*IBQ;
 }
 
-float IBQ(float VBB, float potentialDeBariera, floar RB)
+float IBQ(float VBB, float potentialDeBariera, float RB)
 {
 	return (VBB-potentialDeBariera)/RB;
 }
@@ -635,5 +635,189 @@ float VCE(float VCC,  float IC, float  RC)
 //stabilitatea cu variatai temp
 
 
-//pagina 157
+
 //amplfi de semnal mic cu tbj
+//functionare ampli de semnal mic
+//marimi de ca
+//VCE 
+//Vef 
+//Vmed 
+//Vceef
+//Vcemed
+//Vcevf
+//Vcevv
+
+
+//amplficiator de smnal mic 
+//ilutrare grafica 
+//psf grafic  VCE la IC la IB 
+
+
+
+//circuite echiv de ca ale tbj
+//parametrii hibrizi h 
+//i impendanta de intrare cu iesire in scurt
+// r factor de reactie in tensiune  cu intrare in gol 
+//f castigul in curent in bucla deschisa cu iesire in scurt 
+//o admitanta de iesire cu intrare in gol
+
+
+//configuratii 
+//emitor comun ec 	hie hre hfe hoe 
+//baza comuna  bc	hib hrb hfh hob
+//colector comun cc hic hrc hfc hoc
+
+
+//EC
+float  hie(float Vb, float Ib)
+{
+	return Vb/Ib;
+}
+
+float hre(float Vb, float Vc)
+{
+	return Vb/Vc;
+}
+
+float hfe(float Ic, float Ib)
+{
+	return Ic/Ib;
+}
+
+float hoe(float Ic, float Vc)
+{
+	return Ic/Vc;
+}
+
+//BC
+
+float  hib(float Ve, float Ie)
+{
+	return Ve/Ie;
+}
+
+float hrb(float Ve, float Vc)
+{
+	return Vb/Vc;
+}
+
+float hfb(float Ic, float Ie)
+{
+	return Ic/Ib;
+}
+
+float hob(float Ic, float Vc)
+{
+	return Ic/Vc;
+}
+
+//CC
+
+float  hic(float Vb, float Ib)
+{
+	return Vb/Ib;
+}
+
+float hrc(float Vb, float Ve)
+{
+	return Vb/Ve;
+}
+
+float hfc(float Ie, float Ib)
+{
+	return Ie/Ib;
+}
+
+float hoc(float Ie, float Ve)
+{
+	return Ie/Ve;
+}
+
+
+//circuite cu parametrii hibrizi
+
+//EC  B2C 
+//BC  B2E
+//CC  E2C
+
+//parametrii rezistivi r 
+
+//alfaca 
+//betaca 
+//re 
+//rb 
+//rc 
+
+float alfaca(float Ic,float Ie)
+{
+	return Ic/Ie;
+}
+
+float betaca(float Ic, float Ib)
+{
+	return Ic/Ib;
+}
+
+
+
+//relatii intre parametrii tbj h si r 
+
+float alfaca(float hfb)
+{
+	return hfb;
+}
+
+float betaca(float hfe)
+{
+	return hfe;
+}
+
+float re(float hre, float hoe)
+{
+	return hre/hoe;
+}
+
+float rc(float hre, float hoe)
+{
+	return (hre+1)/hoe;
+}
+
+float rb(float hie, float hre, float hoe, float hfe)
+{
+	return (hie-(hre/hoe)*(1+hfe));
+}
+
+
+//circuite echivalente cu parametrii r 
+//circuit echiv general
+//circuit echiv simplificat 
+//echivalenta dintre circuitul cu r si simbolica tbj 
+
+
+//re rezistenta interna a tbj 
+float re(float IE)
+{
+	return 25*IE;
+}
+
+//comparatie intre betaca si betacc IC la IB 
+//betacc drepata de sarcina 
+//betaca interval de pe o dreapta de sarcina 
+float betaca(float IC, float IB)
+{
+	return IC/IB;
+}
+
+float DELTAIx(float min, float max)
+{return max - min;}
+float ABSDELTAx(float min, float max)
+{return Math.Abs(max - min) ;}
+
+float betca(float DELTAIC, float DELTAIB)
+{
+	return DELTAIC/DELTAIB;
+}
+
+//amplificatoare cu emitor comun 
+//pagina 163
+
