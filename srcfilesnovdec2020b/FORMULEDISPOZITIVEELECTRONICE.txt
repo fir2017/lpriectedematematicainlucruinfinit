@@ -634,15 +634,123 @@ float DeltaVz(float IzT, float IzK, float Zz)
  }
  
  
- //PAGINA 78
+
  //LIMITATOARE CU DIODE ZENER 
+//float polarizare = 1 sau -1
+ float Vlimitare(float Vz, float polarizare)
+{
+	return Vz* polarizare;
+}
+
+float VBariera(float potentialDeBariera,  float polarizare)
+{
+
+ return potentialDeBariera * polarizare;
+}
+
+//cu doua Zener 
+
+ float Vlimitare(float Vz, float polarizare, float potentialDeBariera)
+{
+	return Vzz * Vpolarizare + potentialDeBariera ;
+}
+
+
+
+//DIODA VARACTOR
+
+//CAPACITATEA
+//A aria suprafetei
+//epsilon constanta dielectricului inf fct de material
+//d grosimea dielectricului
+/
+float C(float A, float epsilon, float d)
+{
+	return (A*epsilon)/d;
+}
+ 
+ //RAPORT DE RACORDARE
+float C60(float C4, float rA)
+{
+	return C4/ Ra;
+}
+
+
+//FILTRU TRECE BANDA CU DIODA VARACTOR
+float fr(float L, float C)
+{
+	return 1/(2*Math.PI*Math.Sqrt(L*C));
+}
+ 
+
+//tensiunea inversa de polarizare prin filtrul trece jos 
+
+float vk(float R3, float R4, float R5, float R2, float Rs, float Vpol)
+{
+	return ((R3+R4+R5)/(R2+R3+R4+R5))*Vpol;
+}
  
  
- 
- 
- 
- 
- 
+ //tensiunea continua a anodului varactorului 
+float vamin(float R3, float R4, float R5, float R2, float Vpol)
+{
+	return ((R5)/(R2+R3+R4+R5))*Vpol;
+}
+float vamax(float R3, float R4, float R5, float R2, float Rs, float Vpol)
+{
+	return ((R4+R5)/(R2+R3+R4+R5))*Vpol;
+}
+
+//tensiunile inverse min si max Vr
+
+float vrmin(float vk, float vamax)
+{
+return vk - vamax;
+}
+
+float vrmax(float vk, float vamin)
+{
+return vk - vamin;
+}
+
+//LED
+
+//intensitatea radianta si iradierea
+
+float H(float Ie, float d)
+{
+	return Ie/(d*d);
+}
+
+
+//FOTODIODA
+
+// rezistenta disp RR
+float RR(float VR, float Ilambda)
+{
+	return VR/Ilambda;
+}
+
+//alte tipuri de diode
+
+//dioda stabilizatoare de curent
+
+//dioda schottky
+
+//dioda pin
+
+//dioda ultrarapida
+
+//dioda tunel
+
+//rezistenta directa
+floar RF(float deltaVf, float deltaIf)
+{
+	return deltaVf/deltaIf;	
+}
+
+//pagina 101
+//tbj
 
 
 
