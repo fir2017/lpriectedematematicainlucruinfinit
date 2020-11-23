@@ -486,8 +486,154 @@ return ICsat = IC;
 }
 
 //tbj pnp cu emitor polarizat din sursa separata
-//pagina 137
+
+//polarizare cu divizor rezistiv
+
+float RINbaza(float VIN, float IIN)
+{
+return VIN/RIN;
+}
+
+float VIN(float VBE, float  IE, float RE)
+{
+	if(eMultMaiMare(IE*RE,VBE,10)!=true)
+	{
+		return VBE + IE*RE;
+	}
+	else
+	{
+		return IE*RE;
+	}
+}
 
 
+float VIN (float betacc, float IB, float RE)
+{
+ return betacc*IB*RE;
+}
+
+float RIN(float betacc, float RE)
+{
+	return betacc*RE;
+}
+
+//analiza circ pol cu div de V
+
+float RTBGND(float R2,float betacc,float RE)
+{
+	return RParelela(R2,betacc*RE);
+}
 
 
+float VB(float R1, float  R2, float RE, float  betacc, float VCC)
+{
+	if(eMultMaiMare(betacc*RE,R2,10)!=false)
+	{
+		return VCC*((RParelela(R2,betacc*RE)/R1+(RParelela(R2,betacc*RE))));	
+	}
+	else
+	{
+		return (R2/(R1+R2))*VCC;
+	}
+}
+
+float VE(float VB, float VBE)
+{
+	return VB-VBE;
+}
+
+float IE(float  VE, float RE)
+{
+	return VE/RE;
+}
+
+float IC(float  IE)
+{
+	return IE;
+}
+
+float VC(float  VCC, float  IC, float RC)
+{
+	return VCC-IC*RC;
+}
+
+float  VCE(float VC, float VE)
+{
+	return VC-VE;
+}
+
+float VCE(float VCC, float  IC, float  RC , float  RE)
+{
+	return VCC-IC*(RC+RE);
+}
+
+
+//stabilitatea circ pol de div de V
+//thevenin
+
+float RParalel(float R1, float R2)
+{
+	return (R1*R2)/(R1+R2);
+}
+
+float Rech(float R1,float  R2,float  VCC)
+{
+	return (R2/(R1+R2))*VCC;
+}
+
+float Vech(float  IB, float  Rech, float VBE, float  IE, float  RE)
+{
+	return IB*Rech+VBE+IE*RE;
+}
+
+
+float IE(float Vech, float  VBE, float  RE, float  betacc)
+{
+	if(eMultMaiMare(RE, Rech/betacc, 10)!=true)
+	{
+		return (Vech-VBE)/(RE+(Rech/betacc));
+	}
+	else
+	{
+		return (Vech-Vbe)/RE;	
+	}
+}
+
+
+//circuit cu div V pt pnp
+
+//pol cu reactie in colector
+
+float IB(float  VC, float  VBE , float  RB)
+{
+	return (VC-VB)/RB;
+}
+
+float VC(float VCC, float  IC, float  RC)
+{
+	if(eMultMaiMare(IC,IB,10)==true)
+	{
+		return VCC-IC*RC;
+	}
+	else
+	{
+		return NECUNOSCUT;
+	}
+}
+
+float IC(float VCC, float VBE, float  RC , float  RB, float betacc)
+{
+	return (VCC-VBE)/(RC*(RB/betacc));
+}
+
+float VCE(float VCC,  float IC, float  RC)
+{
+	
+	return Vcc-IC*RC;
+}
+
+//stabilitatea cu variatai temp
+
+
+//pagina 157
+//amplfi de semnal mic cu tbj
