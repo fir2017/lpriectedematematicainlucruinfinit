@@ -438,7 +438,211 @@ float Vout(float Vv)
 return 4 * Vv;
 }
 
-//PAGINA 69 DIODE DE UZ SPECIAL 
+// DIODE DE UZ SPECIAL 
+
+//DIODA ZENER
+
+
+float delta(float a , float b )
+{
+return b-a;
+}
+
+//IMPEDANTA DINAMICA ZZ
+
+float DeltaVz(float Vz1, float Vz2)
+{
+	return delta(Vz1,Vz2);
+}
+float DeltaVz(float DeltaIz, float ZzT)
+{
+	return delta(DeltaIz * ZzT);
+}
+float DeltaIz(float Iz1, float Iz2)
+{
+	return delta(Iz1,Iz2);
+}
+float DeltaIz(float Iz, float IzT)
+{
+	return delta(Iz,IzT);
+}
+
+float ZZ(float DeltaVz, float DeltaIz)
+{
+ return DeltaVz / DeltaIz;
+}
+ 
+ 
+  //pt Iz < IzT Vz=
+ float DeltaVz(float DeltaIz, float VzT)
+ {
+	return DeltaIz*VzT;
+ }
+ 
+
+ float Vz(float Vz , float DeltaVz)
+ {
+	return Vz - DeltaVz;
+ }
+ 
+ 
+ //coeficient de temperatura 
+ //in %/gradC
+ //variatia tensiunii destabilizare DeltaVz
+ float DeltaVz(float Vz, float CT, float DeltaT)
+ {
+		return Vz * CT * DeltaT;
+ }
+ //in mV/gradC
+ float DeltaVz(float CT, float DeltaT)
+ {
+		return CT * DeltaT;
+ }
+ 
+ //puterea disipata de dioda zener PD
+ float PD(float Vz, float Iz)
+ {
+	return Vz * Iz;
+ }
+ 
+ //pd corectata in fct de temperatura 
+ float PDCorectata(float PDMAX, float DeltaT)
+ {
+	return PDMAX - DeltaT;
+ }
+ 
+ //curentul zener maxim IzM
+ float IzM(float PDMAX, float Vz)
+ {
+	return PDMAX/ Vz;
+ }
+ 
+ //IzK CURENTUL ZENER MINIM DE STABILIZARE 
+ 
+ 
+ 
+ 
+ //STABILITATEA CU DIODA IN RAPORT CU VARIATIA TENSIUNII DE INTRARE 
+ 
+ float Vr( float IzK, float R)
+ {
+	return IzK*R;
+ }
+ 
+ float VR (float Vin, float Vz)
+{
+return Vin - Vz;
+}
+
+float Vinmin(float Vr, float Vz)
+{
+return Vr + Vz;
+}
+
+
+float Vrmax(float IzM, float R)
+{
+	return IzM * R;
+}
+
+//la Izt
+float Vout(float Vz , float DeltaVz)
+{
+return Vz - DeltaVz;
+}
+
+float DeltaVz(float IzT, float IzK, float Zz)
+{
+	return (IzT-IzK)*Zz;
+}
+ 
+ float VinMin(float IzK, float R, float Vout)
+ {
+	return IzK*R+Vout;
+ }
+ 
+ //STABILITATEA CU DIODA ZENER IN RAPORT CU VARIATIA SARCINII 
+ //SARCINA MINIMA SCURT 
+ //SARCINA INFINITA GOL 
+ 
+ float IzMax(float Is, floar Rs, float Iz, float IT, float Vin, float Vz, float R)
+ {
+	if(Is==0 || Rs==infinit)
+	{
+		if(Iz == IT)
+		{
+			return (Vin-Vz)/R;
+		}
+	}
+ }
+ 
+ //curentul total
+ float IT(float Vin, float Vz, float R)
+ {
+	return (Vin-Vz)/R;
+ }
+ 
+ float Ismin()
+ {
+	return 0;
+ }
+ 
+ //pt Ismax
+ float ISmax(float IT, float IZK)
+ {
+	return IT - IZK;
+	
+ }
+ 
+ float Rsmin(float Vz, float ISmax)
+ {
+	return Vz / ISmax;
+ }
+ 
+ //R pt curentul zener maxim 
+ float R(float Vin, float Vz, floar IzM)
+ {
+	return (Vin-Vz)/IZM ;
+ }
+ 
+ float IT(float Vin, float Vout, float R)
+ {
+	return (Vin-Vout)/R;
+ }
+ 
+ float Ismax(float IT, float IZK)
+ {
+	return IT - IZK;
+ }
+ 
+ float Rsmin(float Vout, float Is)
+ {
+	return Vout/Is ;
+ }
+ 
+ 
+ //STABILIZAREA PROCENTUALA IN RAPORT CU VARIATIA TENSIUNII DE INTRARE 
+ float stbproc(float DeltaVout, float DeltaVin)
+ {
+  return (DeltaVout/ DeltaVin)*100;
+ }
+ 
+ //STABILIZAREA IN RAPORT CU VARIATIA SARCINII 
+ float stabsarc(float Vgol, float Vsmin)
+ {
+  return ((Vgol-Vsmin)/Vsmin)*100;
+ }
+ 
+ 
+ //PAGINA 78
+ //LIMITATOARE CU DIODE ZENER 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
 
