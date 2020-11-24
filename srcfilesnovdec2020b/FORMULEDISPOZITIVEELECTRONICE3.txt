@@ -1,0 +1,138 @@
+//amplificatoare de putere 
+//pagina 191
+
+//amplif in clasa A
+//regiunea lineara
+
+//limitare semnal iesire pt PSF necentrat
+//apropriat de blocare , sau saturatie
+
+//formule
+
+//dr de sarcina in cc
+ICsat pt VCE = 0
+ICsat = VCC/(RC+RE)
+
+VCEblocare pt IC=0
+VCEblocare = VCC
+
+//dr sarcina in ca
+
+deltaIC = VCEPSF / Rc
+Rc = RC || RS
+deltaVCE = deltaIC*Rc = ICPSF * Rc
+
+ICsat = ICPSF + VCEPSF/R
+
+//circuite echivalente de ca 
+
+deltaIC = ICPSF
+Icsat = ICPSF + deltaIC
+Vceblocare = VCEPSF + ICPSF * Rc
+
+VBPSF = VCC*(R2/(R1+R2))
+IEPSF=(VBPSF-Vp)/RE
+
+pt IC = IE
+ICPSF = IEPSF
+
+VCPSG = VCC- ICPSF *RC
+VCEPSF = VCPSF - IEPSF*RE
+
+Vcesat = 0
+Icsa = ICPSF + (VCEPSF/Rc)
+
+Rc = RC || RS = RC*RS/ (RC+RS)
+
+Icblocare = 0
+Vceblocare = VCEPSF + ICPSF * Rc
+
+deltaIC = ICsat -ICPSF
+deltaVCE = VCEPSF
+
+deltaICmax = ICPSF = Icsat / 2
+deltaVCEmax = VCEPSF = Vceblocare/2
+
+//centrare psf pe dr de sarcian in ca
+
+VCEPSF = (VCEPSF+ICPSF*Rc)/2
+ICEPSF = (ICPSF + VCEPSF/Rc)/2
+
+//centrarea psf
+2*VCEPSF = VCEPSF + ICPSF*Rc
+VCEPSF = ICPSF * Rc
+
+RE = (VCC-VCEPSF-ICPSF*RC)/ICPSF
+
+//CASTIG IN TENSIUNE 
+
+re = deltaVBE/deltaIC
+Av = Rc/re
+
+//distrsionarea
+
+//re se scrie r'e
+Av = Rc/(RE1+re)
+
+//castig in putere
+Ap = Ai*Av = betacc*Av
+Ap = betacc*(Rc/re)
+
+//putere
+PDPSF = ICPSF * VCEPSF
+
+//putere de iesire 
+Pout = Vce(Ic
+
+//psf in aprop de saturatie 
+Pout =(( Vp-VCEPSF )/Rc) * Vp*VCEPSF
+
+Rc = RC || RS
+
+//psf in aprop de pct de blocare
+Pout = (Vp*ICEPSF) * (Vp*ICPSF*Rc) = Vp/2 * ICpsf * ICPSF * Rc
+
+Vp = 0.707
+
+//PSF centrat
+Pout = Vp*VCEPSF*Vp*ICPSF
+
+Pout = VP/2 * VCEPSF * ICPSF
+
+//randament
+PCC = VCC*ICC
+nmax = Pout / PCC = 0.5*VCEPSF*ICPSF / (VCC*ICC) = 0.5 /2 = 0.25 %
+
+//putere maxima in sarcina
+PSMAX = Vs*Vs / RS = ( Vp*VCEPSF)^2 / RS
+
+PSmax = 0.5 * VCEPSF ^ 2 / RS 
+
+//aplif in contratimp in clasele B ai AB
+
+//pagina 200
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
