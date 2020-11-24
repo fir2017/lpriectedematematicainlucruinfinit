@@ -1072,6 +1072,140 @@ float Ap(float Av , float Ai)
 
 
 //amplificator cu CC
-//pagina 171
 
+//Av
+float Av(float Ie, float Re, float Ie, float re)
+{
+ return (Ie*Re)/(Ie*(re+Re));
+}
+
+float Vout(float Ie, float Re)
+{
+	return Ie*Re;
+}
+
+float Vin(float Ie, float re, float Re)
+{
+	return Ie*(re+Re);
+}
+
+float Av(float Vout, float Vin)
+{
+	return Vout/Vin;
+}
+
+
+float Re(float RE, float RS)
+{
+	return Rparalel(RE,RS);
+}
+
+float Av(float re, float Re)
+{
+	return Re/(re+Re);
+}
+
+//in absenta sarcini Re==RE;
+//pt Re>>re atunci Av~=1
+
+float Av(float RS, float Re, float RE)
+{
+	if(RS==0)
+	{
+	  Re = RE;		
+	}
+
+	if(eMultMaiMare(Re,re,10)==true)
+	{
+		return 1;
+	}
+}
+
+//Rin
+
+//Rinbaza = Vin/Iin = Vb/Ib = (Ie*(re+Re))/Ib
+
+// pt Ie == Ic = betacc*Ib
+//Ib simplificat
+//Rinbaza = betaca*(re+Re);
+
+float Rinbaza(float betaca, float re, float Re)
+{      
+ 	if(eMultMaiMare(Re,re,10)==true)
+	{
+	return betaca*Re;
+	}	
+	else 
+	{
+	return betaca*(re+Re);
+	}
+}
+
+float Rintot( float R1, float R2, float Rintot)
+{
+	return Rparalel(R1,(Rparalel(R2,Rintot));
+}
+
+//Rout
+
+float Rout(float Rg, float betaca, float RE)
+{
+	return Rparalel(Rg/betaca,RR);
+}
+
+//castig in curent 
+//Ai repetor pe emitor
+float Ai(float Ie, float Iin)
+{
+	return Ie/Iin;
+}
+
+float Ai(float betaca)
+{
+//pt R1||R2 >> betaca*Re 
+return betaca;
+}
+
+float Ai(float Ie, float Iin)
+{
+	return Ie/ Iin;
+}
+
+float Iin(float Vin, float Rintot)
+{
+	return Vin/Rintot;
+}
+
+
+//castig in putere 
+float Ap(float Av, float Ai)
+{
+	return Av*Ai;
+}
+
+//pt Av==1;
+float Ap(float Ai)
+{
+	return Ai;
+}
+
+float Re(float RE, float RS)
+{
+	return Rparalel(RE,RS);
+}
+
+float Apsarcina(float Ap, float RS, float RE)
+{
+	if(RS==RE)
+	{
+		return Ap/2;
+	}	
+	else 
+	{
+		return Ap;
+	}
+}
+
+//configuratia darlington
+//pagina 174
 
