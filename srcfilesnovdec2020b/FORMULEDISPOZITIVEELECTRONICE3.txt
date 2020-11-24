@@ -110,7 +110,127 @@ PSmax = 0.5 * VCEPSF ^ 2 / RS
 
 //aplif in contratimp in clasele B ai AB
 
-//pagina 200
+//la 180 de grade 
+
+//clasa B
+//psf la limita de blocare
+
+ICPSF = 0
+VCEPSF = VCEBLOCARE
+
+//FUNCTIONARE IN CONTRATIMP
+VB = 0
+
+//DISTORSIUBNI DE ACORDARE
+
+//FUNCTIONARE IN CLASA AB
+R1 = VCC/2
+R2 = R1
+D1 = VBET2
+D2 = VBET2
+VCEPSF1 = VCEPSF2 = VCC/2
+ICPSF = 0
+
+IT = (VCC-VD1 - VD2)/(RA + R2)
+
+
+VB1 = VCC - IT*R1
+VB2 = VB1 - VD1 - VD2
+VE1 = VE2 
+VCEPSF1 = VCEPSF2
+
+//FUNCTIONARE IN CA
+
+Icsat = VCEPSF/ RS
+
+Ie = Ic
+Ioutvarf = VCEPSF / RS
+
+Voutv = VCEPSF = VCC/2
+
+Voutv = Icsat = VCEPSF / RS
+
+
+//PUTEREA MAXIMA DE IESIRE 
+Pout = Voutef * Ioutef
+Voutef = 0.707 * Voutv 
+Voutv = VCEPSF
+Ioutef = 0.707 * Ioutv 
+Ioutv = Icsat
+Pout = 0.5 * VCEPSF * Icsat
+
+Pout = 0.25 * VCC * Icsat
+
+//puterea de intrare in cc
+PCC= VCC*ICC
+ICC = Icsat / Math.PI
+PCC = (VCC*Icsat)/Math.PI
+
+
+//randamentul 
+//clasa ab
+niu = Pout / PCC
+//clasa b
+niumax = 0.25 * VCC*Icsat
+
+niumax=Pout / PCC = 0.25 * PI
+nmax = 0.79  = 79%
+
+//r intrare 
+Rin = betaca(re+RE)
+pt RE = RS 
+Rin = betaca*(re+RS)
+
+//amplif in clasa ab cu config Darlington
+Rc = RC || Rin
+
+Av = Rc/re
+
+//amplif in contratimp cu etaj pilot in clasa A
+
+
+//<180 de grade 
+//amplif in clasa C
+
+//functioanre
+//putere disipata
+//funct pe dr de sarcina
+//forma de unda
+//interval de conductie
+//factor de umplere semnal sinusoidal
+//impulsuri curent de colector
+PDcond = VCsat * ICsat
+PDmed =  (tCOND / T ) * PDcond 
+PDmed =  (tCOND / T ) * VCsat * ICsat
+T = 1 / f
+
+
+//funct la rezonanta
+
+fr = 1/(2 * PI * Sqrt(LC))
+
+
+//Pout  maxima 
+Pout = Vef*Vef / Rc = 
+Vef = VCC*0.707
+Pout = 0.5 * VCC*VCC / Rc
+
+//functionare circuit rezonant LC din Colector
+//armonice
+
+PT = Pout + PDmed 
+
+
+//randament 
+niu = Pout / (Pout+PDmed)
+
+//if Pout >> PDmed 
+//then niuC = 100%
+
+
+
+//polarizare cu circuit de axare a amplif in clasa C
+
 
 
 
