@@ -818,6 +818,260 @@ float betca(float DELTAIC, float DELTAIB)
 	return DELTAIC/DELTAIB;
 }
 
-//amplificatoare cu emitor comun 
-//pagina 163
+//amplificatoare cu emitor comun EC
+//circuit echivalent de ca
+//masa de semnal 
+//V semnal ca in baza 
+
+float Vb(float Rintot, float Rg, float Vg)
+{
+ if(eMultMaiMare(Rintot,Rg,10)!=true)
+ {
+ return Vg*(Rintot/(Rg+Rintot));
+ }
+ else 
+ {
+	return Vg;
+ }
+}
+
+
+float Rintot(float R1, float R2, float Rinbaza)
+{
+	return(Rparalel(Rparalel(R1,R2),Rinbaza));
+}
+
+//Vin = Vb;
+//Iin = In
+float Rinbaza(float Vb, float Ib)
+{
+	return Vb/Ib;
+}
+float Rinbaza(float Vin, float Iin)
+{
+	return Vin/Iin;
+}
+
+float Vb(float Ie, float re)
+{
+	return Ie*re;
+}
+//ib aprox = ie
+float Ib( float Ie, float betaca)
+{
+	return Ie/betaca;
+}
+
+float Rinbaza(float betaca, float re)
+{
+	return betaca * re;
+}
+
+float Rintot(float R1, float R2, float Rinbaza)
+{
+	return 
+}
+
+
+float Rout(float RC, float rc)
+{
+	if(eMultMaiMare(rc,RC,1000)==true){
+	return RC;
+	}
+
+}
+
+
+//castigul in tnsiuen al amplificatorului in EC
+
+float Av(float Vc, float Vb)
+{
+	//Vout/Vin
+	return Vc/Vb;
+}
+
+float Vc(float alfaca, float Ie, float RC)
+{
+	return alfa * Ic * RC;
+}
+
+float Vb(float Ie, float re)
+{
+	return Ie*re;
+}
+
+float Av(float Ie, float RC, float re)
+{
+	return (Ie*RC)/(Ie*re);
+}
+
+
+float Av(float Rc, float re)
+{
+	return Rc/re;
+}
+
+//atenuarea
+float At(float Av, float Vg)
+{
+	return Vb/Vg;
+}
+float At(vloat Rintot, float Rg)
+{
+	return Rinto/(Rg+Rintot);	
+}
+
+
+//castigul total
+//atenuarea * av
+float avt(float Vb, float Vg, float Av)
+{
+	return (Vb/Vg)*Av;
+}
+
+//efectul condensatorului de decuplare a rezistorului din emitor asupra castigului in tensiune 
+
+float XC(float RE)
+{
+ 	return RE/10;
+} 
+
+float C2(float f, float Xc)
+{
+	return 1/(2 * Math.PI * f * Xc);
+}
+
+//castigi n tensiuen fara condensator de decuplare
+float Av(float RC, float re, float RE)
+{
+	return RC/(re*RE);
+}
+
+//influenta sarcinii asupra castigului in tensiune 
+
+float Rc(float RC, float RS)
+{
+   return	RC*RS  / (RC+RS);
+}
+
+float Av(float Rc, float re)
+{
+	return Rc/re;
+}
+
+//Rc<Rc Av scade
+//RS >> RC atunci RC ~= RC si Av = ct
+
+//stabilitatea castigului in tensiune
+//pt RE>>re
+float Av(float RC, float RE)
+{
+	return RC/RE;
+}
+
+//optimizarea stab castig in tensiune in functie de re
+
+float Av(float RC, float RE1, re)
+{
+	return RC/(RE1+re);
+}
+//iar pt RE1 >= re*10;
+float Av(float RC, float RE1)
+{
+	return RC/RE1;
+}
+
+//efect optimizare asupra rin a amplif
+
+float Rinbaza(float betaca, float re, float RE1)
+{
+	return betaca *(re+RE1);
+}
+
+//inversare faza in amplif cu EC
+
+float RINbaza(float betacc, float RE1, float RE2)
+{
+ return betacc*(RE1+ RE2);
+}
+
+//pt RINbaza >= R2 * 10
+
+float VE(float R2, float R1, float VCC)
+{
+	return (R2/(R1+R2))*VCC;
+}
+
+
+float VE(float Vb, float potentialDeBariera)
+{
+	return VB - potentialDeBariera;
+}
+
+float IE(float VE, float RE1, float RE2)
+{
+	return VE/(RE1+RE2);
+}
+
+float VC(float VCC, float IC, float RC)
+{
+	return VCC-IC*RC;
+}
+
+Rinbaza(float betacc, float re, float RE1)
+{
+	return betaca*(re+RE1);
+}
+
+float Av(float Rc, float RE1)
+{
+	return Rc/RE1;
+}
+
+float Rc(float RC, float RS)
+{
+	return (RC*RS)/(RC+RS);
+}
+
+//castig total
+float Avi(float Vb, float Vg, float Av)
+{
+	return Av*(Vb/Vg);
+}
+
+float Vc(float Avi, float Vin)
+{
+	return Avi*Vin;
+}
+
+//castig in curent 
+
+float Ai(float Ic, float Ib)
+{
+	return Ic/Ib;
+}
+float Ai(float betaca)
+{
+	return betaca;
+}
+float Aitotal(float Ic, float Ig)
+{
+	return Ic/Ib;
+}
+
+float Ig(float Vg, float Rintot, float Rg)
+{
+	return Vg/(Rintot+Rg);
+}
+
+//castig in putere
+float Ap(float Av , float Ai)
+{
+ return Av*Ai;
+}
+
+
+//amplificator cu CC
+//pagina 171
+
 
