@@ -1209,3 +1209,246 @@ float Apsarcina(float Ap, float RS, float RE)
 //configuratia darlington
 //pagina 174
 
+float Ie1(float betaca1, float Ib1)
+{
+	return betaca1 * Ib1;
+
+}
+
+
+float Ie2(float betaca1,float betaca2, float Ie1)
+{
+	return betaca1*betaca2*Ib1;
+}
+
+
+float betaca(float betaca1, float betaca2)
+{
+	return betaca1*betaca2;
+}
+
+//pt re << RE
+float Rin(float betaca1, float betaca2, float RE)
+{
+	return betaca1*betaca2*RE;
+}
+
+float Rc(float RC, float RS)
+{
+	return Rparalel(RC,RS);
+}
+
+float Av(float RC, float re)
+{
+	return RC/re;
+}
+
+float Av(float Rc, float re)
+{
+	return Rc/re;
+}
+
+float PRE(float IE, float RE)
+{
+	return IE*IE*RE;
+}
+
+float PT2(float VCC, float VE, float IE)
+{
+	return ( VCC-VE)*IE;
+}
+float Re(float RE, float RS)
+{
+	return Rparalel(RE,RS);
+}
+
+float Rintot(float R1, float R2, float betaca, float re)
+{
+	return Rparalel(R1,Rparalel(R2,betaca*betaca*re));
+}
+
+float Rc(float RC, float Rintot)
+{
+	return Rparalel(RC,Rintot);
+}
+
+float Av(float Rc, float  re)
+{
+	return Rc/re;
+}
+
+float Av(float  Re, float  re, float  Re)
+{
+	return Re/(re+Re);
+}
+
+float Avtotal(float Avrepetor, float Avampl)
+{
+	return Avrepetor * Avampl;
+}
+
+
+//amp. cu BC
+
+float  Av(float  Ic, float  Rc, float  Ie ,float  re, float  RE)
+{
+	if(re>=RE/10)
+	{
+		return Rc/ re;
+	}
+	else
+	{
+		return (Ic*Rc)/(Ie*(Rparalel(re,RE));
+	}
+}
+
+float Rc(float  RC, float RS)
+{
+	return Rparalel(RC,RS);
+}
+
+float  Rintot(float  Ie, float  re, float  RE)
+{
+	if(re/10<=RE)
+	{
+		return re;
+	}
+	else
+	{
+	return (Ie*(Rparalel(re,RE))/Ie;
+	}
+}
+
+float Rout(float  RC)
+{
+	return RC;
+}
+
+float Ai(){return 1;}
+
+float Ap(float  Av,float Ai){return Av*Ai;}
+
+//amplificatoare cu mai multe etaje 
+
+float sumaN(ref float [] a)
+{
+	float suma = 0.0f;
+	for(int i = 0 ; i< a.Length ; i++)
+	{
+		suma+=a[i];	
+	}
+	return suma;
+}
+
+
+float produsN(ref float [] a)
+{
+	float produs= 0.0f;
+	for(int i = 0 ; i< a.Length ; i++)
+	{
+		produs*=a[i];	
+	}
+	return produs;
+}
+
+float Avtotal(ref float [] a)
+{
+	return produs(ref a);
+}
+
+float Avdb(float Av)
+{
+	return 20 * Math.Log(Av);
+}
+
+float Avtotaldb(ref float [] adb)
+{
+	return suma(ref adb);
+}
+
+//analiza amp cu mai multe etaje
+
+//castig in tensiune 
+//etaj 1
+
+
+//Rparalel == Rp
+float Rc1(float R2, float  R5, float R6, float Rinbaza2)
+{
+	return Rp(R3,Rp(R5,Rp(R6,Rinbaza2)));
+}
+
+float Av1(float Rc1m float  re)
+{
+	return Rc1/ re;
+}
+
+float Av2(float R7, float re)
+{
+	return R7/re;
+}
+
+float Avtotalfarasarcina(float Av1, float Av2_
+{
+	return Av1*Av2;
+}
+
+//tensiuni continue din amp cu doua etaje cuplate capacitiv
+
+//betacc*R4 >> R2 si betcacc*R8>>R6
+
+float VB(float R2, float R1, float VCC)
+{
+	return (R2/(R1+R2))*VCC;
+}
+
+//potentialDeBariera Vp sau Uprag
+float VE(float  VB, float Vp)
+{
+	return VB-Vp;	
+}
+
+float IE(float  VE, float  R4)
+{
+	return VE/R4;
+}
+
+
+float IC(float IE)
+{
+	return IE;
+}
+
+float VC(float  VCC, float  IC, float  R3)
+{
+	return VCC-IC*R3;
+}
+
+//amplif cu mai multe etaje cuplate direct
+
+//amplif cu mai multe etake cuplate prin transformator
+
+//mult din formule sunt probabil gresite datorita confuziei c si e din manual
+//greseala de scanare sau de redactare si necesita verificare si reparare
+//o alta chestie placuta
+
+
+//amplificatoare de putere 
+//pagina 191
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
