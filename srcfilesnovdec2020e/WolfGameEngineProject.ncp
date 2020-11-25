@@ -1,0 +1,912 @@
+<Project>
+  <Name>WolfGameEngineProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Wolfstein3dGameEngine</Name>
+    <Language>CSharp</Language>
+    <Entities />
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>animation</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Animation</Name>
+        <Access>Public</Access>
+        <Location left="26" top="21" />
+        <Size width="162" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int time</Member>
+        <Member type="Field">int count</Member>
+        <Member type="Field">int frame</Member>
+        <Member type="Field">int stopped</Member>
+        <Member type="Field">sequnces numberOfSequencesPerSec</Member>
+        <Member type="Field">int stopAtSequence</Member>
+        <Member type="Field">int stopAtSequenceCallback</Member>
+        <Member type="Constructor">public Animation(var frames, var numberOfSequncesPerSec)</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void stopAtSequenceNumber()</Member>
+        <Member type="Method">public void getFrame()</Member>
+        <Member type="Method">public void stop()</Member>
+        <Member type="Method">public void isStopped()</Member>
+        <Member type="Method">public void lastFrame()</Member>
+        <Member type="Method">public void getNumberOfSequences()</Member>
+        <Member type="Method">public void reset()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>assets</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Assets</Name>
+        <Access>Public</Access>
+        <Location left="14" top="27" />
+        <Size width="162" height="400" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int loaded</Member>
+        <Member type="Field">int loadedCount</Member>
+        <Member type="Field">int callback</Member>
+        <Member type="Field">int downloadCallback</Member>
+        <Member type="Field">int srcs</Member>
+        <Member type="Field">int keys</Member>
+        <Member type="Field">int audio</Member>
+        <Member type="Field">int audio_srcs</Member>
+        <Member type="Field">int audio_keys</Member>
+        <Member type="Field">int window_AudioContext</Member>
+        <Member type="Constructor">public Assets()</Member>
+        <Member type="Method">public void getInstance()</Member>
+        <Member type="Method">public void getLoadedRatio()</Member>
+        <Member type="Method">public void load()</Member>
+        <Member type="Method">public void loadAll()</Member>
+        <Member type="Method">public void loadAllAudios()</Member>
+        <Member type="Method">public void loadAudio()</Member>
+        <Member type="Method">public void playAudio()</Member>
+        <Member type="Method">public void playAudioWithGainInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>atlas</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Atlas</Name>
+        <Access>Public</Access>
+        <Location left="25" top="29" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int loaded</Member>
+        <Member type="Field">int loadedCount</Member>
+        <Member type="Field">string xmls</Member>
+        <Member type="Field">string keys</Member>
+        <Member type="Constructor">public Atlas()</Member>
+        <Member type="Method">public void getInstance()</Member>
+        <Member type="Method">public void getLoadedRatio()</Member>
+        <Member type="Method">public void loadAll()</Member>
+        <Member type="Method">public void load()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>bullet</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Bullet</Name>
+        <Access>Public</Access>
+        <Location left="33" top="26" />
+        <Size width="162" height="383" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt;Pair&gt; moves</Member>
+        <Member type="Field">int position</Member>
+        <Member type="Field">int speed</Member>
+        <Member type="Field">int position_addThis</Member>
+        <Member type="Field">int velocity</Member>
+        <Member type="Field">int length</Member>
+        <Member type="Field">int collided</Member>
+        <Member type="Field">int dispose</Member>
+        <Member type="Field">string image</Member>
+        <Member type="Field">Atlas atlas</Member>
+        <Member type="Field">Assets assets</Member>
+        <Member type="Field">Animation fireExplosionAnimation</Member>
+        <Member type="Field">Animation fireExplosionAnimation_stopAtSequenceNumber</Member>
+        <Member type="Constructor">public Bullet()</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void render()</Member>
+        <Member type="Method">public void renderRaycaster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>door</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Door</Name>
+        <Access>Public</Access>
+        <Location left="23" top="22" />
+        <Size width="162" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; Pair &gt; openRange</Member>
+        <Member type="Field">List &lt; Pair &gt; velocty</Member>
+        <Member type="Field">bool openBool</Member>
+        <Member type="Field">Atlas atlas</Member>
+        <Member type="Field">Assets assets</Member>
+        <Member type="Field">string image</Member>
+        <Member type="Field">int closeTime</Member>
+        <Member type="Field">int closeTimeCount</Member>
+        <Member type="Field">int isClosingCountdown</Member>
+        <Member type="Field">int isMakingNoise</Member>
+        <Member type="Constructor">public Door()</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void open()</Member>
+        <Member type="Method">public void isPixelVisible()</Member>
+        <Member type="Method">public void render()</Member>
+        <Member type="Method">public void renderRaycaster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>life</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Life</Name>
+        <Access>Public</Access>
+        <Location left="32" top="25" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int length</Member>
+        <Member type="Field">int position</Member>
+        <Member type="Field">Atlas atlas</Member>
+        <Member type="Field">Assets assets</Member>
+        <Member type="Field">int dispose</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void render()</Member>
+        <Member type="Method">public void renderRaycaster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>movingwall</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>movingwall</Name>
+        <Access>Public</Access>
+        <Location left="22" top="20" />
+        <Size width="162" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; Pair &gt; end</Member>
+        <Member type="Field">int start</Member>
+        <Member type="Field">int to</Member>
+        <Member type="Field">int velocity</Member>
+        <Member type="Field">int colImage</Member>
+        <Member type="Field">int rowImage</Member>
+        <Member type="Field">Animation animation</Member>
+        <Member type="Field">int blicnkTime</Member>
+        <Member type="Field">int blinkTimeLimit</Member>
+        <Member type="Field">int animation_stopAtSequenceNumber</Member>
+        <Member type="Constructor">public movingwall()</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void renderRaycaster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>player</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Player</Name>
+        <Access>Public</Access>
+        <Location left="31" top="18" />
+        <Size width="162" height="825" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; Pair &gt; moves</Member>
+        <Member type="Field">int length</Member>
+        <Member type="Field">List &lt; Pair &gt; position</Member>
+        <Member type="Field">List &lt;Pair&gt; velocity</Member>
+        <Member type="Field">List &lt; Pair &gt; velocityLength</Member>
+        <Member type="Field">int friction</Member>
+        <Member type="Field">int totalFriction</Member>
+        <Member type="Field">int rotation</Member>
+        <Member type="Field">int radinStep</Member>
+        <Member type="Field">bool rotateLeftBool</Member>
+        <Member type="Field">bool forwardLeftBool</Member>
+        <Member type="Field">bool rotateRightBool</Member>
+        <Member type="Field">int shootTime</Member>
+        <Member type="Field">int shootTimeLimit</Member>
+        <Member type="Field">List&lt;Bullet&gt; bullets</Member>
+        <Member type="Field">List &lt; Pair &gt; playerDirection</Member>
+        <Member type="Field">List &lt; Pair &gt; viewDirection</Member>
+        <Member type="Field">int newField</Member>
+        <Member type="Field">bool backwardBool</Member>
+        <Member type="Field">bool openDoorBool</Member>
+        <Member type="Field">bool shootBool</Member>
+        <Member type="Field">bool isShooting</Member>
+        <Member type="Field">int takingLifeLimit</Member>
+        <Member type="Field">int takingLife</Member>
+        <Member type="Field">int damageLifeTime</Member>
+        <Member type="Field">int damageLife</Member>
+        <Member type="Field">int life</Member>
+        <Member type="Field">int maxLife</Member>
+        <Member type="Field">int isDead</Member>
+        <Member type="Field">int assets</Member>
+        <Member type="Method">public void setViewDirection()</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void isTakingLife()</Member>
+        <Member type="Method">public void isDamageLife()</Member>
+        <Member type="Method">public void render()</Member>
+        <Member type="Method">public void rotateLeft()</Member>
+        <Member type="Method">public void rotateRight()</Member>
+        <Member type="Method">public void forward()</Member>
+        <Member type="Method">public void backword()</Member>
+        <Member type="Method">public void shoot()</Member>
+        <Member type="Method">public void openDoor()</Member>
+        <Member type="Method">public void damage()</Member>
+        <Member type="Method">public void kill()</Member>
+        <Member type="Method">public void reset()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>prioityqueue</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>PriorityQueueElement</Name>
+        <Access>Public</Access>
+        <Location left="35" top="41" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">object theobject</Member>
+        <Member type="Field">int priority</Member>
+        <Member type="Constructor">public PriorityQueueElement()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PriorityQueue</Name>
+        <Access>Public</Access>
+        <Location left="90" top="221" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt;PriorityQueueElement&gt; elements</Member>
+        <Member type="Field">comparatorCb comparator</Member>
+        <Member type="Constructor">public PriorityQueue()</Member>
+        <Member type="Method">public void add()</Member>
+        <Member type="Method">public void remove()</Member>
+        <Member type="Method">public void isEmpty()</Member>
+        <Member type="Method">public void seze()</Member>
+        <Member type="Method">public void clear()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>raycaster</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Raycaster</Name>
+        <Access>Public</Access>
+        <Location left="29" top="7" />
+        <Size width="162" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int fov</Member>
+        <Member type="Field">int numberOfRays</Member>
+        <Member type="Field">int radStep</Member>
+        <Member type="Field">List &lt;Pair&gt; tileDirs</Member>
+        <Member type="Field">List &lt; object &gt; data</Member>
+        <Member type="Field">int maxVisibility</Member>
+        <Member type="Field">List&lt;object&gt; tmpObjects</Member>
+        <Member type="Method">public void sprites()</Member>
+        <Member type="Method">public void calculateSpritePosition()</Member>
+        <Member type="Method">public void calculateMovingWalls()</Member>
+        <Member type="Method">public void wallsAndDoors()</Member>
+        <Member type="Method">public void getFixedZ()</Member>
+        <Member type="Method">public void collideWall()</Member>
+        <Member type="Method">public void collideDoor()</Member>
+        <Member type="Method">public void getData()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>raycasterrender</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>RaycasterRender</Name>
+        <Access>Public</Access>
+        <Location left="22" top="29" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; object &gt; data</Member>
+        <Member type="Field">Atlas atlas</Member>
+        <Member type="Field">Assets assets</Member>
+        <Member type="Field">Animation fireAnimation</Member>
+        <Member type="Field">Animation fireAnimation_stopAtSequenceNumber</Member>
+        <Member type="Field">int fireAnimation_stop</Member>
+        <Member type="Field">int lifeWidth</Member>
+        <Member type="Field">int origLifeWidth</Member>
+        <Member type="Constructor">public RaycasterRender()</Member>
+        <Member type="Method">public void render()</Member>
+        <Member type="Method">public void reset()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>sprite</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Sprite</Name>
+        <Access>Public</Access>
+        <Location left="27" top="17" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Atlas atlas</Member>
+        <Member type="Field">Assets assets</Member>
+        <Member type="Field">Animation fireAnimation</Member>
+        <Member type="Constructor">public Sprite(var x, var y, var type, var length, var walkable)</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void render()</Member>
+        <Member type="Method">public void renderRaycaster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>tile</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Tile</Name>
+        <Access>Public</Access>
+        <Location left="15" top="17" />
+        <Size width="162" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int length</Member>
+        <Member type="Field">List &lt; Pair &gt; position</Member>
+        <Member type="Field">List &lt; Pair &gt; mapPosition</Member>
+        <Member type="Field">int walkable</Member>
+        <Member type="Field">int type</Member>
+        <Member type="Field">Atlas atlas</Member>
+        <Member type="Field">Assets assets</Member>
+        <Member type="Field">int colImage</Member>
+        <Member type="Field">int rowImage</Member>
+        <Member type="Constructor">public Tile()</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void render()</Member>
+        <Member type="Method">public void renderRaycaster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>vector</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Vector</Name>
+        <Access>Public</Access>
+        <Location left="25" top="34" />
+        <Size width="162" height="366" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int x</Member>
+        <Member type="Field">int y</Member>
+        <Member type="Method">public void add()</Member>
+        <Member type="Method">public void addThis()</Member>
+        <Member type="Method">public void sub()</Member>
+        <Member type="Method">public void mul()</Member>
+        <Member type="Method">public void mulThis()</Member>
+        <Member type="Method">public void length()</Member>
+        <Member type="Method">public void setLength()</Member>
+        <Member type="Method">public void normalize()</Member>
+        <Member type="Method">public void dot()</Member>
+        <Member type="Method">public void getAngle()</Member>
+        <Member type="Method">public void setAngle()</Member>
+        <Member type="Method">public void setUnitAngle()</Member>
+        <Member type="Method">public void addAngle()</Member>
+        <Member type="Method">public void equals()</Member>
+        <Member type="Method">public void clone()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>DIRassets</Name>
+    <Language>CSharp</Language>
+    <Entities />
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>DIRenemies</Name>
+    <Language>CSharp</Language>
+    <Entities />
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>DIRmaps</Name>
+    <Language>CSharp</Language>
+    <Entities />
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>index</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>index</Name>
+        <Access>Public</Access>
+        <Location left="27" top="16" />
+        <Size width="162" height="910" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int width</Member>
+        <Member type="Field">int initial_scale</Member>
+        <Member type="Field">int viewport</Member>
+        <Member type="Field">int previewWidth</Member>
+        <Member type="Field">int previewHeight</Member>
+        <Member type="Field">int gameResWidth</Member>
+        <Member type="Field">int gameResHeight</Member>
+        <Member type="Field">int origX</Member>
+        <Member type="Field">int origY</Member>
+        <Member type="Field">int aspectRatio</Member>
+        <Member type="Field">int prevTime</Member>
+        <Member type="Field">int canvas</Member>
+        <Member type="Field">int context</Member>
+        <Member type="Field">int canvasGame</Member>
+        <Member type="Field">int contextGame</Member>
+        <Member type="Field">int player</Member>
+        <Member type="Field">int map</Member>
+        <Member type="Field">int enemies</Member>
+        <Member type="Field">int raycaster</Member>
+        <Member type="Field">int raycasterRender</Member>
+        <Member type="Field">int outputWidth</Member>
+        <Member type="Field">int pixelWidth</Member>
+        <Member type="Field">int outputHeight</Member>
+        <Member type="Field">int distToPlane</Member>
+        <Member type="Field">int restart</Member>
+        <Member type="Field">int isTheEnd</Member>
+        <Member type="Field">int levelManager</Member>
+        <Member type="Field">int music</Member>
+        <Member type="Field">int canvas</Member>
+        <Member type="Field">int context</Member>
+        <Member type="Field">int canvasGame</Member>
+        <Member type="Field">int canvas_Width</Member>
+        <Member type="Field">int canvasHeight</Member>
+        <Member type="Field">player player</Member>
+        <Member type="Field">Raycaster reycaster</Member>
+        <Member type="Field">RaycasterRender raycasterRender</Member>
+        <Member type="Field">int distToPlane</Member>
+        <Member type="Field">Assets assets</Member>
+        <Member type="Field">int assets_loadAll</Member>
+        <Member type="Field">int fpsLimitCount</Member>
+        <Member type="Method">public void onLoadAssets()</Member>
+        <Member type="Method">public void onDownloadAssets()</Member>
+        <Member type="Method">public void onLoadAtlas()</Member>
+        <Member type="Method">public void onDownloadAtlas()</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void onKeyDown()</Member>
+        <Member type="Method">public void onKeyUp()</Member>
+        <Member type="Method">public void onMouseDown()</Member>
+        <Member type="Method">public void onMouseUp()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>level</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>level</Name>
+        <Access>Public</Access>
+        <Location left="37" top="16" />
+        <Size width="162" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int onTileMapLoaded</Member>
+        <Member type="Field">int TileMaps</Member>
+        <Member type="Field">int name</Member>
+        <Member type="Field">int height</Member>
+        <Member type="Field">Layer layers</Member>
+        <Member type="Field">int nextobjectid</Member>
+        <Member type="Field">int orientation</Member>
+        <Member type="Field">int renderorder</Member>
+        <Member type="Field">int tiledversion</Member>
+        <Member type="Field">int tileheight</Member>
+        <Member type="Field">Tilesets tilesets</Member>
+        <Member type="Field">int tilewidth</Member>
+        <Member type="Field">int type</Member>
+        <Member type="Field">int version</Member>
+        <Member type="Field">int width</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Layer</Name>
+        <Access>Public</Access>
+        <Location left="220" top="164" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Matrix data</Member>
+        <Member type="Field">int height</Member>
+        <Member type="Field">int name</Member>
+        <Member type="Field">int opacity</Member>
+        <Member type="Field">int type</Member>
+        <Member type="Field">int visible</Member>
+        <Member type="Field">int width</Member>
+        <Member type="Field">int x</Member>
+        <Member type="Field">int y</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Matrix</Name>
+        <Access>Public</Access>
+        <Location left="279" top="51" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; List &lt; object &gt;&gt; date</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Tilesets</Name>
+        <Access>Public</Access>
+        <Location left="194" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int firstgid</Member>
+        <Member type="Field">Grid source</Member>
+        <Member type="Field">int name</Member>
+        <Member type="Field">int tilewidth</Member>
+        <Member type="Field">int tileheight</Member>
+        <Member type="Field">int tilecount</Member>
+        <Member type="Field">int columns</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Grid</Name>
+        <Access>Public</Access>
+        <Location left="87" top="412" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Matrix grid</Member>
+        <Member type="Field">int orientation</Member>
+        <Member type="Field">int width</Member>
+        <Member type="Field">int height</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>textures</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>TextureAtlas</Name>
+        <Access>Public</Access>
+        <Location left="15" top="40" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int path</Member>
+        <Member type="Field">string image</Member>
+        <Member type="Field">List &lt;Subtextures&gt; subTexturesList</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Subtextures</Name>
+        <Access>Public</Access>
+        <Location left="206" top="74" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int name</Member>
+        <Member type="Field">int path</Member>
+        <Member type="Field">int x</Member>
+        <Member type="Field">int y</Member>
+        <Member type="Field">int width</Member>
+        <Member type="Field">int height</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>boss</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Boss</Name>
+        <Access>Public</Access>
+        <Location left="10" top="13" />
+        <Size width="162" height="723" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">map map</Member>
+        <Member type="Field">int length</Member>
+        <Member type="Field">List &lt; Pair &gt; moves</Member>
+        <Member type="Field">List &lt; Pair &gt; position</Member>
+        <Member type="Field">List &lt; Pair &gt; velocity</Member>
+        <Member type="Field">List &lt; Pair &gt; velocityTmp</Member>
+        <Member type="Field">int searchTime</Member>
+        <Member type="Field">int searchTimeLimit</Member>
+        <Member type="Field">int path</Member>
+        <Member type="Field">int pathTo</Member>
+        <Member type="Field">List&lt;Bullet&gt; bullets</Member>
+        <Member type="Field">int pathTo</Member>
+        <Member type="Field">int shootTime</Member>
+        <Member type="Field">int shootTimeLimit</Member>
+        <Member type="Field">int searchDoorTime</Member>
+        <Member type="Field">int searchDoorTimeLimit</Member>
+        <Member type="Field">int damageTimeLimit</Member>
+        <Member type="Field">int damageTime</Member>
+        <Member type="Field">Atlas atlas</Member>
+        <Member type="Field">Assets assets</Member>
+        <Member type="Field">Animation runAnimation</Member>
+        <Member type="Field">Animation deadAnimation</Member>
+        <Member type="Field">Animation fireAnimation</Member>
+        <Member type="Field">int fireAnimation_stopAtSequenceNumber</Member>
+        <Member type="Field">int fireAnimation_stop</Member>
+        <Member type="Field">int life</Member>
+        <Member type="Field">int isDead</Member>
+        <Member type="Field">int dispose</Member>
+        <Member type="Field">int randomShootTime</Member>
+        <Member type="Field">int randomShootTimeLimit</Member>
+        <Member type="Field">int speakingTime</Member>
+        <Member type="Field">int speakingTimeLimit</Member>
+        <Member type="Constructor">public Boss()</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void damage()</Member>
+        <Member type="Method">public void pathfinding()</Member>
+        <Member type="Method">public void render()</Member>
+        <Member type="Method">public void renderRaycaster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>dog</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Dog</Name>
+        <Access>Public</Access>
+        <Location left="22" top="43" />
+        <Size width="162" height="859" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">map map</Member>
+        <Member type="Field">int length</Member>
+        <Member type="Field">List &lt; Pair &gt; moves</Member>
+        <Member type="Field">List &lt; Pair &gt; position</Member>
+        <Member type="Field">List &lt; Pair &gt; velocity</Member>
+        <Member type="Field">List &lt; Pair &gt; velocityTmp</Member>
+        <Member type="Field">int searchTime</Member>
+        <Member type="Field">int searchTimeLimit</Member>
+        <Member type="Field">int path</Member>
+        <Member type="Field">int pathTo</Member>
+        <Member type="Field">List&lt;Bullet&gt; bullets</Member>
+        <Member type="Field">int pathTo</Member>
+        <Member type="Field">int shootTime</Member>
+        <Member type="Field">int shootTimeLimit</Member>
+        <Member type="Field">int searchDoorTime</Member>
+        <Member type="Field">int searchDoorTimeLimit</Member>
+        <Member type="Field">int damageTimeLimit</Member>
+        <Member type="Field">int damageTime</Member>
+        <Member type="Field">Atlas atlas</Member>
+        <Member type="Field">Assets assets</Member>
+        <Member type="Field">Animation runAnimation</Member>
+        <Member type="Field">Animation deadAnimation</Member>
+        <Member type="Field">Animation fireAnimation</Member>
+        <Member type="Field">int fireAnimation_stopAtSequenceNumber</Member>
+        <Member type="Field">int fireAnimation_stop</Member>
+        <Member type="Field">int life</Member>
+        <Member type="Field">int isDead</Member>
+        <Member type="Field">int dispose</Member>
+        <Member type="Field">int randomShootTime</Member>
+        <Member type="Field">int randomShootTimeLimit</Member>
+        <Member type="Field">int speakingTime</Member>
+        <Member type="Field">int speakingTimeLimit</Member>
+        <Member type="Field">int attackAnimation</Member>
+        <Member type="Field">int attackAnimation_stopAtSequenceNumber</Member>
+        <Member type="Field">int attackAnimation_stop</Member>
+        <Member type="Field">int isAware</Member>
+        <Member type="Field">int hasFoundPlayer</Member>
+        <Member type="Constructor">public Dog()</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void damage()</Member>
+        <Member type="Method">public void pathfinding()</Member>
+        <Member type="Method">public void render()</Member>
+        <Member type="Method">public void renderRaycaster()</Member>
+        <Member type="Method">public void awareness()</Member>
+        <Member type="Method">public void calculateDirection()</Member>
+        <Member type="Method">public void getSpriteAngle()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>soldier</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Soldier</Name>
+        <Access>Public</Access>
+        <Location left="30" top="33" />
+        <Size width="162" height="859" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">map map</Member>
+        <Member type="Field">int length</Member>
+        <Member type="Field">List &lt; Pair &gt; moves</Member>
+        <Member type="Field">List &lt; Pair &gt; position</Member>
+        <Member type="Field">List &lt; Pair &gt; velocity</Member>
+        <Member type="Field">List &lt; Pair &gt; velocityTmp</Member>
+        <Member type="Field">int searchTime</Member>
+        <Member type="Field">int searchTimeLimit</Member>
+        <Member type="Field">int path</Member>
+        <Member type="Field">int pathTo</Member>
+        <Member type="Field">List&lt;Bullet&gt; bullets</Member>
+        <Member type="Field">int pathTo</Member>
+        <Member type="Field">int shootTime</Member>
+        <Member type="Field">int shootTimeLimit</Member>
+        <Member type="Field">int searchDoorTime</Member>
+        <Member type="Field">int searchDoorTimeLimit</Member>
+        <Member type="Field">int damageTimeLimit</Member>
+        <Member type="Field">int damageTime</Member>
+        <Member type="Field">Atlas atlas</Member>
+        <Member type="Field">Assets assets</Member>
+        <Member type="Field">Animation runAnimation</Member>
+        <Member type="Field">Animation deadAnimation</Member>
+        <Member type="Field">Animation fireAnimation</Member>
+        <Member type="Field">int fireAnimation_stopAtSequenceNumber</Member>
+        <Member type="Field">int fireAnimation_stop</Member>
+        <Member type="Field">int life</Member>
+        <Member type="Field">int isDead</Member>
+        <Member type="Field">int dispose</Member>
+        <Member type="Field">int randomShootTime</Member>
+        <Member type="Field">int randomShootTimeLimit</Member>
+        <Member type="Field">int speakingTime</Member>
+        <Member type="Field">int speakingTimeLimit</Member>
+        <Member type="Field">int isAware</Member>
+        <Member type="Field">int shootDistance</Member>
+        <Member type="Field">int unawarenessDistance</Member>
+        <Member type="Field">int awarenessDistance</Member>
+        <Member type="Field">int hasFoundPlayer</Member>
+        <Member type="Field">int awareness</Member>
+        <Member type="Constructor">public Soldier()</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void damage()</Member>
+        <Member type="Method">public void pathfinding()</Member>
+        <Member type="Method">public void render()</Member>
+        <Member type="Method">public void renderRaycaster()</Member>
+        <Member type="Method">public void calculateDirection()</Member>
+        <Member type="Method">public void getSpriteAngle()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>maps</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Map</Name>
+        <Access>Public</Access>
+        <Location left="22" top="27" />
+        <Size width="162" height="468" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int tileLength</Member>
+        <Member type="Field">int width</Member>
+        <Member type="Field">int height</Member>
+        <Member type="Field">List &lt; Tile &gt; tiles</Member>
+        <Member type="Field">List &lt; Wall &gt; walls</Member>
+        <Member type="Field">List &lt; MovingWall&gt; movingWalls</Member>
+        <Member type="Field">List &lt;Door&gt; doors</Member>
+        <Member type="Field">List &lt; Sprite &gt; sprites</Member>
+        <Member type="Field">List &lt;Enemy&gt; enemies</Member>
+        <Member type="Field">List &lt; object &gt; items</Member>
+        <Member type="Field">List &lt;Map&gt; map</Member>
+        <Member type="Field">player player</Member>
+        <Member type="Field">int exitVector</Member>
+        <Member type="Field">int exitTile</Member>
+        <Member type="Field">int isFinished</Member>
+        <Member type="Field">List &lt; object &gt; enemyParams</Member>
+        <Member type="Field">int ceilingColor</Member>
+        <Member type="Field">int floorColor</Member>
+        <Member type="Field">List &lt; Player&gt; player</Member>
+        <Member type="Constructor">public Map()</Member>
+        <Member type="Method">public void load()</Member>
+        <Member type="Method">public void reset()</Member>
+        <Member type="Method">public void update()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Maps</Name>
+        <Access>Public</Access>
+        <Location left="200" top="30" />
+        <Size width="162" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int MAP_EMPTY</Member>
+        <Member type="Field">int MAP_WALL</Member>
+        <Member type="Field">int MAP_DOOR_COL</Member>
+        <Member type="Field">int MAP_DOOR_ROW</Member>
+        <Member type="Field">int MAP_WALL_DOOR_COL</Member>
+        <Member type="Field">int MAP_WALL_DOOR_ROW</Member>
+        <Member type="Field">int MAP_SPRITE</Member>
+        <Member type="Field">int MAP_MOVING_WALL</Member>
+        <Member type="Field">int MAP_SOLDIER</Member>
+        <Member type="Field">int MAP_DOG</Member>
+        <Member type="Field">int MAP_BOSS</Member>
+        <Member type="Field">int MAP_LIFE</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LevelManager</Name>
+        <Access>Public</Access>
+        <Location left="200" top="337" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int currentLevel</Member>
+        <Member type="Method">public void next()</Member>
+        <Member type="Method">public void isLast()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LevelN</Name>
+        <Access>Public</Access>
+        <Location left="16" top="545" />
+        <Size width="162" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int width</Member>
+        <Member type="Field">int height</Member>
+        <Member type="Field">player player</Member>
+        <Member type="Field">int player_position_x</Member>
+        <Member type="Field">int player_position_y</Member>
+        <Member type="Field">int player_setViewDirection</Member>
+        <Member type="Field">map map</Member>
+        <Member type="Field">List&lt;EnemyParameter&gt; enemyParams</Member>
+        <Member type="Field">Audio music</Member>
+        <Member type="Constructor">public LevelN()</Member>
+        <Member type="Method">public void reset()</Member>
+        <Member type="Method">public void update()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EnemyParameter</Name>
+        <Access>Public</Access>
+        <Location left="200" top="585" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
