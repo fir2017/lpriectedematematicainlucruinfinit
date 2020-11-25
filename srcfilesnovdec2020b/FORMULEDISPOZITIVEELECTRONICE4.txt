@@ -215,6 +215,105 @@ VDS = VDD - IDSS*RD
 //FET AMPS
 //SI CIRCUITE DE COMUTATIE
 
+//model ac fet
+//Vgs
+//rgs
+//gm*Vgs
+//rds
+//GDS
+
+//model simplificat
+//model complet
+
+Vin = Vgs
+Id = gm * Vgs
+Vout = Vds
+Av = Vds / Vgs
+Vds = Id*Rd
+gm = Id/Vgs
+Vgs = Id/gm
+Av = gm*Rd
+
+
+//amplficiator cu jfet
+//SC sursa comuna
+//VGSQ
+//VDSQ
+//analiza grafica
+//graficul Vds la Id
+//graficul Id la Vds
+
+//analiza in CC
+//analiza grafica
+//caz 1
+VGS = 0.3 * VGSoff 
+ID = IDSS/2
+/caz 2
+VGS = 0.5*VGSoff
+ID = IDSS / 4
+
+//analiza matematica
+VGS = ID*RD
+ID = IDSS(1-(ID*RD/VGSoff))^2
+VGS = -RD*RS
+
+
+//circuit echivalent de ca
+Rd = RD||RL
+RG
+
+
+//semnalul in tensiune pe poarta
+Vgs = Vin
+Av= gm * Rd
+Vout = Vds = Av*Vgs
+Vout = gm * Rd * Vin
+CD = VDD-ID*RD
+
+
+//efectul sarcini in ca asupra castigului in tensiune 
+Rd = RD||RL
+
+
+//inversarea de faza 
+//out 180 grade 
+//-Av
+
+
+//Rezistenta de intrare 
+Rin = RG || (VGS/IGSS)
+
+Rinpoarta = VGS / IGSS
+Rin = RG || RINpoarta
+
+//poarat = grila G
+
+
+//mosfet D ca amplificator 
+//graficul Vgs la ID 
+//mosfet D la -VGS
+//mosfet E la +VGS
+
+Vd = VDD-ID*RD
+
+
+//mosfet E ca amplificator
+VGS > VGSth
+//graficul mosfet E VGS la ID
+//IDQ si VGSQ
+//VGSth
+
+VGs = (R2/ (R1 + R2))*VDD
+ID = k*(VGS - VGSth)^2
+VDS = VDD - ID*RD
+Rin = R! || R2 || RINgate
+Ringate = VGS/IGSS
+//gate = grila == poarta
+K = IDon / (VGS-VGSth)^2
+
+
+pag 464 amplificator cu mosfet Drena Comuna DC
+
 
 
 
