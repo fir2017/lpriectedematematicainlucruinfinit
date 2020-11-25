@@ -1,0 +1,36 @@
+<Project>
+  <Name>InchidereTranzitivaRelatieBinaraProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>InchidereTranzitivaRelatieBinara</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Program</Name>
+        <Access>Public</Access>
+        <Location left="77" top="33" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int max = 10</Member>
+        <Member type="Field">List &lt; Placa&gt; vect_placa</Member>
+        <Member type="Field">List &lt; List &lt; bool &gt; &gt; matrice</Member>
+        <Member type="Method">public void EsteIn()</Member>
+        <Member type="Method">public void SeIntersecteaza()</Member>
+        <Member type="Method">public void ExistaZonaComuna()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Placa</Name>
+        <Access>Public</Access>
+        <Location left="258" top="33" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int x1</Member>
+        <Member type="Field">int x2</Member>
+        <Member type="Field">int y1</Member>
+        <Member type="Field">int y2</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

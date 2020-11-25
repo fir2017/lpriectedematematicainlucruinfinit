@@ -1,0 +1,82 @@
+<Project>
+  <Name>MorphingProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Morphing</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>EditorDeAnimatie</Name>
+        <Access>Public</Access>
+        <Location left="58" top="55" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">desen D1</Member>
+        <Member type="Field">desen D2</Member>
+        <Member type="Method">public void Run()</Member>
+        <Member type="Method">public void Morphing()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>uAnim</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>uAnim</Name>
+        <Access>Public</Access>
+        <Location left="77" top="21" />
+        <Size width="162" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">byte pag</Member>
+        <Member type="Method">public void OpenGraph()</Member>
+        <Member type="Method">public void CreatePic()</Member>
+        <Member type="Method">public void TranfPic()</Member>
+        <Member type="Method">public void ModifyPic()</Member>
+        <Member type="Method">public void SavePic()</Member>
+        <Member type="Method">public void LoadPic()</Member>
+        <Member type="Method">public void Beep()</Member>
+        <Member type="Method">public void Apartine()</Member>
+        <Member type="Method">public void Bara()</Member>
+        <Member type="Method">public void DrawSurface()</Member>
+        <Member type="Method">public void CreateSurface()</Member>
+        <Member type="Method">public void ModifySurface()</Member>
+        <Member type="Method">public void TransfSurface()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>surface</Name>
+        <Access>Public</Access>
+        <Location left="266" top="18" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; List &lt; int &gt; &gt; Pct</Member>
+        <Member type="Field">byte NrPct</Member>
+        <Member type="Field">byte Fil</Member>
+        <Member type="Field">byte Cul</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>YesNo</Name>
+        <Access>Public</Access>
+        <Location left="455" top="21" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>no</Value>
+        <Value>soso</Value>
+        <Value>yes</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>desen</Name>
+        <Access>Public</Access>
+        <Location left="261" top="254" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">byte NrSurf</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

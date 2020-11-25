@@ -1,0 +1,93 @@
+<Project>
+  <Name>GraficulDeFunctieProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>GraficulDeFunctie</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>ReprezentareGraficaFunctie</Name>
+        <Access>Public</Access>
+        <Location left="108" top="40" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Dimensiune dimensiune</Member>
+        <Member type="Field">Pozitie pozitia</Member>
+        <Member type="Field">Extreme extreme</Member>
+        <Member type="Field">string sir</Member>
+        <Member type="Field">int cod</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>functie</Name>
+        <Access>Public</Access>
+        <Location left="298" top="39" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public Real functia(Real x)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Real</Name>
+        <Access>Public</Access>
+        <Location left="476" top="40" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Numar numar</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Dimensiune</Name>
+        <Access>Public</Access>
+        <Location left="651" top="43" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Pozitie</Name>
+        <Access>Public</Access>
+        <Location left="666" top="110" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Extreme</Name>
+        <Access>Public</Access>
+        <Location left="684" top="181" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ReprezintaGrafic</Name>
+        <Access>Public</Access>
+        <Location left="110" top="285" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">functie f</Member>
+        <Member type="Field">Real a</Member>
+        <Member type="Field">Real b</Member>
+        <Member type="Field">Dimensiune dimensiune</Member>
+        <Member type="Field">Coordonate CoordonateAxe</Member>
+        <Member type="Field">int i</Member>
+        <Member type="Field">Coordonate CoordonateEcran</Member>
+        <Member type="Field">Coordonate CoordonateEcranVechi</Member>
+        <Member type="Field">Coordonate CoordonatePlanReal</Member>
+        <Member type="Method">public void Run()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Coordonate</Name>
+        <Access>Public</Access>
+        <Location left="480" top="268" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float x0</Member>
+        <Member type="Field">float y0</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

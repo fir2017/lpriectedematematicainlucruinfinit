@@ -1,0 +1,107 @@
+<Project>
+  <Name>GraficFunctieProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>GraficFunctie</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Grafic</Name>
+        <Access>Public</Access>
+        <Location left="50" top="31" />
+        <Size width="162" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Dimensiune dimensiuni</Member>
+        <Member type="Field">Pozitie pozitia</Member>
+        <Member type="Field">Stil stilul</Member>
+        <Member type="Field">Point centrul</Member>
+        <Member type="Field">Graphics g</Member>
+        <Member type="Field">Pen pen</Member>
+        <Member type="Field">Brush brush</Member>
+        <Member type="Field">Font font</Member>
+        <Member type="Field">float gridx</Member>
+        <Member type="Field">int gridy</Member>
+        <Member type="Method">public void PlotLine(Pen p, Point p1, Point p2)</Member>
+        <Member type="Method">public void PlotDot(Pen p, Point point)</Member>
+        <Member type="Method">public void PlotFunction(Function f, Pen p)</Member>
+        <Member type="Method">public void DrawGrid()</Member>
+        <Member type="Method">public void ReprezintaGrafic(Functie x, float a, float b, int x1, int x2, int y1, int y2)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Functie</Name>
+        <Access>Public</Access>
+        <Location left="225" top="33" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Expression expresie</Member>
+        <Member type="Field">Interval interval</Member>
+        <Member type="Field">Extreme extreme</Member>
+        <Member type="Field">int cod</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Dimensiune</Name>
+        <Access>Public</Access>
+        <Location left="663" top="273" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float latime</Member>
+        <Member type="Field">float lungime</Member>
+        <Member type="Field">float inaltime</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Pozitie</Name>
+        <Access>Public</Access>
+        <Location left="614" top="22" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float x</Member>
+        <Member type="Field">float y</Member>
+        <Member type="Field">float z</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Stil</Name>
+        <Access>Public</Access>
+        <Location left="635" top="147" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Font font</Member>
+        <Member type="Field">Color background</Member>
+        <Member type="Field">Color foreground</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Interval</Name>
+        <Access>Public</Access>
+        <Location left="408" top="30" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float a</Member>
+        <Member type="Field">float b</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Extreme</Name>
+        <Access>Public</Access>
+        <Location left="425" top="141" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float ymin</Member>
+        <Member type="Field">float ymax</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Expresie</Name>
+        <Access>Public</Access>
+        <Location left="449" top="242" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string valoare</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

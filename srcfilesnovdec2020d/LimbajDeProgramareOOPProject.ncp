@@ -1,0 +1,109 @@
+<Project>
+  <Name>LimbajDeProgramareOOPProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>LPOOP</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>IF</Name>
+        <Access>Public</Access>
+        <Location left="71" top="15" />
+        <Size width="162" height="179" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Comparatie compara</Member>
+        <Member type="Field">bool rezultatComparatie</Member>
+        <Member type="Method">public Functie dacaAdevarat()</Member>
+        <Member type="Method">public Functie dacaFals()</Member>
+        <Member type="Method">public Functie dacaIndecis()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Comparatie</Name>
+        <Access>Public</Access>
+        <Location left="258" top="34" />
+        <Size width="162" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string a</Member>
+        <Member type="Field">string b</Member>
+        <Member type="Field">string operatorcomparatie</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FOR</Name>
+        <Access>Public</Access>
+        <Location left="71" top="199" />
+        <Size width="162" height="162" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Initializare initializare</Member>
+        <Member type="Field">Comparatie panaCand</Member>
+        <Member type="Field">Comparatie atatTimpCat</Member>
+        <Member type="Method">public string incrementeaza(Step s)</Member>
+        <Member type="Method">public void executaBloc()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Initializare</Name>
+        <Access>Public</Access>
+        <Location left="258" top="174" />
+        <Size width="162" height="114" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string valoare</Member>
+        <Member type="Method">public void asignare()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Step</Name>
+        <Access>Public</Access>
+        <Location left="258" top="297" />
+        <Size width="162" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string valoareInitiala</Member>
+        <Member type="Field">string operatorPas</Member>
+        <Member type="Field">string valoareFinala</Member>
+        <Member type="Method">public string incrementeaza()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DOWHILE</Name>
+        <Access>Public</Access>
+        <Location left="71" top="377" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WHILE</Name>
+        <Access>Public</Access>
+        <Location left="71" top="466" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SWITCHCASE</Name>
+        <Access>Public</Access>
+        <Location left="258" top="466" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BREAK</Name>
+        <Access>Public</Access>
+        <Location left="428" top="34" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CONTINUE</Name>
+        <Access>Public</Access>
+        <Location left="428" top="129" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

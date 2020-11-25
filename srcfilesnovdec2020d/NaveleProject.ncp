@@ -1,0 +1,98 @@
+<Project>
+  <Name>NaveleProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Navele</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Joc</Name>
+        <Access>Public</Access>
+        <Location left="29" top="15" />
+        <Size width="162" height="417" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; Notat &gt; Note</Member>
+        <Member type="Field">List &lt; TNava&gt; Nava</Member>
+        <Member type="Field">int nrNave</Member>
+        <Member type="Field">Text fisier</Member>
+        <Member type="Field">int frecv</Member>
+        <Member type="Field">int frecv1</Member>
+        <Member type="Field">List &lt;byte&gt; Melo</Member>
+        <Member type="Field">int contor</Member>
+        <Member type="Field">int lung_melo</Member>
+        <Member type="Field">TOm Om</Member>
+        <Member type="Field">TGlont Glont</Member>
+        <Member type="Field">bool ExistaGlont</Member>
+        <Member type="Field">bool Sonor</Member>
+        <Member type="Field">bool Escape</Member>
+        <Member type="Field">int i</Member>
+        <Member type="Field">int Timp</Member>
+        <Member type="Field">string sir</Member>
+        <Member type="Method">public void Beeps()</Member>
+        <Member type="Method">public void CitesteMelodia()</Member>
+        <Member type="Method">public void Run()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TNava</Name>
+        <Access>Public</Access>
+        <Location left="212" top="20" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int x</Member>
+        <Member type="Field">int y</Member>
+        <Member type="Field">int dx</Member>
+        <Member type="Field">int dy</Member>
+        <Member type="Field">int cul</Member>
+        <Member type="Field">Str3 model</Member>
+        <Member type="Method">public void Init()</Member>
+        <Member type="Method">public void Display()</Member>
+        <Member type="Method">public void Clear()</Member>
+        <Member type="Method">public void Close()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Str3</Name>
+        <Access>Public</Access>
+        <Location left="397" top="15" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; string&gt; valoare</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Nota</Name>
+        <Access>Public</Access>
+        <Location left="566" top="20" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string valoare</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TOm</Name>
+        <Access>Public</Access>
+        <Location left="219" top="280" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int c</Member>
+        <Member type="Method">public void Init()</Member>
+        <Member type="Method">public void Move()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TGlont</Name>
+        <Access>Public</Access>
+        <Location left="398" top="283" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int l</Member>
+        <Member type="Field">int c</Member>
+        <Member type="Method">public void Init()</Member>
+        <Member type="Method">public void Move()</Member>
+        <Member type="Method">public void Clear()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
