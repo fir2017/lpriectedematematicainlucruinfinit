@@ -1,0 +1,70 @@
+<Project>
+  <Name>FacturaDBProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>FacturaDB</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>DBUtil</Name>
+        <Access>Public</Access>
+        <Location left="13" top="26" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string driver</Member>
+        <Member type="Field">string parola</Member>
+        <Member type="Field">string utilizator</Member>
+        <Member type="Field">static Connection conn</Member>
+        <Member type="Field">static DBUtil instanta</Member>
+        <Member type="Constructor">public DBUtil()</Member>
+        <Member type="Method">public static Connection getConnection()</Member>
+        <Member type="Method">public static void dispaySQLExceptions(SQLException ex)</Member>
+        <Member type="Method">public static void buildConnection()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Factura</Name>
+        <Access>Public</Access>
+        <Location left="72" top="72" />
+        <Size width="162" height="434" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">DateFormat df = SimpleDateFormat("dd-mm-yyy")</Member>
+        <Member type="Field">long id</Member>
+        <Member type="Method">public static Factura getFactura(int index)</Member>
+        <Member type="Method">public int nrFacura()</Member>
+        <Member type="Method">public string furnizor()</Member>
+        <Member type="Method">public string client()</Member>
+        <Member type="Method">public Date data()</Member>
+        <Member type="Method">public double suma()</Member>
+        <Member type="Constructor">public Factura(int nrFactura, String furnizor, String client, Date data, double suma)</Member>
+        <Member type="Method">public int getNrFactura()</Member>
+        <Member type="Method">void setNrFactura(int nrFactura)</Member>
+        <Member type="Method">String getFurnizor()</Member>
+        <Member type="Method">void setFurnizor(String furnizor)</Member>
+        <Member type="Method">String getClient()</Member>
+        <Member type="Method">void setClient(String client)</Member>
+        <Member type="Method">Date getData()</Member>
+        <Member type="Method">void setData(Date data)</Member>
+        <Member type="Method">double getSuma()</Member>
+        <Member type="Method">void setSuma(double suma)</Member>
+        <Member type="Method">long getId()</Member>
+        <Member type="Method">void setId(long id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FacturaDB</Name>
+        <Access>Public</Access>
+        <Location left="119" top="124" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void createTable()</Member>
+        <Member type="Method">void insertFactura(Factura f)</Member>
+        <Member type="Method">void updateFactura(int nrfactura)</Member>
+        <Member type="Method">void displayAll()</Member>
+        <Member type="Method">void displayInTimePeriod()</Member>
+        <Member type="Method">static void main(String [] args)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

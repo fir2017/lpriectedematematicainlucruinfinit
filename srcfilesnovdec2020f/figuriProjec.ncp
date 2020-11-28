@@ -1,0 +1,62 @@
+<Project>
+  <Name>figuriProjec</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Figuri</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Figura</Name>
+        <Access>Public</Access>
+        <Location left="24" top="14" />
+        <Size width="162" height="434" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int startx</Member>
+        <Member type="Field">int starty</Member>
+        <Member type="Field">int stopx</Member>
+        <Member type="Field">int stopy</Member>
+        <Member type="Field">Color color</Member>
+        <Member type="Method">public void draw(Graphics g)</Member>
+        <Member type="Method">public void actualDraw(Graphics g, int x, int y, int width, int height)</Member>
+        <Member type="Constructor">public Figura()</Member>
+        <Member type="Constructor">public Figura(int startx, int starty, int stopx, int stopy, Color c, bool fill)</Member>
+        <Member type="Method">public void getstartx()</Member>
+        <Member type="Method">public void setstartx(int startx)</Member>
+        <Member type="Method">public void getstarty()</Member>
+        <Member type="Method">public void setstarty(int starty)</Member>
+        <Member type="Method">public void getstopx()</Member>
+        <Member type="Method">public void setstopx(int stopx)</Member>
+        <Member type="Method">public void getstopy()</Member>
+        <Member type="Method">public void setstopy(int stopy)</Member>
+        <Member type="Method">public Color getcolor()</Member>
+        <Member type="Method">public void setcolor(Color color)</Member>
+        <Member type="Method">public bool isfill()</Member>
+        <Member type="Method">public void setfill(bool fill)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FigureMng</Name>
+        <Access>Public</Access>
+        <Location left="173" top="26" />
+        <Size width="162" height="398" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static FigureMng obj = null</Member>
+        <Member type="Field">List&lt;Figura&gt; figs</Member>
+        <Member type="Field">Figura currFig</Member>
+        <Member type="Field">bool fill = false</Member>
+        <Member type="Field">Color color = Color.Black</Member>
+        <Member type="Constructor">public FigureMng()</Member>
+        <Member type="Method">public FigureMng getinstance()</Member>
+        <Member type="Method">public void addFigure()</Member>
+        <Member type="Method">public List&lt;Figura&gt; getFigs()</Member>
+        <Member type="Method">public Figura getCurrFig()</Member>
+        <Member type="Method">public void setCurrFig(Figura currFig)</Member>
+        <Member type="Method">public bool isFill()</Member>
+        <Member type="Method">public void setFill(bool fill)</Member>
+        <Member type="Method">public Color getColor()</Member>
+        <Member type="Method">public void setColor(Color color)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
