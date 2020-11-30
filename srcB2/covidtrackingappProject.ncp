@@ -1,0 +1,157 @@
+<Project>
+  <Name>covidtrackingappProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>covidtrackingapp</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Persoana</Name>
+        <Access>Public</Access>
+        <Location left="10" top="17" />
+        <Size width="162" height="740" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string nume</Member>
+        <Member type="Field">string prenume</Member>
+        <Member type="Field">string cnp</Member>
+        <Member type="Field">string nrtelefon</Member>
+        <Member type="Field">string datecontact</Member>
+        <Member type="Field">string email</Member>
+        <Member type="Field">List &lt;Persoana&gt; contacti</Member>
+        <Member type="Field">bool econtactdirect</Member>
+        <Member type="Field">bool einfectat</Member>
+        <Member type="Field">bool evaccinat</Member>
+        <Member type="Field">bool esanatos</Member>
+        <Member type="Field">bool einfectat</Member>
+        <Member type="Field">bool einsanatosit</Member>
+        <Member type="Field">bool ecarantinat</Member>
+        <Member type="Field">bool einternatinspital</Member>
+        <Member type="Field">bool edecedat</Member>
+        <Member type="Field">bool eladomiciliu</Member>
+        <Member type="Field">bool elaATI</Member>
+        <Member type="Field">List &lt;string&gt; virusul</Member>
+        <Member type="Field">Date datanasterii</Member>
+        <Member type="Field">Date datadecesului</Member>
+        <Member type="Field">string CIBI</Member>
+        <Member type="Field">Point locatia</Member>
+        <Member type="Field">float greutate</Member>
+        <Member type="Field">float inaltime</Member>
+        <Member type="Field">Color culoare</Member>
+        <Member type="Field">string nationalitate</Member>
+        <Member type="Field">string cetatenie</Member>
+        <Member type="Field">string taraLocatiei</Member>
+        <Member type="Field">string loculdecaracntina</Member>
+        <Member type="Field">string taraDomiciliului</Member>
+        <Member type="Field">List &lt; string&gt; limbivorbite</Member>
+        <Member type="Field">List &lt;Image&gt; poze</Member>
+        <Member type="Field">bool econtactdirect</Member>
+        <Member type="Field">bool econfirmat</Member>
+        <Member type="Method">public void adaugaLegatura(Persoana p)</Member>
+        <Member type="Method">public void alertaCovid()</Member>
+        <Member type="Method">public void calculeazadistanta(Persoana p)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Tracker</Name>
+        <Access>Public</Access>
+        <Location left="679" top="332" />
+        <Size width="162" height="131" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt;Persoana&gt; listadepersoane</Member>
+        <Member type="Method">public void creazaHarta()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Client</Name>
+        <Access>Public</Access>
+        <Location left="178" top="297" />
+        <Size width="162" height="315" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt;Persoana&gt; persoane</Member>
+        <Member type="Field">Persoana persanacurenta</Member>
+        <Member type="Field">asynccallback acceptcallback</Member>
+        <Member type="Field">asynccallback receivecallback</Member>
+        <Member type="Field">socket listenersocket</Member>
+        <Member type="Field">socket clientsocket</Member>
+        <Member type="Field">byte [] recv</Member>
+        <Member type="Field">ipdostentry iphost</Member>
+        <Member type="Field">ipendpoint ipepserver</Member>
+        <Member type="Method">public void LoadToServer()</Member>
+        <Member type="Method">public void DownloadFromServer()</Member>
+        <Member type="Method">public void load(object sender, eventargs e)</Member>
+        <Member type="Method">public void accepthandler(iasyncresult asyncresult)</Member>
+        <Member type="Method">public void receivethandler(iasyncresult asyncresult)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Server</Name>
+        <Access>Public</Access>
+        <Location left="510" top="297" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void Store()</Member>
+        <Member type="Method">public void Serve()</Member>
+        <Member type="Method">public void Verifiy()</Member>
+        <Member type="Method">public void Valide()</Member>
+        <Member type="Method">public void Check()</Member>
+        <Member type="Method">public void Prelucrate()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Retea</Name>
+        <Access>Public</Access>
+        <Location left="344" top="332" />
+        <Size width="162" height="140" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Socket socket</Member>
+        <Member type="Field">Connection connection</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>tcpclient</Name>
+        <Access>Public</Access>
+        <Location left="189" top="621" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string filename</Member>
+        <Member type="Field">Stream filestream</Member>
+        <Member type="Field">byte[] filebuffer</Member>
+        <Member type="Field">TcpClient clientSocket = new TcpClient(tbServer.Text, 8080)</Member>
+        <Member type="Field">NetworkStream networkStream = clientSocket.GetStream()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>tcpserver</Name>
+        <Access>Public</Access>
+        <Location left="356" top="621" />
+        <Size width="162" height="485" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ArrayList alSockets</Member>
+        <Member type="Field">IPHostEntry IPHost = Dns.GetHostEntry(Dns.GetHostName())</Member>
+        <Member type="Field">Thread thdListener = new Thread(new ThreadStart(listenerThread))</Member>
+        <Member type="Field">IPHostEntry IPHost = Dns.GetHostEntry(Dns.GetHostName())</Member>
+        <Member type="Field">TcpListener tcpListener = new TcpListener(IPHost.AddressList[0], 8080)</Member>
+        <Member type="Field">Socket handlerSocket = tcpListener.AcceptSocket()</Member>
+        <Member type="Field">ThreadStart thdstHandler = new ThreadStart(handlerThread)</Member>
+        <Member type="Field">Thread thdHandler = new Thread(thdstHandler)</Member>
+        <Member type="Field">Socket handlerSocket = (Socket)alSockets[alSockets.Count - 1]</Member>
+        <Member type="Field">NetworkStream networkStream = new NetworkStream(handlerSocket)</Member>
+        <Member type="Field">int thisRead = 0</Member>
+        <Member type="Field">int blockSize = 1024</Member>
+        <Member type="Field">Byte[] dataByte = new Byte[blockSize]</Member>
+        <Member type="Field">Stream fileStream = File.OpenWrite("c:\\my documents\\upload.txt")</Member>
+        <Member type="Field">int newField</Member>
+        <Member type="Field">byte[] recv = new byte[1]</Member>
+        <Member type="Field">Socket clientSocket</Member>
+        <Member type="Field">Socket listenerSocket = new Socket()</Member>
+        <Member type="Field">IPHostEntry IPHost = Dns.GetHostEntry(Dns.GetHostName())</Member>
+        <Member type="Field">TcpListener tcpListener = new TcpListener(IPHost.AddressList[0], 8080)</Member>
+        <Member type="Field">IPEndPoint ipepServer = new IPEndPoint(IPHost.AddressList[0], 8080)</Member>
+        <Member type="Method">public void listenerThread()</Member>
+        <Member type="Method">public void handlerThread()</Member>
+        <Member type="Method">private void button1_Click(object sender, EventArgs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
