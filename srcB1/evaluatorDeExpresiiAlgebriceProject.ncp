@@ -1,0 +1,72 @@
+<Project>
+  <Name>evaluatorDeExpresiiAlgebriceProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>evaluatorDeExpresiiAlgebrice</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>evaluatorexpresiialgebrice</Name>
+        <Access>Public</Access>
+        <Location left="27" top="11" />
+        <Size width="162" height="672" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">const real infinit = 30000</Member>
+        <Member type="Field">const real epsi = 0.0001</Member>
+        <Member type="Field">List &lt;char&gt; operatiibinare</Member>
+        <Member type="Field">List&lt;char&gt; operatiiunare</Member>
+        <Member type="Field">const int max = 30</Member>
+        <Member type="Field">int lung</Member>
+        <Member type="Field">real a</Member>
+        <Member type="Field">real b</Member>
+        <Member type="Field">int n</Member>
+        <Member type="Method">public bool difinf(real x)</Member>
+        <Member type="Method">public real logaritm(real x)</Member>
+        <Member type="Method">public real exponential(real x)</Member>
+        <Member type="Method">public real inmultit(real x, real y)</Member>
+        <Member type="Method">public real putere(real x, real y)</Member>
+        <Member type="Method">public real egal(real x, real y)</Member>
+        <Member type="Method">public real diferit(real x, real y)</Member>
+        <Member type="Method">public real maimict(real x, real y)</Member>
+        <Member type="Method">public real maimare(real x, real y)</Member>
+        <Member type="Method">public real plus(real x, real y)</Member>
+        <Member type="Method">public real minus(real x, real y)</Member>
+        <Member type="Method">public real impartit(real x, real y)</Member>
+        <Member type="Method">public real sinus(real x)</Member>
+        <Member type="Method">public real cosinus(real x)</Member>
+        <Member type="Method">public real modul(real x)</Member>
+        <Member type="Method">public real radical(real x)</Member>
+        <Member type="Method">public string lower(string s)</Member>
+        <Member type="Method">public bool esteintreg(real v)</Member>
+        <Member type="Method">public byte tipcaracter(char c)</Member>
+        <Member type="Method">public bool estenumar(string sir)</Member>
+        <Member type="Method">public void punespatiiinexpresie(functie E)</Member>
+        <Member type="Method">public void transformainvector(functie E)</Member>
+        <Member type="Method">public byte prioritate(char c)</Member>
+        <Member type="Method">public real valoarefunctie(functie E, real x)</Member>
+        <Member type="Method">public void citestefunctia(functie E)</Member>
+        <Member type="Method">public void afiseazavalorifunctie(functie E)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>real</Name>
+        <Access>Public</Access>
+        <Location left="217" top="11" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float value</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>functie</Name>
+        <Access>Public</Access>
+        <Location left="217" top="239" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string expresie</Member>
+        <Member type="Field">List &lt;string&gt; vector</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

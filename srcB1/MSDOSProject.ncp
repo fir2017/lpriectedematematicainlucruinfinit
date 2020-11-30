@@ -1,0 +1,2143 @@
+<Project>
+  <Name>MSDOSProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>MSDOS</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>COMMANDLINE</Name>
+        <Access>Public</Access>
+        <Location left="51" top="15" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PROMPT</Name>
+        <Access>Public</Access>
+        <Location left="116" top="66" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CURSOR</Name>
+        <Access>Public</Access>
+        <Location left="162" top="122" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>install</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>FORMAT</Name>
+        <Access>Public</Access>
+        <Location left="17" top="20" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FDISK</Name>
+        <Access>Public</Access>
+        <Location left="187" top="19" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>INSTALL</Name>
+        <Access>Public</Access>
+        <Location left="17" top="116" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SELECT</Name>
+        <Access>Public</Access>
+        <Location left="362" top="89" />
+        <Size width="162" height="451" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SELECT()</Member>
+        <Member type="Method">public void RESET()</Member>
+        <Member type="Method">public void ENTER()</Member>
+        <Member type="Method">public void ESC()</Member>
+        <Member type="Method">public void TAB()</Member>
+        <Member type="Method">public void PGUP()</Member>
+        <Member type="Method">public void PGDN()</Member>
+        <Member type="Method">public void LEFT()</Member>
+        <Member type="Method">public void RIGHT()</Member>
+        <Member type="Method">public void UP()</Member>
+        <Member type="Method">public void DOWN()</Member>
+        <Member type="Method">public void F1()</Member>
+        <Member type="Method">public void F3()</Member>
+        <Member type="Method">public void F9()</Member>
+        <Member type="Method">public void SCREEN()</Member>
+        <Member type="Method">public void WORKSPACES()</Member>
+        <Member type="Method">public void INSTALLATIONDRIVE()</Member>
+        <Member type="Method">public void NUMBEROFPRINTERS()</Member>
+        <Member type="Method">public void MSDOSSHELLOPTION()</Member>
+        <Member type="Method">public void INSTALLATIONOPTION()</Member>
+        <Member type="Method">public void COPYSISTEMFILESOFDISK()</Member>
+        <Member type="Method">public void MODIFYOPTION()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DISK</Name>
+        <Access>Public</Access>
+        <Location left="398" top="19" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int factorDeIntretesare</Member>
+        <Member type="Field">int vitezaDeTransfer</Member>
+        <Member type="Method">public void boot()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PLATAN</Name>
+        <Access>Public</Access>
+        <Location left="451" top="74" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FATA</Name>
+        <Access>Public</Access>
+        <Location left="492" top="126" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CAPDESCRIERE</Name>
+        <Access>Public</Access>
+        <Location left="515" top="178" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PISTA</Name>
+        <Access>Public</Access>
+        <Location left="552" top="230" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CILINDRU</Name>
+        <Access>Public</Access>
+        <Location left="592" top="283" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GRUPA</Name>
+        <Access>Public</Access>
+        <Location left="631" top="337" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SECTOR</Name>
+        <Access>Public</Access>
+        <Location left="663" top="391" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>INTERFATA</Name>
+        <Access>Public</Access>
+        <Location left="412" top="102" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CUPLORDEDISC</Name>
+        <Access>Public</Access>
+        <Location left="455" top="154" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>UNITATEDEDISC</Name>
+        <Access>Public</Access>
+        <Location left="495" top="204" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DISC</Name>
+        <Access>Public</Access>
+        <Location left="530" top="258" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HDINIT</Name>
+        <Access>Public</Access>
+        <Location left="201" top="170" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PARTITION</Name>
+        <Access>Public</Access>
+        <Location left="30" top="194" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PRIMARY</Name>
+        <Access>Public</Access>
+        <Location left="77" top="240" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EXTENDED</Name>
+        <Access>Public</Access>
+        <Location left="100" top="292" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>VOLUM</Name>
+        <Access>Public</Access>
+        <Location left="130" top="347" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>systemfile</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>DIRTREE</Name>
+        <Access>Public</Access>
+        <Location left="47" top="18" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SYSTEMFILES</Name>
+        <Access>Public</Access>
+        <Location left="73" top="68" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FAT</Name>
+        <Access>Public</Access>
+        <Location left="109" top="122" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FILE</Name>
+        <Access>Public</Access>
+        <Location left="152" top="175" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DIR</Name>
+        <Access>Public</Access>
+        <Location left="181" top="224" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BOOT</Name>
+        <Access>Public</Access>
+        <Location left="85" top="355" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CON</Name>
+        <Access>Public</Access>
+        <Location left="118" top="431" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AUX</Name>
+        <Access>Public</Access>
+        <Location left="157" top="482" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>COM</Name>
+        <Access>Public</Access>
+        <Location left="204" top="525" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PRN</Name>
+        <Access>Public</Access>
+        <Location left="237" top="578" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LPT</Name>
+        <Access>Public</Access>
+        <Location left="273" top="638" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NUL</Name>
+        <Access>Public</Access>
+        <Location left="296" top="696" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CLOCK</Name>
+        <Access>Public</Access>
+        <Location left="302" top="756" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FILENAME</Name>
+        <Access>Public</Access>
+        <Location left="275" top="36" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FILENAME(fullpath path, string filename, char separatorchar, string extension)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FILETYPE</Name>
+        <Access>Public</Access>
+        <Location left="300" top="134" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>os</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>msdos</Name>
+        <Access>Public</Access>
+        <Location left="33" top="19" />
+        <Size width="162" height="400" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void DRIVEMANAGEMENT()</Member>
+        <Member type="Method">public void COMMANDS()</Member>
+        <Member type="Method">public void DRIVERS()</Member>
+        <Member type="Method">public void INTERFACE()</Member>
+        <Member type="Method">public void BIOS()</Member>
+        <Member type="Method">public void ROM()</Member>
+        <Member type="Method">public void RAM()</Member>
+        <Member type="Method">public void INT()</Member>
+        <Member type="Method">public void SYSTEMFILE()</Member>
+        <Member type="Method">public void DIRTREE()</Member>
+        <Member type="Method">public void DEMONTABLEVOLUME()</Member>
+        <Member type="Method">public void SHELLCMD()</Member>
+        <Member type="Method">public void CLUSTERLINKER()</Member>
+        <Member type="Method">public void PIPE()</Member>
+        <Member type="Method">public void REDIR()</Member>
+        <Member type="Method">public void FILTER()</Member>
+        <Member type="Method">public void SYSTEMCALL()</Member>
+        <Member type="Method">public void MONOLIT()</Member>
+        <Member type="Method">public void MONOTASK()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>os</Name>
+        <Access>Public</Access>
+        <Location left="214" top="19" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>configsys</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>configsys</Name>
+        <Access>Public</Access>
+        <Location left="14" top="13" />
+        <Size width="162" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">CMD BREAK</Member>
+        <Member type="Field">CMD BUFFERS</Member>
+        <Member type="Field">CMD COUNTRY</Member>
+        <Member type="Field">CMD DEVICE</Member>
+        <Member type="Field">CMD DRIVPARAM</Member>
+        <Member type="Field">CMD FCBS</Member>
+        <Member type="Field">CMD FILES</Member>
+        <Member type="Field">CMD INSTALL</Member>
+        <Member type="Field">CMD LASTDRIVE</Member>
+        <Member type="Field">CMD REM</Member>
+        <Member type="Field">CMD SHELL</Member>
+        <Member type="Field">CMD STACKS</Member>
+        <Member type="Constructor">public configsys()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BREAK</Name>
+        <Access>Public</Access>
+        <Location left="32" top="31" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BREAK(bool onoff)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BUFFERS</Name>
+        <Access>Public</Access>
+        <Location left="53" top="82" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BUFFERS(int n, int m, List &lt;option&gt; x)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>COUNTRY</Name>
+        <Access>Public</Access>
+        <Location left="68" top="131" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public COUNTRY(int contrycode, int pagecode, fullpath filename)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DEVICE</Name>
+        <Access>Public</Access>
+        <Location left="90" top="182" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DEVICE(fullpath path, List &lt;args&gt; arguments)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ANSISYS</Name>
+        <Access>Public</Access>
+        <Location left="238" top="21" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ANSISYS(device dev, List&lt;option&gt; options)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DISPLAYSYS</Name>
+        <Access>Public</Access>
+        <Location left="249" top="73" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DISPLAYSYS(device dev, number d, bool changeline, factor f, heads h, sector s, tracks t)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PRINTERSYS</Name>
+        <Access>Public</Access>
+        <Location left="271" top="118" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public PRINTERSYS(device dev, lptx type, List&lt; hwcp&gt; codpages)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RAMDRIVESYS</Name>
+        <Access>Public</Access>
+        <Location left="289" top="159" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RAMDRIVESYS(device drv, int disksize, int sectorsize, int entries, bool expanded, bool limram)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>VDISKSYS</Name>
+        <Access>Public</Access>
+        <Location left="303" top="210" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SMARTDRVSYS</Name>
+        <Access>Public</Access>
+        <Location left="283" top="277" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SMARTDRVSYS(device dev, int normalcachesize, int minimumcachesize, bool expanded)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XMAEMSYS</Name>
+        <Access>Public</Access>
+        <Location left="277" top="326" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public XMAEMSYS()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XMA2EMSSYS</Name>
+        <Access>Public</Access>
+        <Location left="263" top="380" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public XMA2EMSSYS()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HIMEMSYS</Name>
+        <Access>Public</Access>
+        <Location left="246" top="427" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public HIMEMSYS(deive dev, hmamin h, numhandles n, shadow onoff, machine name)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EMM386SYS</Name>
+        <Access>Public</Access>
+        <Location left="216" top="473" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public EMM386SYS(device dev, int memory, bool wonoff, frame address, pn address, x addressrange, b address, l minxms, a altregs, h handles)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SERPRNSYS</Name>
+        <Access>Public</Access>
+        <Location left="204" top="522" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SERPRNSYS(device dev)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DRIVPARM</Name>
+        <Access>Public</Access>
+        <Location left="15" top="494" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DRIVPARM(int numberofdisc, bool opendoor, float factor, float heads, bool i, int n, int tracks)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FCBS</Name>
+        <Access>Public</Access>
+        <Location left="34" top="542" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FCBS(int x, int y)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>INSTALL</Name>
+        <Access>Public</Access>
+        <Location left="59" top="597" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public INSTALL(fullpath path, List &lt;param&gt; paramlist)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LASTDRIVE</Name>
+        <Access>Public</Access>
+        <Location left="91" top="647" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public LASTDRIVE(string drive)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>REM</Name>
+        <Access>Public</Access>
+        <Location left="117" top="693" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public REM(string comment)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SHELL</Name>
+        <Access>Public</Access>
+        <Location left="142" top="739" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SHELL(fullpath path, List &lt;params&gt; parameterslist)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>STACKS</Name>
+        <Access>Public</Access>
+        <Location left="168" top="792" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public STACKS(int n, int s)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AUTOEXECBAT</Name>
+        <Access>Public</Access>
+        <Location left="33" top="883" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">date data</Member>
+        <Member type="Field">time timp</Member>
+        <Member type="Field">fullpath path</Member>
+        <Member type="Field">directory dir</Member>
+        <Member type="Field">msdosprompt prompt</Member>
+        <Member type="Field">clearscreen cls</Member>
+        <Member type="Field">msdosmenu menu</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BATCH</Name>
+        <Access>Public</Access>
+        <Location left="44" top="925" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TEMP</Name>
+        <Access>Public</Access>
+        <Location left="82" top="972" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FILES</Name>
+        <Access>Public</Access>
+        <Location left="226" top="600" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FILES(int x)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>commands</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>COMMAND</Name>
+        <Access>Public</Access>
+        <Location left="43" top="22" />
+        <Size width="162" height="519" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void run(fullpath path)</Member>
+        <Member type="Method">public void removechar()</Member>
+        <Member type="Method">public void removechars()</Member>
+        <Member type="Method">public void removeallchars()</Member>
+        <Member type="Method">public void movecursorto()</Member>
+        <Member type="Method">public void inputcurrentline()</Member>
+        <Member type="Method">public void eof()</Member>
+        <Member type="Method">public void esc()</Member>
+        <Member type="Method">public void ctrlx()</Member>
+        <Member type="Method">public void del()</Member>
+        <Member type="Method">public void ins()</Member>
+        <Member type="Method">public void toleft()</Member>
+        <Member type="Method">public void toright()</Member>
+        <Member type="Method">public void page2page()</Member>
+        <Member type="Method">public void closecommand()</Member>
+        <Member type="Method">public void breakcmd()</Member>
+        <Member type="Method">public void exittoprinter()</Member>
+        <Member type="Method">public void stopterminal()</Member>
+        <Member type="Method">public void startterminal()</Member>
+        <Member type="Method">public void warmboot()</Member>
+        <Member type="Method">public void con()</Member>
+        <Member type="Method">public void redirect()</Member>
+        <Member type="Method">public void insertfrom()</Member>
+        <Member type="Method">public void passto()</Member>
+        <Member type="Method">public void replacechar()</Member>
+        <Member type="Method">public void anychar()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OPERATOR</Name>
+        <Access>Public</Access>
+        <Location left="260" top="100" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OPERATION</Name>
+        <Access>Public</Access>
+        <Location left="240" top="22" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>commandcom</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>COPYCON</Name>
+        <Access>Public</Access>
+        <Location left="86" top="24" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public COPYCON(string filename)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TYPE</Name>
+        <Access>Public</Access>
+        <Location left="126" top="83" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TYPE(param p1, cmd nextcmd)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BATCH</Name>
+        <Access>Public</Access>
+        <Location left="202" top="130" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ECHO</Name>
+        <Access>Public</Access>
+        <Location left="420" top="23" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PAUSE</Name>
+        <Access>Public</Access>
+        <Location left="452" top="69" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>COPY</Name>
+        <Access>Public</Access>
+        <Location left="489" top="121" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SET</Name>
+        <Access>Public</Access>
+        <Location left="523" top="171" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>command</Name>
+        <Access>Public</Access>
+        <Location left="44" top="176" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>cmd</Name>
+        <Access>Public</Access>
+        <Location left="95" top="227" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>internalcmd</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>BREAK</Name>
+        <Access>Public</Access>
+        <Location left="18" top="13" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BREAK(bool onoff)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CHCP</Name>
+        <Access>Public</Access>
+        <Location left="47" top="50" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public CHCP(int nnn)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CHDIR</Name>
+        <Access>Public</Access>
+        <Location left="55" top="102" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public CHDIR(fullpath path)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CD</Name>
+        <Access>Public</Access>
+        <Location left="248" top="164" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public CD(fullpath path)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CLS</Name>
+        <Access>Public</Access>
+        <Location left="112" top="207" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public CLS()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>COPY</Name>
+        <Access>Public</Access>
+        <Location left="74" top="254" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public COPY(bool asciis, bool binarys, fullpath pathsource, bool asciid, bool binaryd, fullpath pathdestination, bool asciia, bool binarya, bool verifya)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CTTY</Name>
+        <Access>Public</Access>
+        <Location left="60" top="296" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public CTTY(device devicename)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DATE</Name>
+        <Access>Public</Access>
+        <Location left="53" top="338" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DATE(int mm, int dd, int yy)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DEL</Name>
+        <Access>Public</Access>
+        <Location left="34" top="387" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DEL(fullpath path, bool prompts)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ERASE</Name>
+        <Access>Public</Access>
+        <Location left="67" top="435" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ERASE(fullpath path, bool prompts)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DIR</Name>
+        <Access>Public</Access>
+        <Location left="110" top="484" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DIR(fullpath path, bool pagewithpage, bool condensed)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EXIT</Name>
+        <Access>Public</Access>
+        <Location left="115" top="536" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public EXIT()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MKDIR</Name>
+        <Access>Public</Access>
+        <Location left="133" top="590" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public MKDIR(fullpath path)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MD</Name>
+        <Access>Public</Access>
+        <Location left="104" top="637" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public MD(fullpath path)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PATH</Name>
+        <Access>Public</Access>
+        <Location left="92" top="688" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public PATH()</Member>
+        <Member type="Constructor">public PATH(List &lt;fullpath&gt; path)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PROMPT</Name>
+        <Access>Public</Access>
+        <Location left="61" top="736" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public PROMPT(string text)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RENAME</Name>
+        <Access>Public</Access>
+        <Location left="74" top="789" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RENAME(fullpath path, fullpath newname)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>REN</Name>
+        <Access>Public</Access>
+        <Location left="112" top="838" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public REN(fullpath path, fullpath newname)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RMDIR</Name>
+        <Access>Public</Access>
+        <Location left="149" top="891" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RMDIR(fullpath path)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RD</Name>
+        <Access>Public</Access>
+        <Location left="177" top="938" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RD(fullpath path)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SET</Name>
+        <Access>Public</Access>
+        <Location left="194" top="992" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SET(string name, List&lt;Params&gt; parameters)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TIME</Name>
+        <Access>Public</Access>
+        <Location left="209" top="1050" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TIME(int hh, int mm, int ss, int xx)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TYPE</Name>
+        <Access>Public</Access>
+        <Location left="195" top="1099" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TYPE(fullpath path)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>VER</Name>
+        <Access>Public</Access>
+        <Location left="164" top="1148" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public VER()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>VERIFY</Name>
+        <Access>Public</Access>
+        <Location left="143" top="1201" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public VERIFY(bool onoff)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>VOLUME</Name>
+        <Access>Public</Access>
+        <Location left="116" top="1256" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public VOLUME(drive driver)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>externalcmd</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>APPEND</Name>
+        <Access>Public</Access>
+        <Location left="58" top="34" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public APPEND(bool addcurrentdir, bool environment)</Member>
+        <Member type="Constructor">public APPEND(List &lt;fullpath&gt; pathlist, bool adaugaDirList, bool anuleazapath)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ASSIGN</Name>
+        <Access>Public</Access>
+        <Location left="91" top="149" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ASSIGN(drive drivera, drive driverb)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ATTRIB</Name>
+        <Access>Public</Access>
+        <Location left="125" top="254" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ATTRIB(bool archive, bool read_only, fullpah pathoffile, bool subdirectory)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BACKUP</Name>
+        <Access>Public</Access>
+        <Location left="196" top="338" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BACKUP(fullpath source, drive destinationdrive, bool subdirectory, bool modified, bool append, date data, time timp, bol formatdestinationdisc, bool logfile, fullpath saveasfilename)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CHKDSK</Name>
+        <Access>Public</Access>
+        <Location left="359" top="66" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public CHKDSK(fullpath path, fullpath filenam, bool fix, bool verbose)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>COMP</Name>
+        <Access>Public</Access>
+        <Location left="403" top="177" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public COMP(fullpath source, fullpath destination)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>COMMAND</Name>
+        <Access>Public</Access>
+        <Location left="605" top="66" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public COMMAND(fullpath path, cttydev cttydevicename, int sizeoftext, bool permanent, bool text)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DISKCOMP</Name>
+        <Access>Public</Access>
+        <Location left="626" top="223" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DISKCOMP(driver drivesource, driver drivedestination, bool simplefacedisc, bool force8sectorsdiscformat)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DISKCOPY</Name>
+        <Access>Public</Access>
+        <Location left="651" top="323" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DISKCOPY(driver drivesource, driver drivedestination, bool copyfaceone)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EXE2BIN</Name>
+        <Access>Public</Access>
+        <Location left="636" top="573" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public EXE2BIN(fullpath source, fullpath destination)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FASTOPEN</Name>
+        <Access>Public</Access>
+        <Location left="452" top="486" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FASTOPEN(driver drive, int nroffiles, bool expandedmemory)</Member>
+        <Member type="Constructor">public FASTOPEN(driver drive, int nroffiles, int nrofsubdirectories, bool expandedmemory)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FC</Name>
+        <Access>Public</Access>
+        <Location left="125" top="691" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FC(bool abbreviates, bool thecase, bool lines, int linesbuffer, bool number, bool tabs, bool white_spaces, int linesnumber, fullpath destinationfile)</Member>
+        <Member type="Constructor">public FC(bool binary, int linesnumber, fullpath sourcepath, fullpath destinationpath)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FDISK</Name>
+        <Access>Public</Access>
+        <Location left="91" top="608" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FDISK()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FORMAT</Name>
+        <Access>Public</Access>
+        <Location left="46" top="573" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FORMAT(driver drive, string label, string formatsize, bool sistem)</Member>
+        <Member type="Constructor">public FORMAT(drive deriver, bool simpleface, bool bootable, int sectors, int tracks)</Member>
+        <Member type="Constructor">public FORMAT(drive deriver, bool simpleface, bool hightcaapcitysfdf, bool eigthsectorontrack, int sectors, int tracks, string label, bool sistem)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GRAPHTABL</Name>
+        <Access>Public</Access>
+        <Location left="692" top="691" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public GRAPHTABL(int nnn)</Member>
+        <Member type="Constructor">public GRAPHTABL(bool status)</Member>
+        <Member type="Constructor">public GRAPHTABL(bool help)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GRAPHICS</Name>
+        <Access>Public</Access>
+        <Location left="692" top="773" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public GRAPHICS(string printertype, string printerprofile, bool reverse, bool background, bool lcd, bool printbox, string id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>JOIN</Name>
+        <Access>Public</Access>
+        <Location left="141" top="762" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public JOIN()</Member>
+        <Member type="Constructor">public JOIN(fullpath path)</Member>
+        <Member type="Constructor">public JOIN(bool disconnect)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>KEYB</Name>
+        <Access>Public</Access>
+        <Location left="46" top="1004" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public KEYB(int countrycode, int charsetpagecode, fullpath file, string ID)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LABEL</Name>
+        <Access>Public</Access>
+        <Location left="141" top="1063" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public LABEL(string device, string label)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MEM</Name>
+        <Access>Public</Access>
+        <Location left="250" top="1004" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public MEM(bool programe)</Member>
+        <Member type="Constructor">public MEM(bool debug)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MODE</Name>
+        <Access>Public</Access>
+        <Location left="375" top="947" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public MODE(display displaydriver, int n)</Member>
+        <Member type="Constructor">public MODE(display displaydriver, bool shift, bool test)</Member>
+        <Member type="Constructor">public MODE(bool con, int cols, int lines)</Member>
+        <Member type="Constructor">public MODE(device dispozitiv, bool status)</Member>
+        <Member type="Constructor">public MODE(bool lptn, int port, int chars, int linesperinch, string actiontype)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NLSFUNC</Name>
+        <Access>Public</Access>
+        <Location left="387" top="731" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public NLSFUNC(string volume, fullpath path)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PRINT</Name>
+        <Access>Public</Access>
+        <Location left="526" top="839" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public PRINT(string device, int bsize, int value1, int value2, int timeslice, int qsize, bool deletequeue, string volume, fullpath path, bool cancel, bool adaugafile)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RECOVER</Name>
+        <Access>Public</Access>
+        <Location left="540" top="1016" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RECOVER(string volume, fullpath path)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>REPLACE</Name>
+        <Access>Public</Access>
+        <Location left="592" top="1078" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public REPLACE(string volumesource, fullpath source, string volumedestination, fullpath destination, bool append, bool prompts, bool read_only, bool subdirectory, bool update, bool wait)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RESTORE</Name>
+        <Access>Public</Access>
+        <Location left="659" top="1143" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RESTORE(string volume, fullpath path, bool subdirectory, bool prompts, date before, date after, bool modified, bool newfiles, time later, time earlier)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SELECT</Name>
+        <Access>Public</Access>
+        <Location left="718" top="1203" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SELECT()</Member>
+        <Member type="Method">public void MENU()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SHARE</Name>
+        <Access>Public</Access>
+        <Location left="299" top="1426" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SHARE(int space, int nrlock)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SUBST</Name>
+        <Access>Public</Access>
+        <Location left="348" top="1524" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SUBST(string volume, fullpath path, bool disconnect)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SYS</Name>
+        <Access>Public</Access>
+        <Location left="429" top="1622" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SYS(string volume)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TREE</Name>
+        <Access>Public</Access>
+        <Location left="507" top="1727" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TREE(string volume, fullpath path, bool files, bool all)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XCOPY</Name>
+        <Access>Public</Access>
+        <Location left="608" top="1825" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">error errorlevel</Member>
+        <Member type="Constructor">public XCOPY(fullpath source, fullpath destination, bool archive, date data, bool empty, bool move, bool prompts, bool subdirectory, bool verify, bool wait)</Member>
+        <Member type="Method">public errorcode ReturnErrorCode()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>filter</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>FILTER</Name>
+        <Access>Public</Access>
+        <Location left="19" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FIND</Name>
+        <Access>Public</Access>
+        <Location left="52" top="51" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FIND(bool viceversa, bool count, bool number, string sir, fullpath path)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MORE</Name>
+        <Access>Public</Access>
+        <Location left="96" top="88" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public MORE(string source)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SORT</Name>
+        <Access>Public</Access>
+        <Location left="133" top="131" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SORT(string source, bool reverse, int ncolumn)</Member>
+        <Member type="Method">public void ToStream(Stream s)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>batch</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>BAT</Name>
+        <Access>Public</Access>
+        <Location left="16" top="18" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BATCH</Name>
+        <Access>Public</Access>
+        <Location left="35" top="65" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PARAMETER</Name>
+        <Access>Public</Access>
+        <Location left="77" top="113" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>POSITIONALPARAM</Name>
+        <Access>Public</Access>
+        <Location left="112" top="163" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SIMBOLICPARAM</Name>
+        <Access>Public</Access>
+        <Location left="143" top="206" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SHIFT</Name>
+        <Access>Public</Access>
+        <Location left="63" top="459" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PAUSE</Name>
+        <Access>Public</Access>
+        <Location left="93" top="516" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public PAUSE()</Member>
+        <Member type="Constructor">public PAUSE(string comment)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>REM</Name>
+        <Access>Public</Access>
+        <Location left="118" top="596" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public REM()</Member>
+        <Member type="Constructor">public REM(string comment)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>IF</Name>
+        <Access>Public</Access>
+        <Location left="150" top="711" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public IF(NOT n, ERRORLEVEL e, NUMBER n, COMMAND c)</Member>
+        <Member type="Constructor">public IF(NOT n, STRING TEXT1, STRING TEXT2, COMAMND CMD)</Member>
+        <Member type="Constructor">public IF(NOT N, EXIST E, FILENAME FN, COMMAND CMD)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GO</Name>
+        <Access>Public</Access>
+        <Location left="79" top="769" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public GO(LABEL L)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FOR</Name>
+        <Access>Public</Access>
+        <Location left="109" top="823" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FOR(STRING SIMBOLIC, IN i, SET set, DOCOMMAND CMD)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ECHO</Name>
+        <Access>Public</Access>
+        <Location left="159" top="883" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ECHO(ON on)</Member>
+        <Member type="Constructor">public ECHO(OFF off)</Member>
+        <Member type="Constructor">public ECHO(STRING MESSAGE)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CALL</Name>
+        <Access>Public</Access>
+        <Location left="182" top="954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public CALL(FULLPATH FP, PARAMLIST PARAMETERS)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SET</Name>
+        <Access>Public</Access>
+        <Location left="164" top="1021" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SET(STRING PARAM, STRING VALUE)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>shell</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>SHELL</Name>
+        <Access>Public</Access>
+        <Location left="15" top="9" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GUI</Name>
+        <Access>Public</Access>
+        <Location left="51" top="51" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MOUSE</Name>
+        <Access>Public</Access>
+        <Location left="85" top="94" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>KB</Name>
+        <Access>Public</Access>
+        <Location left="118" top="147" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>INSTRUCTION</Name>
+        <Access>Public</Access>
+        <Location left="142" top="196" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>USE</Name>
+        <Access>Public</Access>
+        <Location left="174" top="255" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WINDOW</Name>
+        <Access>Public</Access>
+        <Location left="200" top="315" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HELP</Name>
+        <Access>Public</Access>
+        <Location left="201" top="373" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SCREEN</Name>
+        <Access>Public</Access>
+        <Location left="173" top="424" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LAUNCH</Name>
+        <Access>Public</Access>
+        <Location left="133" top="474" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GROUP</Name>
+        <Access>Public</Access>
+        <Location left="112" top="516" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PROGRAM</Name>
+        <Access>Public</Access>
+        <Location left="88" top="568" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FILESYSTEM</Name>
+        <Access>Public</Access>
+        <Location left="144" top="613" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MENU</Name>
+        <Access>Public</Access>
+        <Location left="175" top="662" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>debug</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>DEBUG</Name>
+        <Access>Public</Access>
+        <Location left="21" top="8" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DEBUG(fullpath fp, string param1, string param2)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CALL</Name>
+        <Access>Public</Access>
+        <Location left="21" top="243" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>INFO</Name>
+        <Access>Public</Access>
+        <Location left="21" top="485" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ASSEMBLE</Name>
+        <Access>Public</Access>
+        <Location left="361" top="105" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ASSEMBLE(address a)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>COMPARE</Name>
+        <Access>Public</Access>
+        <Location left="361" top="197" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public COMPARE(range r, address a)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DUMP</Name>
+        <Access>Public</Access>
+        <Location left="361" top="299" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DUMP(range r)</Member>
+        <Member type="Constructor">public DUMP(address a)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ENTER</Name>
+        <Access>Public</Access>
+        <Location left="361" top="385" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ENTER(address a, list l)</Member>
+        <Member type="Constructor">public ENTER(address a)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FILL</Name>
+        <Access>Public</Access>
+        <Location left="361" top="511" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FILL(range r, list l)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GO</Name>
+        <Access>Public</Access>
+        <Location left="361" top="625" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public GO(address a)</Member>
+        <Member type="Constructor">public GO(address a1, address a2)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HEXA</Name>
+        <Access>Public</Access>
+        <Location left="538" top="625" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public HEXA(string value1, string value2)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LOAD</Name>
+        <Access>Public</Access>
+        <Location left="569" top="704" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public LOAD(address a, record r1, record r2)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>INPUT</Name>
+        <Access>Public</Access>
+        <Location left="361" top="725" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public INPUT(port p, address a)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MOVE</Name>
+        <Access>Public</Access>
+        <Location left="361" top="835" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public MOVE(ange r, address a)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NAME</Name>
+        <Access>Public</Access>
+        <Location left="553" top="812" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public NAME(fullpath fp)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OUTPUT</Name>
+        <Access>Public</Access>
+        <Location left="553" top="916" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public OUTPUT(portaddress pa, byte b)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PROCEED</Name>
+        <Access>Public</Access>
+        <Location left="385" top="939" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public PROCEED(address a, number n)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>QUIT</Name>
+        <Access>Public</Access>
+        <Location left="569" top="1025" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>REGISTER</Name>
+        <Access>Public</Access>
+        <Location left="385" top="1067" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public REGISTER()</Member>
+        <Member type="Constructor">public REGISTER(register r)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SEARCH</Name>
+        <Access>Public</Access>
+        <Location left="553" top="1108" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SEARCH(range r, list l)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TRACE</Name>
+        <Access>Public</Access>
+        <Location left="385" top="1190" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TRACE()</Member>
+        <Member type="Constructor">public TRACE(address a, string value)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>UNASSEMBLE</Name>
+        <Access>Public</Access>
+        <Location left="553" top="1244" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public UNASSEMBLE(range r)</Member>
+        <Member type="Constructor">public UNASSEMBLE(address a)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WRITE</Name>
+        <Access>Public</Access>
+        <Location left="553" top="1361" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public WRITE(address a)</Member>
+        <Member type="Constructor">public WRITE(address a, drive drv, record r1, record r2)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XA</Name>
+        <Access>Public</Access>
+        <Location left="55" top="969" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public XA(int count)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XD</Name>
+        <Access>Public</Access>
+        <Location left="77" top="1067" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public XD(handle hnd)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XM</Name>
+        <Access>Public</Access>
+        <Location left="19" top="1190" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public XM(lpage lp, ppage pp, handle hnd)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XS</Name>
+        <Access>Public</Access>
+        <Location left="19" top="1304" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public XS()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ERROR</Name>
+        <Access>Public</Access>
+        <Location left="322" top="1567" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>badflag</Name>
+        <Access>Public</Access>
+        <Location left="114" top="1653" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>breakpoints</Name>
+        <Access>Public</Access>
+        <Location left="126" top="1704" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>badregister</Name>
+        <Access>Public</Access>
+        <Location left="140" top="1750" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>doubleflag</Name>
+        <Access>Public</Access>
+        <Location left="171" top="1802" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>address</Name>
+        <Access>Public</Access>
+        <Location left="756" top="57" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">register registername</Member>
+        <Member type="Field">string offset</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>range</Name>
+        <Access>Public</Access>
+        <Location left="569" top="179" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string min</Member>
+        <Member type="Field">string max</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>offset</Name>
+        <Access>Public</Access>
+        <Location left="580" top="291" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string offs</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>list</Name>
+        <Access>Public</Access>
+        <Location left="602" top="379" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; string &gt; lista</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>port</Name>
+        <Access>Public</Access>
+        <Location left="756" top="705" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string p</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>driver</Name>
+        <Access>Public</Access>
+        <Location left="772" top="795" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string drv</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>record</Name>
+        <Access>Public</Access>
+        <Location left="787" top="893" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string rec</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>input</Name>
+        <Access>Public</Access>
+        <Location left="804" top="992" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string inp</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>fullpath</Name>
+        <Access>Public</Access>
+        <Location left="778" top="1108" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">drive drv</Member>
+        <Member type="Field">string path</Member>
+        <Member type="Field">string filename</Member>
+        <Member type="Field">string extension</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>portaddress</Name>
+        <Access>Public</Access>
+        <Location left="767" top="1244" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>number</Name>
+        <Access>Public</Access>
+        <Location left="758" top="1299" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string nr</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>register</Name>
+        <Access>Public</Access>
+        <Location left="774" top="1394" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string theregister</Member>
+        <Member type="Field">string value</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>handle</Name>
+        <Access>Public</Access>
+        <Location left="585" top="1476" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string hnd</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>lpage</Name>
+        <Access>Public</Access>
+        <Location left="600" top="1567" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int lp</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ppage</Name>
+        <Access>Public</Access>
+        <Location left="771" top="1569" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int pp</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>admin</Name>
+    <Language>CSharp</Language>
+    <Entities />
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>softpacks</Name>
+    <Language>CSharp</Language>
+    <Entities />
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>machine</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>CALCULATOR</Name>
+        <Access>Public</Access>
+        <Location left="13" top="21" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PC</Name>
+        <Access>Public</Access>
+        <Location left="57" top="62" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int MEMORY</Member>
+        <Member type="Field">int PRINTERTYPE</Member>
+        <Member type="Field">bool EXTENDEDMEMORY</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BIOS</Name>
+        <Access>Public</Access>
+        <Location left="102" top="120" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HARDWARE</Name>
+        <Access>Public</Access>
+        <Location left="165" top="175" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MACHINE</Name>
+        <Access>Public</Access>
+        <Location left="206" top="235" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
