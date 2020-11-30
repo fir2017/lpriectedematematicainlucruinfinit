@@ -1,0 +1,122 @@
+function rollTheDice() {
+var die1 = Math.floor(Math.random() * 6 + 1);
+var die2 = Math.floor(Math.random() * 6 + 1);
+console.log("Die 1: " + die1 + " Die 2: " + die2);
+}
+
+
+
+
+function rollTheDice() {
+var rand0to35 = Math.floor(Math.random() * 36);
+var die1 = Math.floor(rand0to35 / 6) + 1;
+var die2 = (rand0to35 % 6) + 1;
+console.log("Die 1: " + die1 + " Die 2: " + die2);
+}
+
+
+
+
+
+function dieRoll2() {
+var die2;
+var die6 = dieRoll();
+if (die6 <= 3) {
+die2 = 1;
+} else {
+die2 = 2;
+}
+return die2;
+}
+
+
+
+
+
+
+function dieRoll3() {
+var die3;
+var die6 = dieRoll();
+die3 = Math.ceil(die6 / 2);
+return die3;
+}
+
+
+
+
+
+
+
+function dieRoll4(){
+var die4;
+die2First = dieRoll2() - 1;
+die2Second = dieRoll2() - 1;
+die4 = (die2First * 2 + die2Second) + 1;
+return die4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+function dieRoll5() {
+var die5;
+do {
+die5 = dieRoll();
+} while (die5 == 6);
+return die5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function estimatePi(iterations) {
+var i;
+var randX;
+var randY;
+var dist;
+var inside = 0;
+for (i = 0; i < iterations; i++) {
+randX = Math.random();
+randY = Math.random();
+dist = (randX * randX) + (randY * randY);
+if (dist <= 1) {
+inside++;
+}
+}
+return (4 * (inside / iterations));
+}
+
+
+
+
+
+
+
+
+
+
+
+

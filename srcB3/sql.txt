@@ -1,0 +1,478 @@
+Player (
+name CHAR(20),
+number INTEGER(4)
+);
+Stats (
+number INTEGER(4),
+totalPoints INTEGER(4),
+year CHAR(20)
+);
+
+
+Player (
+name CHAR(20),
+number INTEGER(4) PRIMARY KEY
+);
+Stats (
+number INTEGER(4),
+totalPoints INTEGER(4),
+year CHAR(20),
+FOREIGN KEY (number) REFERENCES Player
+);
+
+
+
+
+
+INSERT INTO Player VALUES('Bill Henry', 50);
+SELECT is the SQL statement most commonly seen in interviews. A SELECT statement retrieves data
+from a table. For example, the statement:
+SELECT * FROM Player;
+
+
+
+
+
+SELECT name FROM Player;
+
+
+
+SELECT name FROM Player WHERE number < 10 OR number > 40;
+
+
+
+
+SELECT name, totalPoints, year FROM Player, Stats
+WHERE Player.number = Stats.number;
+
+
+
+
+
+SELECT name, totalPoints, year FROM Player INNER JOIN Stats
+ON Player.number = Stats.number;
+This syntax provides a cleaner separation between the logic of joining tables and the logic of choos-
+ing rows. Inner joins are the default type of join, so the INNER keyword is optional for an inner join.
+When the key columns in the tables being joined have the same name, a more succinct syntax can be
+used:
+SELECT name, totalPoints, year FROM Player JOIN Stats
+USING (number);
+
+
+
+
+SELECT name, totalPoints, year FROM Player LEFT OUTER JOIN Stats
+ON Player.number = Stats.number;
+
+
+
+
+SELECT AVG(totalPoints) FROM Stats;
+
+
+
+
+
+SELECT name, AVG(totalPoints) FROM Player INNER JOIN Stats
+ON Player.number = Stats.number GROUP BY name;
+
+
+
+
+
+
+
+INSERT INTO student (student_id, first_name, last_name)
+VALUES (4489, 'Suzanne', 'Gonzalez');
+SELECT * FROM student;
+
+
+
+
+
+
+
+
+Olympics(
+city CHAR(16),
+year INTEGER(4)
+);
+
+
+
+
+
+Company (
+companyName CHAR(30),
+id INTEGER(4) PRIMARY KEY
+);
+EmployeesHired (
+id INTEGER(4),
+numHired INTEGER(4),
+fiscalQuarter INTEGER(4),
+FOREIGN KEY (id) REFERENCES Company
+);
+
+
+
+
+
+
+SELECT companyName FROM Company, EmployeesHired
+WHERE Company.id = EmployeesHired.id AND fiscalQuarter = 4;
+
+
+
+
+
+
+SELECT companyName FROM Company, EmployeesHired
+WHERE Company.id = EmployeesHired.id AND fiscalQuarter = 4
+AND numHired > 0;
+
+
+
+
+
+
+
+SELECT companyName FROM Company WHERE id NOT IN
+(SELECT id from EmployeesHired WHERE numHired > 0);
+
+
+
+
+
+
+
+SELECT companyName, SUM(numHired)
+FROM Company, EmployeesHired
+WHERE Company.id = EmployeesHired.id
+GROUP BY companyName;
+
+
+
+
+
+
+
+
+
+SELECT companyName, SUM(numHired)
+FROM Company LEFT OUTER JOIN EmployeesHired
+ON Company.id = EmployeesHired.id
+GROUP BY companyName;
+
+
+
+
+
+
+
+
+SELECT companyName, COALESCE(SUM(numHired), 0)
+FROM Company LEFT OUTER JOIN EmployeesHired
+ON Company.id = EmployeesHired.id
+GROUP BY companyName;
+
+
+
+
+
+
+
+
+Test (
+num INTEGER(4)
+);
+
+
+
+
+
+
+
+SELECT Lesser.num, Greater.num
+FROM Test AS Greater, Test AS Lesser
+WHERE Lesser.num < Greater.num;
+
+
+
+
+SELECT num FROM Test WHERE num NOT IN
+(SELECT Lesser.num FROM Test AS Greater, Test AS Lesser
+WHERE Lesser.num < Greater.num);
+There is one minor bug in this query. If the maximum value is repeated in the Test table, it will be
+returned twice. To prevent this, use the DISTINCT keyword. This changes the query to the following:
+SELECT DISTINCT num FROM Test WHERE num NOT IN
+(SELECT Lesser.num FROM Test AS Greater, Test AS Lesser
+WHERE Lesser.num < Greater.num);
+
+
+
+
+
+
+
+Address (
+street CHAR(30) NOT NULL,
+apartment CHAR(10),
+city CHAR(40) NOT NULL,
+);
+write a SQL statement that returns nonapartment addresses only.
+This problem seems simple. The immediately obvious solution is this query:
+SELECT * FROM Address WHERE apartment = NULL;
+
+
+
+
+
+
+
+
+
+SELECT * FROM Address WHERE apartment IS NULL;
+
+
+
+
+
+
+SELECT * FROM Address WHERE apartment <> 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+"students": {
+"eric": {
+"name": "Eric Giguere",
+"classes": {
+"Advanced Programming": true,
+"Math 205": true
+...
+}
+},
+...
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+"classes": {
+"Advanced Programming": {
+"name": "Advanced Programming: NoSQL databases",
+"students": {
+"eric": true,
+"john": true,
+"noah": true
+}
+},
+...
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE student (
+student_id int PRIMARY KEY,
+first_name varchar(255),
+last_name varchar(255),
+email varchar(255) UNIQUE NOT NULL
+);
+CREATE TABLE class (
+class_id int PRIMARY KEY,
+title varchar(255),
+room_number varchar(255),
+instructor varchar(255)
+);
+CREATE TABLE enrollment (
+student_id int NOT NULL FOREIGN KEY REFERENCES student(student_id),
+class_id int NOT NULL FOREIGN KEY REFERENCES class(class_id)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT COUNT (*)
+FROM student JOIN enrollment USING (student_id)
+WHERE email = 'john@pie.com';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE enrollment {
+student_id int NOT NULL,
+class_id int NOT NULL,
+email varchar(255)
+};
+Then, your query is a straightforward count of rows in the enrollment table:
+SELECT COUNT (*)
+FROM enrollment WHERE email = 'john@pie.com';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE student (
+student_id int NOT NULL,
+first_name varchar(255),
+last_name varchar(255),
+email varchar(255) PRIMARY KEY UNIQUE NOT NULL,
+num_classes int
+);
+Now, the query to look up the number of classes is trivial:
+SELECT num_classes from student where email = 'john@pie.com';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO enrollment VALUES (334, 887);
+UPDATE student
+SET num_classes = num_classes + 1
+WHERE student_id = 334;
+Unenrollment looks very much like the reverse of the insert and the update—again making sure this
+occurs within a transaction:
+DELETE FROM enrollment WHERE student_id = 334 AND class_id = 887;
+UPDATE student
+SET num_classes = num_classes - 1
+WHERE student_id = 334;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+byte[] arrayA = new byte[10];
+byte[] arrayB = new byte[10];
+arrayA = arrayB; // arrayA now refers to the same array as arrayB
+If you want to copy the contents of one array to another, you must do it element by element in a loop
+or call a system function:
+if ( arrayB.length <= arrayA.length ){
+System.arraycopy( arrayB, 0, arrayA, 0, arrayB.length );
+}
+
+Button myButtons[] = new Button[3]; // Buttons not yet constructed
+for ( int i = 0; i < myButtons.length; i++ ) {
+myButtons[i] = new Button(); // Constructing Buttons
+}
+// All Buttons constructed
+Alternatively, you can use array initialization syntax (which is allowed only where the array is
+declared):
+Button myButtons[] = { new Button(), new Button(), new Button() };
+
+
+
+
+Array cities = new Array(); // zero length array
+cities[0] = "New York";
+cities[1] = "Los Angeles"; // now array is length 2
+You can change the size of an array simply by modifying its length property:
+cities.length = 1; // drop Los Angeles...
+cities[ cities.length ] = "San Francisco"; // new cities[1] value
+
+

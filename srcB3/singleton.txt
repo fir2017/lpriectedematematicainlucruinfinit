@@ -1,0 +1,65 @@
+// Implements a simple logging class using a singleton.
+public class Logger {
+// Create and store the singleton.
+private static final Logger instance = new Logger();
+// Prevent anyone else from creating this class.
+private Logger(){
+}
+// Return the singleton instance.
+public static Logger getInstance() { return instance; }
+// Log a string to the console.
+//
+// example: Logger.getInstance().log(“this is a test”);
+//
+public void log( String msg ){
+System.out.println( System.currentTimeMillis() + “: “ + msg );
+}
+}
+
+
+// Deferred initialization of Logger.
+public class Logger {
+// Create and store the singleton.
+private static Logger instance = null; // no longer final
+// Prevent anyone else from creating this class.
+private Logger(){
+}
+// Return the singleton instance.
+public static Logger getInstance() {
+if ( instance == null ){
+200 ❘ CHAPTER 12 Design Patterns
+instance = new Logger();
+}
+return instance;
+}
+// Log a string to the console.
+public void log( String msg ){
+System.out.println( System.currentTimeMillis() + “: “ + msg );
+}
+}
+This simple change accomplishes deferred initialization, but introduces a new problem—it’s no
+longer thread-safe. In the original version of your class, the instance was initialized when the class
+was loaded, before any methods could be called. In the revised, deferred initialization version, the
+instance is created in getInstance. What happens if two threads call getInstance simultaneously?
+They might both see instance as uninitialized, and both try to create the instance—clearly not
+what you want for a singleton. You can prevent this from happening by making getInstance a
+synchronized method:
+// Return the singleton instance.
+public synchronized static Logger getInstance() {
+if ( instance == null ){
+instance = new Logger();
+}
+return instance;
+}
+
+
+
+// Inner class initializes instance on load, won’t be loaded
+// until referenced by getInstance()
+private static class LoggerHolder {
+public static final Logger instance = new Logger();
+}
+// Return the singleton instance.
+public static Logger getInstance() { return LoggerHolder.instance; }
+
+

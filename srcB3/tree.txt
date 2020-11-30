@@ -1,0 +1,94 @@
+public class Node {
+public Node[] children;
+}
+public class IntNode : Node {
+public int value;
+}
+
+
+public abstract class Node {
+private Node[] children;
+public Node( Node[] children ){
+this.children = children;
+}
+public int getNumChildren(){
+return children.length;
+}
+public Node getChild( int index ){
+return children[ index ];
+}
+}
+public class IntNode extends Node {
+private int value;
+public IntNode( Node[] children, int value ){
+super( children );
+this.value = value;
+}
+public int getValue(){
+return value;
+}
+}
+
+
+
+binary tree 
+
+
+
+public class Node {
+private Node left;
+private Node right;
+private int value;
+public Node( Node left, Node right, int value ){
+this.left = left;
+this.right = right;
+this.value = value;
+}
+public Node getLeft() { return left; }
+public Node getRight() { return right; }
+public int getValue() { return value; }
+}
+
+
+
+
+
+
+search tree 
+
+
+Node findNode( Node root, int value ){
+while ( root != null ){
+int curVal = root.getValue();
+if ( curVal == value ) break;
+if ( curVal < value ){
+root = root.getRight();
+} else { // curVal > value
+root = root.getLeft();
+}
+}
+return root;
+}
+
+
+
+
+
+Node findNode( Node root, int value ){
+if ( root == null ) return null;
+int curVal = root.getValue();
+if ( curVal == value ) return root;
+if ( curVal < value ){
+return findNode( root.getRight(), value );
+} else { // curVal > value
+return findNode( root.getLeft(), value );
+}
+}
+
+
+
+
+
+heap sort
+
+

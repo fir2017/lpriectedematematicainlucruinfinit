@@ -1,0 +1,532 @@
+ 
+ 
+ typedef struct Element {
+struct Element *next;
+void *data;
+} Element;
+The corresponding prototypes for push and pop follow:
+void push( Element *stack, void *data );
+void *pop( Element *stack );
+
+
+
+
+void push( Element **stack, void *data );
+void *pop( Element **stack );
+
+
+
+
+
+
+bool push( Element **stack, void *data );
+bool pop( Element **stack, void **data );
+
+
+
+bool createStack( Element **stack );
+bool deleteStack( Element **stack );
+52 ❘ CHAPTER 5 Linked Lists
+When everything is designed properly, the coding is fairly simple. The createStack routine sets the
+stack pointer to NULL and returns success:
+bool createStack( Element **stack ){
+*stack = NULL;
+return true;
+}
+The push operation allocates the new element, checks for failure, sets the data of the new element,
+places it at the top of the stack, and adjusts the stack pointer:
+bool push( Element **stack, void *data ){
+Element *elem = malloc( sizeof(Element) );
+if ( !elem ) return false;
+elem->data = data;
+elem->next = *stack;
+*stack = elem;
+return true;
+}
+The pop operation checks that the stack isn’t empty, fetches the data from the top element, adjusts
+the stack pointer, and frees the element that is no longer on the stack, as follows:
+bool pop( Element **stack, void **data ){
+Element *elem;
+if ( !(elem = *stack) ) return false;
+*data = elem->data;
+*stack = elem->next;
+free( elem );
+return true;
+}
+Although deleteStack could call pop repeatedly, it’s more efficient to simply traverse the data
+structure, freeing as you go. Don’t forget that you need a temporary pointer to hold the address of
+the next element while you free the current one:
+bool deleteStack( Element **stack ){
+Element *next;
+while ( *stack ){
+next = (*stack)->next;
+free( *stack );
+*stack = next;
+}
+return true;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+template <class T>
+class Stack
+{
+public:
+Stack() : head( nullptr ) {};
+~Stack();
+void push( T data );
+T pop();
+protected:
+class Element {
+public:
+Element( Element *n, T d ): next( n ), data( d ) {}
+Element *getNext() const { return next; }
+T value() const { return data; }
+private:
+Element *next;
+T data;
+};
+Element *head;
+};
+template <class T>
+Stack<T>::~Stack() {
+while ( head ){
+Element *next = head->getNext();
+delete head;
+head = next;
+}
+}
+template <class T>
+void Stack<T>::push( T data ){
+///* Allocation error will throw exception */
+Element *element = new Element( head, data );
+head = element;
+}
+template <class T>
+T Stack<T>::pop() {
+Element *popElement = head;
+T data;
+/* Assume StackError exception class is defined elsewhere */
+if ( head == nullptr )
+throw StackError( E_EMPTY );
+
+
+
+data = head->value();
+head = head->getNext();
+delete popElement;
+return data;
+}
+
+
+
+
+
+
+
+
+
+bool delete( Element *elem );
+bool insertAfter( Element *elem, int data );
+
+
+
+
+
+
+bool delete( Element *elem ){
+if ( elem == head ) {
+head = elem->next;
+free( elem );
+return true;
+}
+...
+
+
+
+
+bool delete( Element *elem ){
+Element *curPos = head;
+if ( elem == head ) {
+head = elem->next;
+free( elem );
+return true;
+}
+while ( curPos ){
+56 ❘ CHAPTER 5 Linked Lists
+if ( curPos->next == elem ){
+curPos->next = elem->next;
+free( elem );
+return true;
+}
+curPos = curPos->next;
+}
+return false;
+...
+
+
+
+
+
+
+
+bool delete( Element *elem ){
+Element *curPos = head;
+if ( elem == head ){
+head = elem->next;
+free( elem );
+return true;
+}
+while ( curPos ){
+if ( curPos->next == elem ){
+curPos->next = elem->next;
+free( elem );
+if ( curPos->next == NULL )
+tail = curPos;
+return true;
+}
+curPos = curPos->next;
+}
+return false;
+}
+
+
+
+
+
+
+bool delete( Element *elem ){
+Element *curPos = head;
+if ( !elem )
+return false;
+if ( elem == head ){
+head = elem->next;
+free( elem );
+/* special case for 1 element list */
+if ( !head )
+tail = NULL;
+return true;
+}
+while ( curPos ){
+if ( curPos->next == elem ){
+curPos->next = elem->next;
+free( elem );
+if ( curPos->next == NULL )
+tail = curPos;
+return true;
+}
+curPos = curPos->next;
+}
+return false;
+}
+You can apply similar reasoning to writing insertAfter. Because you allocate a new element in this
+function, you must take care to check that the allocation is successful and that you don’t leak any
+memory. Many of the special cases encountered in delete are relevant in insertAfter, however,
+and the code is structurally similar:
+bool insertAfter( Element *elem, int data ){
+Element *newElem, *curPos = head;
+newElem = malloc( sizeof(Element) );
+
+
+if ( !newElem )
+return false;
+newElem->data = data;
+/* Insert at beginning of list */
+if ( !elem ){
+newElem->next = head;
+head = newElem;
+/* Special case for empty list */
+if ( !tail )
+tail = newElem;
+return true;
+}
+while ( curPos ){
+if ( curPos == elem ){
+newElem->next = curPos->next;
+curPos->next = newElem;
+/* Special case for inserting at end of list */
+if ( !(newElem->next) )
+tail = newElem;
+return true;
+}
+curPos = curPos->next;
+}
+/* Insert position not found; free element and return failure */
+free( newElem );
+return false;
+}
+
+
+
+
+
+bool delete( Element *elem ){
+Element *curPos = NULL, **ppNext = &head;
+if ( !elem )
+return false;
+while (true) {
+if( *ppNext == elem ){
+*ppNext = elem->next;
+if ( !(elem->next)) /* If deleting last element update tail */
+tail = curPos;
+free( elem );
+return true;
+}
+if (!(curPos = *ppNext))
+break;
+ppNext = &(curPos->next);
+}
+return false;
+}
+You can reimplement insertAfter using a similar approach with similar improvement in length
+and elegance:
+bool insertAfter( Element *elem, int data ){
+Element *newElem, *curPos = NULL, **ppNext = &head;
+newElem = malloc( sizeof(Element) );
+if ( !newElem )
+return false;
+newElem->data = data;
+while (true) {
+if( curPos == elem ){
+newElem->next = *ppNext;
+*ppNext = newElem;
+www.allitebooks.com
+60 ❘ CHAPTER 5 Linked Lists
+/* Update tail if inserting at end of list */
+if( !(newElem->next) )
+tail = newElem;
+return true;
+}
+if (!(curPos = *ppNext))
+break;
+ppNext = &(curPos->next);
+}
+/* Insert position not found; free element and return failure */
+free( newElem );
+return false;
+}
+
+
+
+
+
+
+
+void removeHead( ListElement *head ){
+free( head ); // Line 1
+head = head->next; // Line 2
+}
+
+
+
+
+
+
+void removeHead( ListElement *head ){
+ListElement *temp = head->next; // Line 1
+free( head ); // Line 2
+head = temp; // Line 3
+}
+
+
+
+
+
+
+
+void removeHead( ListElement **head ){
+ListElement *temp = (*head)->next; // Line 1
+free( *head ); // Line 2
+*head = temp; // Line 3
+}
+
+
+
+
+
+
+void removeHead( ListElement **head ){
+ListElement *temp;
+62 ❘ CHAPTER 5 Linked Lists
+if ( head && *head ){
+temp = (*head)->next;
+free( *head );
+*head = temp;
+}
+}
+
+
+
+
+
+
+
+
+
+ListElement *findMToLastElement( ListElement *head, int m ){
+ListElement *current, *mBehind;
+int i;
+if (!head)
+return NULL;
+/* Advance current m elements from beginning,
+* checking for the end of the list
+*/
+current = head;
+for ( i = 0; i < m; i++ ){
+if ( current->next ){
+current = current->next;
+} else {
+return NULL;
+}
+}
+/* Start mBehind at beginning and advance pointers
+* together until current hits last element
+*/
+mBehind = head;
+while ( current->next ){
+current = current->next;
+mBehind = mBehind->next;
+}
+/* mBehind now points to the element we were
+* searching for, so return it
+*/
+return mBehind;
+}
+
+
+
+
+
+list flatening
+
+
+typedef struct Node {
+struct Node *next;
+struct Node *prev;
+struct Node *child;
+int value;
+} Node;
+
+
+
+void flattenList( Node *head, Node **tail ){
+Node *curNode = head;
+while ( curNode ){
+/* The current node has a child */
+if ( curNode->child ){
+append( curNode->child, tail );
+}
+curNode = curNode->next;
+}
+}
+/* Appends the child list to the end of the tail and updates
+* the tail.
+*/
+void append( Node *child, Node **tail ){
+Node *curNode;
+/* Append the child list to the end */
+(*tail)->next = child;
+68 ❘ CHAPTER 5 Linked Lists
+child->prev = *tail;
+/* Find the new tail, which is the end of the child list. */
+for ( curNode = child; curNode->next; curNode = curNode->next )
+; /* Body intentionally empty */
+/* Update the tail pointer now that curNode is the new tail */
+*tail = curNode;
+}
+
+
+
+
+
+
+
+List Unflattening
+
+
+
+/* unflattenList wraps the recursive function and updates the tail pointer. */
+void unflattenList( Node *start, Node **tail ){
+Node *curNode;
+exploreAndSeparate( start );
+/* Update the tail pointer */
+for ( curNode = start; curNode->next; curNode = curNode->next )
+; /* Body intentionally empty */
+*tail = curNode;
+}
+/* exploreAndSeparate actually does the recursion and separation */
+void exploreAndSeparate( Node *childListStart ){
+Node *curNode = childListStart;
+while ( curNode ){
+if ( curNode->child ){
+/* terminates the child list before the child */
+curNode->child->prev->next = NULL;
+/* starts the child list beginning with the child */
+curNode->child->prev = NULL;
+exploreAndSeparate( curNode->child );
+}
+curNode = curNode->next;
+}
+}
+
+
+
+
+
+
+
+void unflattenIteratative(Node* start, Node** tail) {
+if (!(*tail)) return; //don't dereference if passed a null pointer
+Node* tracker = *tail;
+while (tracker){
+if (tracker->child){
+*tail = tracker->child->prev;
+tracker->child->prev = NULL;
+(*tail)->next = NULL;
+}
+tracker = tracker->prev;
+}
+}
+
+
+
+
+
+circular list 
+
+/* Takes a pointer to the head of a linked list and determines if
+* the list ends in a cycle or is NULL terminated
+*/
+bool isCyclicList( Node *head ){
+Node *fast, *slow;
+if ( !head )
+return false;
+slow = head;
+fast = head->next;
+while ( true ){
+if ( !fast || !fast->next )
+return false;
+else if ( fast == slow || fast->next == slow )
+return true;
+Summary ❘ 73
+else {
+slow = slow->next;
+fast = fast->next->next;
+}
+}
+}
+
+

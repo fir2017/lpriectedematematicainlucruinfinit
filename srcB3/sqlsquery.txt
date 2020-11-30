@@ -1,0 +1,13 @@
+result = sql.executeQuery("SELECT uid FROM Users WHERE user = '" +
+username + "' AND pass = '" + pword + "';");
+SELECT uid FROM Users WHERE user = 'admin' OR 'A' = 'B' AND pass = 'xyz';
+
+
+sql = db.prepareStatement("SELECT uid FROM Users WHERE user = ? AND " +
+"pass = ? ;");
+sql.setString(1, username);
+sql.setString(2, pword);
+result = sql.executeQuery();
+
+
+

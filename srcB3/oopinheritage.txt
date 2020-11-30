@@ -1,0 +1,17 @@
+class A {
+protected:
+bool flag;
+};
+class B : public A {};
+class C : public A {};
+class D : public B, public C {
+public:
+void setFlag( bool nflag ){
+flag = nflag; // ambiguous
+}
+};
+In this example, the flag data member is defined by class A. But class D descends from class B
+and class C, which both derive from A, so in essence two copies of flag are available because two
+instances of A are in D’s class hierarchy. Which one do you want to set? The compiler will complain
+that the reference to flag in D is ambiguous. One fix is to explicitly disambiguate the reference:
+B::flag = nflag;

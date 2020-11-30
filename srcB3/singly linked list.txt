@@ -1,0 +1,66 @@
+// The simplest singly linked list element
+typedef struct ListElement {
+struct ListElement *next;
+} ListElement;
+
+
+
+
+// A more useful singly linked list element
+typedef struct IntElement {
+struct IntElement *next;
+int data;
+} IntElement;
+
+
+
+
+// A singly linked list in C++
+class IntElement {
+public:
+IntElement( int value ): next( NULL ), data( value ) {}
+~IntElement() {}
+IntElement *getNext() const { return next; }
+int value() const { return data; }
+void setNext( IntElement *elem ) { next = elem; }
+void setValue( int value ) { data = value; }
+private:
+IntElement *next;
+int data;
+};
+
+
+
+
+// A templated C++ singly linked list
+template <class T>
+class ListElement {
+public:
+ListElement( const T &value ): next( NULL ), data( value ) {}
+~ListElement() {}
+ListElement *getNext() const { return next; }
+const T& value() const { return data; }
+void setNext( ListElement *elem ) { next = elem; }
+void setValue( const T &value ) { data = value; }
+private:
+ListElement *next;
+T data;
+};
+
+
+
+
+
+// A templated Java singly linked list
+public class ListElement<T> {
+public ListElement( T value ) { data = value; }
+public ListElement<T> next() { return next; }
+public T value() { return data; }
+public void setNext( ListElement<T> elem ) { next = elem; }
+public void setValue( T value ) { data = value; }
+private ListElement<T> next;
+private T data;
+}
+
+
+

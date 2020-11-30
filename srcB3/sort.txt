@@ -1,0 +1,383 @@
+ // Sort an array using a recursive selection sort.
+public static void selectionSortRecursive( int[] data ){
+selectionSortRecursive( data, 0 );
+}
+// Sort a subset of the array starting at the given index.
+private static void selectionSortRecursive( int[] data, int start ){
+if ( start < data.length - 1 ){
+swap( data, start, findMinimumIndex( data, start ) );
+selectionSortRecursive( data, start + 1 );
+}
+}
+Sorting Algorithms ❘ 145
+This implementation depends on the two helper routines findMinimumIndex and swap:
+// Find the position of the minimum value starting at the given index.
+private static int findMinimumIndex( int[] data, int start ){
+int minPos = start;
+for ( int i = start + 1; i < data.length; ++i ){
+if ( data[i] < data[minPos] ){
+minPos = i;
+}
+}
+return minPos;
+}
+// Swap two elements in an array.
+private static void swap( int[] data, int index1, int index2 ){
+if ( index1 != index2 ){
+int tmp = data[index1];
+data[index1] = data[index2];
+data[index2] = tmp;
+}
+}
+
+
+
+Insertion Sort
+Insertion sort is another simple sorting algorithm. It builds a sorted array (or list) one element at a
+time by comparing each new element to the already-sorted elements and inserting the new element
+into the correct location, similar to the way you sort a hand of playing cards.
+A simple implementation of insertion sort is as follows:
+// Sort an array using a simple insertion sort.
+public static void insertionSort( int[] data ){
+for ( int which = 1; which < data.length; ++which ){
+146 ❘ CHAPTER 9 Sorting
+int val = data[which];
+for ( int i = which - 1; i >= 0; --i ){
+if ( data[i] > val ){
+data[i + 1] = data[i];
+data[i] = val;
+} else {
+break;
+}
+}
+}
+}
+
+
+
+
+
+
+Quicksort
+Quicksort is a divide-and-conquer algorithm that involves choosing a pivot value from a data set
+and then splitting the set into two subsets: a set that contains all values less than the pivot and a
+set that contains all values greater than or equal to the pivot. The pivot/split process is recursively
+applied to each subset until there are no more subsets to split. The results are combined to form the
+final sorted set.
+A naïve implementation of this algorithm looks like:
+// Sort an array using a simple but inefficient quicksort.
+public static void quicksortSimple( int[] data ){
+if ( data.length < 2 ){
+return;
+}
+int pivotIndex = data.length / 2;
+int pivotValue = data[ pivotIndex ];
+int leftCount = 0;
+// Count how many are less than the pivot
+for ( int i = 0; i < data.length; ++i ){
+if ( data[ i ] < pivotValue ) ++leftCount;
+}
+// Allocate the arrays and create the subsets
+int[] left = new int[ leftCount ];
+int[] right = new int[ data.length - leftCount - 1 ];
+Sorting Algorithms ❘ 147
+int l = 0;
+int r = 0;
+for ( int i = 0; i < data.length; ++i ){
+if ( i == pivotIndex ) continue;
+int val = data[ i ];
+if ( val < pivotValue ){
+left[ l++ ] = val;
+} else {
+right[ r++ ] = val;
+}
+}
+// Sort the subsets
+quicksortSimple( left );
+quicksortSimple( right );
+// Combine the sorted arrays and the pivot back into the original array
+System.arraycopy( left, 0, data, 0, left.length );
+data[ left.length ] = pivotValue;
+System.arraycopy( right, 0, data, left.length + 1, right.length );
+}
+
+
+
+
+
+
+Merge Sort
+Merge sort is another divide-and-conquer algorithm that works by splitting a data set into two or
+more subsets, sorting the subsets, and then merging them together into the final sorted set.
+The algorithm can be implemented recursively as follows:
+// Sort an array using a simple but inefficient merge sort.
+public static void mergeSortSimple( int[] data ){
+if ( data.length < 2 ){
+return;
+}
+// Split the array into two subarrays of approx equal size.
+int mid = data.length / 2;
+int[] left = new int[ mid ];
+int[] right = new int[ data.length - mid ];
+System.arraycopy( data, 0, left, 0, left.length );
+System.arraycopy( data, mid, right, 0, right.length );
+// Sort each subarray, then merge the result.
+mergeSortSimple( left );
+mergeSortSimple( right );
+merge( data, left, right );
+}
+// Merge two smaller arrays into a larger array.
+private static void merge( int[] dest, int[] left, int[] right ){
+int dind = 0;
+int lind = 0;
+int rind = 0;
+// Merge arrays while there are elements in both
+while ( lind < left.length && rind < right.length ){
+if ( left[ lind ] <= right[ rind ] ){
+dest[ dind++ ] = left[ lind++ ];
+Sorting Problems ❘ 149
+} else {
+dest[ dind++ ] = right[ rind++ ];
+}
+}
+// Copy rest of whichever array remains
+while ( lind < left.length )
+dest[ dind++ ] = left[ lind++ ];
+while ( rind < right.length )
+dest[ dind++ ] = right[ rind++ ];
+}
+Most of the work is done in the merge method, which combines two sorted arrays into a larger
+sorted array.
+A hybrid merge sort occurs when a different sorting algorithm is used to sort subsets below a speci-
+fied minimum size. For example, you can transform the mergeSortSimple method into a hybrid
+algorithm by replacing the termination condition:
+if ( data.length < 2 ){
+return;
+}
+with an insertion sort:
+if ( data.length < 10 ){ // some small empirically determined value
+insertionSort( data );
+return;
+}
+
+
+
+
+
+
+
+
+Stable Selection Sort
+PROBLEM Implement a stable version of the selection sort algorithm.
+This problem requires that you know what a selection sort is. If you don’t remember, ask the inter-
+viewer. Briefly, a selection sort works by repeatedly scanning the not-yet-sorted values to find the
+lowest key, and then swapping the lowest key into sorted position at the end of the already-sorted
+values, as described in more detail earlier in this chapter. A typical implementation is:
+// Sort an array using an iterative selection sort.
+public static void selectionSort( int[] data ){
+for ( int start = 0; start < data.length - 1; ++start ){
+swap( data, start, findMinimumIndex( data, start ) );
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Sort an array using a stable selection sort.
+public static void selectionSortStable( int[] data ){
+for ( int start = 0; start < data.length - 1; ++start ){
+insert( data, start, findMinimumIndex( data, start ) );
+}
+}
+// Insert the data into the array, shifting the array as necessary.
+private static void insert( int[] data, int start, int minIndex ){
+if ( minIndex > start ){
+int tmp = data[minIndex];
+System.arraycopy( data, start, data, start + 1, minIndex - start );
+data[start] = tmp;
+}
+}
+
+
+
+
+public static void selectionSortStable( CursorableLinkedList data ){
+CursorableLinkedList.Cursor sortedBoundary = data.cursor(0);
+while ( sortedBoundary.hasNext() ){
+sortedBoundary.add(
+getMinimum( data, sortedBoundary.nextIndex() ) );
+}
+sortedBoundary.close();
+}
+// remove and return the first minimum-value element from data
+// with position greater than start
+private static Comparable getMinimum( CursorableLinkedList data, int start ){
+CursorableLinkedList.Cursor unsorted = data.cursor( start );
+CursorableLinkedList.Cursor minPos = data.cursor( start + 1 );
+Comparable minValue = (Comparable)minPos.previous();
+while ( unsorted.hasNext() ){
+if ( ( (Comparable)unsorted.next() ).compareTo( minValue ) < 0 ){
+// advance minPos to new minimum value location
+while ( minPos.nextIndex() < unsorted.nextIndex() )
+minValue = (Comparable)minPos.next();
+}
+}
+minPos.remove();
+minPos.close();
+unsorted.close();
+return minValue;
+}
+
+
+
+Multi-Key Sort
+public class Employee {
+public String extension;
+public String givenname;
+public String surname;
+}
+
+
+
+
+
+import java.util.Comparator;
+// A comparator for Employee instances.
+public class EmployeeNameComparator implements Comparator<Employee> {
+public int compare( Employee e1, Employee e2 ){
+// Compare surnames
+int ret = e1.surname.compareToIgnoreCase( e2.surname );
+if ( ret == 0 ){ // Compare givennames if surnames are the same
+ret = e1.givenname.compareToIgnoreCase( e2.givenname );
+}
+return ret;
+}
+}
+Now it’s just a matter of invoking the Arrays.sort method with the array and the comparator:
+public static void sortEmployees( Employee[] employees ){
+Arrays.sort( employees, new EmployeeNameComparator() );
+}
+
+
+
+Make a Sort Stable
+
+
+public static void sortEmployeesStable( Employee[] employees ){
+for ( int i = 0; i < employees.length; ++i ){
+employees[i].sequence = i;
+}
+shakySort( employees, new EmployeeSequenceComparator() );
+}
+You also must create a comparator that uses the sequence number as a tie breaker for otherwise
+identical keys. For instance, to perform a stable sort by surname:
+// A comparator for Employee instances.
+public class EmployeeSequenceComparator implements Comparator<Employee> {
+public int compare( Employee e1, Employee e2 ){
+158 ❘ CHAPTER 9 Sorting
+// Compare surname first.
+int ret = e1.surname.compareToIgnoreCase( e2.surname );
+// Ensure stability
+if ( ret == 0 ){
+ret = Integer.compare(e1.sequence, e2.sequence);
+}
+return ret;
+}
+}
+
+
+
+
+
+Optimized Quicksort
+
+
+
+
+public static void quicksortSwapping( int[] data ){
+quicksortSwapping( data, 0, data.length );
+}
+private static void quicksortSwapping( int[] data, int start, int len ){
+if ( len < 2 ) return; // Nothing to sort!
+int pivotIndex = start + len / 2; // Use the middle value.
+160 ❘ CHAPTER 9 Sorting
+int pivotValue = data[ pivotIndex ];
+int end = start + len;
+int curr = start;
+// Swap the pivot to the end.
+swap( data, pivotIndex, --end );
+// Partition the rest of the array.
+while ( curr < end ){
+if ( data[ curr ] < pivotValue ){
+curr++;
+} else {
+swap( data, curr, --end );
+}
+}
+// Swap the pivot back to its final destination.
+swap( data, end, start + len - 1 );
+// Apply the algorithm recursively to each partition.
+int llen = end - start;
+int rlen = len - llen - 1;
+if ( llen > 1 ){
+quicksortSwapping( data, start, llen );
+}
+if ( rlen > 1 ){
+quicksortSwapping( data, end + 1, rlen );
+}
+}
+
+
+
+
+
+
+public static void quicksortOptimized( int[] data ){
+quicksortOptimized( data, 0, data.length - 1 );
+}
+public static void quicksortOptimized( int[] data, int left, int right ){
+int pivotValue = data[ (int) ( ( ( (long) left) + right ) / 2 ) ];
+int i = left;
+Sorting Problems ❘ 161
+int j = right;
+while ( i <= j ){
+// Find leftmost value greater than or equal to the pivot.
+while ( data[i] < pivotValue ) i++;
+// Find rightmost value less than or equal to the pivot.
+while ( data[j] > pivotValue ) j--;
+// Swap the values at the two indices if those indices have not yet
+crossed.
+if ( i <= j ){
+swap( data, i, j );
+i++;
+j--;
+}
+}
+// Apply the algorithm to the partitions we made, if any.
+if ( left < j ){
+quicksortOptimized( data, left, j );
+}
+if ( i < right ){
+quicksortOptimized( data, i, right );
+}
+}
+
+

@@ -1,0 +1,42 @@
+class StatusCallback {
+public:
+virtual void updateStatus( int oState, int nState ) = 0;
+}
+A class implements the interface by deriving from it and providing a definition for the methods:
+class MyClass : SomeOtherClass, StatusCallback {
+public:
+void updateStatus( int oState, int nState ){
+if ( nState > oState ){
+... // do stuff
+}
+}
+... // remainder of class
+}
+In Java, an interface is defined using the interface keyword:
+public interface StatusCallback {
+void updateStatus( int oState, int nState );
+}
+The interface is then implemented by a class:
+public class MyClass implements StatusCallback {
+public void updateStatus( int oState, int nState ){
+if ( nState > oState ){
+... // do stuff
+}
+}
+... // remainder of class
+}
+186 ❘ CHAPTER 11 Object-Oriented PrOgramming
+A common pattern you see with languages that support both interfaces and abstract classes is the
+provision of a default implementation of an interface via an abstract class. For example, the follow-
+ing interface:
+public interface XMLReader {
+public XMLObject fromString( String str );
+public XMLObject fromReader( Reader in );
+}
+might have a default implementation that provides a definition for only some of its inherited
+methods:
+public abstract class XMLReaderImpl implements XMLReader {
+public XMLObject fromString( String str ){
+return fromReader( new StringReader( str ) );
+}
+}

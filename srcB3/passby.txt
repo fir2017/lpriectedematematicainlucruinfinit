@@ -1,0 +1,54 @@
+void foo(Fruit bar); // Prototype 1
+void foo(Fruit* bar); // Prototype 2
+void foo(Fruit& bar); // Prototype 3
+void foo(const Fruit* bar); // Prototype 4
+void foo(Fruit*& bar); // Prototype 5
+void foo(Fruit&& bar); // Prototype 6
+
+
+#define TRIPLE(x) 3 * x
+the preprocessor replaces any occur
+
+
+
+inline int Triple(int x)
+{
+return 3 * x;
+}
+
+
+
+
+
+
+#define CUBE(x) x * x * x
+int foo, bar = 2;
+foo = CUBE(++bar);
+You would probably expect this code to set bar to 3 and foo to 27, but look at how it expands:
+foo = ++bar * ++bar * ++bar;
+
+
+
+
+
+
+
+#define INCREMENT_BOTH(x, y) x++; y++
+If you favor leaving off the curly brackets when there’s only one statement in the body of an if
+statement, you might write something like this:
+if (flag)
+INCREMENT_BOTH(foo, bar);
+You would probably expect this to be equivalent to:
+if (flag) {
+foo++;
+bar++;
+}
+Instead, when the macro is expanded, the if binds to just the first statement in the macro definition,
+leaving you with code equivalent to:
+if (flag) {
+foo++;
+}
+bar++;
+
+
+

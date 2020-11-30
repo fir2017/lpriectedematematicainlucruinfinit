@@ -1,0 +1,235 @@
+void drawEighthOfCircle( int radius ){
+int x, y;
+x = 0;
+y = radius;
+while ( y <= x ){
+y = Math.sqrt( ( radius * radius ) – ( x * x ) ) + 0.5;
+setPixel( x, y );
+x++;
+}
+}
+
+
+
+
+
+
+
+
+
+class Point {
+public int x;
+public int y;
+public Point( int x, int y ){
+this.x = x;
+this.y = y;
+}
+}
+class Rect {
+public Point ul;
+public Point lr;
+public Rect( Point ul, Point lr ){
+this.ul = ul;
+this.lr = lr;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+boolean overlap( Rect a, Rect b ){
+return !( a.ul.x > b.lr.x ||
+a.ul.y < b.lr.y ||
+a.lr.x < b.ul.x ||
+a.lr.y > b.ul.y );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+boolean overlap( Rect a, Rect b ){
+return( a.ul.x <= b.lr.x &&
+a.ul.y >= b.lr.y &&
+a.lr.x >= b.ul.x &&
+a.lr.y <= b.ul.y );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Set an integer to 1
+Cast a pointer to the integer as a char *
+If the dereferenced pointer is 1, the machine is little-endian
+If the dereferenced pointer is 0, the machine is big-endian
+The code for this test is as follows:
+/* Returns true if the machine is little-endian, false if the
+* machine is big-endian
+*/
+bool isLittleEndian(){
+int testNum;
+char *ptr;
+testNum = 1;
+ptr = (char *) &testNum;
+return (*ptr); /* Returns the byte at the lowest address */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Returns true if the machine is little-endian, false if the
+* machine is big-endian
+*/
+bool isLittleEndian(){
+union {
+int theInteger;
+char singleByte;
+} endianTest;
+endianTest.theInteger = 1;
+return endianTest.singleByte;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int numOnesInBinary( int number ) {
+int numOnes = 0;
+while ( number != 0 ){
+if ( ( number & 1 ) == 1 ) {
+numOnes++;
+}
+number = number >>> 1;
+}
+return numOnes;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int numOnesInBinary( int number ){
+int numOnes = 0;
+while ( number != 0 ){
+number = number & ( number – 1 );
+numOnes++;
+}
+return numOnes;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

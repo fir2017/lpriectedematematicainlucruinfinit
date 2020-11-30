@@ -1,0 +1,41 @@
+ int factorial( int n ){
+if ( n > 1 ) { /* Recursive case */
+return factorial( n - 1 ) * n;
+} else { /* Base case */
+return 1;
+}
+}
+
+
+
+
+
+int[] allFactorials( int n ) { /* Wrapper function */
+int[] results = new int[ n == 0 ? 1 : n ];
+doAllFactorials( n, results, 0 );
+return results;
+}
+int doAllFactorials( int n, int[] results, int level ) {
+if ( n > 1 ){ /* Recursive case */
+results[level] = n * doAllFactorials( n - 1, results, level + 1 );
+return results[level];
+} else { /* Base case */
+results[level] = 1;
+return 1;
+}
+}
+
+
+
+
+
+
+int factorial( int n ){
+int i, val = 1;
+for ( i = n; i > 1; i-- ) /* n = 0 or 1 falls through */ {
+val *= i;
+}
+return val;
+}
+
+

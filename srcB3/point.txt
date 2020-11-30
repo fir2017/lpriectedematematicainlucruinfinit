@@ -1,0 +1,92 @@
+public class Point {
+private int x;
+private int y;
+public Point( int x, int y ){
+this.x = x;
+this.y = y;
+}
+public Point( Point other ){
+x = other.getX();
+y = other.getY();
+}
+
+
+public int getX(){ return x; }
+public int getY(){ return y; }
+public Point relativeTo( int dx, int dy ){
+return new Point( x + dx, y + dy );
+}
+public String toString(){
+StringBuilder b = new StringBuilder();
+b.append( '(' );
+b.append( x );
+b.append( ',' );
+b.append( y );
+b.append( ')' );
+return b.toString();
+}
+}
+To represent a specific point, simply create an instance of the Point class with the appropriate
+values:
+Point p1 = new Point( 5, 10 );
+Point p2 = p1.relativeTo( −5, 5 );
+System.out.println( p2.toString() ); // prints (0,15)
+
+
+public abstract class Shape {
+protected Point center;
+protected Shape( Point center ){
+this.center = center;
+}
+public Point getCenter(){
+return center; // because Point is immutable
+}
+public abstract Rectangle getBounds();
+public abstract void draw( Graphics g );
+}
+You can then specialize the shapes into Rectangle and Ellipse subclasses:
+public class Rectangle extends Shape {
+private int h;
+private int w;
+public Rectangle( Point center, int w, int h ){
+super( center );
+this.w = w;
+this.h = h;
+}
+public Rectangle getBounds(){
+return this;
+}
+184 ❘ CHAPTER 11 Object-Oriented PrOgramming
+public int getHeight(){ return h; }
+public int getWidth(){ return w; }
+public void draw( Graphics g ){
+... // code to paint rectangle
+}
+}
+public class Ellipse extends Shape {
+private int a;
+private int b;
+public Ellipse( Point center, int a, int b ){
+super( center );
+this.a = a;
+this.b = b;
+}
+public Rectangle getBounds(){
+return new Rectangle( center, a * 2, b * 2 );
+}
+public int getHorizontalAxis(){ return a; }
+public int getVerticalAxis(){ return b; }
+public void draw( Graphics g ){
+... // code to paint ellipse
+}
+}
+The Rectangle and Ellipse classes could be further specialized into Square and Circle
+subclasses.
+Even though many shapes may be defined in the library, the part of the application that draws them
+on the screen doesn’t need to do much work because polymorphism is used to select the specific,
+appropriate draw method-body to run:
+void paintShapes( Graphics g, List<Shape> shapes ){
+for ( Shape s : shapes ){
+s.draw( g );
+}
+}

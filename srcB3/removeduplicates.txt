@@ -1,0 +1,28 @@
+#include <list>
+std::list<int> removeDuplicates( const std::list<int>& in ) {
+std::list<int> out;
+for ( auto ival : in ) {
+bool found = false;
+for ( auto oval : out ) {
+if ( ival == oval ) {
+found = true;
+break;
+}
+}
+if ( !found ) {
+out.push_back( ival );
+}
+}
+return out;
+}
+
+
+
+#include <list>
+#include <unordered_set>
+std::list<int> removeDuplicates( const std::list<int>& in ) {
+std::unordered_set<int> s( in.begin(), in.end() );
+std::list<int> out( s.begin(), s.end() );
+return out;
+}
+

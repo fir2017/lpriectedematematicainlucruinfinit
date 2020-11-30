@@ -1,0 +1,41 @@
+public class Window {
+public Window( boolean visible, boolean modal, boolean dialog ){
+this.visible = visible;
+this.modal = modal;
+this.dialog = dialog;
+}
+private boolean visible;
+private boolean modal;
+private boolean dialog;
+... // rest of class omitted
+}
+
+
+public class WindowBuilder {
+public WindowBuilder() {}
+public WindowBuilder setDialog( boolean flag ){
+dialog = flag;
+return this;
+}
+public WindowBuilder setModal( boolean flag ){
+modal = flag;
+return this;
+}
+public WindowBuilder setVisible( boolean flag ){
+visible = flag;
+return this;
+}
+public Window build(){
+return new Window( visible, modal, dialog );
+}
+private boolean dialog;
+private boolean modal;
+private boolean visible;
+}
+Then instead of directly constructing a Window object:
+Window w = new Window( false, true, true ); // ??? confusing parameters!
+use a WindowBuilder instance to define the new object’s initial state:
+Window w = new WindowBuilder().setVisible( false )
+.setModal( true ).setDialog( true ).build();
+
+

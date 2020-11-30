@@ -1,0 +1,46 @@
+class A {
+public:
+void print() { cout << "A"; }
+}
+class B : A {
+public:
+Object-Oriented Programming Problems ❘ 187
+void print() { cout << "B"; }
+}
+class C : B {
+public:
+void print() { cout << "C"; }
+}
+Because print is not virtual, the method invoked depends on the type used at compile time:
+A *a = new A();
+B *b = new B();
+C *c = new C();
+a->print(); // "A"
+b->print(); // "B"
+c->print(); // "C"
+((B *)c)->print(); // "B"
+((A *)c)->print(); // "A"
+((A *)b)->print(); // "A"
+If print is declared virtual instead:
+class A {
+public:
+virtual void print() { cout << "A"; }
+}
+class B : A {
+public:
+virtual void print() { cout << "B"; }
+}
+class C : B {
+public:
+virtual void print() { cout << "C"; }
+}
+The runtime type of the object determines which method definition is invoked:
+A *a = new A();
+B *b = new B();
+C *c = new C();
+a->print(); // "A"
+b->print(); // "B"
+c->print(); // "C"
+((B *)c)->print(); // "C"
+((A *)c)->print(); // "C"
+((A *)b)->print(); // "B"
