@@ -1,0 +1,2393 @@
+<Project>
+  <Name>Untitled</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Accessibility.dll</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>IAccessible</Name>
+        <Access>Public</Access>
+        <Location left="860" top="411" />
+        <Size width="162" height="384" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">Object accParent { get; }</Member>
+        <Member type="Property">Int32 accChildCount { get; }</Member>
+        <Member type="Property">Object this[Object varChild] { get; }</Member>
+        <Member type="Property">String this[Object varChild = System.Reflection.Missing] { get; set; }</Member>
+        <Member type="Property">String this[Object varChild = System.Reflection.Missing] { get; set; }</Member>
+        <Member type="Property">String this[Object varChild = System.Reflection.Missing] { get; }</Member>
+        <Member type="Property">Object this[Object varChild = System.Reflection.Missing] { get; }</Member>
+        <Member type="Property">Object this[Object varChild = System.Reflection.Missing] { get; }</Member>
+        <Member type="Property">String this[Object varChild = System.Reflection.Missing] { get; }</Member>
+        <Member type="Property">Int32 this[out String pszHelpFile, Object varChild = System.Reflection.Missing] { get; }</Member>
+        <Member type="Property">String this[Object varChild = System.Reflection.Missing] { get; }</Member>
+        <Member type="Property">Object accFocus { get; }</Member>
+        <Member type="Property">Object accSelection { get; }</Member>
+        <Member type="Property">String this[Object varChild = System.Reflection.Missing] { get; }</Member>
+        <Member type="Method">Void accSelect(Int32 flagsSelect, Object varChild = System.Reflection.Missing)</Member>
+        <Member type="Method">Void accLocation(out Int32 pxLeft, out Int32 pyTop, out Int32 pcxWidth, out Int32 pcyHeight, Object varChild = System.Reflection.Missing)</Member>
+        <Member type="Method">Object accNavigate(Int32 navDir, Object varStart = System.Reflection.Missing)</Member>
+        <Member type="Method">Object accHitTest(Int32 xLeft, Int32 yTop)</Member>
+        <Member type="Method">Void accDoDefaultAction(Object varChild = System.Reflection.Missing)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IAccessibleHandler</Name>
+        <Access>Public</Access>
+        <Location left="648" top="411" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">Void AccessibleObjectFromID(Int32 hwnd, Int32 lObjectID, out IAccessible pIAccessible)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IAccIdentity</Name>
+        <Access>Public</Access>
+        <Location left="436" top="411" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">Void GetIdentityString(UInt32 dwIDChild, IntPtr ppIDString, out UInt32 pdwIDStringLen)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IAccPropServer</Name>
+        <Access>Public</Access>
+        <Location left="224" top="411" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">Void GetPropValue(ref Byte pIDString, UInt32 dwIDStringLen, Guid idProp, out Object pvarValue, out Int32 pfHasProp)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IAccPropServices</Name>
+        <Access>Public</Access>
+        <Location left="12" top="411" />
+        <Size width="162" height="316" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">Void SetPropValue(ref Byte pIDString, UInt32 dwIDStringLen, Guid idProp, Object var)</Member>
+        <Member type="Method">Void SetPropServer(ref Byte pIDString, UInt32 dwIDStringLen, ref Guid paProps, Int32 cProps, IAccPropServer pServer, AnnoScope AnnoScope)</Member>
+        <Member type="Method">Void ClearProps(ref Byte pIDString, UInt32 dwIDStringLen, ref Guid paProps, Int32 cProps)</Member>
+        <Member type="Method">Void SetHwndProp(ref _RemotableHandle hwnd, UInt32 idObject, UInt32 idChild, Guid idProp, Object var)</Member>
+        <Member type="Method">Void SetHwndPropStr(ref _RemotableHandle hwnd, UInt32 idObject, UInt32 idChild, Guid idProp, String str)</Member>
+        <Member type="Method">Void SetHwndPropServer(ref _RemotableHandle hwnd, UInt32 idObject, UInt32 idChild, ref Guid paProps, Int32 cProps, IAccPropServer pServer, AnnoScope AnnoScope)</Member>
+        <Member type="Method">Void ClearHwndProps(ref _RemotableHandle hwnd, UInt32 idObject, UInt32 idChild, ref Guid paProps, Int32 cProps)</Member>
+        <Member type="Method">Void ComposeHwndIdentityString(ref _RemotableHandle hwnd, UInt32 idObject, UInt32 idChild, IntPtr ppIDString, out UInt32 pdwIDStringLen)</Member>
+        <Member type="Method">Void DecomposeHwndIdentityString(ref Byte pIDString, UInt32 dwIDStringLen, IntPtr phwnd, out UInt32 pidObject, out UInt32 pidChild)</Member>
+        <Member type="Method">Void SetHmenuProp(ref _RemotableHandle hmenu, UInt32 idChild, Guid idProp, Object var)</Member>
+        <Member type="Method">Void SetHmenuPropStr(ref _RemotableHandle hmenu, UInt32 idChild, Guid idProp, String str)</Member>
+        <Member type="Method">Void SetHmenuPropServer(ref _RemotableHandle hmenu, UInt32 idChild, ref Guid paProps, Int32 cProps, IAccPropServer pServer, AnnoScope AnnoScope)</Member>
+        <Member type="Method">Void ClearHmenuProps(ref _RemotableHandle hmenu, UInt32 idChild, ref Guid paProps, Int32 cProps)</Member>
+        <Member type="Method">Void ComposeHmenuIdentityString(ref _RemotableHandle hmenu, UInt32 idChild, IntPtr ppIDString, out UInt32 pdwIDStringLen)</Member>
+        <Member type="Method">Void DecomposeHmenuIdentityString(ref Byte pIDString, UInt32 dwIDStringLen, IntPtr phmenu, out UInt32 pidChild)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>CAccPropServices</Name>
+        <Access>Public</Access>
+        <Location left="860" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+      <Entity type="Class">
+        <Name>CAccPropServicesClass</Name>
+        <Access>Public</Access>
+        <Location left="648" top="12" />
+        <Size width="162" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public CAccPropServicesClass()</Member>
+        <Member type="Method">public virtual Void SetPropValue(ref Byte pIDString, UInt32 dwIDStringLen, Guid idProp, Object var)</Member>
+        <Member type="Method">public virtual Void SetPropServer(ref Byte pIDString, UInt32 dwIDStringLen, ref Guid paProps, Int32 cProps, IAccPropServer pServer, AnnoScope AnnoScope)</Member>
+        <Member type="Method">public virtual Void ClearProps(ref Byte pIDString, UInt32 dwIDStringLen, ref Guid paProps, Int32 cProps)</Member>
+        <Member type="Method">public virtual Void SetHwndProp(ref _RemotableHandle hwnd, UInt32 idObject, UInt32 idChild, Guid idProp, Object var)</Member>
+        <Member type="Method">public virtual Void SetHwndPropStr(ref _RemotableHandle hwnd, UInt32 idObject, UInt32 idChild, Guid idProp, String str)</Member>
+        <Member type="Method">public virtual Void SetHwndPropServer(ref _RemotableHandle hwnd, UInt32 idObject, UInt32 idChild, ref Guid paProps, Int32 cProps, IAccPropServer pServer, AnnoScope AnnoScope)</Member>
+        <Member type="Method">public virtual Void ClearHwndProps(ref _RemotableHandle hwnd, UInt32 idObject, UInt32 idChild, ref Guid paProps, Int32 cProps)</Member>
+        <Member type="Method">public virtual Void ComposeHwndIdentityString(ref _RemotableHandle hwnd, UInt32 idObject, UInt32 idChild, IntPtr ppIDString, out UInt32 pdwIDStringLen)</Member>
+        <Member type="Method">public virtual Void DecomposeHwndIdentityString(ref Byte pIDString, UInt32 dwIDStringLen, IntPtr phwnd, out UInt32 pidObject, out UInt32 pidChild)</Member>
+        <Member type="Method">public virtual Void SetHmenuProp(ref _RemotableHandle hmenu, UInt32 idChild, Guid idProp, Object var)</Member>
+        <Member type="Method">public virtual Void SetHmenuPropStr(ref _RemotableHandle hmenu, UInt32 idChild, Guid idProp, String str)</Member>
+        <Member type="Method">public virtual Void SetHmenuPropServer(ref _RemotableHandle hmenu, UInt32 idChild, ref Guid paProps, Int32 cProps, IAccPropServer pServer, AnnoScope AnnoScope)</Member>
+        <Member type="Method">public virtual Void ClearHmenuProps(ref _RemotableHandle hmenu, UInt32 idChild, ref Guid paProps, Int32 cProps)</Member>
+        <Member type="Method">public virtual Void ComposeHmenuIdentityString(ref _RemotableHandle hmenu, UInt32 idChild, IntPtr ppIDString, out UInt32 pdwIDStringLen)</Member>
+        <Member type="Method">public virtual Void DecomposeHmenuIdentityString(ref Byte pIDString, UInt32 dwIDStringLen, IntPtr phmenu, out UInt32 pidChild)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Structure">
+        <Name>_RemotableHandle</Name>
+        <Access>Public</Access>
+        <Location left="436" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Int32 fContext</Member>
+        <Member type="Field">public __MIDL_IWinTypes_0009 u</Member>
+      </Entity>
+      <Entity type="Structure">
+        <Name>__MIDL_IWinTypes_0009</Name>
+        <Access>Public</Access>
+        <Location left="224" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Int32 hInproc</Member>
+        <Member type="Field">public Int32 hRemote</Member>
+      </Entity>
+      <Entity type="Enum">
+        <Name>AnnoScope</Name>
+        <Access>Public</Access>
+        <Location left="12" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>ANNO_THIS = 0</Value>
+        <Value>ANNO_CONTAINER = 1</Value>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Realization" first="6" second="4">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="6" second="5">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="7" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>u</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Microsoft.Build.Framework.dll</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>IBuildEngine</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="1764" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">Boolean ContinueOnError { get; }</Member>
+        <Member type="Property">Int32 LineNumberOfTaskNode { get; }</Member>
+        <Member type="Property">Int32 ColumnNumberOfTaskNode { get; }</Member>
+        <Member type="Property">String ProjectFileOfTaskNode { get; }</Member>
+        <Member type="Method">Void LogErrorEvent(BuildErrorEventArgs e)</Member>
+        <Member type="Method">Void LogWarningEvent(BuildWarningEventArgs e)</Member>
+        <Member type="Method">Void LogMessageEvent(BuildMessageEventArgs e)</Member>
+        <Member type="Method">Void LogCustomEvent(CustomBuildEventArgs e)</Member>
+        <Member type="Method">Boolean BuildProjectFile(String projectFileName, String[] targetNames, IDictionary globalProperties, IDictionary targetOutputs)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IEventSource</Name>
+        <Access>Public</Access>
+        <Location left="860" top="1764" />
+        <Size width="162" height="299" />
+        <Collapsed>False</Collapsed>
+        <Member type="Event">event BuildMessageEventHandler MessageRaised</Member>
+        <Member type="Event">event BuildErrorEventHandler ErrorRaised</Member>
+        <Member type="Event">event BuildWarningEventHandler WarningRaised</Member>
+        <Member type="Event">event BuildStartedEventHandler BuildStarted</Member>
+        <Member type="Event">event BuildFinishedEventHandler BuildFinished</Member>
+        <Member type="Event">event ProjectStartedEventHandler ProjectStarted</Member>
+        <Member type="Event">event ProjectFinishedEventHandler ProjectFinished</Member>
+        <Member type="Event">event TargetStartedEventHandler TargetStarted</Member>
+        <Member type="Event">event TargetFinishedEventHandler TargetFinished</Member>
+        <Member type="Event">event TaskStartedEventHandler TaskStarted</Member>
+        <Member type="Event">event TaskFinishedEventHandler TaskFinished</Member>
+        <Member type="Event">event CustomBuildEventHandler CustomEventRaised</Member>
+        <Member type="Event">event BuildStatusEventHandler StatusEventRaised</Member>
+        <Member type="Event">event AnyEventHandler AnyEventRaised</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ILogger</Name>
+        <Access>Public</Access>
+        <Location left="648" top="1764" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">LoggerVerbosity Verbosity { get; set; }</Member>
+        <Member type="Property">String Parameters { get; set; }</Member>
+        <Member type="Method">Void Initialize(IEventSource eventSource)</Member>
+        <Member type="Method">Void Shutdown()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ITask</Name>
+        <Access>Public</Access>
+        <Location left="436" top="1764" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">IBuildEngine BuildEngine { get; set; }</Member>
+        <Member type="Property">ITaskHost HostObject { get; set; }</Member>
+        <Member type="Method">Boolean Execute()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ITaskHost</Name>
+        <Access>Public</Access>
+        <Location left="224" top="1764" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ITaskItem</Name>
+        <Access>Public</Access>
+        <Location left="12" top="1764" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">String ItemSpec { get; set; }</Member>
+        <Member type="Property">ICollection MetadataNames { get; }</Member>
+        <Member type="Property">Int32 MetadataCount { get; }</Member>
+        <Member type="Method">String GetMetadata(String metadataName)</Member>
+        <Member type="Method">Void SetMetadata(String metadataName, String metadataValue)</Member>
+        <Member type="Method">Void RemoveMetadata(String metadataName)</Member>
+        <Member type="Method">Void CopyMetadataTo(ITaskItem destinationItem)</Member>
+        <Member type="Method">IDictionary CloneCustomMetadata()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>BuildEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="1920" top="1365" />
+        <Size width="162" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String message</Member>
+        <Member type="Field">private String helpKeyword</Member>
+        <Member type="Field">private String senderName</Member>
+        <Member type="Field">private DateTime timestamp</Member>
+        <Member type="Field">private Int32 threadId</Member>
+        <Member type="Property">public DateTime Timestamp { get; }</Member>
+        <Member type="Property">public Int32 ThreadId { get; }</Member>
+        <Member type="Property">public String Message { get; }</Member>
+        <Member type="Property">public String HelpKeyword { get; }</Member>
+        <Member type="Property">public String SenderName { get; }</Member>
+        <Member type="Constructor">protected BuildEventArgs()</Member>
+        <Member type="Constructor">protected BuildEventArgs(String message, String helpKeyword, String senderName)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BuildErrorEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="1365" />
+        <Size width="162" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String subcategory</Member>
+        <Member type="Field">private String code</Member>
+        <Member type="Field">private String file</Member>
+        <Member type="Field">private Int32 lineNumber</Member>
+        <Member type="Field">private Int32 columnNumber</Member>
+        <Member type="Field">private Int32 endLineNumber</Member>
+        <Member type="Field">private Int32 endColumnNumber</Member>
+        <Member type="Property">public String Subcategory { get; }</Member>
+        <Member type="Property">public String Code { get; }</Member>
+        <Member type="Property">public String File { get; }</Member>
+        <Member type="Property">public Int32 LineNumber { get; }</Member>
+        <Member type="Property">public Int32 ColumnNumber { get; }</Member>
+        <Member type="Property">public Int32 EndLineNumber { get; }</Member>
+        <Member type="Property">public Int32 EndColumnNumber { get; }</Member>
+        <Member type="Constructor">protected BuildErrorEventArgs()</Member>
+        <Member type="Constructor">public BuildErrorEventArgs(String subcategory, String code, String file, Int32 lineNumber, Int32 columnNumber, Int32 endLineNumber, Int32 endColumnNumber, String message, String helpKeyword, String senderName)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BuildStatusEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="1365" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">protected BuildStatusEventArgs()</Member>
+        <Member type="Constructor">protected BuildStatusEventArgs(String message, String helpKeyword, String senderName)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BuildFinishedEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="1365" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Boolean succeeded</Member>
+        <Member type="Property">public Boolean Succeeded { get; }</Member>
+        <Member type="Constructor">protected BuildFinishedEventArgs()</Member>
+        <Member type="Constructor">public BuildFinishedEventArgs(String message, String helpKeyword, Boolean succeeded)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BuildMessageEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="1365" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private MessageImportance importance</Member>
+        <Member type="Property">public MessageImportance Importance { get; }</Member>
+        <Member type="Constructor">protected BuildMessageEventArgs()</Member>
+        <Member type="Constructor">public BuildMessageEventArgs(String message, String helpKeyword, String senderName, MessageImportance importance)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BuildStartedEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="860" top="1365" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">protected BuildStartedEventArgs()</Member>
+        <Member type="Constructor">public BuildStartedEventArgs(String message, String helpKeyword)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BuildWarningEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="648" top="1365" />
+        <Size width="162" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String subcategory</Member>
+        <Member type="Field">private String code</Member>
+        <Member type="Field">private String file</Member>
+        <Member type="Field">private Int32 lineNumber</Member>
+        <Member type="Field">private Int32 columnNumber</Member>
+        <Member type="Field">private Int32 endLineNumber</Member>
+        <Member type="Field">private Int32 endColumnNumber</Member>
+        <Member type="Property">public String Subcategory { get; }</Member>
+        <Member type="Property">public String Code { get; }</Member>
+        <Member type="Property">public String File { get; }</Member>
+        <Member type="Property">public Int32 LineNumber { get; }</Member>
+        <Member type="Property">public Int32 ColumnNumber { get; }</Member>
+        <Member type="Property">public Int32 EndLineNumber { get; }</Member>
+        <Member type="Property">public Int32 EndColumnNumber { get; }</Member>
+        <Member type="Constructor">protected BuildWarningEventArgs()</Member>
+        <Member type="Constructor">public BuildWarningEventArgs(String subcategory, String code, String file, Int32 lineNumber, Int32 columnNumber, Int32 endLineNumber, Int32 endColumnNumber, String message, String helpKeyword, String senderName)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CustomBuildEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="436" top="1365" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">protected CustomBuildEventArgs()</Member>
+        <Member type="Constructor">protected CustomBuildEventArgs(String message, String helpKeyword, String senderName)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ExternalProjectFinishedEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="224" top="1365" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String projectFile</Member>
+        <Member type="Field">private Boolean succeeded</Member>
+        <Member type="Property">public String ProjectFile { get; }</Member>
+        <Member type="Property">public Boolean Succeeded { get; }</Member>
+        <Member type="Constructor">protected ExternalProjectFinishedEventArgs()</Member>
+        <Member type="Constructor">public ExternalProjectFinishedEventArgs(String message, String helpKeyword, String senderName, String projectFile, Boolean succeeded)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ExternalProjectStartedEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="12" top="1365" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String projectFile</Member>
+        <Member type="Field">private String targetNames</Member>
+        <Member type="Property">public String ProjectFile { get; }</Member>
+        <Member type="Property">public String TargetNames { get; }</Member>
+        <Member type="Constructor">protected ExternalProjectStartedEventArgs()</Member>
+        <Member type="Constructor">public ExternalProjectStartedEventArgs(String message, String helpKeyword, String senderName, String projectFile, String targetNames)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LoadInSeparateAppDomainAttribute</Name>
+        <Access>Public</Access>
+        <Location left="1920" top="1068" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public LoadInSeparateAppDomainAttribute()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LoggerException</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="1068" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String errorCode</Member>
+        <Member type="Field">private String helpKeyword</Member>
+        <Member type="Property">public String ErrorCode { get; }</Member>
+        <Member type="Property">public String HelpKeyword { get; }</Member>
+        <Member type="Constructor">public LoggerException()</Member>
+        <Member type="Constructor">public LoggerException(String message)</Member>
+        <Member type="Constructor">public LoggerException(String message, Exception innerException)</Member>
+        <Member type="Constructor">public LoggerException(String message, Exception innerException, String errorCode, String helpKeyword)</Member>
+        <Member type="Constructor">protected LoggerException(SerializationInfo info, StreamingContext context)</Member>
+        <Member type="Method">public override Void GetObjectData(SerializationInfo info, StreamingContext context)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OutputAttribute</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="1068" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public OutputAttribute()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ProjectFinishedEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="1068" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String projectFile</Member>
+        <Member type="Field">private Boolean succeeded</Member>
+        <Member type="Property">public String ProjectFile { get; }</Member>
+        <Member type="Property">public Boolean Succeeded { get; }</Member>
+        <Member type="Constructor">protected ProjectFinishedEventArgs()</Member>
+        <Member type="Constructor">public ProjectFinishedEventArgs(String message, String helpKeyword, String projectFile, Boolean succeeded)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ProjectStartedEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="1068" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String projectFile</Member>
+        <Member type="Field">private String targetNames</Member>
+        <Member type="Field">private IEnumerable properties</Member>
+        <Member type="Field">private IEnumerable items</Member>
+        <Member type="Property">public String ProjectFile { get; }</Member>
+        <Member type="Property">public String TargetNames { get; }</Member>
+        <Member type="Property">public IEnumerable Properties { get; }</Member>
+        <Member type="Property">public IEnumerable Items { get; }</Member>
+        <Member type="Constructor">protected ProjectStartedEventArgs()</Member>
+        <Member type="Constructor">public ProjectStartedEventArgs(String message, String helpKeyword, String projectFile, String targetNames, IEnumerable properties, IEnumerable items)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RequiredAttribute</Name>
+        <Access>Public</Access>
+        <Location left="860" top="1068" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RequiredAttribute()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TargetFinishedEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="648" top="1068" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String projectFile</Member>
+        <Member type="Field">private String targetFile</Member>
+        <Member type="Field">private String targetName</Member>
+        <Member type="Field">private Boolean succeeded</Member>
+        <Member type="Property">public String TargetName { get; }</Member>
+        <Member type="Property">public Boolean Succeeded { get; }</Member>
+        <Member type="Property">public String ProjectFile { get; }</Member>
+        <Member type="Property">public String TargetFile { get; }</Member>
+        <Member type="Constructor">protected TargetFinishedEventArgs()</Member>
+        <Member type="Constructor">public TargetFinishedEventArgs(String message, String helpKeyword, String targetName, String projectFile, String targetFile, Boolean succeeded)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TargetStartedEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="436" top="1068" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String targetName</Member>
+        <Member type="Field">private String projectFile</Member>
+        <Member type="Field">private String targetFile</Member>
+        <Member type="Property">public String TargetName { get; }</Member>
+        <Member type="Property">public String ProjectFile { get; }</Member>
+        <Member type="Property">public String TargetFile { get; }</Member>
+        <Member type="Constructor">protected TargetStartedEventArgs()</Member>
+        <Member type="Constructor">public TargetStartedEventArgs(String message, String helpKeyword, String targetName, String projectFile, String targetFile)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TaskCommandLineEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="224" top="1068" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String CommandLine { get; }</Member>
+        <Member type="Property">public String TaskName { get; }</Member>
+        <Member type="Constructor">protected TaskCommandLineEventArgs()</Member>
+        <Member type="Constructor">public TaskCommandLineEventArgs(String commandLine, String taskName, MessageImportance importance)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TaskFinishedEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="12" top="1068" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String taskName</Member>
+        <Member type="Field">private String projectFile</Member>
+        <Member type="Field">private String taskFile</Member>
+        <Member type="Field">private Boolean succeeded</Member>
+        <Member type="Property">public String TaskName { get; }</Member>
+        <Member type="Property">public Boolean Succeeded { get; }</Member>
+        <Member type="Property">public String ProjectFile { get; }</Member>
+        <Member type="Property">public String TaskFile { get; }</Member>
+        <Member type="Constructor">protected TaskFinishedEventArgs()</Member>
+        <Member type="Constructor">public TaskFinishedEventArgs(String message, String helpKeyword, String projectFile, String taskFile, String taskName, Boolean succeeded)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TaskStartedEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="1920" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String taskName</Member>
+        <Member type="Field">private String projectFile</Member>
+        <Member type="Field">private String taskFile</Member>
+        <Member type="Property">public String TaskName { get; }</Member>
+        <Member type="Property">public String ProjectFile { get; }</Member>
+        <Member type="Property">public String TaskFile { get; }</Member>
+        <Member type="Constructor">protected TaskStartedEventArgs()</Member>
+        <Member type="Constructor">public TaskStartedEventArgs(String message, String helpKeyword, String projectFile, String taskFile, String taskName)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FXAssembly</Name>
+        <Access>Internal</Access>
+        <Location left="1708" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal const String Version = 2.0.0.0</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ThisAssembly</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal const String Title = Microsoft.Build.Framework.dll</Member>
+        <Member type="Field">internal const String Description = Microsoft.Build.Framework.dll</Member>
+        <Member type="Field">internal const String DefaultAlias = Microsoft.Build.Framework.dll</Member>
+        <Member type="Field">internal const String Copyright = © Microsoft Corporation.  All rights reserved.</Member>
+        <Member type="Field">internal const String Version = 2.0.0.0</Member>
+        <Member type="Field">internal const String InformationalVersion = 2.0.50727.9136</Member>
+        <Member type="Field">internal const Int32 DailyBuildNumber = 50727</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AssemblyRef</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="278" />
+        <Size width="162" height="740" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal const String EcmaPublicKey = b77a5c561934e089</Member>
+        <Member type="Field">internal const String EcmaPublicKeyToken = b77a5c561934e089</Member>
+        <Member type="Field">internal const String EcmaPublicKeyFull = 00000000000000000400000000000000</Member>
+        <Member type="Field">internal const String Mscorlib = mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Member>
+        <Member type="Field">internal const String SystemData = System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Member>
+        <Member type="Field">internal const String SystemDataOracleClient = System.Data.OracleClient, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Member>
+        <Member type="Field">internal const String System = System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Member>
+        <Member type="Field">internal const String SystemRuntimeRemoting = System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Member>
+        <Member type="Field">internal const String SystemWindowsForms = System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Member>
+        <Member type="Field">internal const String SystemXml = System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Member>
+        <Member type="Field">internal const String MicrosoftPublicKey = b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String MicrosoftPublicKeyToken = b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String MicrosoftPublicKeyFull = 002400000480000094000000060200000024000052534131000400000100010007D1FA57C4AED9F0A32E84AA0FAEFD0DE9E8FD6AEC8F87FB03766C834C99921EB23BE79AD9D5DCC1DD9AD236132102900B723CF980957FC4E177108FC607774F29E8320E92EA05ECE4E821C0A5EFE8F1645C4C0C93C1AB99285D622CAA652C1DFAD63D745D6F2DE5F17E5EAF0FC4963D261C8A12436518206DC093344D5AD293</Member>
+        <Member type="Field">internal const String SystemConfiguration = System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemConfigurationInstall = System.Configuration.Install, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemDeployment = System.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemDesign = System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemDirectoryServices = System.DirectoryServices, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemDrawingDesign = System.Drawing.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemDrawing = System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemEnterpriseServices = System.EnterpriseServices, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemManagement = System.Management, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemMessaging = System.Messaging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemRuntimeSerializationFormattersSoap = System.Runtime.Serialization.Formatters.Soap, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemSecurity = System.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemServiceProcess = System.ServiceProcess, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemWeb = System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemWebMobile = System.Web.Mobile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemWebRegularExpressions = System.Web.RegularExpressions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemWebServices = System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String MicrosoftVisualStudio = Microsoft.VisualStudio, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String MicrosoftVisualStudioWindowsForms = Microsoft.VisualStudio.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String VJSharpCodeProvider = VJSharpCodeProvider, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String ASPBrowserCapsPublicKey = b7bd7678b977bd8f</Member>
+        <Member type="Field">internal const String ASPBrowserCapsFactory = ASP.BrowserCapsFactory, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b7bd7678b977bd8f</Member>
+        <Member type="Field">internal const String MicrosoftVSDesigner = Microsoft.VSDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String MicrosoftVisualStudioWeb = Microsoft.VisualStudio.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String MicrosoftVSDesignerMobile = Microsoft.VSDesigner.Mobile, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String MicrosoftJScript = Microsoft.JScript, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>BuildMessageEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>Void</ReturnType>
+        <Param>Object sender</Param>
+        <Param>BuildMessageEventArgs e</Param>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>BuildErrorEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="860" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>Void</ReturnType>
+        <Param>Object sender</Param>
+        <Param>BuildErrorEventArgs e</Param>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>BuildWarningEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="648" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>Void</ReturnType>
+        <Param>Object sender</Param>
+        <Param>BuildWarningEventArgs e</Param>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>CustomBuildEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="436" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>Void</ReturnType>
+        <Param>Object sender</Param>
+        <Param>CustomBuildEventArgs e</Param>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>BuildStartedEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="224" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>Void</ReturnType>
+        <Param>Object sender</Param>
+        <Param>BuildStartedEventArgs e</Param>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>BuildFinishedEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="12" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>Void</ReturnType>
+        <Param>Object sender</Param>
+        <Param>BuildFinishedEventArgs e</Param>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>ProjectStartedEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="1920" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>Void</ReturnType>
+        <Param>Object sender</Param>
+        <Param>ProjectStartedEventArgs e</Param>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>ProjectFinishedEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>Void</ReturnType>
+        <Param>Object sender</Param>
+        <Param>ProjectFinishedEventArgs e</Param>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>TargetStartedEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>Void</ReturnType>
+        <Param>Object sender</Param>
+        <Param>TargetStartedEventArgs e</Param>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>TargetFinishedEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>Void</ReturnType>
+        <Param>Object sender</Param>
+        <Param>TargetFinishedEventArgs e</Param>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>TaskStartedEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>Void</ReturnType>
+        <Param>Object sender</Param>
+        <Param>TaskStartedEventArgs e</Param>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>TaskFinishedEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="860" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>Void</ReturnType>
+        <Param>Object sender</Param>
+        <Param>TaskFinishedEventArgs e</Param>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>BuildStatusEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="648" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>Void</ReturnType>
+        <Param>Object sender</Param>
+        <Param>BuildStatusEventArgs e</Param>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>AnyEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="436" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>Void</ReturnType>
+        <Param>Object sender</Param>
+        <Param>BuildEventArgs e</Param>
+      </Entity>
+      <Entity type="Enum">
+        <Name>MessageImportance</Name>
+        <Access>Public</Access>
+        <Location left="224" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>High = 0</Value>
+        <Value>Normal = 1</Value>
+        <Value>Low = 2</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>LoggerVerbosity</Name>
+        <Access>Public</Access>
+        <Location left="12" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Quiet = 0</Value>
+        <Value>Minimal = 1</Value>
+        <Value>Normal = 2</Value>
+        <Value>Detailed = 3</Value>
+        <Value>Diagnostic = 4</Value>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="7" second="6">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="8" second="6">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="9" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="10" second="6">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="11" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="12" second="6">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="13" second="6">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="14" second="13">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="15" second="13">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="19" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="20" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="22" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="23" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="24" second="10">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="25" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="26" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="10" second="44">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>importance</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Microsoft.Build.Utilities.dll</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>AppDomainIsolatedTask</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="2280" />
+        <Size width="162" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private IBuildEngine buildEngine</Member>
+        <Member type="Field">private ITaskHost hostObject</Member>
+        <Member type="Field">private TaskLoggingHelper log</Member>
+        <Member type="Property">public IBuildEngine BuildEngine { get; set; }</Member>
+        <Member type="Property">public ITaskHost HostObject { get; set; }</Member>
+        <Member type="Property">public TaskLoggingHelper Log { get; }</Member>
+        <Member type="Property">protected ResourceManager TaskResources { get; set; }</Member>
+        <Member type="Property">protected String HelpKeywordPrefix { get; set; }</Member>
+        <Member type="Constructor">protected AppDomainIsolatedTask()</Member>
+        <Member type="Constructor">protected AppDomainIsolatedTask(ResourceManager taskResources)</Member>
+        <Member type="Constructor">protected AppDomainIsolatedTask(ResourceManager taskResources, String helpKeywordPrefix)</Member>
+        <Member type="Method">public abstract Boolean Execute()</Member>
+        <Member type="Method">public override Object InitializeLifetimeService()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AssemblyResources</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="2280" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ResourceManager resources</Member>
+        <Member type="Field">private ResourceManager sharedResources</Member>
+        <Member type="Property">internal static ResourceManager PrimaryResources { get; }</Member>
+        <Member type="Property">internal static ResourceManager SharedResources { get; }</Member>
+        <Member type="Constructor">static AssemblyResources()</Member>
+        <Member type="Method">internal static String GetString(String name)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CanonicalError</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="2280" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static Regex originCategoryCodeTextExpression</Member>
+        <Member type="Field">private static Regex filenameLocationFromOrigin</Member>
+        <Member type="Field">private static Regex lineFromLocation</Member>
+        <Member type="Field">private static Regex lineLineFromLocation</Member>
+        <Member type="Field">private static Regex lineColFromLocation</Member>
+        <Member type="Field">private static Regex lineColColFromLocation</Member>
+        <Member type="Field">private static Regex lineColLineColFromLocation</Member>
+        <Member type="Constructor">static CanonicalError()</Member>
+        <Member type="Method">internal static Parts Parse(String message)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Parts</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="2280" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal String origin</Member>
+        <Member type="Field">internal Int32 line</Member>
+        <Member type="Field">internal Int32 column</Member>
+        <Member type="Field">internal Int32 endLine</Member>
+        <Member type="Field">internal Int32 endColumn</Member>
+        <Member type="Field">internal Category category</Member>
+        <Member type="Field">internal String subcategory</Member>
+        <Member type="Field">internal String code</Member>
+        <Member type="Field">internal String text</Member>
+        <Member type="Field">internal const Int32 numberNotSpecified = 0</Member>
+        <Member type="Constructor">internal Parts()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CommandLineBuilder</Name>
+        <Access>Public</Access>
+        <Location left="224" top="2280" />
+        <Size width="162" height="519" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private StringBuilder commandLine</Member>
+        <Member type="Field">private static Regex allowedUnquoted</Member>
+        <Member type="Field">private static Regex definitelyNeedQuotes</Member>
+        <Member type="Property">protected StringBuilder CommandLine { get; }</Member>
+        <Member type="Constructor">public CommandLineBuilder()</Member>
+        <Member type="Constructor">static CommandLineBuilder()</Member>
+        <Member type="Method">public override String ToString()</Member>
+        <Member type="Method">protected virtual Boolean IsQuotingRequired(String parameter)</Member>
+        <Member type="Method">protected Void AppendSpaceIfNotEmpty()</Member>
+        <Member type="Method">protected Void AppendTextWithQuoting(String textToAppend)</Member>
+        <Member type="Method">protected Void AppendTextUnquoted(String textToAppend)</Member>
+        <Member type="Method">protected Void AppendFileNameWithQuoting(String fileName)</Member>
+        <Member type="Method">public Void AppendFileNameIfNotNull(String fileName)</Member>
+        <Member type="Method">public Void AppendFileNameIfNotNull(ITaskItem fileItem)</Member>
+        <Member type="Method">public Void AppendFileNamesIfNotNull(String[] fileNames, String delimiter)</Member>
+        <Member type="Method">public Void AppendFileNamesIfNotNull(ITaskItem[] fileItems, String delimiter)</Member>
+        <Member type="Method">public Void AppendSwitch(String switchName)</Member>
+        <Member type="Method">public Void AppendSwitchIfNotNull(String switchName, String parameter)</Member>
+        <Member type="Method">protected virtual Void VerifyThrowNoEmbeddedDoubleQuotes(String switchName, String parameter)</Member>
+        <Member type="Method">public Void AppendSwitchIfNotNull(String switchName, ITaskItem parameter)</Member>
+        <Member type="Method">public Void AppendSwitchIfNotNull(String switchName, String[] parameters, String delimiter)</Member>
+        <Member type="Method">public Void AppendSwitchIfNotNull(String switchName, ITaskItem[] parameters, String delimiter)</Member>
+        <Member type="Method">public Void AppendSwitchUnquotedIfNotNull(String switchName, String parameter)</Member>
+        <Member type="Method">public Void AppendSwitchUnquotedIfNotNull(String switchName, ITaskItem parameter)</Member>
+        <Member type="Method">public Void AppendSwitchUnquotedIfNotNull(String switchName, String[] parameters, String delimiter)</Member>
+        <Member type="Method">public Void AppendSwitchUnquotedIfNotNull(String switchName, ITaskItem[] parameters, String delimiter)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Logger</Name>
+        <Access>Public</Access>
+        <Location left="12" top="2280" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private LoggerVerbosity verbosity</Member>
+        <Member type="Field">private String parameters</Member>
+        <Member type="Property">public virtual LoggerVerbosity Verbosity { get; set; }</Member>
+        <Member type="Property">public virtual String Parameters { get; set; }</Member>
+        <Member type="Constructor">protected Logger()</Member>
+        <Member type="Method">public abstract Void Initialize(IEventSource eventSource)</Member>
+        <Member type="Method">public virtual Void Shutdown()</Member>
+        <Member type="Method">public virtual String FormatErrorEvent(BuildErrorEventArgs args)</Member>
+        <Member type="Method">public virtual String FormatWarningEvent(BuildWarningEventArgs args)</Member>
+        <Member type="Method">public Boolean IsVerbosityAtLeast(LoggerVerbosity checkVerbosity)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NativeMethods</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="1184" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal const UInt32 ERROR_INSUFFICIENT_BUFFER = 2147942522</Member>
+        <Member type="Field">internal const UInt32 STARTUP_LOADER_SAFEMODE = 16</Member>
+        <Member type="Field">internal const UInt32 S_OK = 0</Member>
+        <Member type="Field">internal const UInt32 RUNTIME_INFO_DONT_SHOW_ERROR_DIALOG = 64</Member>
+        <Member type="Field">private const String MscoreeDLL = mscoree.dll</Member>
+        <Member type="Method">internal static UInt32 GetRequestedRuntimeInfo(String pExe, String pwszVersion, String pConfigurationFile, UInt32 startupFlags, UInt32 runtimeInfoFlags, StringBuilder pDirectory, Int32 dwDirectory, out UInt32 dwDirectoryLength, StringBuilder pVersion, Int32 cchBuffer, out UInt32 dwlength)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Task</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="1184" />
+        <Size width="162" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private IBuildEngine buildEngine</Member>
+        <Member type="Field">private ITaskHost hostObject</Member>
+        <Member type="Field">private TaskLoggingHelper log</Member>
+        <Member type="Property">public IBuildEngine BuildEngine { get; set; }</Member>
+        <Member type="Property">public ITaskHost HostObject { get; set; }</Member>
+        <Member type="Property">public TaskLoggingHelper Log { get; }</Member>
+        <Member type="Property">protected ResourceManager TaskResources { get; set; }</Member>
+        <Member type="Property">protected String HelpKeywordPrefix { get; set; }</Member>
+        <Member type="Constructor">protected Task()</Member>
+        <Member type="Constructor">protected Task(ResourceManager taskResources)</Member>
+        <Member type="Constructor">protected Task(ResourceManager taskResources, String helpKeywordPrefix)</Member>
+        <Member type="Method">public abstract Boolean Execute()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TaskItem</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="1184" />
+        <Size width="162" height="383" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String itemSpec</Member>
+        <Member type="Field">private Hashtable metadata</Member>
+        <Member type="Field">private Hashtable itemSpecModifiers</Member>
+        <Member type="Property">public String ItemSpec { get; set; }</Member>
+        <Member type="Property">public ICollection MetadataNames { get; }</Member>
+        <Member type="Property">public Int32 MetadataCount { get; }</Member>
+        <Member type="Constructor">public TaskItem()</Member>
+        <Member type="Constructor">public TaskItem(String itemSpec)</Member>
+        <Member type="Constructor">public TaskItem(String itemSpec, IDictionary itemMetadata)</Member>
+        <Member type="Constructor">public TaskItem(ITaskItem sourceItem)</Member>
+        <Member type="Method">public Void RemoveMetadata(String metadataName)</Member>
+        <Member type="Method">public Void SetMetadata(String metadataName, String metadataValue)</Member>
+        <Member type="Method">public String GetMetadata(String metadataName)</Member>
+        <Member type="Method">public Void CopyMetadataTo(ITaskItem destinationItem)</Member>
+        <Member type="Method">public IDictionary CloneCustomMetadata()</Member>
+        <Member type="Method">public override String ToString()</Member>
+        <Member type="Method">public override Object InitializeLifetimeService()</Member>
+        <Member type="Method">public static explicit operator String(TaskItem taskItemToCast)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TaskLoggingHelper</Name>
+        <Access>Public</Access>
+        <Location left="860" top="1184" />
+        <Size width="162" height="893" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ITask taskInstance</Member>
+        <Member type="Field">private String taskName</Member>
+        <Member type="Field">private String taskNameUpperCase</Member>
+        <Member type="Field">private ResourceManager taskResources</Member>
+        <Member type="Field">private String helpKeywordPrefix</Member>
+        <Member type="Field">private Boolean hasLoggedErrors</Member>
+        <Member type="Field">private Regex messageCodePattern</Member>
+        <Member type="Property">protected String TaskName { get; }</Member>
+        <Member type="Property">private String TaskNameUpperCase { get; }</Member>
+        <Member type="Property">protected IBuildEngine BuildEngine { get; }</Member>
+        <Member type="Property">public ResourceManager TaskResources { get; set; }</Member>
+        <Member type="Property">public String HelpKeywordPrefix { get; set; }</Member>
+        <Member type="Property">public Boolean HasLoggedErrors { get; }</Member>
+        <Member type="Constructor">public TaskLoggingHelper(ITask taskInstance)</Member>
+        <Member type="Constructor">private TaskLoggingHelper()</Member>
+        <Member type="Constructor">static TaskLoggingHelper()</Member>
+        <Member type="Method">public String ExtractMessageCode(String message, out String messageWithoutCodePrefix)</Member>
+        <Member type="Method">public virtual String FormatResourceString(String resourceName, params Object[] args)</Member>
+        <Member type="Method">public virtual String FormatString(String unformatted, params Object[] args)</Member>
+        <Member type="Method">public Void LogMessage(String message, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogMessage(MessageImportance importance, String message, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogMessageFromResources(String messageResourceName, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogMessageFromResources(MessageImportance importance, String messageResourceName, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogExternalProjectStarted(String message, String helpKeyword, String projectFile, String targetNames)</Member>
+        <Member type="Method">public Void LogExternalProjectFinished(String message, String helpKeyword, String projectFile, Boolean succeeded)</Member>
+        <Member type="Method">public Void LogCommandLine(String commandLine)</Member>
+        <Member type="Method">public Void LogCommandLine(MessageImportance importance, String commandLine)</Member>
+        <Member type="Method">public Void LogError(String message, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogError(String subcategory, String errorCode, String helpKeyword, String file, Int32 lineNumber, Int32 columnNumber, Int32 endLineNumber, Int32 endColumnNumber, String message, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogErrorFromResources(String messageResourceName, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogErrorFromResources(String subcategoryResourceName, String errorCode, String helpKeyword, String file, Int32 lineNumber, Int32 columnNumber, Int32 endLineNumber, Int32 endColumnNumber, String messageResourceName, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogErrorWithCodeFromResources(String messageResourceName, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogErrorWithCodeFromResources(String subcategoryResourceName, String file, Int32 lineNumber, Int32 columnNumber, Int32 endLineNumber, Int32 endColumnNumber, String messageResourceName, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogErrorFromException(Exception exception)</Member>
+        <Member type="Method">public Void LogErrorFromException(Exception exception, Boolean showStackTrace)</Member>
+        <Member type="Method">public Void LogErrorFromException(Exception exception, Boolean showStackTrace, Boolean showDetail, String file)</Member>
+        <Member type="Method">public Void LogWarning(String message, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogWarning(String subcategory, String warningCode, String helpKeyword, String file, Int32 lineNumber, Int32 columnNumber, Int32 endLineNumber, Int32 endColumnNumber, String message, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogWarningFromResources(String messageResourceName, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogWarningFromResources(String subcategoryResourceName, String warningCode, String helpKeyword, String file, Int32 lineNumber, Int32 columnNumber, Int32 endLineNumber, Int32 endColumnNumber, String messageResourceName, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogWarningWithCodeFromResources(String messageResourceName, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogWarningWithCodeFromResources(String subcategoryResourceName, String file, Int32 lineNumber, Int32 columnNumber, Int32 endLineNumber, Int32 endColumnNumber, String messageResourceName, params Object[] messageArgs)</Member>
+        <Member type="Method">public Void LogWarningFromException(Exception exception)</Member>
+        <Member type="Method">public Void LogWarningFromException(Exception exception, Boolean showStackTrace)</Member>
+        <Member type="Method">public Boolean LogMessagesFromFile(String fileName)</Member>
+        <Member type="Method">public Boolean LogMessagesFromFile(String fileName, MessageImportance messageImportance)</Member>
+        <Member type="Method">public Boolean LogMessagesFromStream(TextReader stream, MessageImportance messageImportance)</Member>
+        <Member type="Method">public Boolean LogMessageFromText(String lineOfText, MessageImportance messageImportance)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ToolLocationHelper</Name>
+        <Access>Public</Access>
+        <Location left="648" top="1184" />
+        <Size width="162" height="604" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String thisAssemblyFrameworkVersion</Member>
+        <Member type="Field">private GetDirectories getDirectories</Member>
+        <Member type="Field">private static String pathToDotNetFrameworkV11</Member>
+        <Member type="Field">private static String pathToDotNetFrameworkV20</Member>
+        <Member type="Field">private static String pathToDotNetFrameworkSdkV11</Member>
+        <Member type="Field">private static String pathToDotNetFrameworkSdkV20</Member>
+        <Member type="Field">private const String dotNetFrameworkRegistryPath = SOFTWARE\Microsoft\.NETFramework</Member>
+        <Member type="Field">private const String fullDotNetFrameworkRegistryKey = HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework</Member>
+        <Member type="Field">private const String dotNetFrameworkSdkInstallKeyValueV11 = SDKInstallRootv1.1</Member>
+        <Member type="Field">private const String dotNetFrameworkVersionFolderPrefixV11 = v1.1</Member>
+        <Member type="Field">private const String dotNetFrameworkVersionV11 = v1.1.4322</Member>
+        <Member type="Field">private const String dotNetFrameworkSdkInstallKeyValueV20 = SDKInstallRootv2.0</Member>
+        <Member type="Field">private const String dotNetFrameworkVersionFolderPrefixV20 = v2.0</Member>
+        <Member type="Property">public static String PathToSystem { get; }</Member>
+        <Member type="Property">private static String PathToDotNetFrameworkV11 { get; }</Member>
+        <Member type="Property">private static String PathToDotNetFrameworkV20 { get; }</Member>
+        <Member type="Property">private static String PathToDotNetFrameworkSdkV11 { get; }</Member>
+        <Member type="Property">private static String PathToDotNetFrameworkSdkV20 { get; }</Member>
+        <Member type="Constructor">static ToolLocationHelper()</Member>
+        <Member type="Method">private static String ConvertAssemblyVersionInfoToFxDirectoryFormat(String assemblyVersionInfo)</Member>
+        <Member type="Method">private static String FindDotNetFrameworkSdkUnderKey(String registryKeyName)</Member>
+        <Member type="Method">internal static String FindDotNetFrameworkPath(String currentRuntimePath, String prefix, String frameworkVersion, GetDirectories getDirectories, Boolean useHeuristic)</Member>
+        <Member type="Method">internal static String ConstructDotNetFrameworkPathFromRuntimeInfo(String requestedVersion)</Member>
+        <Member type="Method">public static String GetDotNetFrameworkVersionFolderPrefix(TargetDotNetFrameworkVersion version)</Member>
+        <Member type="Method">public static String GetDotNetFrameworkRootRegistryKey(TargetDotNetFrameworkVersion version)</Member>
+        <Member type="Method">public static String GetDotNetFrameworkSdkInstallKeyValue(TargetDotNetFrameworkVersion version)</Member>
+        <Member type="Method">public static String GetPathToDotNetFramework(TargetDotNetFrameworkVersion version)</Member>
+        <Member type="Method">public static String GetPathToDotNetFrameworkSdk(TargetDotNetFrameworkVersion version)</Member>
+        <Member type="Method">public static String GetPathToDotNetFrameworkSdkFile(String fileName, TargetDotNetFrameworkVersion version)</Member>
+        <Member type="Method">public static String GetPathToDotNetFrameworkFile(String fileName, TargetDotNetFrameworkVersion version)</Member>
+        <Member type="Method">public static String GetPathToSystemFile(String fileName)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ToolTask</Name>
+        <Access>Public</Access>
+        <Location left="436" top="1184" />
+        <Size width="162" height="1046" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int32 exitCode</Member>
+        <Member type="Field">private String toolPath</Member>
+        <Member type="Field">private Int32 timeout</Member>
+        <Member type="Field">private TaskLoggingHelper logPrivate</Member>
+        <Member type="Field">private TaskLoggingHelper logShared</Member>
+        <Member type="Field">private Queue standardErrorData</Member>
+        <Member type="Field">private Queue standardOutputData</Member>
+        <Member type="Field">private ManualResetEvent standardErrorDataAvailable</Member>
+        <Member type="Field">private ManualResetEvent standardOutputDataAvailable</Member>
+        <Member type="Field">private ManualResetEvent toolExited</Member>
+        <Member type="Field">private ManualResetEvent toolTimeoutExpired</Member>
+        <Member type="Field">private Timer toolTimer</Member>
+        <Member type="Property">public Int32 ExitCode { get; }</Member>
+        <Member type="Property">protected abstract String ToolName { get; }</Member>
+        <Member type="Property">public String ToolPath { get; set; }</Member>
+        <Member type="Property">public virtual Int32 Timeout { get; set; }</Member>
+        <Member type="Property">protected virtual Encoding ResponseFileEncoding { get; }</Member>
+        <Member type="Property">protected virtual Encoding StandardOutputEncoding { get; }</Member>
+        <Member type="Property">protected virtual Encoding StandardErrorEncoding { get; }</Member>
+        <Member type="Property">protected virtual StringDictionary EnvironmentOverride { get; }</Member>
+        <Member type="Property">protected virtual MessageImportance StandardErrorLoggingImportance { get; }</Member>
+        <Member type="Property">protected virtual MessageImportance StandardOutputLoggingImportance { get; }</Member>
+        <Member type="Property">private TaskLoggingHelper LogPrivate { get; }</Member>
+        <Member type="Property">private TaskLoggingHelper LogShared { get; }</Member>
+        <Member type="Constructor">protected ToolTask()</Member>
+        <Member type="Constructor">protected ToolTask(ResourceManager taskResources)</Member>
+        <Member type="Constructor">protected ToolTask(ResourceManager taskResources, String helpKeywordPrefix)</Member>
+        <Member type="Method">protected abstract String GenerateFullPathToTool()</Member>
+        <Member type="Method">protected virtual String GetWorkingDirectory()</Member>
+        <Member type="Method">protected internal virtual Boolean ValidateParameters()</Member>
+        <Member type="Method">protected virtual Boolean SkipTaskExecution()</Member>
+        <Member type="Method">protected virtual String GenerateResponseFileCommands()</Member>
+        <Member type="Method">protected virtual String GenerateCommandLineCommands()</Member>
+        <Member type="Method">protected virtual String GetResponseFileSwitch(String responseFilePath)</Member>
+        <Member type="Method">protected virtual Boolean HandleTaskExecutionErrors()</Member>
+        <Member type="Method">protected virtual Boolean CallHostObjectToExecute()</Member>
+        <Member type="Method">protected virtual HostObjectInitializationStatus InitializeHostObject()</Member>
+        <Member type="Method">protected virtual Void LogToolCommand(String message)</Member>
+        <Member type="Method">protected virtual Void LogPathToTool(String toolName, String pathToTool)</Member>
+        <Member type="Method">private String ComputePathToTool()</Member>
+        <Member type="Method">private String GetTemporaryResponseFile(String responseFileCommands, out String responseFileSwitch)</Member>
+        <Member type="Method">private ProcessStartInfo GetProcessStartInfo(String pathToTool, String commandLineCommands, String responseFileSwitch)</Member>
+        <Member type="Method">protected virtual Int32 ExecuteTool(String pathToTool, String responseFileCommands, String commandLineCommands)</Member>
+        <Member type="Method">protected Void DeleteTempFile(String fileName)</Member>
+        <Member type="Method">private Void HandleToolNotifications(Process proc)</Member>
+        <Member type="Method">private Void KillToolProcessOnTimeout(Process proc)</Member>
+        <Member type="Method">private Void ConfirmProcessExit(Process proc)</Member>
+        <Member type="Method">private Void LogMessagesFromStandardError()</Member>
+        <Member type="Method">private Void LogMessagesFromStandardOutput()</Member>
+        <Member type="Method">private Void LogMessagesFromStandardErrorOrOutput(Queue dataQueue, ManualResetEvent dataAvailableSignal, MessageImportance messageImportance)</Member>
+        <Member type="Method">protected virtual Void LogEventsFromTextOutput(String singleLine, MessageImportance messageImportance)</Member>
+        <Member type="Method">private Void ReceiveTimeoutNotification(Object unused)</Member>
+        <Member type="Method">private Void ReceiveExitNotification(Object sender, EventArgs e)</Member>
+        <Member type="Method">private Void ReceiveStandardErrorData(Object sender, DataReceivedEventArgs e)</Member>
+        <Member type="Method">private Void ReceiveStandardOutputData(Object sender, DataReceivedEventArgs e)</Member>
+        <Member type="Method">private static Void ReceiveStandardErrorOrOutputData(DataReceivedEventArgs e, Queue dataQueue, ManualResetEvent dataAvailableSignal)</Member>
+        <Member type="Method">public override Boolean Execute()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EncodingUtilities</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="1184" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static Encoding currentOemEncoding</Member>
+        <Member type="Property">internal static Encoding CurrentSystemOemEncoding { get; }</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ErrorUtilities</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="1184" />
+        <Size width="162" height="451" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">private static Void ThrowInternalError(Boolean showAssert, String unformattedMessage, params Object[] args)</Member>
+        <Member type="Method">internal static Void VerifyThrowNoAssert(Boolean condition, String unformattedMessage)</Member>
+        <Member type="Method">internal static Void VerifyThrow(Boolean condition, String unformattedMessage)</Member>
+        <Member type="Method">internal static Void VerifyThrow(Boolean condition, String unformattedMessage, Object arg0)</Member>
+        <Member type="Method">internal static Void VerifyThrow(Boolean condition, String unformattedMessage, Object arg0, Object arg1)</Member>
+        <Member type="Method">internal static Void VerifyThrow(Boolean condition, String unformattedMessage, Object arg0, Object arg1, Object arg2)</Member>
+        <Member type="Method">internal static Void VerifyThrow(Boolean condition, String unformattedMessage, Object arg0, Object arg1, Object arg2, Object arg3)</Member>
+        <Member type="Method">private static Void ThrowInvalidOperation(String resourceName, params Object[] args)</Member>
+        <Member type="Method">internal static Void VerifyThrowInvalidOperation(Boolean condition, String resourceName)</Member>
+        <Member type="Method">internal static Void VerifyThrowInvalidOperation(Boolean condition, String resourceName, Object arg0)</Member>
+        <Member type="Method">internal static Void VerifyThrowInvalidOperation(Boolean condition, String resourceName, Object arg0, Object arg1)</Member>
+        <Member type="Method">internal static Void VerifyThrowInvalidOperation(Boolean condition, String resourceName, Object arg0, Object arg1, Object arg2)</Member>
+        <Member type="Method">private static Void ThrowArgument(Exception innerException, String resourceName, params Object[] args)</Member>
+        <Member type="Method">internal static Void VerifyThrowArgument(Boolean condition, String resourceName)</Member>
+        <Member type="Method">internal static Void VerifyThrowArgument(Boolean condition, String resourceName, Object arg0)</Member>
+        <Member type="Method">internal static Void VerifyThrowArgument(Boolean condition, String resourceName, Object arg0, Object arg1)</Member>
+        <Member type="Method">internal static Void VerifyThrowArgument(Boolean condition, Exception innerException, String resourceName)</Member>
+        <Member type="Method">internal static Void VerifyThrowArgument(Boolean condition, Exception innerException, String resourceName, Object arg0)</Member>
+        <Member type="Method">internal static Void VerifyThrowArgument(Boolean condition, Exception innerException, String resourceName, Object arg0, Object arg1)</Member>
+        <Member type="Method">internal static Void VerifyThrowArgumentOutOfRange(Boolean condition, String parameterName)</Member>
+        <Member type="Method">internal static Void VerifyThrowArgumentLength(String parameter, String parameterName)</Member>
+        <Member type="Method">internal static Void VerifyThrowArgumentNull(Object parameter, String parameterName)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EscapingUtilities</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="802" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static Char[] charsToEscape</Member>
+        <Member type="Constructor">static EscapingUtilities()</Member>
+        <Member type="Method">internal static String UnescapeAll(String escapedString)</Member>
+        <Member type="Method">internal static String UnescapeAll(String escapedString, out Boolean escapingWasNecessary)</Member>
+        <Member type="Method">internal static String Escape(String unescapedString)</Member>
+        <Member type="Method">private static Boolean ContainsReservedCharacters(String unescapedString)</Member>
+        <Member type="Method">internal static Boolean ContainsEscapedWildcards(String escapedString)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EventArgsFormatting</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="802" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String[] newLines</Member>
+        <Member type="Constructor">static EventArgsFormatting()</Member>
+        <Member type="Method">internal static String FormatEventMessage(BuildErrorEventArgs e)</Member>
+        <Member type="Method">internal static String FormatEventMessage(BuildWarningEventArgs e)</Member>
+        <Member type="Method">internal static String FormatEventMessage(String category, String subcategory, String message, String code, String file, Int32 lineNumber, Int32 endLineNumber, Int32 columnNumber, Int32 endColumnNumber, Int32 threadId)</Member>
+        <Member type="Method">private static String[] SplitStringOnNewLines(String s)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FileUtilities</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="802" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal const String FileTimeFormat = yyyy'-'MM'-'dd HH':'mm':'ss'.'fffffff</Member>
+        <Member type="Method">internal static Boolean IsItemSpecModifier(String name)</Member>
+        <Member type="Method">internal static Boolean IsDerivableItemSpecModifier(String name)</Member>
+        <Member type="Method">internal static String GetItemSpecModifier(String itemSpec, String modifier, ref Hashtable cachedModifiers)</Member>
+        <Member type="Method">internal static String EnsureTrailingSlash(String fileSpec)</Member>
+        <Member type="Method">internal static Boolean EndsWithSlash(String fileSpec)</Member>
+        <Member type="Method">internal static Boolean IsSlash(Char c)</Member>
+        <Member type="Method">private static String GetFullPath(String fileSpec)</Member>
+        <Member type="Method">internal static String GetDirectory(String fileSpec)</Member>
+        <Member type="Method">internal static Boolean HasExtension(String fileName, String[] allowedExtensions)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ItemSpecModifiers</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="802" />
+        <Size width="162" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal String[] All</Member>
+        <Member type="Field">private static Hashtable tableOfItemSpecModifiers</Member>
+        <Member type="Field">internal const String FullPath = FullPath</Member>
+        <Member type="Field">internal const String RootDir = RootDir</Member>
+        <Member type="Field">internal const String Filename = Filename</Member>
+        <Member type="Field">internal const String Extension = Extension</Member>
+        <Member type="Field">internal const String RelativeDir = RelativeDir</Member>
+        <Member type="Field">internal const String Directory = Directory</Member>
+        <Member type="Field">internal const String RecursiveDir = RecursiveDir</Member>
+        <Member type="Field">internal const String Identity = Identity</Member>
+        <Member type="Field">internal const String ModifiedTime = ModifiedTime</Member>
+        <Member type="Field">internal const String CreatedTime = CreatedTime</Member>
+        <Member type="Field">internal const String AccessedTime = AccessedTime</Member>
+        <Member type="Property">internal static Hashtable TableOfItemSpecModifiers { get; }</Member>
+        <Member type="Constructor">static ItemSpecModifiers()</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FileUtilitiesRegex</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="802" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal Regex DrivePattern</Member>
+        <Member type="Field">internal Regex UNCPattern</Member>
+        <Member type="Constructor">static FileUtilitiesRegex()</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>InternalErrorException</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="802" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">internal InternalErrorException()</Member>
+        <Member type="Constructor">internal InternalErrorException(String message)</Member>
+        <Member type="Constructor">internal InternalErrorException(String message, Boolean showAssert)</Member>
+        <Member type="Constructor">internal InternalErrorException(String message, Exception innerException)</Member>
+        <Member type="Method">private Void ShowAssertDialog(Boolean showAssert)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NativeMethods</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="802" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">internal static Int32 GetOEMCP()</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ResourceUtilities</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="802" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Regex msbuildMessageCodePattern</Member>
+        <Member type="Constructor">static ResourceUtilities()</Member>
+        <Member type="Method">internal static String ExtractMessageCode(Regex messageCodePattern, String messageWithCode, out String code)</Member>
+        <Member type="Method">private static String GetHelpKeyword(String resourceName)</Member>
+        <Member type="Method">internal static String FormatResourceString(out String code, out String helpKeyword, String resourceName, params Object[] args)</Member>
+        <Member type="Method">internal static String FormatResourceString(String resourceName, params Object[] args)</Member>
+        <Member type="Method">internal static String FormatString(String unformatted, params Object[] args)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ExceptionHandling</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">internal static Boolean IsCriticalException(Exception e)</Member>
+        <Member type="Method">internal static Void RethrowUnlessFileIO(Exception e)</Member>
+        <Member type="Method">internal static Boolean NotExpectedException(Exception e)</Member>
+        <Member type="Method">internal static Boolean NotExpectedReflectionException(Exception e)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FXAssembly</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal const String Version = 2.0.0.0</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ThisAssembly</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal const String Title = Microsoft.Build.Utilities.dll</Member>
+        <Member type="Field">internal const String Description = Microsoft.Build.Utilities.dll</Member>
+        <Member type="Field">internal const String DefaultAlias = Microsoft.Build.Utilities.dll</Member>
+        <Member type="Field">internal const String Copyright = © Microsoft Corporation.  All rights reserved.</Member>
+        <Member type="Field">internal const String Version = 2.0.0.0</Member>
+        <Member type="Field">internal const String InformationalVersion = 2.0.50727.9136</Member>
+        <Member type="Field">internal const Int32 DailyBuildNumber = 50727</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AssemblyRef</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="12" />
+        <Size width="162" height="740" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal const String EcmaPublicKey = b77a5c561934e089</Member>
+        <Member type="Field">internal const String EcmaPublicKeyToken = b77a5c561934e089</Member>
+        <Member type="Field">internal const String EcmaPublicKeyFull = 00000000000000000400000000000000</Member>
+        <Member type="Field">internal const String Mscorlib = mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Member>
+        <Member type="Field">internal const String SystemData = System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Member>
+        <Member type="Field">internal const String SystemDataOracleClient = System.Data.OracleClient, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Member>
+        <Member type="Field">internal const String System = System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Member>
+        <Member type="Field">internal const String SystemRuntimeRemoting = System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Member>
+        <Member type="Field">internal const String SystemWindowsForms = System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Member>
+        <Member type="Field">internal const String SystemXml = System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Member>
+        <Member type="Field">internal const String MicrosoftPublicKey = b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String MicrosoftPublicKeyToken = b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String MicrosoftPublicKeyFull = 002400000480000094000000060200000024000052534131000400000100010007D1FA57C4AED9F0A32E84AA0FAEFD0DE9E8FD6AEC8F87FB03766C834C99921EB23BE79AD9D5DCC1DD9AD236132102900B723CF980957FC4E177108FC607774F29E8320E92EA05ECE4E821C0A5EFE8F1645C4C0C93C1AB99285D622CAA652C1DFAD63D745D6F2DE5F17E5EAF0FC4963D261C8A12436518206DC093344D5AD293</Member>
+        <Member type="Field">internal const String SystemConfiguration = System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemConfigurationInstall = System.Configuration.Install, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemDeployment = System.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemDesign = System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemDirectoryServices = System.DirectoryServices, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemDrawingDesign = System.Drawing.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemDrawing = System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemEnterpriseServices = System.EnterpriseServices, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemManagement = System.Management, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemMessaging = System.Messaging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemRuntimeSerializationFormattersSoap = System.Runtime.Serialization.Formatters.Soap, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemSecurity = System.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemServiceProcess = System.ServiceProcess, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemWeb = System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemWebMobile = System.Web.Mobile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemWebRegularExpressions = System.Web.RegularExpressions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String SystemWebServices = System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String MicrosoftVisualStudio = Microsoft.VisualStudio, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String MicrosoftVisualStudioWindowsForms = Microsoft.VisualStudio.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String VJSharpCodeProvider = VJSharpCodeProvider, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String ASPBrowserCapsPublicKey = b7bd7678b977bd8f</Member>
+        <Member type="Field">internal const String ASPBrowserCapsFactory = ASP.BrowserCapsFactory, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b7bd7678b977bd8f</Member>
+        <Member type="Field">internal const String MicrosoftVSDesigner = Microsoft.VSDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String MicrosoftVisualStudioWeb = Microsoft.VisualStudio.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String MicrosoftVSDesignerMobile = Microsoft.VSDesigner.Mobile, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String MicrosoftJScript = Microsoft.JScript, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>GetDirectories</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>String[]</ReturnType>
+        <Param>String path</Param>
+        <Param>String pattern</Param>
+      </Entity>
+      <Entity type="Enum">
+        <Name>Category</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Warning = 0</Value>
+        <Value>Error = 1</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>TargetDotNetFrameworkVersion</Name>
+        <Access>Public</Access>
+        <Location left="224" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Version11 = 0</Value>
+        <Value>Version20 = 1</Value>
+        <Value>VersionLatest = 1</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>HostObjectInitializationStatus</Name>
+        <Access>Public</Access>
+        <Location left="12" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>UseHostObjectToExecute = 0</Value>
+        <Value>UseAlternateToolToExecute = 1</Value>
+        <Value>NoActionReturnSuccess = 2</Value>
+        <Value>NoActionReturnFailure = 3</Value>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Nesting" first="2" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="16" second="17">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="3" second="27">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="11" second="7">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="0" second="9">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>log</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="27">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>category</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="9">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>log</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="10" second="26">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>getDirectories</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="9">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>logPrivate</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="9">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>logShared</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>System.Web.RegularExpressions.dll</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>TagRegexRunner1</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="1608" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TagRegexRunner1()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TagRegexFactory1</Name>
+        <Access>Internal</Access>
+        <Location left="2556" top="1342" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TagRegexFactory1()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TagRegex</Name>
+        <Access>Public</Access>
+        <Location left="2344" top="1342" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TagRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DirectiveRegexRunner2</Name>
+        <Access>Internal</Access>
+        <Location left="2132" top="1342" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DirectiveRegexRunner2()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DirectiveRegexFactory2</Name>
+        <Access>Internal</Access>
+        <Location left="1920" top="1342" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DirectiveRegexFactory2()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DirectiveRegex</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="1342" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DirectiveRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EndTagRegexRunner3</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="1342" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public EndTagRegexRunner3()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EndTagRegexFactory3</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="1342" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public EndTagRegexFactory3()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EndTagRegex</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="1342" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public EndTagRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AspCodeRegexRunner4</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="1342" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public AspCodeRegexRunner4()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AspCodeRegexFactory4</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="1342" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public AspCodeRegexFactory4()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AspCodeRegex</Name>
+        <Access>Public</Access>
+        <Location left="436" top="1342" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public AspCodeRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AspExprRegexRunner5</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="1342" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public AspExprRegexRunner5()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AspExprRegexFactory5</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="1342" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public AspExprRegexFactory5()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AspExprRegex</Name>
+        <Access>Public</Access>
+        <Location left="2556" top="1076" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public AspExprRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DatabindExprRegexRunner6</Name>
+        <Access>Internal</Access>
+        <Location left="2344" top="1076" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DatabindExprRegexRunner6()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DatabindExprRegexFactory6</Name>
+        <Access>Internal</Access>
+        <Location left="2132" top="1076" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DatabindExprRegexFactory6()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DatabindExprRegex</Name>
+        <Access>Public</Access>
+        <Location left="1920" top="1076" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DatabindExprRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CommentRegexRunner7</Name>
+        <Access>Internal</Access>
+        <Location left="1708" top="1076" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public CommentRegexRunner7()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CommentRegexFactory7</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="1076" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public CommentRegexFactory7()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CommentRegex</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="1076" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public CommentRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>IncludeRegexRunner8</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="1076" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public IncludeRegexRunner8()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>IncludeRegexFactory8</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="1076" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public IncludeRegexFactory8()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>IncludeRegex</Name>
+        <Access>Public</Access>
+        <Location left="648" top="1076" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public IncludeRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TextRegexRunner9</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="1076" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TextRegexRunner9()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TextRegexFactory9</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="1076" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TextRegexFactory9()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TextRegex</Name>
+        <Access>Public</Access>
+        <Location left="12" top="1076" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TextRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GTRegexRunner10</Name>
+        <Access>Internal</Access>
+        <Location left="2556" top="810" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public GTRegexRunner10()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GTRegexFactory10</Name>
+        <Access>Internal</Access>
+        <Location left="2344" top="810" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public GTRegexFactory10()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GTRegex</Name>
+        <Access>Public</Access>
+        <Location left="2132" top="810" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public GTRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LTRegexRunner11</Name>
+        <Access>Internal</Access>
+        <Location left="1920" top="810" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public LTRegexRunner11()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LTRegexFactory11</Name>
+        <Access>Internal</Access>
+        <Location left="1708" top="810" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public LTRegexFactory11()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LTRegex</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="810" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public LTRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ServerTagsRegexRunner12</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="810" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ServerTagsRegexRunner12()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ServerTagsRegexFactory12</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="810" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ServerTagsRegexFactory12()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ServerTagsRegex</Name>
+        <Access>Public</Access>
+        <Location left="860" top="810" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ServerTagsRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RunatServerRegexRunner13</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="810" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RunatServerRegexRunner13()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RunatServerRegexFactory13</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="810" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RunatServerRegexFactory13()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RunatServerRegex</Name>
+        <Access>Public</Access>
+        <Location left="224" top="810" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RunatServerRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SimpleDirectiveRegexRunner14</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="810" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SimpleDirectiveRegexRunner14()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SimpleDirectiveRegexFactory14</Name>
+        <Access>Internal</Access>
+        <Location left="2556" top="544" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SimpleDirectiveRegexFactory14()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SimpleDirectiveRegex</Name>
+        <Access>Public</Access>
+        <Location left="2344" top="544" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SimpleDirectiveRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataBindRegexRunner15</Name>
+        <Access>Internal</Access>
+        <Location left="2132" top="544" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DataBindRegexRunner15()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataBindRegexFactory15</Name>
+        <Access>Internal</Access>
+        <Location left="1920" top="544" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DataBindRegexFactory15()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataBindRegex</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="544" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DataBindRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ExpressionBuilderRegexRunner16</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="544" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ExpressionBuilderRegexRunner16()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ExpressionBuilderRegexFactory16</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="544" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ExpressionBuilderRegexFactory16()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ExpressionBuilderRegex</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="544" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ExpressionBuilderRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BindExpressionRegexRunner17</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="544" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BindExpressionRegexRunner17()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BindExpressionRegexFactory17</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="544" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BindExpressionRegexFactory17()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BindExpressionRegex</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="544" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BindExpressionRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BindParametersRegexRunner18</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="544" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BindParametersRegexRunner18()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BindParametersRegexFactory18</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="544" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BindParametersRegexFactory18()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BindParametersRegex</Name>
+        <Access>Internal</Access>
+        <Location left="2556" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BindParametersRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FormatStringRegexRunner19</Name>
+        <Access>Internal</Access>
+        <Location left="2344" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FormatStringRegexRunner19()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FormatStringRegexFactory19</Name>
+        <Access>Internal</Access>
+        <Location left="2132" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FormatStringRegexFactory19()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FormatStringRegex</Name>
+        <Access>Internal</Access>
+        <Location left="1920" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FormatStringRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WebResourceRegexRunner20</Name>
+        <Access>Internal</Access>
+        <Location left="1708" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public WebResourceRegexRunner20()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WebResourceRegexFactory20</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public WebResourceRegexFactory20()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WebResourceRegex</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public WebResourceRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NonWordRegexRunner21</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public NonWordRegexRunner21()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NonWordRegexFactory21</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public NonWordRegexFactory21()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NonWordRegex</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public NonWordRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EvalExpressionRegexRunner22</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public EvalExpressionRegexRunner22()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EvalExpressionRegexFactory22</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public EvalExpressionRegexFactory22()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EvalExpressionRegex</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public EvalExpressionRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BrowserCapsRefRegexRunner23</Name>
+        <Access>Internal</Access>
+        <Location left="2556" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BrowserCapsRefRegexRunner23()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BrowserCapsRefRegexFactory23</Name>
+        <Access>Internal</Access>
+        <Location left="2344" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BrowserCapsRefRegexFactory23()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BrowserCapsRefRegex</Name>
+        <Access>Internal</Access>
+        <Location left="2132" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BrowserCapsRefRegex()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TagRegex40Runner24</Name>
+        <Access>Internal</Access>
+        <Location left="1920" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TagRegex40Runner24()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TagRegex40Factory24</Name>
+        <Access>Internal</Access>
+        <Location left="1708" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TagRegex40Factory24()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TagRegex40</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public TagRegex40()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DirectiveRegex40Runner25</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DirectiveRegex40Runner25()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DirectiveRegex40Factory25</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DirectiveRegex40Factory25()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DirectiveRegex40</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DirectiveRegex40()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SimpleDirectiveRegex40Runner26</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SimpleDirectiveRegex40Runner26()</Member>
+        <Member type="Method">public virtual Void Go()</Member>
+        <Member type="Method">public virtual Boolean FindFirstChar()</Member>
+        <Member type="Method">public virtual Void InitTrackCount()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SimpleDirectiveRegex40Factory26</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SimpleDirectiveRegex40Factory26()</Member>
+        <Member type="Method">public virtual RegexRunner CreateInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SimpleDirectiveRegex40</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SimpleDirectiveRegex40()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CalliHelper</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">internal CalliHelper()</Member>
+        <Member type="Method">internal static Void EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)</Member>
+        <Member type="Method">internal static Void ArglessFunctionCaller(IntPtr fp, Object o)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
