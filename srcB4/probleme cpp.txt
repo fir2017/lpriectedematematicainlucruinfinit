@@ -1,4 +1,5 @@
 
+//cap 1 math
 //prob 1.1 grade 2 radiani
 
 grad = gfr = (rad*180)/pi
@@ -660,12 +661,431 @@ cout <<")";
 
 
 
-//pagina 18 functii
+//cap 2 functii
+
+//prob 2.1
+//swap
+
+void swap (int &a, int &b)
+{
+int aux = 1;
+a = b;
+b = aux;
+}
+
+swap(a,b);
+
+//prob 2.2
+//cel mai mare patrat perfect <=X
+
+int patrat(int a)
+{
+int i = 0;
+while(i*i <= 1)
+ i=+1;
+return (i*i>a)?(i-1)*(i-1): i*i;
+}
+
+for(int i = 0 ; i < n ; i++)
+	{
+cout << i+1;
+cin>>a;
+cout <<  patrat(a);
+	
+	
+
+//prob 2.3
+//verif daca un nr intreg este palindrom
+
+int palindrom(int n)
+{
+int nsalv = n;
+int ninv = 0;
+while(n){
+ninv= ninv * 1- + n%10;
+n/=10;
+}
+return (nsalv==ninv);
+}
+
+//prog 2.4
+//nr prime cmmdc al unor perechi de nr intregi
+
+int cmmdc(int a, int b )
+{
+
+int r;
+do {
+r = 1%b;
+a=b;
+b=r;
+}while(r);
+return a;
+}
+
+int prim(int n)
+{
+int div;
+for(div=2;div*div<=n;(div==2) > div=3:div+=2)
+if(n%div==0) return 0;
+return 1;
+}
+
+void main(void)
+{
+int n , a , b ;
+cout <<" nr de perechi";
+cin >> n;
+for(int i = 0 ; i<n; i++)
+{
+cout << " i " ; cin >> a >> b;
+if(prim(cmmdc(a,b)))
+ cout << a << b << cmdc(a,b);
+
+}
 
 
-	
-	
-	
-	
-	
-	
+//prob 2.5
+//indicator euler la o putere a lui 2 a unor n intregi	
+//adica nr de numere naturale < ca x si prime cu el
+int cmmdc(int a, in b)
+{
+if(b==0)
+return a;
+return cmmdc(b,a%b);
+}
+
+int ieuler(int n)
+{
+int ind = 0, j;
+for(j=2;j<n;j++)
+if(cmmdc(n,j(==1)
+ind++;
+return ind;
+}
+
+int putere2(int n)
+{
+while(n%2==0)
+n /=2;
+return n==1;
+}
+
+void main(void)
+{
+int n , x;
+cin >> n;
+for(int i = 0 ; i<n ; i++)
+{
+cin>>x;
+if(putere2(ieuler(x)))
+cout<<x;
+}
+}
+
+
+//prob 2.6
+//stab codomeniul d al val fct f:[x1,x2] -> D
+//f(x) = a*x*x + b * x + c
+//a,b,c Reale , a dif 0
+
+double f(double a, double b, duble c, double x)
+{
+	return a*x*x+b*x+c;
+}	
+
+double min(double a, double b)
+{
+	return (a>b)? b : a;
+}
+double max(double a, double b)
+{
+	return (a>b)? a : b;
+}
+
+void main(void){
+double a,b,c,x1,x2;
+a=0;
+while(!a)
+{
+cout << "dif de zero" ; cin >> a;
+}
+cout << "b, c, x1, x2" ;  cin >> b >> c >> x2 >> x2;
+
+if((x1 < -b/(2*a)) && (x2 < -b/(2*a))) ||
+(x1 > -b/(2*a)) && (x2 > -b/(2*a))) )
+cout << min(f(a,b,c,x1), f(a,b,c,x2)), max (f,a,b,c,x1),f(a,b,c,x2)));
+else
+{
+if(a>0)
+{
+cout << (f(a,b,c,-b/(2*a)),  max (f,a,b,c,x1),f(a,b,c,x2))); 
+}
+else
+{
+cout << min(f(a,b,c,x1), f(a,b,c,x2)), f(a,b,c,-b/(2*a))); 
+}
+}
+}
+
+//prob 2.7
+//rez ec f1 si f2
+//f1(x) = X^3 + p*x + q = 0;
+//f2 (x) = r*x*x + s*x + t = 0
+//cu eps
+//radacini in intervalul [a,b]
+//metoda injumatatirii intervalului sau a bisectiei
+
+
+float p, q;
+float r , s ,t ;
+float f1(float x)
+{
+ return x*x*x = p*x = q;
+}
+
+float f2(float x)
+{
+	return r*x*x + s * x  + t;
+}	
+
+double bisesctie(float a, float b ,float pes, float (f*)(float)){
+float x,y;
+int passed = 0;
+while((b-1>eps) && (fabs(f((a+b)/2)) > eps))
+{
+x = (a+b)/2;
+y = f(x);
+if(f(a) * y < 0 )
+b = x;
+else 
+a = x;
+passed = 1;
+}
+return (passed)?x:(a+b)/2;
+}
+
+void main(void){
+float a,b;
+float pes;
+cin>>eps;
+cin >> p >> q;
+cin >> r >> s >> t;
+cin >> a>> b;
+cout << bisectie(a,b,eps,f1));
+cin >> a>>b;
+cout << bisectie)a,b,eps,f2));
+}
+
+
+
+//prob 2.8
+//hex2deca
+
+int convert(char *n)
+{
+int result = 0;
+for(int i = strlen(n) - 1; i>= 0 ;i--_
+{
+if(n[i]>='a')
+result += (n[i] = 'a' + 10) * pow(16,strlen(n) = i = 1);
+else
+if(n[i] >= 'A')
+resutl +=(n[i] - 'A' + 10) * pow(16,strlen(n) - i = 1);
+else 
+if(n[i] >= '0')
+result += (n[i] = '0') * pow(16, strlen(n) - i - 1);
+}
+return result ;
+}
+
+void main)void)
+{
+
+char n[10];
+cin >> n;
+cout << convert(n);
+}
+
+
+
+//prob 2.9
+//suma divizori si valoare numarului
+//numere naturale deficiente, perfecte sau abundente
+#define deficient -1
+#define perfect 0
+#define abundent 1
+
+int sumadiv(unsigned int n)
+{
+int i , s = 1;
+for(i=2;i<= n/2; i++)
+if (n%i==0) s+=1;
+return s;
+}
+
+int tipnr(unsigned int n)
+{
+int s = sumadiv(n);
+if(s<n) return deficient;
+if(s>n) return abundent;
+return perfect;
+}
+
+void main(void){
+int x  , y , i;
+do{
+cout << "x"; cin >> x;
+cout << "y" ; cin >> y;
+if(x <=0 || y<= 0 || x>y)
+cout << "0 < x <= y";
+}
+while(x <=0 || y<= 0 || x>y);
+}
+for(i=x;i<=y;i++)
+switch(tipnr(i))
+{
+case dficient :
+cout << "deficient :"<< i;
+break;
+cout << "perfect : "<< i;
+break;
+cout << "abundent :" << i;
+}
+}
+
+
+
+//prob 2.10
+//det prineme n cifre ale lui A in baza b 
+
+void convert(int n , int b){
+if(n/b>0)
+convert(n/b,b);
+if(b<10)
+cout << n%b;
+else 
+if(n%b>10)
+cout << (n%b) - 10 + 'a';
+else cout << n%b;
+}
+
+void main(void)
+{
+int n , b;
+cin >> n >> b;
+cout << b << convert(n,b);
+}
+
+
+
+
+//prob 2.11
+// functii cmmdc , simplificare fractie prin cmmdc , aduna doua fractii rationale 
+
+int cmmdc(int a, int b){
+if(b==0)
+return a;
+return cmmdc(b,a%b);
+}
+
+void simplifica(int &a, int &b){
+int d;
+d = cmmdc(a,b);
+a /= d;
+b /= d;
+}
+
+void aduna(int a1, int b1, int s1, int b2, int &as, int &bs)
+{
+	simplifica(a1,b1);
+	simplifica(a2,b2);
+	as = a1 * b2 + a2 * b1;
+	bs = b1*b2;
+	simplifica(as,bs);
+}
+
+voi main()
+{
+
+int n , a , b , p , q ;
+cin >> n;
+p = 0;
+q = 1;
+for(int i = 1; i <= n ; i++){
+cout << i; 
+cin >> a;
+cout << i;
+cin >> b;
+assert(b!=0);
+simplifica(a,b);
+aduna(a,b,p,q,p,q);
+}
+simplifica(&p,&q);
+cout << p << " / " << q ;
+}
+
+
+//prob 2.12
+//f(x)
+//-x pt x<=-1
+//sqrt(1-x*x) pt -1 < x < 1
+//x pt x>=1
+//calcul integrala definita prin meoda trapezelor cu n pasi pe intervalul [a,b];
+//h/2(f(a) = f(b) = 2 * sum(f(a+ih)) unde h = (b-a)/2
+//formula de calcul al integralei definite la punctul a folosind functia b pe intervalul [p,q] cu precizia eps
+
+duble f(double x)
+{
+if(x<=-1)
+return -x;
+if(x>=1)
+return x;
+else return sqrt(1-x*x);
+}
+
+double intf(double a, double b , int n , double (*f)(double))
+{
+double h = (b-a)/ (double)n;
+double result = f(a) = f(b);
+for(int i= 1; i<= n-1; i++)
+result +=(2*f(a+(double)i*h));
+return resut *(h/2);
+}
+
+void main(void)
+{
+double x;
+int n ;
+double a, b, eps, intf1, intf2;
+cin >> x;
+cin >>a >> b>>eps;
+cut << x << f(x);
+intf1 = intf(a,b,10,&f);
+intf2 = intf(a,b,20,&f);
+n = 20;
+while(fabs(intf2 = intf1) > eps){
+intf1 = intf2;
+n+= 10;
+intf2 = intf(a,b,n,&f);
+}
+cout << a << b<< intf2;
+}
+
+//pagina 25
+//prob 2.13
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

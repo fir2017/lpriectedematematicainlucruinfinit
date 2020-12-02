@@ -1,0 +1,106 @@
+<Project>
+  <Name>gestudProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>GeStud</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>disciplina</Name>
+        <Access>Public</Access>
+        <Location left="10" top="11" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string coddisc</Member>
+        <Member type="Field">string dendisc</Member>
+        <Member type="Field">string coefsem</Member>
+        <Member type="Field">string coefteza</Member>
+        <Member type="Field">string anuniv</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>student</Name>
+        <Access>Public</Access>
+        <Location left="186" top="11" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int matricol</Member>
+        <Member type="Field">string numepren</Member>
+        <Member type="Field">string datanast</Member>
+        <Member type="Field">string foto</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>inscriere</Name>
+        <Access>Public</Access>
+        <Location left="362" top="11" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string matricol</Member>
+        <Member type="Field">string anuniv</Member>
+        <Member type="Field">string anstud</Member>
+        <Member type="Field">string codspec</Member>
+        <Member type="Field">string grupa</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>specializare</Name>
+        <Access>Public</Access>
+        <Location left="529" top="14" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string codspec</Member>
+        <Member type="Field">string denspec</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>nota</Name>
+        <Access>Public</Access>
+        <Location left="700" top="16" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string coddisc</Member>
+        <Member type="Field">string anuniv</Member>
+        <Member type="Field">string matricol</Member>
+        <Member type="Field">string dataex</Member>
+        <Member type="Field">string notasem</Member>
+        <Member type="Field">string noteaza</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>gestiunstudenti</Name>
+        <Access>Public</Access>
+        <Location left="137" top="242" />
+        <Size width="162" height="519" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt;disciplina&gt; discipline</Member>
+        <Member type="Field">List &lt;student&gt; studenti</Member>
+        <Member type="Field">List&lt; inscriere&gt; inscrieri</Member>
+        <Member type="Field">List &lt;specializare&gt; specializari</Member>
+        <Member type="Field">List &lt;nota&gt; note</Member>
+        <Member type="Method">public void save()</Member>
+        <Member type="Method">public void open()</Member>
+        <Member type="Method">public void brow()</Member>
+        <Member type="Method">public void modif()</Member>
+        <Member type="Method">public void del()</Member>
+        <Member type="Method">public void copy()</Member>
+        <Member type="Method">public void cut()</Member>
+        <Member type="Method">public void paste()</Member>
+        <Member type="Method">public void select()</Member>
+        <Member type="Method">public void selectall()</Member>
+        <Member type="Method">public void query()</Member>
+        <Member type="Method">public void add()</Member>
+        <Member type="Method">public void raport()</Member>
+        <Member type="Method">public void listastundeti()</Member>
+        <Member type="Method">public void ordonare()</Member>
+        <Member type="Method">public void cautare()</Member>
+        <Member type="Method">public void calcule()</Member>
+        <Member type="Method">public void showrecord()</Member>
+        <Member type="Method">public void createform()</Member>
+        <Member type="Method">public void exportas()</Member>
+        <Member type="Method">public void debug()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
