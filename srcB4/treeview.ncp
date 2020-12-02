@@ -1,0 +1,695 @@
+<Project>
+  <Name>Untitled</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>ICSharpCode.TreeView.dll</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>RevisionClass</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="2255" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public const String Major = 4</Member>
+        <Member type="Field">public const String Minor = 2</Member>
+        <Member type="Field">public const String Build = 0</Member>
+        <Member type="Field">public const String Revision = 8752</Member>
+        <Member type="Field">public const String VersionName = Beta 2</Member>
+        <Member type="Field">public const String FullVersion = 4.2.0.8752-Beta 2</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CollapsedWhenFalse</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="2255" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public static CollapsedWhenFalse Instance</Member>
+        <Member type="Constructor">public CollapsedWhenFalse()</Member>
+        <Member type="Constructor">static CollapsedWhenFalse()</Member>
+        <Member type="Method">public override Object ProvideValue(IServiceProvider serviceProvider)</Member>
+        <Member type="Method">public Object Convert(Object value, Type targetType, Object parameter, CultureInfo culture)</Member>
+        <Member type="Method">public Object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EditTextBox</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="2255" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Boolean committing</Member>
+        <Member type="Property">public SharpTreeViewItem Item { get; set; }</Member>
+        <Member type="Property">public SharpTreeNode Node { get; }</Member>
+        <Member type="Constructor">static EditTextBox()</Member>
+        <Member type="Constructor">public EditTextBox()</Member>
+        <Member type="Method">private Void Init()</Member>
+        <Member type="Method">protected virtual Void OnKeyDown(KeyEventArgs e)</Member>
+        <Member type="Method">protected virtual Void OnLostKeyboardFocus(KeyboardFocusChangedEventArgs e)</Member>
+        <Member type="Method">private Void Commit()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ExtensionMethods</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="2255" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public static T FindAncestor(DependencyObject d)</Member>
+        <Member type="Method">public static IEnumerable&lt;DependencyObject&gt; AncestorsAndSelf(DependencyObject d)</Member>
+        <Member type="Method">public static Void AddOnce(IList list, Object item)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GeneralAdorner</Name>
+        <Access>Public</Access>
+        <Location left="436" top="2255" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private FrameworkElement child</Member>
+        <Member type="Property">public FrameworkElement Child { get; set; }</Member>
+        <Member type="Property">protected virtual Int32 VisualChildrenCount { get; }</Member>
+        <Member type="Constructor">public GeneralAdorner(UIElement target)</Member>
+        <Member type="Method">protected virtual Visual GetVisualChild(Int32 index)</Member>
+        <Member type="Method">protected virtual Size MeasureOverride(Size constraint)</Member>
+        <Member type="Method">protected virtual Size ArrangeOverride(Size finalSize)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>InsertMarker</Name>
+        <Access>Public</Access>
+        <Location left="224" top="2255" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">static InsertMarker()</Member>
+        <Member type="Constructor">public InsertMarker()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LinesRenderer</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="2255" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static Pen pen</Member>
+        <Member type="Property">private SharpTreeNodeView NodeView { get; }</Member>
+        <Member type="Constructor">static LinesRenderer()</Member>
+        <Member type="Constructor">public LinesRenderer()</Member>
+        <Member type="Method">protected virtual Void OnRender(DrawingContext dc)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SharpTreeNode</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="547" />
+        <Size width="162" height="1658" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal SharpTreeNode listParent</Member>
+        <Member type="Field">private SharpTreeNode left</Member>
+        <Member type="Field">private SharpTreeNode right</Member>
+        <Member type="Field">internal TreeFlattener treeFlattener</Member>
+        <Member type="Field">private Byte height</Member>
+        <Member type="Field">private Int32 totalListLength</Member>
+        <Member type="Field">private SharpTreeNodeCollection modelChildren</Member>
+        <Member type="Field">internal SharpTreeNode modelParent</Member>
+        <Member type="Field">private Boolean isVisible</Member>
+        <Member type="Field">private Boolean isHidden</Member>
+        <Member type="Field">private Boolean isSelected</Member>
+        <Member type="Field">private Boolean isExpanded</Member>
+        <Member type="Field">private Boolean lazyLoading</Member>
+        <Member type="Field">private Boolean canExpandRecursively</Member>
+        <Member type="Field">private Boolean isEditing</Member>
+        <Member type="Field">private Boolean? isChecked</Member>
+        <Member type="Property">private Int32 Balance { get; }</Member>
+        <Member type="Property">public SharpTreeNodeCollection Children { get; }</Member>
+        <Member type="Property">public SharpTreeNode Parent { get; }</Member>
+        <Member type="Property">public virtual Object Text { get; }</Member>
+        <Member type="Property">public virtual Brush Foreground { get; }</Member>
+        <Member type="Property">public virtual Object Icon { get; }</Member>
+        <Member type="Property">public virtual Object ToolTip { get; }</Member>
+        <Member type="Property">public Int32 Level { get; }</Member>
+        <Member type="Property">public Boolean IsRoot { get; }</Member>
+        <Member type="Property">public Boolean IsHidden { get; set; }</Member>
+        <Member type="Property">public Boolean IsVisible { get; }</Member>
+        <Member type="Property">public Boolean IsSelected { get; set; }</Member>
+        <Member type="Property">public virtual Object ExpandedIcon { get; }</Member>
+        <Member type="Property">public virtual Boolean ShowExpander { get; }</Member>
+        <Member type="Property">public Boolean IsExpanded { get; set; }</Member>
+        <Member type="Property">public Boolean LazyLoading { get; set; }</Member>
+        <Member type="Property">public virtual Boolean CanExpandRecursively { get; }</Member>
+        <Member type="Property">public virtual Boolean ShowIcon { get; }</Member>
+        <Member type="Property">public virtual Boolean IsEditable { get; }</Member>
+        <Member type="Property">public Boolean IsEditing { get; set; }</Member>
+        <Member type="Property">public virtual Boolean IsCheckable { get; }</Member>
+        <Member type="Property">public Boolean? IsChecked { get; set; }</Member>
+        <Member type="Property">public Boolean IsCut { get; }</Member>
+        <Member type="Property">public Boolean IsLast { get; }</Member>
+        <Member type="Event">public event PropertyChangedEventHandler PropertyChanged</Member>
+        <Member type="Constructor">public SharpTreeNode()</Member>
+        <Member type="Method">private static Int32 Height(SharpTreeNode node)</Member>
+        <Member type="Method">internal SharpTreeNode GetListRoot()</Member>
+        <Member type="Method">private Void CheckRootInvariants()</Member>
+        <Member type="Method">private Void CheckInvariants()</Member>
+        <Member type="Method">private static Void DumpTree(SharpTreeNode node)</Member>
+        <Member type="Method">private Void DumpTree()</Member>
+        <Member type="Method">internal static SharpTreeNode GetNodeByVisibleIndex(SharpTreeNode root, Int32 index)</Member>
+        <Member type="Method">internal static Int32 GetVisibleIndexForNode(SharpTreeNode node)</Member>
+        <Member type="Method">private static SharpTreeNode Rebalance(SharpTreeNode node)</Member>
+        <Member type="Method">internal Int32 GetTotalListLength()</Member>
+        <Member type="Method">private SharpTreeNode RotateLeft()</Member>
+        <Member type="Method">private SharpTreeNode RotateRight()</Member>
+        <Member type="Method">private static Void RebalanceUntilRoot(SharpTreeNode pos)</Member>
+        <Member type="Method">private static Void InsertNodeAfter(SharpTreeNode pos, SharpTreeNode newNode)</Member>
+        <Member type="Method">private Void RemoveNodes(SharpTreeNode start, SharpTreeNode end)</Member>
+        <Member type="Method">private static SharpTreeNode ConcatTrees(SharpTreeNode first, SharpTreeNode second)</Member>
+        <Member type="Method">private SharpTreeNode Successor()</Member>
+        <Member type="Method">private static Void DeleteNode(SharpTreeNode node)</Member>
+        <Member type="Method">private Void ReplaceWith(SharpTreeNode node)</Member>
+        <Member type="Method">private Void UpdateIsVisible(Boolean parentIsVisible, Boolean updateFlattener)</Member>
+        <Member type="Method">protected virtual Void OnIsVisibleChanged()</Member>
+        <Member type="Method">private Void UpdateChildIsVisible(Boolean updateFlattener)</Member>
+        <Member type="Method">protected internal virtual Void OnChildrenChanged(NotifyCollectionChangedEventArgs e)</Member>
+        <Member type="Method">protected virtual Void OnExpanding()</Member>
+        <Member type="Method">protected virtual Void OnCollapsing()</Member>
+        <Member type="Method">protected virtual Void LoadChildren()</Member>
+        <Member type="Method">public Void EnsureLazyChildren()</Member>
+        <Member type="Method">public IEnumerable&lt;SharpTreeNode&gt; Descendants()</Member>
+        <Member type="Method">public IEnumerable&lt;SharpTreeNode&gt; DescendantsAndSelf()</Member>
+        <Member type="Method">internal IEnumerable&lt;SharpTreeNode&gt; VisibleDescendants()</Member>
+        <Member type="Method">internal IEnumerable&lt;SharpTreeNode&gt; VisibleDescendantsAndSelf()</Member>
+        <Member type="Method">public IEnumerable&lt;SharpTreeNode&gt; Ancestors()</Member>
+        <Member type="Method">public IEnumerable&lt;SharpTreeNode&gt; AncestorsAndSelf()</Member>
+        <Member type="Method">public virtual String LoadEditText()</Member>
+        <Member type="Method">public virtual Boolean SaveEditText(String value)</Member>
+        <Member type="Method">private Void SetIsChecked(Boolean? value, Boolean update)</Member>
+        <Member type="Method">private Boolean TryValueForIsChecked(Boolean? value)</Member>
+        <Member type="Method">public virtual Boolean CanDelete()</Member>
+        <Member type="Method">public virtual Void Delete()</Member>
+        <Member type="Method">public virtual Void DeleteCore()</Member>
+        <Member type="Method">public virtual IDataObject Copy(SharpTreeNode[] nodes)</Member>
+        <Member type="Method">public virtual Boolean CanDrag(SharpTreeNode[] nodes)</Member>
+        <Member type="Method">public virtual Void StartDrag(DependencyObject dragSource, SharpTreeNode[] nodes)</Member>
+        <Member type="Method">public virtual Boolean CanDrop(DragEventArgs e, Int32 index)</Member>
+        <Member type="Method">internal Void InternalDrop(DragEventArgs e, Int32 index)</Member>
+        <Member type="Method">public virtual Void Drop(DragEventArgs e, Int32 index)</Member>
+        <Member type="Method">private Void RaiseIsLastChangedIfNeeded(NotifyCollectionChangedEventArgs e)</Member>
+        <Member type="Method">public Void RaisePropertyChanged(String name)</Member>
+        <Member type="Method">public virtual Void ActivateItem(RoutedEventArgs e)</Member>
+        <Member type="Method">public virtual Void ActivateItemSecondary(RoutedEventArgs e)</Member>
+        <Member type="Method">public override String ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SharpGridView</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="547" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public static ResourceKey ItemContainerStyleKey { get; private set; }</Member>
+        <Member type="Property">protected virtual Object ItemContainerDefaultStyleKey { get; }</Member>
+        <Member type="Constructor">static SharpGridView()</Member>
+        <Member type="Constructor">public SharpGridView()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SharpTreeNodeCollection</Name>
+        <Access>Public</Access>
+        <Location left="860" top="547" />
+        <Size width="162" height="502" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly SharpTreeNode parent</Member>
+        <Member type="Field">private List&lt;SharpTreeNode&gt; list</Member>
+        <Member type="Field">private Boolean isRaisingEvent</Member>
+        <Member type="Property">public SharpTreeNode this[Int32 index] { get; set; }</Member>
+        <Member type="Property">public Int32 Count { get; }</Member>
+        <Member type="Property">Boolean System.Collections.Generic.ICollection&lt;ICSharpCode.TreeView.SharpTreeNode&gt;.IsReadOnly { get; }</Member>
+        <Member type="Event">public event NotifyCollectionChangedEventHandler CollectionChanged</Member>
+        <Member type="Constructor">public SharpTreeNodeCollection(SharpTreeNode parent)</Member>
+        <Member type="Method">private Void OnCollectionChanged(NotifyCollectionChangedEventArgs e)</Member>
+        <Member type="Method">private Void ThrowOnReentrancy()</Member>
+        <Member type="Method">private Void ThrowIfValueIsNullOrHasParent(SharpTreeNode node)</Member>
+        <Member type="Method">public Int32 IndexOf(SharpTreeNode node)</Member>
+        <Member type="Method">public Void Insert(Int32 index, SharpTreeNode node)</Member>
+        <Member type="Method">public Void InsertRange(Int32 index, IEnumerable&lt;SharpTreeNode&gt; nodes)</Member>
+        <Member type="Method">public Void RemoveAt(Int32 index)</Member>
+        <Member type="Method">public Void RemoveRange(Int32 index, Int32 count)</Member>
+        <Member type="Method">public Void Add(SharpTreeNode node)</Member>
+        <Member type="Method">public Void AddRange(IEnumerable&lt;SharpTreeNode&gt; nodes)</Member>
+        <Member type="Method">public Void Clear()</Member>
+        <Member type="Method">public Boolean Contains(SharpTreeNode node)</Member>
+        <Member type="Method">public Void CopyTo(SharpTreeNode[] array, Int32 arrayIndex)</Member>
+        <Member type="Method">public Boolean Remove(SharpTreeNode item)</Member>
+        <Member type="Method">public IEnumerator&lt;SharpTreeNode&gt; GetEnumerator()</Member>
+        <Member type="Method">IEnumerator System.Collections.IEnumerable.GetEnumerator()</Member>
+        <Member type="Method">public Void RemoveAll(Predicate&lt;SharpTreeNode&gt; match)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SharpTreeNodeView</Name>
+        <Access>Public</Access>
+        <Location left="648" top="547" />
+        <Size width="162" height="383" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty TextBackgroundProperty</Member>
+        <Member type="Field">public DependencyProperty CellEditorProperty</Member>
+        <Member type="Property">public Brush TextBackground { get; set; }</Member>
+        <Member type="Property">public SharpTreeNode Node { get; }</Member>
+        <Member type="Property">public SharpTreeViewItem ParentItem { get; private set; }</Member>
+        <Member type="Property">public Control CellEditor { get; set; }</Member>
+        <Member type="Property">public SharpTreeView ParentTreeView { get; }</Member>
+        <Member type="Property">internal LinesRenderer LinesRenderer { get; private set; }</Member>
+        <Member type="Constructor">static SharpTreeNodeView()</Member>
+        <Member type="Constructor">public SharpTreeNodeView()</Member>
+        <Member type="Method">public override Void OnApplyTemplate()</Member>
+        <Member type="Method">protected virtual Void OnVisualParentChanged(DependencyObject oldParent)</Member>
+        <Member type="Method">protected virtual Void OnPropertyChanged(DependencyPropertyChangedEventArgs e)</Member>
+        <Member type="Method">private Void UpdateDataContext(SharpTreeNode oldNode, SharpTreeNode newNode)</Member>
+        <Member type="Method">private Void Node_PropertyChanged(Object sender, PropertyChangedEventArgs e)</Member>
+        <Member type="Method">private Void OnIsEditingChanged()</Member>
+        <Member type="Method">private Void UpdateTemplate()</Member>
+        <Member type="Method">internal Double CalculateIndent()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SharpTreeView</Name>
+        <Access>Public</Access>
+        <Location left="436" top="547" />
+        <Size width="162" height="1148" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private TreeFlattener flattener</Member>
+        <Member type="Field">private Boolean updatesLocked</Member>
+        <Member type="Field">private Boolean doNotScrollOnExpanding</Member>
+        <Member type="Field">private SharpTreeNodeView previewNodeView</Member>
+        <Member type="Field">private InsertMarker insertMarker</Member>
+        <Member type="Field">private DropPlace previewPlace</Member>
+        <Member type="Field">public DependencyProperty RootProperty</Member>
+        <Member type="Field">public DependencyProperty ShowRootProperty</Member>
+        <Member type="Field">public DependencyProperty ShowRootExpanderProperty</Member>
+        <Member type="Field">public DependencyProperty AllowDropOrderProperty</Member>
+        <Member type="Field">public DependencyProperty ShowLinesProperty</Member>
+        <Member type="Field">public DependencyProperty ShowAlternationProperty</Member>
+        <Member type="Property">public static ResourceKey DefaultItemContainerStyleKey { get; private set; }</Member>
+        <Member type="Property">public SharpTreeNode Root { get; set; }</Member>
+        <Member type="Property">public Boolean ShowRoot { get; set; }</Member>
+        <Member type="Property">public Boolean ShowRootExpander { get; set; }</Member>
+        <Member type="Property">public Boolean AllowDropOrder { get; set; }</Member>
+        <Member type="Property">public Boolean ShowLines { get; set; }</Member>
+        <Member type="Constructor">static SharpTreeView()</Member>
+        <Member type="Constructor">public SharpTreeView()</Member>
+        <Member type="Method">public static Boolean GetShowAlternation(DependencyObject obj)</Member>
+        <Member type="Method">public static Void SetShowAlternation(DependencyObject obj, Boolean value)</Member>
+        <Member type="Method">protected virtual Void OnPropertyChanged(DependencyPropertyChangedEventArgs e)</Member>
+        <Member type="Method">public IDisposable LockUpdates()</Member>
+        <Member type="Method">private Void Reload()</Member>
+        <Member type="Method">private Void flattener_CollectionChanged(Object sender, NotifyCollectionChangedEventArgs e)</Member>
+        <Member type="Method">private Void UpdateFocusedNode(List&lt;SharpTreeNode&gt; newSelection, Int32 topSelectedIndex)</Member>
+        <Member type="Method">protected virtual DependencyObject GetContainerForItemOverride()</Member>
+        <Member type="Method">protected virtual Boolean IsItemItsOwnContainerOverride(Object item)</Member>
+        <Member type="Method">protected virtual Void PrepareContainerForItemOverride(DependencyObject element, Object item)</Member>
+        <Member type="Method">internal Void HandleExpanding(SharpTreeNode node)</Member>
+        <Member type="Method">protected virtual Void OnKeyDown(KeyEventArgs e)</Member>
+        <Member type="Method">protected virtual Void OnTextInput(TextCompositionEventArgs e)</Member>
+        <Member type="Method">private Void ExpandRecursively(SharpTreeNode node)</Member>
+        <Member type="Method">public Void FocusNode(SharpTreeNode node)</Member>
+        <Member type="Method">public Void ScrollIntoView(SharpTreeNode node)</Member>
+        <Member type="Method">private Object OnFocusItem(Object item)</Member>
+        <Member type="Method">protected virtual AutomationPeer OnCreateAutomationPeer()</Member>
+        <Member type="Method">protected virtual Void OnSelectionChanged(SelectionChangedEventArgs e)</Member>
+        <Member type="Method">protected virtual Void OnDragEnter(DragEventArgs e)</Member>
+        <Member type="Method">protected virtual Void OnDragOver(DragEventArgs e)</Member>
+        <Member type="Method">protected virtual Void OnDrop(DragEventArgs e)</Member>
+        <Member type="Method">internal Void HandleDragEnter(SharpTreeViewItem item, DragEventArgs e)</Member>
+        <Member type="Method">internal Void HandleDragOver(SharpTreeViewItem item, DragEventArgs e)</Member>
+        <Member type="Method">internal Void HandleDrop(SharpTreeViewItem item, DragEventArgs e)</Member>
+        <Member type="Method">internal Void HandleDragLeave(SharpTreeViewItem item, DragEventArgs e)</Member>
+        <Member type="Method">private DropTarget GetDropTarget(SharpTreeViewItem item, DragEventArgs e)</Member>
+        <Member type="Method">private List&lt;DropTarget&gt; BuildDropTargets(SharpTreeViewItem item, DragEventArgs e)</Member>
+        <Member type="Method">private Void TryAddDropTarget(List&lt;DropTarget&gt; targets, SharpTreeViewItem item, DropPlace place, DragEventArgs e)</Member>
+        <Member type="Method">private Void GetNodeAndIndex(SharpTreeViewItem item, DropPlace place, out SharpTreeNode node, out Int32 index)</Member>
+        <Member type="Method">private Void ShowPreview(SharpTreeViewItem item, DropPlace place)</Member>
+        <Member type="Method">private Void HidePreview()</Member>
+        <Member type="Method">private static Void RegisterCommands()</Member>
+        <Member type="Method">private static Void HandleExecuted_Cut(Object sender, ExecutedRoutedEventArgs e)</Member>
+        <Member type="Method">private static Void HandleCanExecute_Cut(Object sender, CanExecuteRoutedEventArgs e)</Member>
+        <Member type="Method">private static Void HandleExecuted_Copy(Object sender, ExecutedRoutedEventArgs e)</Member>
+        <Member type="Method">private static Void HandleCanExecute_Copy(Object sender, CanExecuteRoutedEventArgs e)</Member>
+        <Member type="Method">private static Void HandleExecuted_Paste(Object sender, ExecutedRoutedEventArgs e)</Member>
+        <Member type="Method">private static Void HandleCanExecute_Paste(Object sender, CanExecuteRoutedEventArgs e)</Member>
+        <Member type="Method">private static Void HandleExecuted_Delete(Object sender, ExecutedRoutedEventArgs e)</Member>
+        <Member type="Method">private static Void HandleCanExecute_Delete(Object sender, CanExecuteRoutedEventArgs e)</Member>
+        <Member type="Method">public IEnumerable&lt;SharpTreeNode&gt; GetTopLevelSelection()</Member>
+        <Member type="Method">public Void SetSelectedNodes(IEnumerable&lt;SharpTreeNode&gt; nodes)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SharpTreeViewAutomationPeer</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="547" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">internal SharpTreeViewAutomationPeer(SharpTreeView owner)</Member>
+        <Member type="Method">protected virtual AutomationControlType GetAutomationControlTypeCore()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SharpTreeViewItem</Name>
+        <Access>Public</Access>
+        <Location left="12" top="547" />
+        <Size width="162" height="383" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Point startPoint</Member>
+        <Member type="Field">private Boolean wasSelected</Member>
+        <Member type="Field">private Boolean wasDoubleClick</Member>
+        <Member type="Property">public SharpTreeNode Node { get; }</Member>
+        <Member type="Property">public SharpTreeNodeView NodeView { get; internal set; }</Member>
+        <Member type="Property">public SharpTreeView ParentTreeView { get; internal set; }</Member>
+        <Member type="Constructor">static SharpTreeViewItem()</Member>
+        <Member type="Constructor">public SharpTreeViewItem()</Member>
+        <Member type="Method">protected virtual Void OnKeyDown(KeyEventArgs e)</Member>
+        <Member type="Method">protected virtual AutomationPeer OnCreateAutomationPeer()</Member>
+        <Member type="Method">protected virtual Void OnMouseLeftButtonDown(MouseButtonEventArgs e)</Member>
+        <Member type="Method">protected virtual Void OnMouseMove(MouseEventArgs e)</Member>
+        <Member type="Method">protected virtual Void OnMouseLeftButtonUp(MouseButtonEventArgs e)</Member>
+        <Member type="Method">protected virtual Void OnMouseUp(MouseButtonEventArgs e)</Member>
+        <Member type="Method">protected virtual Void OnDragEnter(DragEventArgs e)</Member>
+        <Member type="Method">protected virtual Void OnDragOver(DragEventArgs e)</Member>
+        <Member type="Method">protected virtual Void OnDrop(DragEventArgs e)</Member>
+        <Member type="Method">protected virtual Void OnDragLeave(DragEventArgs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SharpTreeViewTextSearch</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="12" />
+        <Size width="162" height="366" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private DispatcherTimer timer</Member>
+        <Member type="Field">private Boolean isActive</Member>
+        <Member type="Field">private Int32 lastMatchIndex</Member>
+        <Member type="Field">private String matchPrefix</Member>
+        <Member type="Field">private readonly Stack&lt;String&gt; inputStack</Member>
+        <Member type="Field">private readonly SharpTreeView treeView</Member>
+        <Member type="Field">private DependencyPropertyKey TextSearchInstancePropertyKey</Member>
+        <Member type="Field">private DependencyProperty TextSearchInstanceProperty</Member>
+        <Member type="Constructor">private SharpTreeViewTextSearch(SharpTreeView treeView)</Member>
+        <Member type="Constructor">static SharpTreeViewTextSearch()</Member>
+        <Member type="Method">private static Int32 GetDoubleClickTime()</Member>
+        <Member type="Method">public static SharpTreeViewTextSearch GetInstance(SharpTreeView sharpTreeView)</Member>
+        <Member type="Method">public Boolean RevertLastCharacter()</Member>
+        <Member type="Method">public Boolean Search(String nextChar)</Member>
+        <Member type="Method">private Int32 IndexOfMatch(String needle, Int32 startIndex, Boolean tryBackward, out Boolean charWasUsed)</Member>
+        <Member type="Method">private Void ClearState()</Member>
+        <Member type="Method">private Void ResetTimeout()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SharpTreeViewItemAutomationPeer</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="12" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">private SharpTreeViewItem SharpTreeViewItem { get; }</Member>
+        <Member type="Property">public ExpandCollapseState ExpandCollapseState { get; }</Member>
+        <Member type="Constructor">internal SharpTreeViewItemAutomationPeer(SharpTreeViewItem owner)</Member>
+        <Member type="Method">protected virtual AutomationControlType GetAutomationControlTypeCore()</Member>
+        <Member type="Method">public override Object GetPattern(PatternInterface patternInterface)</Member>
+        <Member type="Method">public Void Collapse()</Member>
+        <Member type="Method">public Void Expand()</Member>
+        <Member type="Method">private Void OnPropertyChanged(Object sender, PropertyChangedEventArgs e)</Member>
+        <Member type="Method">private Void OnDataContextChanged(Object sender, DependencyPropertyChangedEventArgs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TreeFlattener</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="12" />
+        <Size width="162" height="485" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal SharpTreeNode root</Member>
+        <Member type="Field">private readonly Boolean includeRoot</Member>
+        <Member type="Field">private readonly Object syncRoot</Member>
+        <Member type="Property">public Object this[Int32 index] { get; set; }</Member>
+        <Member type="Property">public Int32 Count { get; }</Member>
+        <Member type="Property">Boolean System.Collections.IList.IsReadOnly { get; }</Member>
+        <Member type="Property">Boolean System.Collections.IList.IsFixedSize { get; }</Member>
+        <Member type="Property">Boolean System.Collections.ICollection.IsSynchronized { get; }</Member>
+        <Member type="Property">Object System.Collections.ICollection.SyncRoot { get; }</Member>
+        <Member type="Event">public event NotifyCollectionChangedEventHandler CollectionChanged</Member>
+        <Member type="Constructor">public TreeFlattener(SharpTreeNode modelRoot, Boolean includeRoot)</Member>
+        <Member type="Method">public Void RaiseCollectionChanged(NotifyCollectionChangedEventArgs e)</Member>
+        <Member type="Method">public Void NodesInserted(Int32 index, IEnumerable&lt;SharpTreeNode&gt; nodes)</Member>
+        <Member type="Method">public Void NodesRemoved(Int32 index, IEnumerable&lt;SharpTreeNode&gt; nodes)</Member>
+        <Member type="Method">public Void Stop()</Member>
+        <Member type="Method">public Int32 IndexOf(Object item)</Member>
+        <Member type="Method">Void System.Collections.IList.Insert(Int32 index, Object item)</Member>
+        <Member type="Method">Void System.Collections.IList.RemoveAt(Int32 index)</Member>
+        <Member type="Method">Int32 System.Collections.IList.Add(Object item)</Member>
+        <Member type="Method">Void System.Collections.IList.Clear()</Member>
+        <Member type="Method">public Boolean Contains(Object item)</Member>
+        <Member type="Method">public Void CopyTo(Array array, Int32 arrayIndex)</Member>
+        <Member type="Method">Void System.Collections.IList.Remove(Object item)</Member>
+        <Member type="Method">public IEnumerator GetEnumerator()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TreeTraversal</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public static IEnumerable&lt;T&gt; PreOrder(T root, Func&lt;T, IEnumerable&lt;T&gt;&gt; recursion)</Member>
+        <Member type="Method">public static IEnumerable&lt;T&gt; PreOrder(IEnumerable&lt;T&gt; input, Func&lt;T, IEnumerable&lt;T&gt;&gt; recursion)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>UpdateLock</Name>
+        <Access>Public</Access>
+        <Location left="436" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private SharpTreeView instance</Member>
+        <Member type="Constructor">public UpdateLock(SharpTreeView instance)</Member>
+        <Member type="Method">public Void Dispose()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DropTarget</Name>
+        <Access>Public</Access>
+        <Location left="224" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public SharpTreeViewItem Item</Member>
+        <Member type="Field">public DropPlace Place</Member>
+        <Member type="Field">public Double Y</Member>
+        <Member type="Field">public SharpTreeNode Node</Member>
+        <Member type="Field">public Int32 Index</Member>
+        <Member type="Constructor">public DropTarget()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>DropPlace</Name>
+        <Access>Public</Access>
+        <Location left="12" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Before = 0</Value>
+        <Value>Inside = 1</Value>
+        <Value>After = 2</Value>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Nesting" first="11" second="18">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="11" second="19">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="11" second="20">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="1" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>Instance</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>listParent</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>left</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>right</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="16">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>treeFlattener</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="9">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>modelChildren</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>modelParent</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="9" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>parent</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="16">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>flattener</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="10">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>previewNodeView</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>insertMarker</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="20">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>previewPlace</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="14" second="11">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>treeView</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="16" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>root</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="18" second="11">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>instance</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="19" second="13">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>Item</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="19" second="20">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>Place</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="19" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>Node</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

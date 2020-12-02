@@ -1137,8 +1137,199 @@ cout << "\n";
 //pag 27
 //array vector si pointeri
 
+//prob 3.1
+//deca 2 roman
+
+const char letters[] = {"MDCLXVI"};
+cost int cifrom[] = {1000, 500, 100, 50, 10, 5, 1};
+
+void convert(int n){
+ for(inti = 0 ; i< strlen(letters) && n ; i++)
+ while(n>= cifreom[i]){
+ cout << letter[i];
+n-= cifreom[i];
+}
+}
+
+void main(void){
+int n ;
+cout << " introd to nr"; cin >> n;
+cout << "cifre romane : " ;
+convert(n);
+}
 
 
+
+
+//prob 3.2
+//casier automat
+//restul la casa de marcat 
+
+long multiplu (long suma)
+{
+if(suma % 100000 == 0)
+return suma ;
+return ((suma / 100000) + 1) * 100000;
+}
+
+void main(void){
+long suma;
+int i ;
+const long valori [13] = { 100000, 50000, 10000, 5000, 1000, 500,100,50,25,10,5,3,1);
+int cantitati[13];
+long platit;
+long rest;
+cout << " suam de plata";
+cin >> suma;
+platit = multiplu(suma)'
+res = platit - suma;
+cout << " rest de plata este " << rest;
+for(i = 0 ; i < 13 ; i++)
+cantitati[i] = 0;
+for(i=0;(i<13) && ( rest > 0) ; i++)
+{
+cantitati[i] = rest / valori [i];
+rest %= valori [i];
+}
+for(i = 0 ; i< 13; i++)
+if(cantitati[i])
+cout << cantitati[i]<<valori[i];
+}
+
+
+//prog 3.3
+//scadere polinoame
+//grad si coeficienti
+//Pn(x) = a0  + a1x + ... + anxn;
+//lsiat de param
+//f de normalizare a unui polinom 
+//f main read, scade , normalizare dfirenta , afisare
+
+void difpol(float p1[], int n1, float p2[], int n2. float pd[], int &nd){
+ int i , j;
+ if(n1 > n2){
+ nd = n1;
+ for(i=n1; i> n2; i--)
+ pd[i] = p1[i];
+}
+
+else
+{
+nd = n2;
+for(i=n2;i>n1;i--)
+pd[i] = -p2[i];
+}
+for(j=i;j>=0;j--)
+pd[j] ; p1[j] - p2[j];
+}
+
+void normalizare(float p[], int &grad){
+for(; p[grad] ==0 && grad >= 0; grad--)
+;
+}
+
+void main(void){
+int n1, n2, nd;
+int i;
+float p1[100], p2[100], pd[100];
+cout << " gra p1" ; cin >> n1;
+cout <<"coef p1";
+for(i=n1;i>=0;i--)
+{
+cout << i ; cin >> p1[i];
+}
+cout << "grad p2"; cin >>n2;
+cout <<"coef p2";
+for(i=n2;i>=0;i--)
+{
+cout << i ; cin >> p2[i];
+}
+diferentapol(p1,n1,p2,n2,pd,nd);
+normalizare(pd,nd);
+cout << " pol dif";
+if(nd < 0)
+cout << "polinom nul";
+else 
+for(i=nd;i>=0;i--)
+{
+cout << i << pd[i];
+}
+
+}
+
+
+
+//prob 3.4
+//ec px = 0
+//metoda tangentei cu x dat 
+//x^(k+1) = x^k - ((p(x^k))/(pp(x^k)))
+//precizie eps
+//x^(k+1) - x^k < eps
+//raphson newton 
+
+float valpol(float p[], int n , float x){
+int i ;
+float val;
+val = p[n];
+for(i = n-1; i>= 0; i--)
+val = vla * x + pi[];
+return val;
+}
+
+void deriveazapol(float p[], int n , float pd[], int &nd)
+{
+int i '
+if(n==0){
+nd = 0;
+pd[0] = 0;
+}
+else
+{
+nd= n -1;
+for(i = nd ; i>=0;i--)
+pd[i] = (i+1) * p[i+1];
+}
+}
+void main(void){
+float p[20], pd[20];
+float eps;
+float xcrt;
+float xprec;
+int n , nd;
+char c;
+cout << " grad p >=1"; cin >> n;
+cout << "introd coef pol";
+for(int i=n;i>=0;i--)
+{
+cout << a << i << " = "  ; cin >> p[i];
+}
+
+cout << " precizia " ; cin >> eps;
+cout<<"val de pornire " ;
+cin >> xcrt;
+deirveazapol(p,n,pd,nd);
+cout << " aprox succesive pt radacini " ;
+do
+{
+xprec = xcrt;
+xcrt = xprec- valpol(p,n,xprec) / valpol(pd,nd,xprec);
+cout << setprecision(5) << xcrt ;
+}while(fabs(xcrt-xprec)>=eps);
+cout<<"aprox este " << setprecision(5)<<xcrt;
+}
+
+
+
+//prob 3.5
+//nr de bare si lungimi
+//p categorii de lugimi std <=10
+//limita max is min
+//cal
+//nr piese din clasa
+//dim media a pieselor din fiecare clasade lungime
+//nr de rebuturi si lungimile bare rebute
+
+pag 31...
 
 
 

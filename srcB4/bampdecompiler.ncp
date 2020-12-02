@@ -1,0 +1,3320 @@
+<Project>
+  <Name>Untitled</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>ILSpy.BamlDecompiler.Plugin.dll</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>IHandler</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="15366" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">BamlRecordType Type { get; }</Member>
+        <Member type="Method">BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IDeferHandler</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="15366" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">BamlElement TranslateDefer(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IRewritePass</Name>
+        <Access>Internal</Access>
+        <Location left="3404" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">Void Run(XamlContext ctx, XDocument document)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IBamlDeferRecord</Name>
+        <Access>Internal</Access>
+        <Location left="3192" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">Int64 Position { get; }</Member>
+        <Member type="Property">BamlRecord Record { get; set; }</Member>
+        <Member type="Method">Void ReadDefer(BamlDocument doc, Int32 index, Func&lt;Int64, BamlRecord&gt; resolve)</Member>
+        <Member type="Method">Void WriteDefer(BamlDocument doc, Int32 index, BinaryWriter wtr)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlElement</Name>
+        <Access>Internal</Access>
+        <Location left="2980" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlNode Node { get; }</Member>
+        <Member type="Property">public XamlNode Xaml { get; set; }</Member>
+        <Member type="Property">public BamlElement Parent { get; set; }</Member>
+        <Member type="Property">public IList&lt;BamlElement&gt; Children { get; }</Member>
+        <Member type="Constructor">public BamlElement(BamlNode node)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlResourceNodeFactory</Name>
+        <Access>Public</Access>
+        <Location left="2768" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BamlResourceNodeFactory()</Member>
+        <Member type="Method">public ILSpyTreeNode CreateNode(Resource resource)</Member>
+        <Member type="Method">public ILSpyTreeNode CreateNode(String key, Object data)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlResourceFileHandler</Name>
+        <Access>Public</Access>
+        <Location left="2556" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String EntryType { get; }</Member>
+        <Member type="Constructor">public BamlResourceFileHandler()</Member>
+        <Member type="Method">public Boolean CanHandle(String name, DecompilationOptions options)</Member>
+        <Member type="Method">public String WriteResourceToFile(LoadedAssembly assembly, String fileName, Stream stream, DecompilationOptions options)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlResourceEntryNode</Name>
+        <Access>Public</Access>
+        <Location left="2344" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BamlResourceEntryNode(String key, Stream data)</Member>
+        <Member type="Method">public override Boolean View(TabPageModel tabPage)</Member>
+        <Member type="Method">private Boolean LoadBaml(AvalonEditTextOutput output, CancellationToken cancellationToken)</Member>
+        <Member type="Method">internal static XDocument LoadIntoDocument(PEFile module, IAssemblyResolver assemblyResolver, Stream stream, CancellationToken cancellationToken)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EventRegistration</Name>
+        <Access>Internal</Access>
+        <Location left="2132" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public String EventName</Member>
+        <Member type="Field">public String MethodName</Member>
+        <Member type="Constructor">public EventRegistration()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlConnectionId</Name>
+        <Access>Internal</Access>
+        <Location left="1920" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public UInt32 Id { get; }</Member>
+        <Member type="Constructor">public BamlConnectionId(UInt32 id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HandlerMap</Name>
+        <Access>Internal</Access>
+        <Location left="1708" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Dictionary&lt;BamlRecordType, IHandler&gt; handlers</Member>
+        <Member type="Constructor">static HandlerMap()</Member>
+        <Member type="Method">public static IHandler LookupHandler(BamlRecordType type)</Member>
+        <Member type="Method">public static Void ProcessChildren(XamlContext ctx, BamlBlockNode node, BamlElement nodeElem)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XamlContext</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="14831" />
+        <Size width="162" height="485" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Dictionary&lt;UInt16, XamlType&gt; typeMap</Member>
+        <Member type="Field">private Dictionary&lt;UInt16, XamlProperty&gt; propertyMap</Member>
+        <Member type="Field">private Dictionary&lt;String, XNamespace&gt; xmlnsMap</Member>
+        <Member type="Field">public const String KnownNamespace_Xaml = http://schemas.microsoft.com/winfx/2006/xaml</Member>
+        <Member type="Field">public const String KnownNamespace_Presentation = http://schemas.microsoft.com/winfx/2006/xaml/presentation</Member>
+        <Member type="Field">public const String KnownNamespace_PresentationOptions = http://schemas.microsoft.com/winfx/2006/xaml/presentation/options</Member>
+        <Member type="Property">public IDecompilerTypeSystem TypeSystem { get; }</Member>
+        <Member type="Property">public CancellationToken CancellationToken { get; private set; }</Member>
+        <Member type="Property">public BamlDecompilerOptions BamlDecompilerOptions { get; private set; }</Member>
+        <Member type="Property">public BamlContext Baml { get; private set; }</Member>
+        <Member type="Property">public BamlNode RootNode { get; private set; }</Member>
+        <Member type="Property">public IDictionary&lt;BamlRecord, BamlBlockNode&gt; NodeMap { get; }</Member>
+        <Member type="Property">public XmlnsDictionary XmlNs { get; }</Member>
+        <Member type="Constructor">private XamlContext(IDecompilerTypeSystem typeSystem)</Member>
+        <Member type="Method">public static XamlContext Construct(IDecompilerTypeSystem typeSystem, BamlDocument document, CancellationToken token, BamlDecompilerOptions bamlDecompilerOptions)</Member>
+        <Member type="Method">private Void BuildNodeMap(BamlBlockNode node)</Member>
+        <Member type="Method">private Void BuildPIMappings(BamlDocument document)</Member>
+        <Member type="Method">public XamlType ResolveType(UInt16 id)</Member>
+        <Member type="Method">public XamlProperty ResolveProperty(UInt16 id)</Member>
+        <Member type="Method">public String ResolveString(UInt16 id)</Member>
+        <Member type="Method">public XNamespace GetXmlNamespace(String xmlns)</Member>
+        <Member type="Method">public String TryGetXmlNamespace(IModule assembly, String typeNamespace)</Member>
+        <Member type="Method">public XName GetKnownNamespace(String name, String xmlNamespace, XElement context)</Member>
+        <Member type="Method">public XName GetPseudoName(String name)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XamlDecompiler</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private IRewritePass[] rewritePasses</Member>
+        <Member type="Constructor">public XamlDecompiler()</Member>
+        <Member type="Constructor">static XamlDecompiler()</Member>
+        <Member type="Method">public XDocument Decompile(IDecompilerTypeSystem typeSystem, BamlDocument document, CancellationToken token, BamlDecompilerOptions bamlDecompilerOptions, List&lt;String&gt; assemblyReferences)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlDecompilerOptions</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BamlDecompilerOptions()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XmlnsScope</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlElement Element { get; }</Member>
+        <Member type="Property">public XmlnsScope PreviousScope { get; }</Member>
+        <Member type="Constructor">public XmlnsScope(XmlnsScope prev, BamlElement elem)</Member>
+        <Member type="Method">public String LookupXmlns(String fullAssemblyName, String clrNs)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XmlnsDictionary</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="14831" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Dictionary&lt;String, NamespaceMap&gt; piMappings</Member>
+        <Member type="Property">public XmlnsScope CurrentScope { get; set; }</Member>
+        <Member type="Constructor">public XmlnsDictionary()</Member>
+        <Member type="Method">public Void PushScope(BamlElement element)</Member>
+        <Member type="Method">public Void PopScope()</Member>
+        <Member type="Method">public Void Add(NamespaceMap map)</Member>
+        <Member type="Method">public Void SetPIMapping(String xmlNs, String clrNs, String fullAssemblyName)</Member>
+        <Member type="Method">private NamespaceMap PIFixup(NamespaceMap map)</Member>
+        <Member type="Method">public NamespaceMap LookupNamespaceFromPrefix(String prefix)</Member>
+        <Member type="Method">public NamespaceMap LookupNamespaceFromXmlns(String xmlNs)</Member>
+        <Member type="Method">public String LookupXmlns(String fullAssemblyName, String clrNs)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NamespaceMap</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String XmlnsPrefix { get; set; }</Member>
+        <Member type="Property">public String FullAssemblyName { get; set; }</Member>
+        <Member type="Property">public String XMLNamespace { get; set; }</Member>
+        <Member type="Property">public String CLRNamespace { get; set; }</Member>
+        <Member type="Constructor">public NamespaceMap(String prefix, String fullAssemblyName, String xmlNs)</Member>
+        <Member type="Constructor">public NamespaceMap(String prefix, String fullAssemblyName, String xmlNs, String clrNs)</Member>
+        <Member type="Method">public override String ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XamlExtension</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public XamlType ExtensionType { get; }</Member>
+        <Member type="Property">public Object[] Initializer { get; set; }</Member>
+        <Member type="Property">public IDictionary&lt;String, Object&gt; NamedArguments { get; }</Member>
+        <Member type="Constructor">public XamlExtension(XamlType type)</Member>
+        <Member type="Method">private static Void WriteObject(StringBuilder sb, XamlContext ctx, XElement ctxElement, Object value)</Member>
+        <Member type="Method">public String ToString(XamlContext ctx, XElement ctxElement)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XamlPathDeserializer</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="14831" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public XamlPathDeserializer()</Member>
+        <Member type="Method">private static Void UnpackBools(Byte b, out Boolean b1, out Boolean b2, out Boolean b3, out Boolean b4)</Member>
+        <Member type="Method">private static Point ReadPoint(BinaryReader reader)</Member>
+        <Member type="Method">private static Void ReadPointBoolBool(BinaryReader reader, Byte b, out Point pt, out Boolean b1, out Boolean b2)</Member>
+        <Member type="Method">private static IList&lt;Point&gt; ReadPointsBoolBool(BinaryReader reader, Byte b, out Boolean b1, out Boolean b2)</Member>
+        <Member type="Method">public static String Deserialize(BinaryReader reader)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XamlProperty</Name>
+        <Access>Internal</Access>
+        <Location left="3404" top="14517" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public XamlType DeclaringType { get; }</Member>
+        <Member type="Property">public String PropertyName { get; }</Member>
+        <Member type="Property">public IMember ResolvedMember { get; set; }</Member>
+        <Member type="Constructor">public XamlProperty(XamlType type, String name)</Member>
+        <Member type="Method">public Void TryResolve()</Member>
+        <Member type="Method">public Boolean IsAttachedTo(XamlType type)</Member>
+        <Member type="Method">public XName ToXName(XamlContext ctx, XElement parent, Boolean isFullName = True)</Member>
+        <Member type="Method">public override String ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XamlResourceKey</Name>
+        <Access>Internal</Access>
+        <Location left="3192" top="14517" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlNode KeyNode { get; set; }</Member>
+        <Member type="Property">public BamlElement KeyElement { get; set; }</Member>
+        <Member type="Property">public IList&lt;BamlNode&gt; StaticResources { get; }</Member>
+        <Member type="Constructor">private XamlResourceKey(BamlNode node)</Member>
+        <Member type="Method">public static XamlResourceKey Create(BamlNode node)</Member>
+        <Member type="Method">public static XamlResourceKey FindKeyInSiblings(BamlNode node)</Member>
+        <Member type="Method">public static XamlResourceKey FindKeyInAncestors(BamlNode node)</Member>
+        <Member type="Method">public static XamlResourceKey FindKeyInAncestors(BamlNode node, out BamlNode found)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XamlType</Name>
+        <Access>Internal</Access>
+        <Location left="2980" top="14517" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public IModule Assembly { get; }</Member>
+        <Member type="Property">public String FullAssemblyName { get; }</Member>
+        <Member type="Property">public String TypeNamespace { get; }</Member>
+        <Member type="Property">public String TypeName { get; }</Member>
+        <Member type="Property">public XNamespace Namespace { get; private set; }</Member>
+        <Member type="Property">public IType ResolvedType { get; set; }</Member>
+        <Member type="Constructor">public XamlType(IModule assembly, String fullAssemblyName, String ns, String name)</Member>
+        <Member type="Constructor">public XamlType(IModule assembly, String fullAssemblyName, String ns, String name, XNamespace xmlns)</Member>
+        <Member type="Method">public Void ResolveNamespace(XElement elem, XamlContext ctx)</Member>
+        <Member type="Method">public XName ToXName(XamlContext ctx)</Member>
+        <Member type="Method">public override String ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XamlUtils</Name>
+        <Access>Internal</Access>
+        <Location left="2768" top="14517" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public static String Escape(String value)</Member>
+        <Member type="Method">public static String ToString(XamlContext ctx, XElement elem, XamlType type)</Member>
+        <Member type="Method">public static String ToString(XamlContext ctx, XElement elem, XName name)</Member>
+        <Member type="Method">public static Double ReadXamlDouble(BinaryReader reader, Boolean scaledInt = False)</Member>
+        <Member type="Method">public static StringBuilder EscapeName(StringBuilder sb, String name)</Member>
+        <Member type="Method">public static String EscapeName(String name)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AttributeRewritePass</Name>
+        <Access>Internal</Access>
+        <Location left="2556" top="14517" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private XName key</Member>
+        <Member type="Constructor">public AttributeRewritePass()</Member>
+        <Member type="Method">public Void Run(XamlContext ctx, XDocument document)</Member>
+        <Member type="Method">private Boolean ProcessElement(XamlContext ctx, XElement elem)</Member>
+        <Member type="Method">private Boolean RewriteElement(XamlContext ctx, XElement parent, XElement elem)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConnectionIdRewritePass</Name>
+        <Access>Internal</Access>
+        <Location left="2344" top="14517" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private TopLevelTypeName componentConnectorTypeName</Member>
+        <Member type="Constructor">public ConnectionIdRewritePass()</Member>
+        <Member type="Constructor">static ConnectionIdRewritePass()</Member>
+        <Member type="Method">public Void Run(XamlContext ctx, XDocument document)</Member>
+        <Member type="Method">private static Void ProcessConnectionIds(XElement element, List&lt;ValueTuple&lt;LongSet, EventRegistration[]&gt;&gt; eventMappings)</Member>
+        <Member type="Method">private List&lt;ValueTuple&lt;LongSet, EventRegistration[]&gt;&gt; DecompileEventMappings(XamlContext ctx, XDocument document)</Member>
+        <Member type="Method">private EventRegistration[] FindEvents(ILInstruction inst)</Member>
+        <Member type="Method">private Void FindEvents(ILInstruction inst, List&lt;EventRegistration&gt; events)</Member>
+        <Member type="Method">private Boolean IsAddAttachedEvent(CallInstruction call, out String eventName, out String handlerName)</Member>
+        <Member type="Method">private Boolean IsAddEvent(CallInstruction call, out String eventName, out String handlerName)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DocumentRewritePass</Name>
+        <Access>Internal</Access>
+        <Location left="2132" top="14517" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DocumentRewritePass()</Member>
+        <Member type="Method">public Void Run(XamlContext ctx, XDocument document)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MarkupExtensionRewritePass</Name>
+        <Access>Internal</Access>
+        <Location left="1920" top="14517" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private XName key</Member>
+        <Member type="Field">private XName ctor</Member>
+        <Member type="Constructor">public MarkupExtensionRewritePass()</Member>
+        <Member type="Method">public Void Run(XamlContext ctx, XDocument document)</Member>
+        <Member type="Method">private Boolean ProcessElement(XamlContext ctx, XElement elem)</Member>
+        <Member type="Method">private Boolean RewriteElement(XamlContext ctx, XElement parent, XElement elem)</Member>
+        <Member type="Method">private Boolean CanInlineExt(XamlContext ctx, XElement ctxElement)</Member>
+        <Member type="Method">private Object InlineObject(XamlContext ctx, XNode obj)</Member>
+        <Member type="Method">private Object[] InlineCtor(XamlContext ctx, XElement ctor)</Member>
+        <Member type="Method">private XamlExtension InlineExtension(XamlContext ctx, XElement ctxElement)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XClassRewritePass</Name>
+        <Access>Internal</Access>
+        <Location left="1708" top="14517" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public XClassRewritePass()</Member>
+        <Member type="Method">public Void Run(XamlContext ctx, XDocument document)</Member>
+        <Member type="Method">private Void RewriteClass(XamlContext ctx, XElement elem)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConstructorParametersStartHandler</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="14517" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public ConstructorParametersStartHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DocumentHandler</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="14517" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public DocumentHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ElementHandler</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="14517" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public ElementHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>KeyElementStartHandler</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="14517" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">BamlRecordType ILSpy.BamlDecompiler.IHandler.Type { get; }</Member>
+        <Member type="Constructor">public KeyElementStartHandler()</Member>
+        <Member type="Method">BamlElement ILSpy.BamlDecompiler.IHandler.Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Member type="Method">public BamlElement TranslateDefer(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyArrayHandler</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="14517" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyArrayHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyComplexHandler</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="14517" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyComplexHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyDictionaryHandler</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="14517" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyDictionaryHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyListHandler</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="14517" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyListHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AssemblyInfoHandler</Name>
+        <Access>Internal</Access>
+        <Location left="3404" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public AssemblyInfoHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AttributeInfoHandler</Name>
+        <Access>Internal</Access>
+        <Location left="3192" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public AttributeInfoHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConnectionIdHandler</Name>
+        <Access>Internal</Access>
+        <Location left="2980" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public ConnectionIdHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConstructorParameterTypeHandler</Name>
+        <Access>Internal</Access>
+        <Location left="2768" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public ConstructorParameterTypeHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ContentPropertyHandler</Name>
+        <Access>Internal</Access>
+        <Location left="2556" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public ContentPropertyHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DefAttributeHandler</Name>
+        <Access>Internal</Access>
+        <Location left="2344" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public DefAttributeHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DefAttributeStringHandler</Name>
+        <Access>Internal</Access>
+        <Location left="2132" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public DefAttributeStringHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Member type="Method">public BamlElement TranslateDefer(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DefAttributeTypeHandler</Name>
+        <Access>Internal</Access>
+        <Location left="1920" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public DefAttributeTypeHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Member type="Method">public BamlElement TranslateDefer(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DeferableContentStartHandler</Name>
+        <Access>Internal</Access>
+        <Location left="1708" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public DeferableContentStartHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LineNumberAndPositionHandler</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public LineNumberAndPositionHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LinePositionHandler</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public LinePositionHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LiteralContentHandler</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public LiteralContentHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OptimizedStaticResourceHandler</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public OptimizedStaticResourceHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Member type="Method">public BamlElement TranslateDefer(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PIMappingHandler</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PIMappingHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PresentationOptionsAttributeHandler</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PresentationOptionsAttributeHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyCustomHandler</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyCustomHandler()</Member>
+        <Member type="Method">private String Deserialize(XamlContext ctx, XElement elem, KnownTypes ser, Byte[] value)</Member>
+        <Member type="Method">private Boolean NeedsFullName(XamlProperty property, XamlContext ctx, XElement elem)</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyHandler</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="14251" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public virtual BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyTypeReferenceHandler</Name>
+        <Access>Internal</Access>
+        <Location left="3404" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyTypeReferenceHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TargetTypeAnnotation</Name>
+        <Access>Internal</Access>
+        <Location left="3192" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public XamlType Type { get; }</Member>
+        <Member type="Constructor">public TargetTypeAnnotation(XamlType type)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyWithConverterHandler</Name>
+        <Access>Internal</Access>
+        <Location left="2980" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">BamlRecordType ILSpy.BamlDecompiler.IHandler.Type { get; }</Member>
+        <Member type="Constructor">public PropertyWithConverterHandler()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyWithExtensionHandler</Name>
+        <Access>Internal</Access>
+        <Location left="2768" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyWithExtensionHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyWithStaticResourceIdHandler</Name>
+        <Access>Internal</Access>
+        <Location left="2556" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyWithStaticResourceIdHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StaticResourceStartHandler</Name>
+        <Access>Internal</Access>
+        <Location left="2344" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public StaticResourceStartHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Member type="Method">public BamlElement TranslateDefer(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StaticResourceIdHandler</Name>
+        <Access>Internal</Access>
+        <Location left="2132" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public StaticResourceIdHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TextHandler</Name>
+        <Access>Internal</Access>
+        <Location left="1920" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public TextHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TextWithIdHandler</Name>
+        <Access>Internal</Access>
+        <Location left="1708" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public TextWithIdHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TextWithConverterHandler</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">BamlRecordType ILSpy.BamlDecompiler.IHandler.Type { get; }</Member>
+        <Member type="Constructor">public TextWithConverterHandler()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TypeInfoHandler</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public TypeInfoHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TypeSerializerInfoHandler</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public TypeSerializerInfoHandler()</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XmlnsPropertyHandler</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public XmlnsPropertyHandler()</Member>
+        <Member type="Method">private IEnumerable&lt;String&gt; ResolveCLRNamespaces(IModule assembly, String ns)</Member>
+        <Member type="Method">public BamlElement Translate(XamlContext ctx, BamlNode node, BamlElement parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlContext</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="13954" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Dictionary&lt;UInt16, ValueTuple&lt;String, IModule&gt;&gt; assemblyMap</Member>
+        <Member type="Property">public IDecompilerTypeSystem TypeSystem { get; }</Member>
+        <Member type="Property">public KnownThings KnownThings { get; }</Member>
+        <Member type="Property">public Dictionary&lt;UInt16, AssemblyInfoRecord&gt; AssemblyIdMap { get; }</Member>
+        <Member type="Property">public Dictionary&lt;UInt16, AttributeInfoRecord&gt; AttributeIdMap { get; }</Member>
+        <Member type="Property">public Dictionary&lt;UInt16, StringInfoRecord&gt; StringIdMap { get; }</Member>
+        <Member type="Property">public Dictionary&lt;UInt16, TypeInfoRecord&gt; TypeIdMap { get; }</Member>
+        <Member type="Constructor">private BamlContext(IDecompilerTypeSystem typeSystem)</Member>
+        <Member type="Method">public static BamlContext ConstructContext(IDecompilerTypeSystem typeSystem, BamlDocument document, CancellationToken token)</Member>
+        <Member type="Method">public ValueTuple&lt;String, IModule&gt; ResolveAssembly(UInt16 id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlDocument</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String DocumentName { get; set; }</Member>
+        <Member type="Property">public String Signature { get; set; }</Member>
+        <Member type="Property">public BamlVersion ReaderVersion { get; set; }</Member>
+        <Member type="Property">public BamlVersion UpdaterVersion { get; set; }</Member>
+        <Member type="Property">public BamlVersion WriterVersion { get; set; }</Member>
+        <Member type="Constructor">public BamlDocument()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlNode</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="13954" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlBlockNode Parent { get; set; }</Member>
+        <Member type="Property">public abstract BamlRecordType Type { get; }</Member>
+        <Member type="Property">public Object Annotation { get; set; }</Member>
+        <Member type="Property">public abstract BamlRecord Record { get; }</Member>
+        <Member type="Constructor">protected BamlNode()</Member>
+        <Member type="Method">public static Boolean IsHeader(BamlRecord rec)</Member>
+        <Member type="Method">public static Boolean IsFooter(BamlRecord rec)</Member>
+        <Member type="Method">public static Boolean IsMatch(BamlRecord header, BamlRecord footer)</Member>
+        <Member type="Method">public static BamlNode Parse(BamlDocument document, CancellationToken token)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlRecordNode</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="13954" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private BamlRecord record</Member>
+        <Member type="Property">public override BamlRecord Record { get; }</Member>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public BamlRecordNode(BamlRecord record)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlBlockNode</Name>
+        <Access>Internal</Access>
+        <Location left="3404" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BamlRecord Header { get; set; }</Member>
+        <Member type="Property">public IList&lt;BamlNode&gt; Children { get; }</Member>
+        <Member type="Property">public BamlRecord Footer { get; set; }</Member>
+        <Member type="Property">public override BamlRecord Record { get; }</Member>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public BamlBlockNode()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlBinaryReader</Name>
+        <Access>Internal</Access>
+        <Location left="3192" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BamlBinaryReader(Stream stream)</Member>
+        <Member type="Method">public Int32 ReadEncodedInt()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlReader</Name>
+        <Access>Internal</Access>
+        <Location left="2980" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private const String MSBAML_SIG = MSBAML</Member>
+        <Member type="Constructor">public BamlReader()</Member>
+        <Member type="Method">internal static Boolean IsBamlHeader(Stream str)</Member>
+        <Member type="Method">private static String ReadSignature(Stream str)</Member>
+        <Member type="Method">public static BamlDocument ReadDocument(Stream str, CancellationToken token)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2768" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public abstract BamlRecordType Type { get; }</Member>
+        <Member type="Property">public Int64 Position { get; internal set; }</Member>
+        <Member type="Constructor">protected BamlRecord()</Member>
+        <Member type="Method">public abstract Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public abstract Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SizedBamlRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2556" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">protected SizedBamlRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">private Int32 SizeofEncodedInt(Int32 val)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Member type="Method">protected abstract Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected abstract Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>XmlnsPropertyRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2344" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public String Prefix { get; set; }</Member>
+        <Member type="Property">public String XmlNamespace { get; set; }</Member>
+        <Member type="Property">public UInt16[] AssemblyIds { get; set; }</Member>
+        <Member type="Constructor">public XmlnsPropertyRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PresentationOptionsAttributeRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2132" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public String Value { get; set; }</Member>
+        <Member type="Property">public UInt16 NameId { get; set; }</Member>
+        <Member type="Constructor">public PresentationOptionsAttributeRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PIMappingRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1920" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public String XmlNamespace { get; set; }</Member>
+        <Member type="Property">public String ClrNamespace { get; set; }</Member>
+        <Member type="Property">public UInt16 AssemblyId { get; set; }</Member>
+        <Member type="Constructor">public PIMappingRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AssemblyInfoRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1708" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 AssemblyId { get; set; }</Member>
+        <Member type="Property">public String AssemblyFullName { get; set; }</Member>
+        <Member type="Constructor">public AssemblyInfoRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 AttributeId { get; set; }</Member>
+        <Member type="Property">public String Value { get; set; }</Member>
+        <Member type="Constructor">public PropertyRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyWithConverterRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 ConverterTypeId { get; set; }</Member>
+        <Member type="Constructor">public PropertyWithConverterRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyCustomRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 AttributeId { get; set; }</Member>
+        <Member type="Property">public UInt16 SerializerTypeId { get; set; }</Member>
+        <Member type="Property">public Byte[] Data { get; set; }</Member>
+        <Member type="Constructor">public PropertyCustomRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DefAttributeRecord</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public String Value { get; set; }</Member>
+        <Member type="Property">public UInt16 NameId { get; set; }</Member>
+        <Member type="Constructor">public DefAttributeRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DefAttributeKeyStringRecord</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="13623" />
+        <Size width="162" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal UInt32 pos</Member>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 ValueId { get; set; }</Member>
+        <Member type="Property">public Boolean Shared { get; set; }</Member>
+        <Member type="Property">public Boolean SharedSet { get; set; }</Member>
+        <Member type="Property">public BamlRecord Record { get; set; }</Member>
+        <Member type="Constructor">public DefAttributeKeyStringRecord()</Member>
+        <Member type="Method">public Void ReadDefer(BamlDocument doc, Int32 index, Func&lt;Int64, BamlRecord&gt; resolve)</Member>
+        <Member type="Method">public Void WriteDefer(BamlDocument doc, Int32 index, BinaryWriter wtr)</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Member type="Method">private static Void NavigateTree(BamlDocument doc, BamlRecordType start, BamlRecordType end, ref Int32 index)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TypeInfoRecord</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 TypeId { get; set; }</Member>
+        <Member type="Property">public UInt16 AssemblyId { get; set; }</Member>
+        <Member type="Property">public String TypeFullName { get; set; }</Member>
+        <Member type="Constructor">public TypeInfoRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TypeSerializerInfoRecord</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 SerializerTypeId { get; set; }</Member>
+        <Member type="Constructor">public TypeSerializerInfoRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AttributeInfoRecord</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="13623" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 AttributeId { get; set; }</Member>
+        <Member type="Property">public UInt16 OwnerTypeId { get; set; }</Member>
+        <Member type="Property">public Byte AttributeUsage { get; set; }</Member>
+        <Member type="Property">public String Name { get; set; }</Member>
+        <Member type="Constructor">public AttributeInfoRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StringInfoRecord</Name>
+        <Access>Internal</Access>
+        <Location left="3404" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 StringId { get; set; }</Member>
+        <Member type="Property">public String Value { get; set; }</Member>
+        <Member type="Constructor">public StringInfoRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TextRecord</Name>
+        <Access>Internal</Access>
+        <Location left="3192" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public String Value { get; set; }</Member>
+        <Member type="Constructor">public TextRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TextWithConverterRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2980" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 ConverterTypeId { get; set; }</Member>
+        <Member type="Constructor">public TextWithConverterRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TextWithIdRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2768" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 ValueId { get; set; }</Member>
+        <Member type="Constructor">public TextWithIdRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LiteralContentRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2556" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public String Value { get; set; }</Member>
+        <Member type="Property">public UInt32 Reserved0 { get; set; }</Member>
+        <Member type="Property">public UInt32 Reserved1 { get; set; }</Member>
+        <Member type="Constructor">public LiteralContentRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RoutedEventRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2344" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public String Value { get; set; }</Member>
+        <Member type="Property">public UInt16 AttributeId { get; set; }</Member>
+        <Member type="Property">public UInt32 Reserved1 { get; set; }</Member>
+        <Member type="Constructor">public RoutedEventRecord()</Member>
+        <Member type="Method">protected virtual Void ReadData(BamlBinaryReader reader, Int32 size)</Member>
+        <Member type="Method">protected virtual Void WriteData(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DocumentStartRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2132" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public Boolean LoadAsync { get; set; }</Member>
+        <Member type="Property">public UInt32 MaxAsyncRecords { get; set; }</Member>
+        <Member type="Property">public Boolean DebugBaml { get; set; }</Member>
+        <Member type="Constructor">public DocumentStartRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DocumentEndRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1920" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public DocumentEndRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ElementStartRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1708" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 TypeId { get; set; }</Member>
+        <Member type="Property">public Byte Flags { get; set; }</Member>
+        <Member type="Constructor">public ElementStartRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ElementEndRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public ElementEndRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>KeyElementStartRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public KeyElementStartRecord()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>KeyElementEndRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public KeyElementEndRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConnectionIdRecord</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt32 ConnectionId { get; set; }</Member>
+        <Member type="Constructor">public ConnectionIdRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyWithExtensionRecord</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 AttributeId { get; set; }</Member>
+        <Member type="Property">public UInt16 Flags { get; set; }</Member>
+        <Member type="Property">public UInt16 ValueId { get; set; }</Member>
+        <Member type="Constructor">public PropertyWithExtensionRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyTypeReferenceRecord</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 TypeId { get; set; }</Member>
+        <Member type="Constructor">public PropertyTypeReferenceRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyStringReferenceRecord</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 StringId { get; set; }</Member>
+        <Member type="Constructor">public PropertyStringReferenceRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyWithStaticResourceIdRecord</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="13357" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 AttributeId { get; set; }</Member>
+        <Member type="Constructor">public PropertyWithStaticResourceIdRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ContentPropertyRecord</Name>
+        <Access>Internal</Access>
+        <Location left="3404" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 AttributeId { get; set; }</Member>
+        <Member type="Constructor">public ContentPropertyRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DefAttributeKeyTypeRecord</Name>
+        <Access>Internal</Access>
+        <Location left="3192" top="13043" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal UInt32 pos</Member>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public Boolean Shared { get; set; }</Member>
+        <Member type="Property">public Boolean SharedSet { get; set; }</Member>
+        <Member type="Property">public BamlRecord Record { get; set; }</Member>
+        <Member type="Constructor">public DefAttributeKeyTypeRecord()</Member>
+        <Member type="Method">public Void ReadDefer(BamlDocument doc, Int32 index, Func&lt;Int64, BamlRecord&gt; resolve)</Member>
+        <Member type="Method">public Void WriteDefer(BamlDocument doc, Int32 index, BinaryWriter wtr)</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Member type="Method">private static Void NavigateTree(BamlDocument doc, BamlRecordType start, BamlRecordType end, ref Int32 index)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyListStartRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2980" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyListStartRecord()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyListEndRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2768" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyListEndRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyDictionaryStartRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2556" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyDictionaryStartRecord()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyDictionaryEndRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2344" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyDictionaryEndRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyArrayStartRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2132" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyArrayStartRecord()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyArrayEndRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1920" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyArrayEndRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyComplexStartRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1708" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 AttributeId { get; set; }</Member>
+        <Member type="Constructor">public PropertyComplexStartRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyComplexEndRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public PropertyComplexEndRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConstructorParametersStartRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public ConstructorParametersStartRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConstructorParametersEndRecord</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public ConstructorParametersEndRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConstructorParameterTypeRecord</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 TypeId { get; set; }</Member>
+        <Member type="Constructor">public ConstructorParameterTypeRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DeferableContentStartRecord</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="13043" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int64 pos</Member>
+        <Member type="Field">internal UInt32 size</Member>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public BamlRecord Record { get; set; }</Member>
+        <Member type="Constructor">public DeferableContentStartRecord()</Member>
+        <Member type="Method">public Void ReadDefer(BamlDocument doc, Int32 index, Func&lt;Int64, BamlRecord&gt; resolve)</Member>
+        <Member type="Method">public Void WriteDefer(BamlDocument doc, Int32 index, BinaryWriter wtr)</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StaticResourceStartRecord</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public StaticResourceStartRecord()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StaticResourceEndRecord</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Constructor">public StaticResourceEndRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StaticResourceIdRecord</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="13043" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt16 StaticResourceId { get; set; }</Member>
+        <Member type="Constructor">public StaticResourceIdRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OptimizedStaticResourceRecord</Name>
+        <Access>Internal</Access>
+        <Location left="3404" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public Byte Flags { get; set; }</Member>
+        <Member type="Property">public UInt16 ValueId { get; set; }</Member>
+        <Member type="Property">public Boolean IsType { get; }</Member>
+        <Member type="Property">public Boolean IsStatic { get; }</Member>
+        <Member type="Constructor">public OptimizedStaticResourceRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LineNumberAndPositionRecord</Name>
+        <Access>Internal</Access>
+        <Location left="3192" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt32 LineNumber { get; set; }</Member>
+        <Member type="Property">public UInt32 LinePosition { get; set; }</Member>
+        <Member type="Constructor">public LineNumberAndPositionRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LinePositionRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2980" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public UInt32 LinePosition { get; set; }</Member>
+        <Member type="Constructor">public LinePositionRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NamedElementStartRecord</Name>
+        <Access>Internal</Access>
+        <Location left="2768" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override BamlRecordType Type { get; }</Member>
+        <Member type="Property">public String RuntimeName { get; set; }</Member>
+        <Member type="Constructor">public NamedElementStartRecord()</Member>
+        <Member type="Method">public override Void Read(BamlBinaryReader reader)</Member>
+        <Member type="Method">public override Void Write(BamlBinaryWriter writer)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlBinaryWriter</Name>
+        <Access>Internal</Access>
+        <Location left="2556" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BamlBinaryWriter(Stream stream)</Member>
+        <Member type="Method">public Void WriteEncodedInt(Int32 val)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlWriter</Name>
+        <Access>Internal</Access>
+        <Location left="2344" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BamlWriter()</Member>
+        <Member type="Method">public static Void WriteDocument(BamlDocument doc, Stream str)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>KnownThings</Name>
+        <Access>Internal</Access>
+        <Location left="2132" top="12" />
+        <Size width="162" height="417" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly IDecompilerTypeSystem typeSystem</Member>
+        <Member type="Field">private readonly Dictionary&lt;Int32, IModule&gt; assemblies</Member>
+        <Member type="Field">private readonly Dictionary&lt;KnownMembers, KnownMember&gt; members</Member>
+        <Member type="Field">private readonly Dictionary&lt;KnownTypes, ITypeDefinition&gt; types</Member>
+        <Member type="Field">private readonly Dictionary&lt;Int32, String&gt; strings</Member>
+        <Member type="Field">private readonly Dictionary&lt;Int32, ValueTuple&lt;String, String, String&gt;&gt; resources</Member>
+        <Member type="Property">public Func&lt;KnownTypes, ITypeDefinition&gt; Types { get; }</Member>
+        <Member type="Property">public Func&lt;KnownMembers, KnownMember&gt; Members { get; }</Member>
+        <Member type="Property">public Func&lt;Int16, String&gt; Strings { get; }</Member>
+        <Member type="Property">public Func&lt;Int16, ValueTuple&lt;String, String, String&gt;&gt; Resources { get; }</Member>
+        <Member type="Property">public IModule FrameworkAssembly { get; }</Member>
+        <Member type="Constructor">public KnownThings(IDecompilerTypeSystem typeSystem)</Member>
+        <Member type="Method">private IModule ResolveAssembly(String name)</Member>
+        <Member type="Method">private ITypeDefinition InitType(IModule assembly, String ns, String name)</Member>
+        <Member type="Method">private KnownMember InitMember(KnownTypes parent, String name, ITypeDefinition type)</Member>
+        <Member type="Method">private Void InitAssemblies()</Member>
+        <Member type="Method">private Void InitTypes()</Member>
+        <Member type="Method">private Void InitMembers()</Member>
+        <Member type="Method">private Void InitStrings()</Member>
+        <Member type="Method">private Void InitResources()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>KnownMember</Name>
+        <Access>Internal</Access>
+        <Location left="1920" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public KnownTypes Parent { get; }</Member>
+        <Member type="Property">public ITypeDefinition DeclaringType { get; }</Member>
+        <Member type="Property">public IProperty Property { get; }</Member>
+        <Member type="Property">public String Name { get; }</Member>
+        <Member type="Property">public ITypeDefinition Type { get; }</Member>
+        <Member type="Constructor">public KnownMember(KnownTypes parent, ITypeDefinition declType, String name, ITypeDefinition type)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BamlDecompilerTypeSystem</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String[] defaultBamlReferences</Member>
+        <Member type="Property">public new MetadataModule MainModule { get; }</Member>
+        <Member type="Constructor">public BamlDecompilerTypeSystem(PEFile mainModule, IAssemblyResolver assemblyResolver)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Structure">
+        <Name>XamlNode</Name>
+        <Access>Internal</Access>
+        <Location left="1496" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public readonly XElement Element</Member>
+        <Member type="Field">public readonly String String</Member>
+        <Member type="Constructor">private XamlNode(XElement value)</Member>
+        <Member type="Constructor">private XamlNode(String value)</Member>
+        <Member type="Method">public static implicit operator XamlNode(XElement value)</Member>
+        <Member type="Method">public static implicit operator XamlNode(String value)</Member>
+        <Member type="Method">public static implicit operator XElement(XamlNode node)</Member>
+        <Member type="Method">public static implicit operator String(XamlNode node)</Member>
+      </Entity>
+      <Entity type="Structure">
+        <Name>Point</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public readonly Double X</Member>
+        <Member type="Field">public readonly Double Y</Member>
+        <Member type="Constructor">public Point(Double x, Double y)</Member>
+        <Member type="Method">public override String ToString()</Member>
+      </Entity>
+      <Entity type="Structure">
+        <Name>BamlVersion</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public UInt16 Major</Member>
+        <Member type="Field">public UInt16 Minor</Member>
+      </Entity>
+      <Entity type="Enum">
+        <Name>BamlRecordType</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="12" />
+        <Size width="162" height="1030" />
+        <Collapsed>False</Collapsed>
+        <Value>ClrEvent = 19</Value>
+        <Value>Comment = 23</Value>
+        <Value>AssemblyInfo = 28</Value>
+        <Value>AttributeInfo = 31</Value>
+        <Value>ConstructorParametersStart = 42</Value>
+        <Value>ConstructorParametersEnd = 43</Value>
+        <Value>ConstructorParameterType = 44</Value>
+        <Value>ConnectionId = 45</Value>
+        <Value>ContentProperty = 46</Value>
+        <Value>DefAttribute = 25</Value>
+        <Value>DefAttributeKeyString = 38</Value>
+        <Value>DefAttributeKeyType = 39</Value>
+        <Value>DeferableContentStart = 37</Value>
+        <Value>DefTag = 24</Value>
+        <Value>DocumentEnd = 2</Value>
+        <Value>DocumentStart = 1</Value>
+        <Value>ElementEnd = 4</Value>
+        <Value>ElementStart = 3</Value>
+        <Value>EndAttributes = 26</Value>
+        <Value>KeyElementEnd = 41</Value>
+        <Value>KeyElementStart = 40</Value>
+        <Value>LastRecordType = 57</Value>
+        <Value>LineNumberAndPosition = 53</Value>
+        <Value>LinePosition = 54</Value>
+        <Value>LiteralContent = 15</Value>
+        <Value>NamedElementStart = 47</Value>
+        <Value>OptimizedStaticResource = 55</Value>
+        <Value>PIMapping = 27</Value>
+        <Value>PresentationOptionsAttribute = 52</Value>
+        <Value>ProcessingInstruction = 22</Value>
+        <Value>Property = 5</Value>
+        <Value>PropertyArrayEnd = 10</Value>
+        <Value>PropertyArrayStart = 9</Value>
+        <Value>PropertyComplexEnd = 8</Value>
+        <Value>PropertyComplexStart = 7</Value>
+        <Value>PropertyCustom = 6</Value>
+        <Value>PropertyDictionaryEnd = 14</Value>
+        <Value>PropertyDictionaryStart = 13</Value>
+        <Value>PropertyListEnd = 12</Value>
+        <Value>PropertyListStart = 11</Value>
+        <Value>PropertyStringReference = 33</Value>
+        <Value>PropertyTypeReference = 34</Value>
+        <Value>PropertyWithConverter = 36</Value>
+        <Value>PropertyWithExtension = 35</Value>
+        <Value>PropertyWithStaticResourceId = 56</Value>
+        <Value>RoutedEvent = 18</Value>
+        <Value>StaticResourceEnd = 49</Value>
+        <Value>StaticResourceId = 50</Value>
+        <Value>StaticResourceStart = 48</Value>
+        <Value>StringInfo = 32</Value>
+        <Value>Text = 16</Value>
+        <Value>TextWithConverter = 17</Value>
+        <Value>TextWithId = 51</Value>
+        <Value>TypeInfo = 29</Value>
+        <Value>TypeSerializerInfo = 30</Value>
+        <Value>XmlAttribute = 21</Value>
+        <Value>XmlnsProperty = 20</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>KnownMembers</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="12" />
+        <Size width="162" height="4617" />
+        <Collapsed>False</Collapsed>
+        <Value>Unknown = 0</Value>
+        <Value>AccessText_Text = 1</Value>
+        <Value>BeginStoryboard_Storyboard = 2</Value>
+        <Value>BitmapEffectGroup_Children = 3</Value>
+        <Value>Border_Background = 4</Value>
+        <Value>Border_BorderBrush = 5</Value>
+        <Value>Border_BorderThickness = 6</Value>
+        <Value>ButtonBase_Command = 7</Value>
+        <Value>ButtonBase_CommandParameter = 8</Value>
+        <Value>ButtonBase_CommandTarget = 9</Value>
+        <Value>ButtonBase_IsPressed = 10</Value>
+        <Value>ColumnDefinition_MaxWidth = 11</Value>
+        <Value>ColumnDefinition_MinWidth = 12</Value>
+        <Value>ColumnDefinition_Width = 13</Value>
+        <Value>ContentControl_Content = 14</Value>
+        <Value>ContentControl_ContentTemplate = 15</Value>
+        <Value>ContentControl_ContentTemplateSelector = 16</Value>
+        <Value>ContentControl_HasContent = 17</Value>
+        <Value>ContentElement_Focusable = 18</Value>
+        <Value>ContentPresenter_Content = 19</Value>
+        <Value>ContentPresenter_ContentSource = 20</Value>
+        <Value>ContentPresenter_ContentTemplate = 21</Value>
+        <Value>ContentPresenter_ContentTemplateSelector = 22</Value>
+        <Value>ContentPresenter_RecognizesAccessKey = 23</Value>
+        <Value>Control_Background = 24</Value>
+        <Value>Control_BorderBrush = 25</Value>
+        <Value>Control_BorderThickness = 26</Value>
+        <Value>Control_FontFamily = 27</Value>
+        <Value>Control_FontSize = 28</Value>
+        <Value>Control_FontStretch = 29</Value>
+        <Value>Control_FontStyle = 30</Value>
+        <Value>Control_FontWeight = 31</Value>
+        <Value>Control_Foreground = 32</Value>
+        <Value>Control_HorizontalContentAlignment = 33</Value>
+        <Value>Control_IsTabStop = 34</Value>
+        <Value>Control_Padding = 35</Value>
+        <Value>Control_TabIndex = 36</Value>
+        <Value>Control_Template = 37</Value>
+        <Value>Control_VerticalContentAlignment = 38</Value>
+        <Value>DockPanel_Dock = 39</Value>
+        <Value>DockPanel_LastChildFill = 40</Value>
+        <Value>DocumentViewerBase_Document = 41</Value>
+        <Value>DrawingGroup_Children = 42</Value>
+        <Value>FlowDocumentReader_Document = 43</Value>
+        <Value>FlowDocumentScrollViewer_Document = 44</Value>
+        <Value>FrameworkContentElement_Style = 45</Value>
+        <Value>FrameworkElement_FlowDirection = 46</Value>
+        <Value>FrameworkElement_Height = 47</Value>
+        <Value>FrameworkElement_HorizontalAlignment = 48</Value>
+        <Value>FrameworkElement_Margin = 49</Value>
+        <Value>FrameworkElement_MaxHeight = 50</Value>
+        <Value>FrameworkElement_MaxWidth = 51</Value>
+        <Value>FrameworkElement_MinHeight = 52</Value>
+        <Value>FrameworkElement_MinWidth = 53</Value>
+        <Value>FrameworkElement_Name = 54</Value>
+        <Value>FrameworkElement_Style = 55</Value>
+        <Value>FrameworkElement_VerticalAlignment = 56</Value>
+        <Value>FrameworkElement_Width = 57</Value>
+        <Value>GeneralTransformGroup_Children = 58</Value>
+        <Value>GeometryGroup_Children = 59</Value>
+        <Value>GradientBrush_GradientStops = 60</Value>
+        <Value>Grid_Column = 61</Value>
+        <Value>Grid_ColumnSpan = 62</Value>
+        <Value>Grid_Row = 63</Value>
+        <Value>Grid_RowSpan = 64</Value>
+        <Value>GridViewColumn_Header = 65</Value>
+        <Value>HeaderedContentControl_HasHeader = 66</Value>
+        <Value>HeaderedContentControl_Header = 67</Value>
+        <Value>HeaderedContentControl_HeaderTemplate = 68</Value>
+        <Value>HeaderedContentControl_HeaderTemplateSelector = 69</Value>
+        <Value>HeaderedItemsControl_HasHeader = 70</Value>
+        <Value>HeaderedItemsControl_Header = 71</Value>
+        <Value>HeaderedItemsControl_HeaderTemplate = 72</Value>
+        <Value>HeaderedItemsControl_HeaderTemplateSelector = 73</Value>
+        <Value>Hyperlink_NavigateUri = 74</Value>
+        <Value>Image_Source = 75</Value>
+        <Value>Image_Stretch = 76</Value>
+        <Value>ItemsControl_ItemContainerStyle = 77</Value>
+        <Value>ItemsControl_ItemContainerStyleSelector = 78</Value>
+        <Value>ItemsControl_ItemTemplate = 79</Value>
+        <Value>ItemsControl_ItemTemplateSelector = 80</Value>
+        <Value>ItemsControl_ItemsPanel = 81</Value>
+        <Value>ItemsControl_ItemsSource = 82</Value>
+        <Value>MaterialGroup_Children = 83</Value>
+        <Value>Model3DGroup_Children = 84</Value>
+        <Value>Page_Content = 85</Value>
+        <Value>Panel_Background = 86</Value>
+        <Value>Path_Data = 87</Value>
+        <Value>PathFigure_Segments = 88</Value>
+        <Value>PathGeometry_Figures = 89</Value>
+        <Value>Popup_Child = 90</Value>
+        <Value>Popup_IsOpen = 91</Value>
+        <Value>Popup_Placement = 92</Value>
+        <Value>Popup_PopupAnimation = 93</Value>
+        <Value>RowDefinition_Height = 94</Value>
+        <Value>RowDefinition_MaxHeight = 95</Value>
+        <Value>RowDefinition_MinHeight = 96</Value>
+        <Value>ScrollViewer_CanContentScroll = 97</Value>
+        <Value>ScrollViewer_HorizontalScrollBarVisibility = 98</Value>
+        <Value>ScrollViewer_VerticalScrollBarVisibility = 99</Value>
+        <Value>Shape_Fill = 100</Value>
+        <Value>Shape_Stroke = 101</Value>
+        <Value>Shape_StrokeThickness = 102</Value>
+        <Value>TextBlock_Background = 103</Value>
+        <Value>TextBlock_FontFamily = 104</Value>
+        <Value>TextBlock_FontSize = 105</Value>
+        <Value>TextBlock_FontStretch = 106</Value>
+        <Value>TextBlock_FontStyle = 107</Value>
+        <Value>TextBlock_FontWeight = 108</Value>
+        <Value>TextBlock_Foreground = 109</Value>
+        <Value>TextBlock_Text = 110</Value>
+        <Value>TextBlock_TextDecorations = 111</Value>
+        <Value>TextBlock_TextTrimming = 112</Value>
+        <Value>TextBlock_TextWrapping = 113</Value>
+        <Value>TextBox_Text = 114</Value>
+        <Value>TextElement_Background = 115</Value>
+        <Value>TextElement_FontFamily = 116</Value>
+        <Value>TextElement_FontSize = 117</Value>
+        <Value>TextElement_FontStretch = 118</Value>
+        <Value>TextElement_FontStyle = 119</Value>
+        <Value>TextElement_FontWeight = 120</Value>
+        <Value>TextElement_Foreground = 121</Value>
+        <Value>TimelineGroup_Children = 122</Value>
+        <Value>Track_IsDirectionReversed = 123</Value>
+        <Value>Track_Maximum = 124</Value>
+        <Value>Track_Minimum = 125</Value>
+        <Value>Track_Orientation = 126</Value>
+        <Value>Track_Value = 127</Value>
+        <Value>Track_ViewportSize = 128</Value>
+        <Value>Transform3DGroup_Children = 129</Value>
+        <Value>TransformGroup_Children = 130</Value>
+        <Value>UIElement_ClipToBounds = 131</Value>
+        <Value>UIElement_Focusable = 132</Value>
+        <Value>UIElement_IsEnabled = 133</Value>
+        <Value>UIElement_RenderTransform = 134</Value>
+        <Value>UIElement_Visibility = 135</Value>
+        <Value>Viewport3D_Children = 136</Value>
+        <Value>AdornedElementPlaceholder_Child = 138</Value>
+        <Value>AdornerDecorator_Child = 139</Value>
+        <Value>AnchoredBlock_Blocks = 140</Value>
+        <Value>ArrayExtension_Items = 141</Value>
+        <Value>BlockUIContainer_Child = 142</Value>
+        <Value>Bold_Inlines = 143</Value>
+        <Value>BooleanAnimationUsingKeyFrames_KeyFrames = 144</Value>
+        <Value>Border_Child = 145</Value>
+        <Value>BulletDecorator_Child = 146</Value>
+        <Value>Button_Content = 147</Value>
+        <Value>ButtonBase_Content = 148</Value>
+        <Value>ByteAnimationUsingKeyFrames_KeyFrames = 149</Value>
+        <Value>Canvas_Children = 150</Value>
+        <Value>CharAnimationUsingKeyFrames_KeyFrames = 151</Value>
+        <Value>CheckBox_Content = 152</Value>
+        <Value>ColorAnimationUsingKeyFrames_KeyFrames = 153</Value>
+        <Value>ComboBox_Items = 154</Value>
+        <Value>ComboBoxItem_Content = 155</Value>
+        <Value>ContextMenu_Items = 156</Value>
+        <Value>ControlTemplate_VisualTree = 157</Value>
+        <Value>DataTemplate_VisualTree = 158</Value>
+        <Value>DataTrigger_Setters = 159</Value>
+        <Value>DecimalAnimationUsingKeyFrames_KeyFrames = 160</Value>
+        <Value>Decorator_Child = 161</Value>
+        <Value>DockPanel_Children = 162</Value>
+        <Value>DocumentViewer_Document = 163</Value>
+        <Value>DoubleAnimationUsingKeyFrames_KeyFrames = 164</Value>
+        <Value>EventTrigger_Actions = 165</Value>
+        <Value>Expander_Content = 166</Value>
+        <Value>Figure_Blocks = 167</Value>
+        <Value>FixedDocument_Pages = 168</Value>
+        <Value>FixedDocumentSequence_References = 169</Value>
+        <Value>FixedPage_Children = 170</Value>
+        <Value>Floater_Blocks = 171</Value>
+        <Value>FlowDocument_Blocks = 172</Value>
+        <Value>FlowDocumentPageViewer_Document = 173</Value>
+        <Value>FrameworkTemplate_VisualTree = 174</Value>
+        <Value>Grid_Children = 175</Value>
+        <Value>GridView_Columns = 176</Value>
+        <Value>GridViewColumnHeader_Content = 177</Value>
+        <Value>GroupBox_Content = 178</Value>
+        <Value>GroupItem_Content = 179</Value>
+        <Value>HeaderedContentControl_Content = 180</Value>
+        <Value>HeaderedItemsControl_Items = 181</Value>
+        <Value>HierarchicalDataTemplate_VisualTree = 182</Value>
+        <Value>Hyperlink_Inlines = 183</Value>
+        <Value>InkCanvas_Children = 184</Value>
+        <Value>InkPresenter_Child = 185</Value>
+        <Value>InlineUIContainer_Child = 186</Value>
+        <Value>InputScopeName_NameValue = 187</Value>
+        <Value>Int16AnimationUsingKeyFrames_KeyFrames = 188</Value>
+        <Value>Int32AnimationUsingKeyFrames_KeyFrames = 189</Value>
+        <Value>Int64AnimationUsingKeyFrames_KeyFrames = 190</Value>
+        <Value>Italic_Inlines = 191</Value>
+        <Value>ItemsControl_Items = 192</Value>
+        <Value>ItemsPanelTemplate_VisualTree = 193</Value>
+        <Value>Label_Content = 194</Value>
+        <Value>LinearGradientBrush_GradientStops = 195</Value>
+        <Value>List_ListItems = 196</Value>
+        <Value>ListBox_Items = 197</Value>
+        <Value>ListBoxItem_Content = 198</Value>
+        <Value>ListItem_Blocks = 199</Value>
+        <Value>ListView_Items = 200</Value>
+        <Value>ListViewItem_Content = 201</Value>
+        <Value>MatrixAnimationUsingKeyFrames_KeyFrames = 202</Value>
+        <Value>Menu_Items = 203</Value>
+        <Value>MenuBase_Items = 204</Value>
+        <Value>MenuItem_Items = 205</Value>
+        <Value>ModelVisual3D_Children = 206</Value>
+        <Value>MultiBinding_Bindings = 207</Value>
+        <Value>MultiDataTrigger_Setters = 208</Value>
+        <Value>MultiTrigger_Setters = 209</Value>
+        <Value>ObjectAnimationUsingKeyFrames_KeyFrames = 210</Value>
+        <Value>PageContent_Child = 211</Value>
+        <Value>PageFunctionBase_Content = 212</Value>
+        <Value>Panel_Children = 213</Value>
+        <Value>Paragraph_Inlines = 214</Value>
+        <Value>ParallelTimeline_Children = 215</Value>
+        <Value>Point3DAnimationUsingKeyFrames_KeyFrames = 216</Value>
+        <Value>PointAnimationUsingKeyFrames_KeyFrames = 217</Value>
+        <Value>PriorityBinding_Bindings = 218</Value>
+        <Value>QuaternionAnimationUsingKeyFrames_KeyFrames = 219</Value>
+        <Value>RadialGradientBrush_GradientStops = 220</Value>
+        <Value>RadioButton_Content = 221</Value>
+        <Value>RectAnimationUsingKeyFrames_KeyFrames = 222</Value>
+        <Value>RepeatButton_Content = 223</Value>
+        <Value>RichTextBox_Document = 224</Value>
+        <Value>Rotation3DAnimationUsingKeyFrames_KeyFrames = 225</Value>
+        <Value>Run_Text = 226</Value>
+        <Value>ScrollViewer_Content = 227</Value>
+        <Value>Section_Blocks = 228</Value>
+        <Value>Selector_Items = 229</Value>
+        <Value>SingleAnimationUsingKeyFrames_KeyFrames = 230</Value>
+        <Value>SizeAnimationUsingKeyFrames_KeyFrames = 231</Value>
+        <Value>Span_Inlines = 232</Value>
+        <Value>StackPanel_Children = 233</Value>
+        <Value>StatusBar_Items = 234</Value>
+        <Value>StatusBarItem_Content = 235</Value>
+        <Value>Storyboard_Children = 236</Value>
+        <Value>StringAnimationUsingKeyFrames_KeyFrames = 237</Value>
+        <Value>Style_Setters = 238</Value>
+        <Value>TabControl_Items = 239</Value>
+        <Value>TabItem_Content = 240</Value>
+        <Value>TabPanel_Children = 241</Value>
+        <Value>Table_RowGroups = 242</Value>
+        <Value>TableCell_Blocks = 243</Value>
+        <Value>TableRow_Cells = 244</Value>
+        <Value>TableRowGroup_Rows = 245</Value>
+        <Value>TextBlock_Inlines = 246</Value>
+        <Value>ThicknessAnimationUsingKeyFrames_KeyFrames = 247</Value>
+        <Value>ToggleButton_Content = 248</Value>
+        <Value>ToolBar_Items = 249</Value>
+        <Value>ToolBarOverflowPanel_Children = 250</Value>
+        <Value>ToolBarPanel_Children = 251</Value>
+        <Value>ToolBarTray_ToolBars = 252</Value>
+        <Value>ToolTip_Content = 253</Value>
+        <Value>TreeView_Items = 254</Value>
+        <Value>TreeViewItem_Items = 255</Value>
+        <Value>Trigger_Setters = 256</Value>
+        <Value>Underline_Inlines = 257</Value>
+        <Value>UniformGrid_Children = 258</Value>
+        <Value>UserControl_Content = 259</Value>
+        <Value>Vector3DAnimationUsingKeyFrames_KeyFrames = 260</Value>
+        <Value>VectorAnimationUsingKeyFrames_KeyFrames = 261</Value>
+        <Value>Viewbox_Child = 262</Value>
+        <Value>Viewport3DVisual_Children = 263</Value>
+        <Value>VirtualizingPanel_Children = 264</Value>
+        <Value>VirtualizingStackPanel_Children = 265</Value>
+        <Value>Window_Content = 266</Value>
+        <Value>WrapPanel_Children = 267</Value>
+        <Value>XmlDataProvider_XmlSerializer = 268</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>KnownTypes</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="12" />
+        <Size width="162" height="12981" />
+        <Collapsed>False</Collapsed>
+        <Value>Unknown = 0</Value>
+        <Value>AccessText = 1</Value>
+        <Value>AdornedElementPlaceholder = 2</Value>
+        <Value>Adorner = 3</Value>
+        <Value>AdornerDecorator = 4</Value>
+        <Value>AdornerLayer = 5</Value>
+        <Value>AffineTransform3D = 6</Value>
+        <Value>AmbientLight = 7</Value>
+        <Value>AnchoredBlock = 8</Value>
+        <Value>Animatable = 9</Value>
+        <Value>AnimationClock = 10</Value>
+        <Value>AnimationTimeline = 11</Value>
+        <Value>Application = 12</Value>
+        <Value>ArcSegment = 13</Value>
+        <Value>ArrayExtension = 14</Value>
+        <Value>AxisAngleRotation3D = 15</Value>
+        <Value>BaseIListConverter = 16</Value>
+        <Value>BeginStoryboard = 17</Value>
+        <Value>BevelBitmapEffect = 18</Value>
+        <Value>BezierSegment = 19</Value>
+        <Value>Binding = 20</Value>
+        <Value>BindingBase = 21</Value>
+        <Value>BindingExpression = 22</Value>
+        <Value>BindingExpressionBase = 23</Value>
+        <Value>BindingListCollectionView = 24</Value>
+        <Value>BitmapDecoder = 25</Value>
+        <Value>BitmapEffect = 26</Value>
+        <Value>BitmapEffectCollection = 27</Value>
+        <Value>BitmapEffectGroup = 28</Value>
+        <Value>BitmapEffectInput = 29</Value>
+        <Value>BitmapEncoder = 30</Value>
+        <Value>BitmapFrame = 31</Value>
+        <Value>BitmapImage = 32</Value>
+        <Value>BitmapMetadata = 33</Value>
+        <Value>BitmapPalette = 34</Value>
+        <Value>BitmapSource = 35</Value>
+        <Value>Block = 36</Value>
+        <Value>BlockUIContainer = 37</Value>
+        <Value>BlurBitmapEffect = 38</Value>
+        <Value>BmpBitmapDecoder = 39</Value>
+        <Value>BmpBitmapEncoder = 40</Value>
+        <Value>Bold = 41</Value>
+        <Value>BoolIListConverter = 42</Value>
+        <Value>Boolean = 43</Value>
+        <Value>BooleanAnimationBase = 44</Value>
+        <Value>BooleanAnimationUsingKeyFrames = 45</Value>
+        <Value>BooleanConverter = 46</Value>
+        <Value>BooleanKeyFrame = 47</Value>
+        <Value>BooleanKeyFrameCollection = 48</Value>
+        <Value>BooleanToVisibilityConverter = 49</Value>
+        <Value>Border = 50</Value>
+        <Value>BorderGapMaskConverter = 51</Value>
+        <Value>Brush = 52</Value>
+        <Value>BrushConverter = 53</Value>
+        <Value>BulletDecorator = 54</Value>
+        <Value>Button = 55</Value>
+        <Value>ButtonBase = 56</Value>
+        <Value>Byte = 57</Value>
+        <Value>ByteAnimation = 58</Value>
+        <Value>ByteAnimationBase = 59</Value>
+        <Value>ByteAnimationUsingKeyFrames = 60</Value>
+        <Value>ByteConverter = 61</Value>
+        <Value>ByteKeyFrame = 62</Value>
+        <Value>ByteKeyFrameCollection = 63</Value>
+        <Value>CachedBitmap = 64</Value>
+        <Value>Camera = 65</Value>
+        <Value>Canvas = 66</Value>
+        <Value>Char = 67</Value>
+        <Value>CharAnimationBase = 68</Value>
+        <Value>CharAnimationUsingKeyFrames = 69</Value>
+        <Value>CharConverter = 70</Value>
+        <Value>CharIListConverter = 71</Value>
+        <Value>CharKeyFrame = 72</Value>
+        <Value>CharKeyFrameCollection = 73</Value>
+        <Value>CheckBox = 74</Value>
+        <Value>Clock = 75</Value>
+        <Value>ClockController = 76</Value>
+        <Value>ClockGroup = 77</Value>
+        <Value>CollectionContainer = 78</Value>
+        <Value>CollectionView = 79</Value>
+        <Value>CollectionViewSource = 80</Value>
+        <Value>Color = 81</Value>
+        <Value>ColorAnimation = 82</Value>
+        <Value>ColorAnimationBase = 83</Value>
+        <Value>ColorAnimationUsingKeyFrames = 84</Value>
+        <Value>ColorConvertedBitmap = 85</Value>
+        <Value>ColorConvertedBitmapExtension = 86</Value>
+        <Value>ColorConverter = 87</Value>
+        <Value>ColorKeyFrame = 88</Value>
+        <Value>ColorKeyFrameCollection = 89</Value>
+        <Value>ColumnDefinition = 90</Value>
+        <Value>CombinedGeometry = 91</Value>
+        <Value>ComboBox = 92</Value>
+        <Value>ComboBoxItem = 93</Value>
+        <Value>CommandConverter = 94</Value>
+        <Value>ComponentResourceKey = 95</Value>
+        <Value>ComponentResourceKeyConverter = 96</Value>
+        <Value>CompositionTarget = 97</Value>
+        <Value>Condition = 98</Value>
+        <Value>ContainerVisual = 99</Value>
+        <Value>ContentControl = 100</Value>
+        <Value>ContentElement = 101</Value>
+        <Value>ContentPresenter = 102</Value>
+        <Value>ContentPropertyAttribute = 103</Value>
+        <Value>ContentWrapperAttribute = 104</Value>
+        <Value>ContextMenu = 105</Value>
+        <Value>ContextMenuService = 106</Value>
+        <Value>Control = 107</Value>
+        <Value>ControlTemplate = 108</Value>
+        <Value>ControllableStoryboardAction = 109</Value>
+        <Value>CornerRadius = 110</Value>
+        <Value>CornerRadiusConverter = 111</Value>
+        <Value>CroppedBitmap = 112</Value>
+        <Value>CultureInfo = 113</Value>
+        <Value>CultureInfoConverter = 114</Value>
+        <Value>CultureInfoIetfLanguageTagConverter = 115</Value>
+        <Value>Cursor = 116</Value>
+        <Value>CursorConverter = 117</Value>
+        <Value>DashStyle = 118</Value>
+        <Value>DataChangedEventManager = 119</Value>
+        <Value>DataTemplate = 120</Value>
+        <Value>DataTemplateKey = 121</Value>
+        <Value>DataTrigger = 122</Value>
+        <Value>DateTime = 123</Value>
+        <Value>DateTimeConverter = 124</Value>
+        <Value>DateTimeConverter2 = 125</Value>
+        <Value>Decimal = 126</Value>
+        <Value>DecimalAnimation = 127</Value>
+        <Value>DecimalAnimationBase = 128</Value>
+        <Value>DecimalAnimationUsingKeyFrames = 129</Value>
+        <Value>DecimalConverter = 130</Value>
+        <Value>DecimalKeyFrame = 131</Value>
+        <Value>DecimalKeyFrameCollection = 132</Value>
+        <Value>Decorator = 133</Value>
+        <Value>DefinitionBase = 134</Value>
+        <Value>DependencyObject = 135</Value>
+        <Value>DependencyProperty = 136</Value>
+        <Value>DependencyPropertyConverter = 137</Value>
+        <Value>DialogResultConverter = 138</Value>
+        <Value>DiffuseMaterial = 139</Value>
+        <Value>DirectionalLight = 140</Value>
+        <Value>DiscreteBooleanKeyFrame = 141</Value>
+        <Value>DiscreteByteKeyFrame = 142</Value>
+        <Value>DiscreteCharKeyFrame = 143</Value>
+        <Value>DiscreteColorKeyFrame = 144</Value>
+        <Value>DiscreteDecimalKeyFrame = 145</Value>
+        <Value>DiscreteDoubleKeyFrame = 146</Value>
+        <Value>DiscreteInt16KeyFrame = 147</Value>
+        <Value>DiscreteInt32KeyFrame = 148</Value>
+        <Value>DiscreteInt64KeyFrame = 149</Value>
+        <Value>DiscreteMatrixKeyFrame = 150</Value>
+        <Value>DiscreteObjectKeyFrame = 151</Value>
+        <Value>DiscretePoint3DKeyFrame = 152</Value>
+        <Value>DiscretePointKeyFrame = 153</Value>
+        <Value>DiscreteQuaternionKeyFrame = 154</Value>
+        <Value>DiscreteRectKeyFrame = 155</Value>
+        <Value>DiscreteRotation3DKeyFrame = 156</Value>
+        <Value>DiscreteSingleKeyFrame = 157</Value>
+        <Value>DiscreteSizeKeyFrame = 158</Value>
+        <Value>DiscreteStringKeyFrame = 159</Value>
+        <Value>DiscreteThicknessKeyFrame = 160</Value>
+        <Value>DiscreteVector3DKeyFrame = 161</Value>
+        <Value>DiscreteVectorKeyFrame = 162</Value>
+        <Value>DockPanel = 163</Value>
+        <Value>DocumentPageView = 164</Value>
+        <Value>DocumentReference = 165</Value>
+        <Value>DocumentViewer = 166</Value>
+        <Value>DocumentViewerBase = 167</Value>
+        <Value>Double = 168</Value>
+        <Value>DoubleAnimation = 169</Value>
+        <Value>DoubleAnimationBase = 170</Value>
+        <Value>DoubleAnimationUsingKeyFrames = 171</Value>
+        <Value>DoubleAnimationUsingPath = 172</Value>
+        <Value>DoubleCollection = 173</Value>
+        <Value>DoubleCollectionConverter = 174</Value>
+        <Value>DoubleConverter = 175</Value>
+        <Value>DoubleIListConverter = 176</Value>
+        <Value>DoubleKeyFrame = 177</Value>
+        <Value>DoubleKeyFrameCollection = 178</Value>
+        <Value>Drawing = 179</Value>
+        <Value>DrawingBrush = 180</Value>
+        <Value>DrawingCollection = 181</Value>
+        <Value>DrawingContext = 182</Value>
+        <Value>DrawingGroup = 183</Value>
+        <Value>DrawingImage = 184</Value>
+        <Value>DrawingVisual = 185</Value>
+        <Value>DropShadowBitmapEffect = 186</Value>
+        <Value>Duration = 187</Value>
+        <Value>DurationConverter = 188</Value>
+        <Value>DynamicResourceExtension = 189</Value>
+        <Value>DynamicResourceExtensionConverter = 190</Value>
+        <Value>Ellipse = 191</Value>
+        <Value>EllipseGeometry = 192</Value>
+        <Value>EmbossBitmapEffect = 193</Value>
+        <Value>EmissiveMaterial = 194</Value>
+        <Value>EnumConverter = 195</Value>
+        <Value>EventManager = 196</Value>
+        <Value>EventSetter = 197</Value>
+        <Value>EventTrigger = 198</Value>
+        <Value>Expander = 199</Value>
+        <Value>Expression = 200</Value>
+        <Value>ExpressionConverter = 201</Value>
+        <Value>Figure = 202</Value>
+        <Value>FigureLength = 203</Value>
+        <Value>FigureLengthConverter = 204</Value>
+        <Value>FixedDocument = 205</Value>
+        <Value>FixedDocumentSequence = 206</Value>
+        <Value>FixedPage = 207</Value>
+        <Value>Floater = 208</Value>
+        <Value>FlowDocument = 209</Value>
+        <Value>FlowDocumentPageViewer = 210</Value>
+        <Value>FlowDocumentReader = 211</Value>
+        <Value>FlowDocumentScrollViewer = 212</Value>
+        <Value>FocusManager = 213</Value>
+        <Value>FontFamily = 214</Value>
+        <Value>FontFamilyConverter = 215</Value>
+        <Value>FontSizeConverter = 216</Value>
+        <Value>FontStretch = 217</Value>
+        <Value>FontStretchConverter = 218</Value>
+        <Value>FontStyle = 219</Value>
+        <Value>FontStyleConverter = 220</Value>
+        <Value>FontWeight = 221</Value>
+        <Value>FontWeightConverter = 222</Value>
+        <Value>FormatConvertedBitmap = 223</Value>
+        <Value>Frame = 224</Value>
+        <Value>FrameworkContentElement = 225</Value>
+        <Value>FrameworkElement = 226</Value>
+        <Value>FrameworkElementFactory = 227</Value>
+        <Value>FrameworkPropertyMetadata = 228</Value>
+        <Value>FrameworkPropertyMetadataOptions = 229</Value>
+        <Value>FrameworkRichTextComposition = 230</Value>
+        <Value>FrameworkTemplate = 231</Value>
+        <Value>FrameworkTextComposition = 232</Value>
+        <Value>Freezable = 233</Value>
+        <Value>GeneralTransform = 234</Value>
+        <Value>GeneralTransformCollection = 235</Value>
+        <Value>GeneralTransformGroup = 236</Value>
+        <Value>Geometry = 237</Value>
+        <Value>Geometry3D = 238</Value>
+        <Value>GeometryCollection = 239</Value>
+        <Value>GeometryConverter = 240</Value>
+        <Value>GeometryDrawing = 241</Value>
+        <Value>GeometryGroup = 242</Value>
+        <Value>GeometryModel3D = 243</Value>
+        <Value>GestureRecognizer = 244</Value>
+        <Value>GifBitmapDecoder = 245</Value>
+        <Value>GifBitmapEncoder = 246</Value>
+        <Value>GlyphRun = 247</Value>
+        <Value>GlyphRunDrawing = 248</Value>
+        <Value>GlyphTypeface = 249</Value>
+        <Value>Glyphs = 250</Value>
+        <Value>GradientBrush = 251</Value>
+        <Value>GradientStop = 252</Value>
+        <Value>GradientStopCollection = 253</Value>
+        <Value>Grid = 254</Value>
+        <Value>GridLength = 255</Value>
+        <Value>GridLengthConverter = 256</Value>
+        <Value>GridSplitter = 257</Value>
+        <Value>GridView = 258</Value>
+        <Value>GridViewColumn = 259</Value>
+        <Value>GridViewColumnHeader = 260</Value>
+        <Value>GridViewHeaderRowPresenter = 261</Value>
+        <Value>GridViewRowPresenter = 262</Value>
+        <Value>GridViewRowPresenterBase = 263</Value>
+        <Value>GroupBox = 264</Value>
+        <Value>GroupItem = 265</Value>
+        <Value>Guid = 266</Value>
+        <Value>GuidConverter = 267</Value>
+        <Value>GuidelineSet = 268</Value>
+        <Value>HeaderedContentControl = 269</Value>
+        <Value>HeaderedItemsControl = 270</Value>
+        <Value>HierarchicalDataTemplate = 271</Value>
+        <Value>HostVisual = 272</Value>
+        <Value>Hyperlink = 273</Value>
+        <Value>IAddChild = 274</Value>
+        <Value>IAddChildInternal = 275</Value>
+        <Value>ICommand = 276</Value>
+        <Value>IComponentConnector = 277</Value>
+        <Value>INameScope = 278</Value>
+        <Value>IStyleConnector = 279</Value>
+        <Value>IconBitmapDecoder = 280</Value>
+        <Value>Image = 281</Value>
+        <Value>ImageBrush = 282</Value>
+        <Value>ImageDrawing = 283</Value>
+        <Value>ImageMetadata = 284</Value>
+        <Value>ImageSource = 285</Value>
+        <Value>ImageSourceConverter = 286</Value>
+        <Value>InPlaceBitmapMetadataWriter = 287</Value>
+        <Value>InkCanvas = 288</Value>
+        <Value>InkPresenter = 289</Value>
+        <Value>Inline = 290</Value>
+        <Value>InlineCollection = 291</Value>
+        <Value>InlineUIContainer = 292</Value>
+        <Value>InputBinding = 293</Value>
+        <Value>InputDevice = 294</Value>
+        <Value>InputLanguageManager = 295</Value>
+        <Value>InputManager = 296</Value>
+        <Value>InputMethod = 297</Value>
+        <Value>InputScope = 298</Value>
+        <Value>InputScopeConverter = 299</Value>
+        <Value>InputScopeName = 300</Value>
+        <Value>InputScopeNameConverter = 301</Value>
+        <Value>Int16 = 302</Value>
+        <Value>Int16Animation = 303</Value>
+        <Value>Int16AnimationBase = 304</Value>
+        <Value>Int16AnimationUsingKeyFrames = 305</Value>
+        <Value>Int16Converter = 306</Value>
+        <Value>Int16KeyFrame = 307</Value>
+        <Value>Int16KeyFrameCollection = 308</Value>
+        <Value>Int32 = 309</Value>
+        <Value>Int32Animation = 310</Value>
+        <Value>Int32AnimationBase = 311</Value>
+        <Value>Int32AnimationUsingKeyFrames = 312</Value>
+        <Value>Int32Collection = 313</Value>
+        <Value>Int32CollectionConverter = 314</Value>
+        <Value>Int32Converter = 315</Value>
+        <Value>Int32KeyFrame = 316</Value>
+        <Value>Int32KeyFrameCollection = 317</Value>
+        <Value>Int32Rect = 318</Value>
+        <Value>Int32RectConverter = 319</Value>
+        <Value>Int64 = 320</Value>
+        <Value>Int64Animation = 321</Value>
+        <Value>Int64AnimationBase = 322</Value>
+        <Value>Int64AnimationUsingKeyFrames = 323</Value>
+        <Value>Int64Converter = 324</Value>
+        <Value>Int64KeyFrame = 325</Value>
+        <Value>Int64KeyFrameCollection = 326</Value>
+        <Value>Italic = 327</Value>
+        <Value>ItemCollection = 328</Value>
+        <Value>ItemsControl = 329</Value>
+        <Value>ItemsPanelTemplate = 330</Value>
+        <Value>ItemsPresenter = 331</Value>
+        <Value>JournalEntry = 332</Value>
+        <Value>JournalEntryListConverter = 333</Value>
+        <Value>JournalEntryUnifiedViewConverter = 334</Value>
+        <Value>JpegBitmapDecoder = 335</Value>
+        <Value>JpegBitmapEncoder = 336</Value>
+        <Value>KeyBinding = 337</Value>
+        <Value>KeyConverter = 338</Value>
+        <Value>KeyGesture = 339</Value>
+        <Value>KeyGestureConverter = 340</Value>
+        <Value>KeySpline = 341</Value>
+        <Value>KeySplineConverter = 342</Value>
+        <Value>KeyTime = 343</Value>
+        <Value>KeyTimeConverter = 344</Value>
+        <Value>KeyboardDevice = 345</Value>
+        <Value>Label = 346</Value>
+        <Value>LateBoundBitmapDecoder = 347</Value>
+        <Value>LengthConverter = 348</Value>
+        <Value>Light = 349</Value>
+        <Value>Line = 350</Value>
+        <Value>LineBreak = 351</Value>
+        <Value>LineGeometry = 352</Value>
+        <Value>LineSegment = 353</Value>
+        <Value>LinearByteKeyFrame = 354</Value>
+        <Value>LinearColorKeyFrame = 355</Value>
+        <Value>LinearDecimalKeyFrame = 356</Value>
+        <Value>LinearDoubleKeyFrame = 357</Value>
+        <Value>LinearGradientBrush = 358</Value>
+        <Value>LinearInt16KeyFrame = 359</Value>
+        <Value>LinearInt32KeyFrame = 360</Value>
+        <Value>LinearInt64KeyFrame = 361</Value>
+        <Value>LinearPoint3DKeyFrame = 362</Value>
+        <Value>LinearPointKeyFrame = 363</Value>
+        <Value>LinearQuaternionKeyFrame = 364</Value>
+        <Value>LinearRectKeyFrame = 365</Value>
+        <Value>LinearRotation3DKeyFrame = 366</Value>
+        <Value>LinearSingleKeyFrame = 367</Value>
+        <Value>LinearSizeKeyFrame = 368</Value>
+        <Value>LinearThicknessKeyFrame = 369</Value>
+        <Value>LinearVector3DKeyFrame = 370</Value>
+        <Value>LinearVectorKeyFrame = 371</Value>
+        <Value>List = 372</Value>
+        <Value>ListBox = 373</Value>
+        <Value>ListBoxItem = 374</Value>
+        <Value>ListCollectionView = 375</Value>
+        <Value>ListItem = 376</Value>
+        <Value>ListView = 377</Value>
+        <Value>ListViewItem = 378</Value>
+        <Value>Localization = 379</Value>
+        <Value>LostFocusEventManager = 380</Value>
+        <Value>MarkupExtension = 381</Value>
+        <Value>Material = 382</Value>
+        <Value>MaterialCollection = 383</Value>
+        <Value>MaterialGroup = 384</Value>
+        <Value>Matrix = 385</Value>
+        <Value>Matrix3D = 386</Value>
+        <Value>Matrix3DConverter = 387</Value>
+        <Value>MatrixAnimationBase = 388</Value>
+        <Value>MatrixAnimationUsingKeyFrames = 389</Value>
+        <Value>MatrixAnimationUsingPath = 390</Value>
+        <Value>MatrixCamera = 391</Value>
+        <Value>MatrixConverter = 392</Value>
+        <Value>MatrixKeyFrame = 393</Value>
+        <Value>MatrixKeyFrameCollection = 394</Value>
+        <Value>MatrixTransform = 395</Value>
+        <Value>MatrixTransform3D = 396</Value>
+        <Value>MediaClock = 397</Value>
+        <Value>MediaElement = 398</Value>
+        <Value>MediaPlayer = 399</Value>
+        <Value>MediaTimeline = 400</Value>
+        <Value>Menu = 401</Value>
+        <Value>MenuBase = 402</Value>
+        <Value>MenuItem = 403</Value>
+        <Value>MenuScrollingVisibilityConverter = 404</Value>
+        <Value>MeshGeometry3D = 405</Value>
+        <Value>Model3D = 406</Value>
+        <Value>Model3DCollection = 407</Value>
+        <Value>Model3DGroup = 408</Value>
+        <Value>ModelVisual3D = 409</Value>
+        <Value>ModifierKeysConverter = 410</Value>
+        <Value>MouseActionConverter = 411</Value>
+        <Value>MouseBinding = 412</Value>
+        <Value>MouseDevice = 413</Value>
+        <Value>MouseGesture = 414</Value>
+        <Value>MouseGestureConverter = 415</Value>
+        <Value>MultiBinding = 416</Value>
+        <Value>MultiBindingExpression = 417</Value>
+        <Value>MultiDataTrigger = 418</Value>
+        <Value>MultiTrigger = 419</Value>
+        <Value>NameScope = 420</Value>
+        <Value>NavigationWindow = 421</Value>
+        <Value>NullExtension = 422</Value>
+        <Value>NullableBoolConverter = 423</Value>
+        <Value>NullableConverter = 424</Value>
+        <Value>NumberSubstitution = 425</Value>
+        <Value>Object = 426</Value>
+        <Value>ObjectAnimationBase = 427</Value>
+        <Value>ObjectAnimationUsingKeyFrames = 428</Value>
+        <Value>ObjectDataProvider = 429</Value>
+        <Value>ObjectKeyFrame = 430</Value>
+        <Value>ObjectKeyFrameCollection = 431</Value>
+        <Value>OrthographicCamera = 432</Value>
+        <Value>OuterGlowBitmapEffect = 433</Value>
+        <Value>Page = 434</Value>
+        <Value>PageContent = 435</Value>
+        <Value>PageFunctionBase = 436</Value>
+        <Value>Panel = 437</Value>
+        <Value>Paragraph = 438</Value>
+        <Value>ParallelTimeline = 439</Value>
+        <Value>ParserContext = 440</Value>
+        <Value>PasswordBox = 441</Value>
+        <Value>Path = 442</Value>
+        <Value>PathFigure = 443</Value>
+        <Value>PathFigureCollection = 444</Value>
+        <Value>PathFigureCollectionConverter = 445</Value>
+        <Value>PathGeometry = 446</Value>
+        <Value>PathSegment = 447</Value>
+        <Value>PathSegmentCollection = 448</Value>
+        <Value>PauseStoryboard = 449</Value>
+        <Value>Pen = 450</Value>
+        <Value>PerspectiveCamera = 451</Value>
+        <Value>PixelFormat = 452</Value>
+        <Value>PixelFormatConverter = 453</Value>
+        <Value>PngBitmapDecoder = 454</Value>
+        <Value>PngBitmapEncoder = 455</Value>
+        <Value>Point = 456</Value>
+        <Value>Point3D = 457</Value>
+        <Value>Point3DAnimation = 458</Value>
+        <Value>Point3DAnimationBase = 459</Value>
+        <Value>Point3DAnimationUsingKeyFrames = 460</Value>
+        <Value>Point3DCollection = 461</Value>
+        <Value>Point3DCollectionConverter = 462</Value>
+        <Value>Point3DConverter = 463</Value>
+        <Value>Point3DKeyFrame = 464</Value>
+        <Value>Point3DKeyFrameCollection = 465</Value>
+        <Value>Point4D = 466</Value>
+        <Value>Point4DConverter = 467</Value>
+        <Value>PointAnimation = 468</Value>
+        <Value>PointAnimationBase = 469</Value>
+        <Value>PointAnimationUsingKeyFrames = 470</Value>
+        <Value>PointAnimationUsingPath = 471</Value>
+        <Value>PointCollection = 472</Value>
+        <Value>PointCollectionConverter = 473</Value>
+        <Value>PointConverter = 474</Value>
+        <Value>PointIListConverter = 475</Value>
+        <Value>PointKeyFrame = 476</Value>
+        <Value>PointKeyFrameCollection = 477</Value>
+        <Value>PointLight = 478</Value>
+        <Value>PointLightBase = 479</Value>
+        <Value>PolyBezierSegment = 480</Value>
+        <Value>PolyLineSegment = 481</Value>
+        <Value>PolyQuadraticBezierSegment = 482</Value>
+        <Value>Polygon = 483</Value>
+        <Value>Polyline = 484</Value>
+        <Value>Popup = 485</Value>
+        <Value>PresentationSource = 486</Value>
+        <Value>PriorityBinding = 487</Value>
+        <Value>PriorityBindingExpression = 488</Value>
+        <Value>ProgressBar = 489</Value>
+        <Value>ProjectionCamera = 490</Value>
+        <Value>PropertyPath = 491</Value>
+        <Value>PropertyPathConverter = 492</Value>
+        <Value>QuadraticBezierSegment = 493</Value>
+        <Value>Quaternion = 494</Value>
+        <Value>QuaternionAnimation = 495</Value>
+        <Value>QuaternionAnimationBase = 496</Value>
+        <Value>QuaternionAnimationUsingKeyFrames = 497</Value>
+        <Value>QuaternionConverter = 498</Value>
+        <Value>QuaternionKeyFrame = 499</Value>
+        <Value>QuaternionKeyFrameCollection = 500</Value>
+        <Value>QuaternionRotation3D = 501</Value>
+        <Value>RadialGradientBrush = 502</Value>
+        <Value>RadioButton = 503</Value>
+        <Value>RangeBase = 504</Value>
+        <Value>Rect = 505</Value>
+        <Value>Rect3D = 506</Value>
+        <Value>Rect3DConverter = 507</Value>
+        <Value>RectAnimation = 508</Value>
+        <Value>RectAnimationBase = 509</Value>
+        <Value>RectAnimationUsingKeyFrames = 510</Value>
+        <Value>RectConverter = 511</Value>
+        <Value>RectKeyFrame = 512</Value>
+        <Value>RectKeyFrameCollection = 513</Value>
+        <Value>Rectangle = 514</Value>
+        <Value>RectangleGeometry = 515</Value>
+        <Value>RelativeSource = 516</Value>
+        <Value>RemoveStoryboard = 517</Value>
+        <Value>RenderOptions = 518</Value>
+        <Value>RenderTargetBitmap = 519</Value>
+        <Value>RepeatBehavior = 520</Value>
+        <Value>RepeatBehaviorConverter = 521</Value>
+        <Value>RepeatButton = 522</Value>
+        <Value>ResizeGrip = 523</Value>
+        <Value>ResourceDictionary = 524</Value>
+        <Value>ResourceKey = 525</Value>
+        <Value>ResumeStoryboard = 526</Value>
+        <Value>RichTextBox = 527</Value>
+        <Value>RotateTransform = 528</Value>
+        <Value>RotateTransform3D = 529</Value>
+        <Value>Rotation3D = 530</Value>
+        <Value>Rotation3DAnimation = 531</Value>
+        <Value>Rotation3DAnimationBase = 532</Value>
+        <Value>Rotation3DAnimationUsingKeyFrames = 533</Value>
+        <Value>Rotation3DKeyFrame = 534</Value>
+        <Value>Rotation3DKeyFrameCollection = 535</Value>
+        <Value>RoutedCommand = 536</Value>
+        <Value>RoutedEvent = 537</Value>
+        <Value>RoutedEventConverter = 538</Value>
+        <Value>RoutedUICommand = 539</Value>
+        <Value>RoutingStrategy = 540</Value>
+        <Value>RowDefinition = 541</Value>
+        <Value>Run = 542</Value>
+        <Value>RuntimeNamePropertyAttribute = 543</Value>
+        <Value>SByte = 544</Value>
+        <Value>SByteConverter = 545</Value>
+        <Value>ScaleTransform = 546</Value>
+        <Value>ScaleTransform3D = 547</Value>
+        <Value>ScrollBar = 548</Value>
+        <Value>ScrollContentPresenter = 549</Value>
+        <Value>ScrollViewer = 550</Value>
+        <Value>Section = 551</Value>
+        <Value>SeekStoryboard = 552</Value>
+        <Value>Selector = 553</Value>
+        <Value>Separator = 554</Value>
+        <Value>SetStoryboardSpeedRatio = 555</Value>
+        <Value>Setter = 556</Value>
+        <Value>SetterBase = 557</Value>
+        <Value>Shape = 558</Value>
+        <Value>Single = 559</Value>
+        <Value>SingleAnimation = 560</Value>
+        <Value>SingleAnimationBase = 561</Value>
+        <Value>SingleAnimationUsingKeyFrames = 562</Value>
+        <Value>SingleConverter = 563</Value>
+        <Value>SingleKeyFrame = 564</Value>
+        <Value>SingleKeyFrameCollection = 565</Value>
+        <Value>Size = 566</Value>
+        <Value>Size3D = 567</Value>
+        <Value>Size3DConverter = 568</Value>
+        <Value>SizeAnimation = 569</Value>
+        <Value>SizeAnimationBase = 570</Value>
+        <Value>SizeAnimationUsingKeyFrames = 571</Value>
+        <Value>SizeConverter = 572</Value>
+        <Value>SizeKeyFrame = 573</Value>
+        <Value>SizeKeyFrameCollection = 574</Value>
+        <Value>SkewTransform = 575</Value>
+        <Value>SkipStoryboardToFill = 576</Value>
+        <Value>Slider = 577</Value>
+        <Value>SolidColorBrush = 578</Value>
+        <Value>SoundPlayerAction = 579</Value>
+        <Value>Span = 580</Value>
+        <Value>SpecularMaterial = 581</Value>
+        <Value>SpellCheck = 582</Value>
+        <Value>SplineByteKeyFrame = 583</Value>
+        <Value>SplineColorKeyFrame = 584</Value>
+        <Value>SplineDecimalKeyFrame = 585</Value>
+        <Value>SplineDoubleKeyFrame = 586</Value>
+        <Value>SplineInt16KeyFrame = 587</Value>
+        <Value>SplineInt32KeyFrame = 588</Value>
+        <Value>SplineInt64KeyFrame = 589</Value>
+        <Value>SplinePoint3DKeyFrame = 590</Value>
+        <Value>SplinePointKeyFrame = 591</Value>
+        <Value>SplineQuaternionKeyFrame = 592</Value>
+        <Value>SplineRectKeyFrame = 593</Value>
+        <Value>SplineRotation3DKeyFrame = 594</Value>
+        <Value>SplineSingleKeyFrame = 595</Value>
+        <Value>SplineSizeKeyFrame = 596</Value>
+        <Value>SplineThicknessKeyFrame = 597</Value>
+        <Value>SplineVector3DKeyFrame = 598</Value>
+        <Value>SplineVectorKeyFrame = 599</Value>
+        <Value>SpotLight = 600</Value>
+        <Value>StackPanel = 601</Value>
+        <Value>StaticExtension = 602</Value>
+        <Value>StaticResourceExtension = 603</Value>
+        <Value>StatusBar = 604</Value>
+        <Value>StatusBarItem = 605</Value>
+        <Value>StickyNoteControl = 606</Value>
+        <Value>StopStoryboard = 607</Value>
+        <Value>Storyboard = 608</Value>
+        <Value>StreamGeometry = 609</Value>
+        <Value>StreamGeometryContext = 610</Value>
+        <Value>StreamResourceInfo = 611</Value>
+        <Value>String = 612</Value>
+        <Value>StringAnimationBase = 613</Value>
+        <Value>StringAnimationUsingKeyFrames = 614</Value>
+        <Value>StringConverter = 615</Value>
+        <Value>StringKeyFrame = 616</Value>
+        <Value>StringKeyFrameCollection = 617</Value>
+        <Value>StrokeCollection = 618</Value>
+        <Value>StrokeCollectionConverter = 619</Value>
+        <Value>Style = 620</Value>
+        <Value>Stylus = 621</Value>
+        <Value>StylusDevice = 622</Value>
+        <Value>TabControl = 623</Value>
+        <Value>TabItem = 624</Value>
+        <Value>TabPanel = 625</Value>
+        <Value>Table = 626</Value>
+        <Value>TableCell = 627</Value>
+        <Value>TableColumn = 628</Value>
+        <Value>TableRow = 629</Value>
+        <Value>TableRowGroup = 630</Value>
+        <Value>TabletDevice = 631</Value>
+        <Value>TemplateBindingExpression = 632</Value>
+        <Value>TemplateBindingExpressionConverter = 633</Value>
+        <Value>TemplateBindingExtension = 634</Value>
+        <Value>TemplateBindingExtensionConverter = 635</Value>
+        <Value>TemplateKey = 636</Value>
+        <Value>TemplateKeyConverter = 637</Value>
+        <Value>TextBlock = 638</Value>
+        <Value>TextBox = 639</Value>
+        <Value>TextBoxBase = 640</Value>
+        <Value>TextComposition = 641</Value>
+        <Value>TextCompositionManager = 642</Value>
+        <Value>TextDecoration = 643</Value>
+        <Value>TextDecorationCollection = 644</Value>
+        <Value>TextDecorationCollectionConverter = 645</Value>
+        <Value>TextEffect = 646</Value>
+        <Value>TextEffectCollection = 647</Value>
+        <Value>TextElement = 648</Value>
+        <Value>TextSearch = 649</Value>
+        <Value>ThemeDictionaryExtension = 650</Value>
+        <Value>Thickness = 651</Value>
+        <Value>ThicknessAnimation = 652</Value>
+        <Value>ThicknessAnimationBase = 653</Value>
+        <Value>ThicknessAnimationUsingKeyFrames = 654</Value>
+        <Value>ThicknessConverter = 655</Value>
+        <Value>ThicknessKeyFrame = 656</Value>
+        <Value>ThicknessKeyFrameCollection = 657</Value>
+        <Value>Thumb = 658</Value>
+        <Value>TickBar = 659</Value>
+        <Value>TiffBitmapDecoder = 660</Value>
+        <Value>TiffBitmapEncoder = 661</Value>
+        <Value>TileBrush = 662</Value>
+        <Value>TimeSpan = 663</Value>
+        <Value>TimeSpanConverter = 664</Value>
+        <Value>Timeline = 665</Value>
+        <Value>TimelineCollection = 666</Value>
+        <Value>TimelineGroup = 667</Value>
+        <Value>ToggleButton = 668</Value>
+        <Value>ToolBar = 669</Value>
+        <Value>ToolBarOverflowPanel = 670</Value>
+        <Value>ToolBarPanel = 671</Value>
+        <Value>ToolBarTray = 672</Value>
+        <Value>ToolTip = 673</Value>
+        <Value>ToolTipService = 674</Value>
+        <Value>Track = 675</Value>
+        <Value>Transform = 676</Value>
+        <Value>Transform3D = 677</Value>
+        <Value>Transform3DCollection = 678</Value>
+        <Value>Transform3DGroup = 679</Value>
+        <Value>TransformCollection = 680</Value>
+        <Value>TransformConverter = 681</Value>
+        <Value>TransformGroup = 682</Value>
+        <Value>TransformedBitmap = 683</Value>
+        <Value>TranslateTransform = 684</Value>
+        <Value>TranslateTransform3D = 685</Value>
+        <Value>TreeView = 686</Value>
+        <Value>TreeViewItem = 687</Value>
+        <Value>Trigger = 688</Value>
+        <Value>TriggerAction = 689</Value>
+        <Value>TriggerBase = 690</Value>
+        <Value>TypeExtension = 691</Value>
+        <Value>TypeTypeConverter = 692</Value>
+        <Value>Typography = 693</Value>
+        <Value>UIElement = 694</Value>
+        <Value>UInt16 = 695</Value>
+        <Value>UInt16Converter = 696</Value>
+        <Value>UInt32 = 697</Value>
+        <Value>UInt32Converter = 698</Value>
+        <Value>UInt64 = 699</Value>
+        <Value>UInt64Converter = 700</Value>
+        <Value>UShortIListConverter = 701</Value>
+        <Value>Underline = 702</Value>
+        <Value>UniformGrid = 703</Value>
+        <Value>Uri = 704</Value>
+        <Value>UriTypeConverter = 705</Value>
+        <Value>UserControl = 706</Value>
+        <Value>Validation = 707</Value>
+        <Value>Vector = 708</Value>
+        <Value>Vector3D = 709</Value>
+        <Value>Vector3DAnimation = 710</Value>
+        <Value>Vector3DAnimationBase = 711</Value>
+        <Value>Vector3DAnimationUsingKeyFrames = 712</Value>
+        <Value>Vector3DCollection = 713</Value>
+        <Value>Vector3DCollectionConverter = 714</Value>
+        <Value>Vector3DConverter = 715</Value>
+        <Value>Vector3DKeyFrame = 716</Value>
+        <Value>Vector3DKeyFrameCollection = 717</Value>
+        <Value>VectorAnimation = 718</Value>
+        <Value>VectorAnimationBase = 719</Value>
+        <Value>VectorAnimationUsingKeyFrames = 720</Value>
+        <Value>VectorCollection = 721</Value>
+        <Value>VectorCollectionConverter = 722</Value>
+        <Value>VectorConverter = 723</Value>
+        <Value>VectorKeyFrame = 724</Value>
+        <Value>VectorKeyFrameCollection = 725</Value>
+        <Value>VideoDrawing = 726</Value>
+        <Value>ViewBase = 727</Value>
+        <Value>Viewbox = 728</Value>
+        <Value>Viewport3D = 729</Value>
+        <Value>Viewport3DVisual = 730</Value>
+        <Value>VirtualizingPanel = 731</Value>
+        <Value>VirtualizingStackPanel = 732</Value>
+        <Value>Visual = 733</Value>
+        <Value>Visual3D = 734</Value>
+        <Value>VisualBrush = 735</Value>
+        <Value>VisualTarget = 736</Value>
+        <Value>WeakEventManager = 737</Value>
+        <Value>WhitespaceSignificantCollectionAttribute = 738</Value>
+        <Value>Window = 739</Value>
+        <Value>WmpBitmapDecoder = 740</Value>
+        <Value>WmpBitmapEncoder = 741</Value>
+        <Value>WrapPanel = 742</Value>
+        <Value>WriteableBitmap = 743</Value>
+        <Value>XamlBrushSerializer = 744</Value>
+        <Value>XamlInt32CollectionSerializer = 745</Value>
+        <Value>XamlPathDataSerializer = 746</Value>
+        <Value>XamlPoint3DCollectionSerializer = 747</Value>
+        <Value>XamlPointCollectionSerializer = 748</Value>
+        <Value>XamlReader = 749</Value>
+        <Value>XamlStyleSerializer = 750</Value>
+        <Value>XamlTemplateSerializer = 751</Value>
+        <Value>XamlVector3DCollectionSerializer = 752</Value>
+        <Value>XamlWriter = 753</Value>
+        <Value>XmlDataProvider = 754</Value>
+        <Value>XmlLangPropertyAttribute = 755</Value>
+        <Value>XmlLanguage = 756</Value>
+        <Value>XmlLanguageConverter = 757</Value>
+        <Value>XmlNamespaceMapping = 758</Value>
+        <Value>ZoomPercentageConverter = 759</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>PathOpCodes</Name>
+        <Access>Public</Access>
+        <Location left="224" top="12" />
+        <Size width="162" height="231" />
+        <Collapsed>False</Collapsed>
+        <Value>BeginFigure = 0</Value>
+        <Value>LineTo = 1</Value>
+        <Value>QuadraticBezierTo = 2</Value>
+        <Value>BezierTo = 3</Value>
+        <Value>PolyLineTo = 4</Value>
+        <Value>PolyQuadraticBezierTo = 5</Value>
+        <Value>PolyBezierTo = 6</Value>
+        <Value>ArcTo = 7</Value>
+        <Value>Closed = 8</Value>
+        <Value>FillRule = 9</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>IntegerCollectionType</Name>
+        <Access>Public</Access>
+        <Location left="12" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Unknown = 0</Value>
+        <Value>Consecutive = 1</Value>
+        <Value>U1 = 2</Value>
+        <Value>U2 = 3</Value>
+        <Value>I4 = 4</Value>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Nesting" first="7" second="129">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="18" second="131">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="67" second="132">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="18" second="136">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="51" second="137">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="31" second="30">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="55" second="52">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="62" second="60">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="69" second="68">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="70" second="68">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="74" second="73">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="75" second="74">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="76" second="74">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="77" second="74">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="78" second="74">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="79" second="74">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="80" second="79">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="81" second="74">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="82" second="74">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="83" second="74">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="84" second="74">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="85" second="84">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="86" second="74">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="87" second="74">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="88" second="74">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="89" second="88">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="90" second="74">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="91" second="74">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="92" second="74">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="93" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="94" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="95" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="96" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="97" second="105">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="98" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="99" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="100" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="101" second="112">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="102" second="112">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="103" second="120">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="104" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="105" second="95">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="106" second="112">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="107" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="108" second="112">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="109" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="110" second="112">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="111" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="112" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="113" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="114" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="115" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="116" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="117" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="118" second="95">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="119" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="120" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="121" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="122" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="123" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="124" second="95">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="23" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="24" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="25" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="26" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="27" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="28" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="29" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="30" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="31" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="31" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="32" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="33" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="34" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="35" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="36" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="37" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="38" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="39" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="40" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="41" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="42" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="42" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="43" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="43" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="44" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="45" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="46" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="47" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="48" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="48" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="49" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="50" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="51" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="52" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="53" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="55" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="56" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="57" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="58" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="58" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="59" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="60" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="61" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="62" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="63" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="64" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="65" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="83" second="3">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="97" second="3">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="105" second="3">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="117" second="3">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="12" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>rewritePasses</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="69" second="73">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>record</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

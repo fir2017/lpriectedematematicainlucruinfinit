@@ -1,0 +1,1071 @@
+<Project>
+  <Name>Untitled</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Mono.Cecil.Mdb.dll</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>ISourceFile</Name>
+        <Access>Public</Access>
+        <Location left="224" top="2546" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">SourceFileEntry Entry { get; }</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ICompileUnit</Name>
+        <Access>Public</Access>
+        <Location left="12" top="2546" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">CompileUnitEntry Entry { get; }</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IMethodDef</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="1365" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">String Name { get; }</Member>
+        <Member type="Property">Int32 Token { get; }</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>MonoSymbolFileException</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="1365" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public MonoSymbolFileException()</Member>
+        <Member type="Constructor">public MonoSymbolFileException(String message, params Object[] args)</Member>
+        <Member type="Constructor">public MonoSymbolFileException(String message, Exception innerException)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MyBinaryWriter</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="1365" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public MyBinaryWriter(Stream stream)</Member>
+        <Member type="Method">public Void WriteLeb128(Int32 value)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MyBinaryReader</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="1365" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public MyBinaryReader(Stream stream)</Member>
+        <Member type="Method">public Int32 ReadLeb128()</Member>
+        <Member type="Method">public String ReadString(Int32 offset)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MonoSymbolFile</Name>
+        <Access>Public</Access>
+        <Location left="860" top="1365" />
+        <Size width="162" height="1131" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;MethodEntry&gt; methods</Member>
+        <Member type="Field">private List&lt;SourceFileEntry&gt; sources</Member>
+        <Member type="Field">private List&lt;CompileUnitEntry&gt; comp_units</Member>
+        <Member type="Field">private Dictionary&lt;Int32, AnonymousScopeEntry&gt; anonymous_scopes</Member>
+        <Member type="Field">private OffsetTable ot</Member>
+        <Member type="Field">private Int32 last_type_index</Member>
+        <Member type="Field">private Int32 last_method_index</Member>
+        <Member type="Field">private Int32 last_namespace_index</Member>
+        <Member type="Field">public readonly Int32 MajorVersion</Member>
+        <Member type="Field">public readonly Int32 MinorVersion</Member>
+        <Member type="Field">public Int32 NumLineNumbers</Member>
+        <Member type="Field">private MyBinaryReader reader</Member>
+        <Member type="Field">private Dictionary&lt;Int32, SourceFileEntry&gt; source_file_hash</Member>
+        <Member type="Field">private Dictionary&lt;Int32, CompileUnitEntry&gt; compile_unit_hash</Member>
+        <Member type="Field">private List&lt;MethodEntry&gt; method_list</Member>
+        <Member type="Field">private Dictionary&lt;Int32, MethodEntry&gt; method_token_hash</Member>
+        <Member type="Field">private Dictionary&lt;String, Int32&gt; source_name_hash</Member>
+        <Member type="Field">private Guid guid</Member>
+        <Member type="Field">internal Int32 LineNumberCount</Member>
+        <Member type="Field">internal Int32 LocalCount</Member>
+        <Member type="Field">internal Int32 StringSize</Member>
+        <Member type="Field">internal Int32 LineNumberSize</Member>
+        <Member type="Field">internal Int32 ExtendedLineNumberSize</Member>
+        <Member type="Property">public Int32 CompileUnitCount { get; }</Member>
+        <Member type="Property">public Int32 SourceCount { get; }</Member>
+        <Member type="Property">public Int32 MethodCount { get; }</Member>
+        <Member type="Property">public Int32 TypeCount { get; }</Member>
+        <Member type="Property">public Int32 AnonymousScopeCount { get; }</Member>
+        <Member type="Property">public Int32 NamespaceCount { get; }</Member>
+        <Member type="Property">public Guid Guid { get; }</Member>
+        <Member type="Property">public OffsetTable OffsetTable { get; }</Member>
+        <Member type="Property">public SourceFileEntry[] Sources { get; }</Member>
+        <Member type="Property">public CompileUnitEntry[] CompileUnits { get; }</Member>
+        <Member type="Property">public MethodEntry[] Methods { get; }</Member>
+        <Member type="Property">internal MyBinaryReader BinaryReader { get; }</Member>
+        <Member type="Constructor">public MonoSymbolFile()</Member>
+        <Member type="Constructor">private MonoSymbolFile(Stream stream)</Member>
+        <Member type="Method">public Int32 AddSource(SourceFileEntry source)</Member>
+        <Member type="Method">public Int32 AddCompileUnit(CompileUnitEntry entry)</Member>
+        <Member type="Method">public Void AddMethod(MethodEntry entry)</Member>
+        <Member type="Method">public MethodEntry DefineMethod(CompileUnitEntry comp_unit, Int32 token, ScopeVariable[] scope_vars, LocalVariableEntry[] locals, LineNumberEntry[] lines, CodeBlockEntry[] code_blocks, String real_name, Flags flags, Int32 namespace_id)</Member>
+        <Member type="Method">internal Void DefineAnonymousScope(Int32 id)</Member>
+        <Member type="Method">internal Void DefineCapturedVariable(Int32 scope_id, String name, String captured_name, CapturedKind kind)</Member>
+        <Member type="Method">internal Void DefineCapturedScope(Int32 scope_id, Int32 id, String captured_name)</Member>
+        <Member type="Method">internal Int32 GetNextTypeIndex()</Member>
+        <Member type="Method">internal Int32 GetNextMethodIndex()</Member>
+        <Member type="Method">internal Int32 GetNextNamespaceIndex()</Member>
+        <Member type="Method">private Void Write(MyBinaryWriter bw, Guid guid)</Member>
+        <Member type="Method">public Void CreateSymbolFile(Guid guid, FileStream fs)</Member>
+        <Member type="Method">public static MonoSymbolFile ReadSymbolFile(Assembly assembly)</Member>
+        <Member type="Method">public static MonoSymbolFile ReadSymbolFile(String mdbFilename)</Member>
+        <Member type="Method">public static MonoSymbolFile ReadSymbolFile(String mdbFilename, Guid assemblyGuid)</Member>
+        <Member type="Method">public static MonoSymbolFile ReadSymbolFile(Stream stream)</Member>
+        <Member type="Method">public SourceFileEntry GetSourceFile(Int32 index)</Member>
+        <Member type="Method">public CompileUnitEntry GetCompileUnit(Int32 index)</Member>
+        <Member type="Method">private Void read_methods()</Member>
+        <Member type="Method">public MethodEntry GetMethodByToken(Int32 token)</Member>
+        <Member type="Method">public MethodEntry GetMethod(Int32 index)</Member>
+        <Member type="Method">public Int32 FindSource(String file_name)</Member>
+        <Member type="Method">public AnonymousScopeEntry GetAnonymousScope(Int32 id)</Member>
+        <Member type="Method">public Void Dispose()</Member>
+        <Member type="Method">protected virtual Void Dispose(Boolean disposing)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OffsetTable</Name>
+        <Access>Public</Access>
+        <Location left="648" top="1365" />
+        <Size width="162" height="536" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Int32 TotalFileSize</Member>
+        <Member type="Field">public Int32 DataSectionOffset</Member>
+        <Member type="Field">public Int32 DataSectionSize</Member>
+        <Member type="Field">public Int32 CompileUnitCount</Member>
+        <Member type="Field">public Int32 CompileUnitTableOffset</Member>
+        <Member type="Field">public Int32 CompileUnitTableSize</Member>
+        <Member type="Field">public Int32 SourceCount</Member>
+        <Member type="Field">public Int32 SourceTableOffset</Member>
+        <Member type="Field">public Int32 SourceTableSize</Member>
+        <Member type="Field">public Int32 MethodCount</Member>
+        <Member type="Field">public Int32 MethodTableOffset</Member>
+        <Member type="Field">public Int32 MethodTableSize</Member>
+        <Member type="Field">public Int32 TypeCount</Member>
+        <Member type="Field">public Int32 AnonymousScopeCount</Member>
+        <Member type="Field">public Int32 AnonymousScopeTableOffset</Member>
+        <Member type="Field">public Int32 AnonymousScopeTableSize</Member>
+        <Member type="Field">public Flags FileFlags</Member>
+        <Member type="Field">public Int32 LineNumberTable_LineBase</Member>
+        <Member type="Field">public Int32 LineNumberTable_LineRange</Member>
+        <Member type="Field">public Int32 LineNumberTable_OpcodeBase</Member>
+        <Member type="Field">public const Int32 MajorVersion = 50</Member>
+        <Member type="Field">public const Int32 MinorVersion = 0</Member>
+        <Member type="Field">public const Int64 Magic = 5037318119232611860</Member>
+        <Member type="Constructor">internal OffsetTable()</Member>
+        <Member type="Constructor">internal OffsetTable(BinaryReader reader, Int32 major_version, Int32 minor_version)</Member>
+        <Member type="Method">internal Void Write(BinaryWriter bw, Int32 major_version, Int32 minor_version)</Member>
+        <Member type="Method">public override String ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LineNumberEntry</Name>
+        <Access>Public</Access>
+        <Location left="436" top="1365" />
+        <Size width="162" height="315" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public readonly Int32 Row</Member>
+        <Member type="Field">public Int32 Column</Member>
+        <Member type="Field">public Int32 EndRow</Member>
+        <Member type="Field">public Int32 EndColumn</Member>
+        <Member type="Field">public readonly Int32 File</Member>
+        <Member type="Field">public readonly Int32 Offset</Member>
+        <Member type="Field">public readonly Boolean IsHidden</Member>
+        <Member type="Field">public LineNumberEntry Null</Member>
+        <Member type="Constructor">public LineNumberEntry(Int32 file, Int32 row, Int32 column, Int32 offset)</Member>
+        <Member type="Constructor">public LineNumberEntry(Int32 file, Int32 row, Int32 offset)</Member>
+        <Member type="Constructor">public LineNumberEntry(Int32 file, Int32 row, Int32 column, Int32 offset, Boolean is_hidden)</Member>
+        <Member type="Constructor">public LineNumberEntry(Int32 file, Int32 row, Int32 column, Int32 end_row, Int32 end_column, Int32 offset, Boolean is_hidden)</Member>
+        <Member type="Constructor">static LineNumberEntry()</Member>
+        <Member type="Method">public override String ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CodeBlockEntry</Name>
+        <Access>Public</Access>
+        <Location left="224" top="1365" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Int32 Index</Member>
+        <Member type="Field">public Int32 Parent</Member>
+        <Member type="Field">public Type BlockType</Member>
+        <Member type="Field">public Int32 StartOffset</Member>
+        <Member type="Field">public Int32 EndOffset</Member>
+        <Member type="Constructor">public CodeBlockEntry(Int32 index, Int32 parent, Type type, Int32 start_offset)</Member>
+        <Member type="Constructor">internal CodeBlockEntry(Int32 index, MyBinaryReader reader)</Member>
+        <Member type="Method">public Void Close(Int32 end_offset)</Member>
+        <Member type="Method">internal Void Write(MyBinaryWriter bw)</Member>
+        <Member type="Method">public override String ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AnonymousScopeEntry</Name>
+        <Access>Public</Access>
+        <Location left="12" top="1365" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public readonly Int32 ID</Member>
+        <Member type="Field">private List&lt;CapturedVariable&gt; captured_vars</Member>
+        <Member type="Field">private List&lt;CapturedScope&gt; captured_scopes</Member>
+        <Member type="Property">public CapturedVariable[] CapturedVariables { get; }</Member>
+        <Member type="Property">public CapturedScope[] CapturedScopes { get; }</Member>
+        <Member type="Constructor">public AnonymousScopeEntry(Int32 id)</Member>
+        <Member type="Constructor">internal AnonymousScopeEntry(MyBinaryReader reader)</Member>
+        <Member type="Method">internal Void AddCapturedVariable(String name, String captured_name, CapturedKind kind)</Member>
+        <Member type="Method">internal Void AddCapturedScope(Int32 scope, String captured_name)</Member>
+        <Member type="Method">internal Void Write(MyBinaryWriter bw)</Member>
+        <Member type="Method">public override String ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CompileUnitEntry</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="660" />
+        <Size width="162" height="417" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public readonly Int32 Index</Member>
+        <Member type="Field">private Int32 DataOffset</Member>
+        <Member type="Field">private MonoSymbolFile file</Member>
+        <Member type="Field">private SourceFileEntry source</Member>
+        <Member type="Field">private List&lt;SourceFileEntry&gt; include_files</Member>
+        <Member type="Field">private List&lt;NamespaceEntry&gt; namespaces</Member>
+        <Member type="Field">private Boolean creating</Member>
+        <Member type="Property">public static Int32 Size { get; }</Member>
+        <Member type="Property">CompileUnitEntry Mono.CompilerServices.SymbolWriter.ICompileUnit.Entry { get; }</Member>
+        <Member type="Property">public SourceFileEntry SourceFile { get; }</Member>
+        <Member type="Property">public NamespaceEntry[] Namespaces { get; }</Member>
+        <Member type="Property">public SourceFileEntry[] IncludeFiles { get; }</Member>
+        <Member type="Constructor">public CompileUnitEntry(MonoSymbolFile file, SourceFileEntry source)</Member>
+        <Member type="Constructor">internal CompileUnitEntry(MonoSymbolFile file, MyBinaryReader reader)</Member>
+        <Member type="Method">public Void AddFile(SourceFileEntry file)</Member>
+        <Member type="Method">public Int32 DefineNamespace(String name, String[] using_clauses, Int32 parent)</Member>
+        <Member type="Method">internal Void WriteData(MyBinaryWriter bw)</Member>
+        <Member type="Method">internal Void Write(BinaryWriter bw)</Member>
+        <Member type="Method">public Void ReadAll()</Member>
+        <Member type="Method">private Void ReadData()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SourceFileEntry</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="660" />
+        <Size width="162" height="451" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public readonly Int32 Index</Member>
+        <Member type="Field">private Int32 DataOffset</Member>
+        <Member type="Field">private MonoSymbolFile file</Member>
+        <Member type="Field">private String file_name</Member>
+        <Member type="Field">private Byte[] guid</Member>
+        <Member type="Field">private Byte[] hash</Member>
+        <Member type="Field">private Boolean creating</Member>
+        <Member type="Field">private Boolean auto_generated</Member>
+        <Member type="Field">private readonly String sourceFile</Member>
+        <Member type="Property">public static Int32 Size { get; }</Member>
+        <Member type="Property">public Byte[] Checksum { get; }</Member>
+        <Member type="Property">public String FileName { get; set; }</Member>
+        <Member type="Property">public Boolean AutoGenerated { get; }</Member>
+        <Member type="Constructor">public SourceFileEntry(MonoSymbolFile file, String file_name)</Member>
+        <Member type="Constructor">public SourceFileEntry(MonoSymbolFile file, String sourceFile, Byte[] guid, Byte[] checksum)</Member>
+        <Member type="Constructor">public SourceFileEntry(MonoSymbolFile file, String fileName, String sourceFile, Byte[] guid, Byte[] checksum)</Member>
+        <Member type="Constructor">internal SourceFileEntry(MonoSymbolFile file, MyBinaryReader reader)</Member>
+        <Member type="Method">internal Void WriteData(MyBinaryWriter bw)</Member>
+        <Member type="Method">internal Void Write(BinaryWriter bw)</Member>
+        <Member type="Method">public Void SetAutoGenerated()</Member>
+        <Member type="Method">public Boolean CheckChecksum()</Member>
+        <Member type="Method">public override String ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LineNumberTable</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="660" />
+        <Size width="162" height="485" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected LineNumberEntry[] _line_numbers</Member>
+        <Member type="Field">public readonly Int32 LineBase</Member>
+        <Member type="Field">public readonly Int32 LineRange</Member>
+        <Member type="Field">public readonly Byte OpcodeBase</Member>
+        <Member type="Field">public readonly Int32 MaxAddressIncrement</Member>
+        <Member type="Field">public const Int32 Default_LineBase = -1</Member>
+        <Member type="Field">public const Int32 Default_LineRange = 8</Member>
+        <Member type="Field">public const Byte Default_OpcodeBase = 9</Member>
+        <Member type="Field">public const Byte DW_LNS_copy = 1</Member>
+        <Member type="Field">public const Byte DW_LNS_advance_pc = 2</Member>
+        <Member type="Field">public const Byte DW_LNS_advance_line = 3</Member>
+        <Member type="Field">public const Byte DW_LNS_set_file = 4</Member>
+        <Member type="Field">public const Byte DW_LNS_const_add_pc = 8</Member>
+        <Member type="Field">public const Byte DW_LNE_end_sequence = 1</Member>
+        <Member type="Field">public const Byte DW_LNE_MONO_negate_is_hidden = 64</Member>
+        <Member type="Field">internal const Byte DW_LNE_MONO__extensions_start = 64</Member>
+        <Member type="Field">internal const Byte DW_LNE_MONO__extensions_end = 127</Member>
+        <Member type="Property">public LineNumberEntry[] LineNumbers { get; }</Member>
+        <Member type="Constructor">protected LineNumberTable(MonoSymbolFile file)</Member>
+        <Member type="Constructor">internal LineNumberTable(MonoSymbolFile file, LineNumberEntry[] lines)</Member>
+        <Member type="Method">internal Void Write(MonoSymbolFile file, MyBinaryWriter bw, Boolean hasColumnsInfo, Boolean hasEndInfo)</Member>
+        <Member type="Method">internal static LineNumberTable Read(MonoSymbolFile file, MyBinaryReader br, Boolean readColumnsInfo, Boolean readEndInfo)</Member>
+        <Member type="Method">private Void DoRead(MonoSymbolFile file, MyBinaryReader br, Boolean includesColumns, Boolean includesEnds)</Member>
+        <Member type="Method">public Boolean GetMethodBounds(out LineNumberEntry start, out LineNumberEntry end)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MethodEntry</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="660" />
+        <Size width="162" height="655" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public readonly Int32 CompileUnitIndex</Member>
+        <Member type="Field">public readonly Int32 Token</Member>
+        <Member type="Field">public readonly Int32 NamespaceID</Member>
+        <Member type="Field">private Int32 DataOffset</Member>
+        <Member type="Field">private Int32 LocalVariableTableOffset</Member>
+        <Member type="Field">private Int32 LineNumberTableOffset</Member>
+        <Member type="Field">private Int32 CodeBlockTableOffset</Member>
+        <Member type="Field">private Int32 ScopeVariableTableOffset</Member>
+        <Member type="Field">private Int32 RealNameOffset</Member>
+        <Member type="Field">private Flags flags</Member>
+        <Member type="Field">private Int32 index</Member>
+        <Member type="Field">public readonly CompileUnitEntry CompileUnit</Member>
+        <Member type="Field">private LocalVariableEntry[] locals</Member>
+        <Member type="Field">private CodeBlockEntry[] code_blocks</Member>
+        <Member type="Field">private ScopeVariable[] scope_vars</Member>
+        <Member type="Field">private LineNumberTable lnt</Member>
+        <Member type="Field">private String real_name</Member>
+        <Member type="Field">public readonly MonoSymbolFile SymbolFile</Member>
+        <Member type="Field">public const Int32 Size = 12</Member>
+        <Member type="Property">public Flags MethodFlags { get; }</Member>
+        <Member type="Property">public Int32 Index { get; set; }</Member>
+        <Member type="Constructor">internal MethodEntry(MonoSymbolFile file, MyBinaryReader reader, Int32 index)</Member>
+        <Member type="Constructor">internal MethodEntry(MonoSymbolFile file, CompileUnitEntry comp_unit, Int32 token, ScopeVariable[] scope_vars, LocalVariableEntry[] locals, LineNumberEntry[] lines, CodeBlockEntry[] code_blocks, String real_name, Flags flags, Int32 namespace_id)</Member>
+        <Member type="Method">private static Void CheckLineNumberTable(LineNumberEntry[] line_numbers)</Member>
+        <Member type="Method">internal Void Write(MyBinaryWriter bw)</Member>
+        <Member type="Method">internal Void WriteData(MonoSymbolFile file, MyBinaryWriter bw)</Member>
+        <Member type="Method">public Void ReadAll()</Member>
+        <Member type="Method">public LineNumberTable GetLineNumberTable()</Member>
+        <Member type="Method">public LocalVariableEntry[] GetLocals()</Member>
+        <Member type="Method">public CodeBlockEntry[] GetCodeBlocks()</Member>
+        <Member type="Method">public ScopeVariable[] GetScopeVariables()</Member>
+        <Member type="Method">public String GetRealName()</Member>
+        <Member type="Method">public Int32 CompareTo(Object obj)</Member>
+        <Member type="Method">public override String ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MonoSymbolWriter</Name>
+        <Access>Public</Access>
+        <Location left="860" top="660" />
+        <Size width="162" height="638" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;SourceMethodBuilder&gt; methods</Member>
+        <Member type="Field">private List&lt;SourceFileEntry&gt; sources</Member>
+        <Member type="Field">private List&lt;CompileUnitEntry&gt; comp_units</Member>
+        <Member type="Field">protected readonly MonoSymbolFile file</Member>
+        <Member type="Field">private String filename</Member>
+        <Member type="Field">private SourceMethodBuilder current_method</Member>
+        <Member type="Field">private Stack&lt;SourceMethodBuilder&gt; current_method_stack</Member>
+        <Member type="Property">public MonoSymbolFile SymbolFile { get; }</Member>
+        <Member type="Constructor">public MonoSymbolWriter(String filename)</Member>
+        <Member type="Method">public Void CloseNamespace()</Member>
+        <Member type="Method">public Void DefineLocalVariable(Int32 index, String name)</Member>
+        <Member type="Method">public Void DefineCapturedLocal(Int32 scope_id, String name, String captured_name)</Member>
+        <Member type="Method">public Void DefineCapturedParameter(Int32 scope_id, String name, String captured_name)</Member>
+        <Member type="Method">public Void DefineCapturedThis(Int32 scope_id, String captured_name)</Member>
+        <Member type="Method">public Void DefineCapturedScope(Int32 scope_id, Int32 id, String captured_name)</Member>
+        <Member type="Method">public Void DefineScopeVariable(Int32 scope, Int32 index)</Member>
+        <Member type="Method">public Void MarkSequencePoint(Int32 offset, SourceFileEntry file, Int32 line, Int32 column, Boolean is_hidden)</Member>
+        <Member type="Method">public SourceMethodBuilder OpenMethod(ICompileUnit file, Int32 ns_id, IMethodDef method)</Member>
+        <Member type="Method">public Void CloseMethod()</Member>
+        <Member type="Method">public SourceFileEntry DefineDocument(String url)</Member>
+        <Member type="Method">public SourceFileEntry DefineDocument(String url, Byte[] guid, Byte[] checksum)</Member>
+        <Member type="Method">public CompileUnitEntry DefineCompilationUnit(SourceFileEntry source)</Member>
+        <Member type="Method">public Int32 DefineNamespace(String name, CompileUnitEntry unit, String[] using_clauses, Int32 parent)</Member>
+        <Member type="Method">public Int32 OpenScope(Int32 start_offset)</Member>
+        <Member type="Method">public Void CloseScope(Int32 end_offset)</Member>
+        <Member type="Method">public Void OpenCompilerGeneratedBlock(Int32 start_offset)</Member>
+        <Member type="Method">public Void CloseCompilerGeneratedBlock(Int32 end_offset)</Member>
+        <Member type="Method">public Void StartIteratorBody(Int32 start_offset)</Member>
+        <Member type="Method">public Void EndIteratorBody(Int32 end_offset)</Member>
+        <Member type="Method">public Void StartIteratorDispatcher(Int32 start_offset)</Member>
+        <Member type="Method">public Void EndIteratorDispatcher(Int32 end_offset)</Member>
+        <Member type="Method">public Void DefineAnonymousScope(Int32 id)</Member>
+        <Member type="Method">public Void WriteSymbolFile(Guid guid)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SourceMethodBuilder</Name>
+        <Access>Public</Access>
+        <Location left="648" top="660" />
+        <Size width="162" height="485" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;LocalVariableEntry&gt; _locals</Member>
+        <Member type="Field">private List&lt;CodeBlockEntry&gt; _blocks</Member>
+        <Member type="Field">private List&lt;ScopeVariable&gt; _scope_vars</Member>
+        <Member type="Field">private Stack&lt;CodeBlockEntry&gt; _block_stack</Member>
+        <Member type="Field">private readonly List&lt;LineNumberEntry&gt; method_lines</Member>
+        <Member type="Field">private readonly ICompileUnit _comp_unit</Member>
+        <Member type="Field">private readonly Int32 ns_id</Member>
+        <Member type="Field">private readonly IMethodDef method</Member>
+        <Member type="Property">public CodeBlockEntry[] Blocks { get; }</Member>
+        <Member type="Property">public CodeBlockEntry CurrentBlock { get; }</Member>
+        <Member type="Property">public LocalVariableEntry[] Locals { get; }</Member>
+        <Member type="Property">public ICompileUnit SourceFile { get; }</Member>
+        <Member type="Property">public ScopeVariable[] ScopeVariables { get; }</Member>
+        <Member type="Constructor">public SourceMethodBuilder(ICompileUnit comp_unit)</Member>
+        <Member type="Constructor">public SourceMethodBuilder(ICompileUnit comp_unit, Int32 ns_id, IMethodDef method)</Member>
+        <Member type="Method">public Void MarkSequencePoint(Int32 offset, SourceFileEntry file, Int32 line, Int32 column, Boolean is_hidden)</Member>
+        <Member type="Method">public Void MarkSequencePoint(Int32 offset, SourceFileEntry file, Int32 line, Int32 column, Int32 end_line, Int32 end_column, Boolean is_hidden)</Member>
+        <Member type="Method">public Void StartBlock(Type type, Int32 start_offset)</Member>
+        <Member type="Method">public Void StartBlock(Type type, Int32 start_offset, Int32 scopeIndex)</Member>
+        <Member type="Method">public Void EndBlock(Int32 end_offset)</Member>
+        <Member type="Method">public Void AddLocal(Int32 index, String name)</Member>
+        <Member type="Method">public Void AddScopeVariable(Int32 scope, Int32 index)</Member>
+        <Member type="Method">public Void DefineMethod(MonoSymbolFile file)</Member>
+        <Member type="Method">public Void DefineMethod(MonoSymbolFile file, Int32 token)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SymbolWriterImpl</Name>
+        <Access>Public</Access>
+        <Location left="436" top="660" />
+        <Size width="162" height="587" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private MonoSymbolWriter msw</Member>
+        <Member type="Field">private Int32 nextLocalIndex</Member>
+        <Member type="Field">private Int32 currentToken</Member>
+        <Member type="Field">private String methodName</Member>
+        <Member type="Field">private Stack namespaceStack</Member>
+        <Member type="Field">private Boolean methodOpened</Member>
+        <Member type="Field">private Hashtable documents</Member>
+        <Member type="Field">private Guid guid</Member>
+        <Member type="Constructor">public SymbolWriterImpl(Guid guid)</Member>
+        <Member type="Method">public Void Close()</Member>
+        <Member type="Method">public Void CloseMethod()</Member>
+        <Member type="Method">public Void CloseNamespace()</Member>
+        <Member type="Method">public Void CloseScope(Int32 endOffset)</Member>
+        <Member type="Method">public ISymbolDocumentWriter DefineDocument(String url, Guid language, Guid languageVendor, Guid documentType)</Member>
+        <Member type="Method">public Void DefineField(SymbolToken parent, String name, FieldAttributes attributes, Byte[] signature, SymAddressKind addrKind, Int32 addr1, Int32 addr2, Int32 addr3)</Member>
+        <Member type="Method">public Void DefineGlobalVariable(String name, FieldAttributes attributes, Byte[] signature, SymAddressKind addrKind, Int32 addr1, Int32 addr2, Int32 addr3)</Member>
+        <Member type="Method">public Void DefineLocalVariable(String name, FieldAttributes attributes, Byte[] signature, SymAddressKind addrKind, Int32 addr1, Int32 addr2, Int32 addr3, Int32 startOffset, Int32 endOffset)</Member>
+        <Member type="Method">public Void DefineParameter(String name, ParameterAttributes attributes, Int32 sequence, SymAddressKind addrKind, Int32 addr1, Int32 addr2, Int32 addr3)</Member>
+        <Member type="Method">public Void DefineSequencePoints(ISymbolDocumentWriter document, Int32[] offsets, Int32[] lines, Int32[] columns, Int32[] endLines, Int32[] endColumns)</Member>
+        <Member type="Method">public Void Initialize(IntPtr emitter, String filename, Boolean fFullBuild)</Member>
+        <Member type="Method">public Void OpenMethod(SymbolToken method)</Member>
+        <Member type="Method">public Void OpenNamespace(String name)</Member>
+        <Member type="Method">public Int32 OpenScope(Int32 startOffset)</Member>
+        <Member type="Method">public Void SetMethodSourceRange(ISymbolDocumentWriter startDoc, Int32 startLine, Int32 startColumn, ISymbolDocumentWriter endDoc, Int32 endLine, Int32 endColumn)</Member>
+        <Member type="Method">public Void SetScopeRange(Int32 scopeID, Int32 startOffset, Int32 endOffset)</Member>
+        <Member type="Method">public Void SetSymAttribute(SymbolToken parent, String name, Byte[] data)</Member>
+        <Member type="Method">public Void SetUnderlyingWriter(IntPtr underlyingWriter)</Member>
+        <Member type="Method">public Void SetUserEntryPoint(SymbolToken entryMethod)</Member>
+        <Member type="Method">public Void UsingNamespace(String fullName)</Member>
+        <Member type="Method">private Int32 GetCurrentNamespace(ISymbolDocumentWriter doc)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SymbolDocumentWriterImpl</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="660" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private CompileUnitEntry comp_unit</Member>
+        <Member type="Property">SourceFileEntry Mono.CompilerServices.SymbolWriter.ISourceFile.Entry { get; }</Member>
+        <Member type="Property">public CompileUnitEntry Entry { get; }</Member>
+        <Member type="Constructor">public SymbolDocumentWriterImpl(CompileUnitEntry comp_unit)</Member>
+        <Member type="Method">public Void SetCheckSum(Guid algorithmId, Byte[] checkSum)</Member>
+        <Member type="Method">public Void SetSource(Byte[] source)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SourceMethodImpl</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="660" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String name</Member>
+        <Member type="Field">private Int32 token</Member>
+        <Member type="Field">private Int32 namespaceID</Member>
+        <Member type="Property">public String Name { get; }</Member>
+        <Member type="Property">public Int32 NamespaceID { get; }</Member>
+        <Member type="Property">public Int32 Token { get; }</Member>
+        <Member type="Constructor">public SourceMethodImpl(String name, Int32 token, Int32 namespaceID)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NamespaceInfo</Name>
+        <Access>Internal</Access>
+        <Location left="1708" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public String Name</Member>
+        <Member type="Field">public Int32 NamespaceID</Member>
+        <Member type="Field">public ArrayList UsingClauses</Member>
+        <Member type="Constructor">public NamespaceInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MdbReaderProvider</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public MdbReaderProvider()</Member>
+        <Member type="Method">public ISymbolReader GetSymbolReader(ModuleDefinition module, String fileName)</Member>
+        <Member type="Method">public ISymbolReader GetSymbolReader(ModuleDefinition module, Stream symbolStream)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MdbReader</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="278" />
+        <Size width="162" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly ModuleDefinition module</Member>
+        <Member type="Field">private readonly MonoSymbolFile symbol_file</Member>
+        <Member type="Field">private readonly Dictionary&lt;String, Document&gt; documents</Member>
+        <Member type="Constructor">public MdbReader(ModuleDefinition module, MonoSymbolFile symFile)</Member>
+        <Member type="Method">public ISymbolWriterProvider GetWriterProvider()</Member>
+        <Member type="Method">public Boolean ProcessDebugHeader(ImageDebugHeader header)</Member>
+        <Member type="Method">public MethodDebugInformation Read(MethodDefinition method)</Member>
+        <Member type="Method">private static Int32 ReadCodeSize(MethodDefinition method)</Member>
+        <Member type="Method">private static Void ReadLocalVariables(MethodEntry entry, ScopeDebugInformation[] scopes)</Member>
+        <Member type="Method">private Void ReadLineNumbers(MethodEntry entry, MethodDebugInformation info)</Member>
+        <Member type="Method">private Document GetDocument(SourceFileEntry file)</Member>
+        <Member type="Method">private static ScopeDebugInformation[] ReadScopes(MethodEntry entry, MethodDebugInformation info)</Member>
+        <Member type="Method">private static Boolean AddScope(Collection&lt;ScopeDebugInformation&gt; scopes, ScopeDebugInformation scope)</Member>
+        <Member type="Method">private SequencePoint LineToSequencePoint(LineNumberEntry line)</Member>
+        <Member type="Method">public Void Dispose()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MethodEntryExtensions</Name>
+        <Access>Internal</Access>
+        <Location left="1072" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public static Boolean HasColumnInfo(MethodEntry entry)</Member>
+        <Member type="Method">public static Boolean HasEndInfo(MethodEntry entry)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MdbWriterProvider</Name>
+        <Access>Public</Access>
+        <Location left="860" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public MdbWriterProvider()</Member>
+        <Member type="Method">public ISymbolWriter GetSymbolWriter(ModuleDefinition module, String fileName)</Member>
+        <Member type="Method">public ISymbolWriter GetSymbolWriter(ModuleDefinition module, Stream symbolStream)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MdbWriter</Name>
+        <Access>Public</Access>
+        <Location left="648" top="278" />
+        <Size width="162" height="315" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly Guid mvid</Member>
+        <Member type="Field">private readonly MonoSymbolWriter writer</Member>
+        <Member type="Field">private readonly Dictionary&lt;String, SourceFile&gt; source_files</Member>
+        <Member type="Constructor">public MdbWriter(Guid mvid, String assembly)</Member>
+        <Member type="Method">public ISymbolReaderProvider GetReaderProvider()</Member>
+        <Member type="Method">private SourceFile GetSourceFile(Document document)</Member>
+        <Member type="Method">private Void Populate(Collection&lt;SequencePoint&gt; sequencePoints, Int32[] offsets, Int32[] startRows, Int32[] endRows, Int32[] startCols, Int32[] endCols, out SourceFile file)</Member>
+        <Member type="Method">public Void Write(MethodDebugInformation info)</Member>
+        <Member type="Method">private Void WriteRootScope(ScopeDebugInformation scope, MethodDebugInformation info)</Member>
+        <Member type="Method">private Void WriteScope(ScopeDebugInformation scope, MethodDebugInformation info)</Member>
+        <Member type="Method">private Void WriteScopes(Collection&lt;ScopeDebugInformation&gt; scopes, MethodDebugInformation info)</Member>
+        <Member type="Method">private Void WriteScopeVariables(ScopeDebugInformation scope)</Member>
+        <Member type="Method">public ImageDebugHeader GetDebugHeader()</Member>
+        <Member type="Method">public Void Dispose()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LocationComparer</Name>
+        <Access>Public</Access>
+        <Location left="436" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public LocationComparer Default</Member>
+        <Member type="Constructor">public LocationComparer()</Member>
+        <Member type="Constructor">static LocationComparer()</Member>
+        <Member type="Method">public Int32 Compare(LineNumberEntry l1, LineNumberEntry l2)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SourceFile</Name>
+        <Access>Public</Access>
+        <Location left="224" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly CompileUnitEntry compilation_unit</Member>
+        <Member type="Field">private readonly SourceFileEntry entry</Member>
+        <Member type="Property">public SourceFileEntry Entry { get; }</Member>
+        <Member type="Property">public CompileUnitEntry CompilationUnit { get; }</Member>
+        <Member type="Constructor">public SourceFile(CompileUnitEntry comp_unit, SourceFileEntry entry)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SourceMethod</Name>
+        <Access>Public</Access>
+        <Location left="12" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly MethodDefinition method</Member>
+        <Member type="Property">public String Name { get; }</Member>
+        <Member type="Property">public Int32 Token { get; }</Member>
+        <Member type="Constructor">public SourceMethod(MethodDefinition method)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Structure">
+        <Name>LocalVariableEntry</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public readonly Int32 Index</Member>
+        <Member type="Field">public readonly String Name</Member>
+        <Member type="Field">public readonly Int32 BlockIndex</Member>
+        <Member type="Constructor">public LocalVariableEntry(Int32 index, String name, Int32 block)</Member>
+        <Member type="Constructor">internal LocalVariableEntry(MonoSymbolFile file, MyBinaryReader reader)</Member>
+        <Member type="Method">internal Void Write(MonoSymbolFile file, MyBinaryWriter bw)</Member>
+        <Member type="Method">public override String ToString()</Member>
+      </Entity>
+      <Entity type="Structure">
+        <Name>CapturedVariable</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public readonly String Name</Member>
+        <Member type="Field">public readonly String CapturedName</Member>
+        <Member type="Field">public readonly CapturedKind Kind</Member>
+        <Member type="Constructor">public CapturedVariable(String name, String captured_name, CapturedKind kind)</Member>
+        <Member type="Constructor">internal CapturedVariable(MyBinaryReader reader)</Member>
+        <Member type="Method">internal Void Write(MyBinaryWriter bw)</Member>
+        <Member type="Method">public override String ToString()</Member>
+      </Entity>
+      <Entity type="Structure">
+        <Name>CapturedScope</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public readonly Int32 Scope</Member>
+        <Member type="Field">public readonly String CapturedName</Member>
+        <Member type="Constructor">public CapturedScope(Int32 scope, String captured_name)</Member>
+        <Member type="Constructor">internal CapturedScope(MyBinaryReader reader)</Member>
+        <Member type="Method">internal Void Write(MyBinaryWriter bw)</Member>
+        <Member type="Method">public override String ToString()</Member>
+      </Entity>
+      <Entity type="Structure">
+        <Name>ScopeVariable</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public readonly Int32 Scope</Member>
+        <Member type="Field">public readonly Int32 Index</Member>
+        <Member type="Constructor">public ScopeVariable(Int32 scope, Int32 index)</Member>
+        <Member type="Constructor">internal ScopeVariable(MyBinaryReader reader)</Member>
+        <Member type="Method">internal Void Write(MyBinaryWriter bw)</Member>
+        <Member type="Method">public override String ToString()</Member>
+      </Entity>
+      <Entity type="Structure">
+        <Name>NamespaceEntry</Name>
+        <Access>Public</Access>
+        <Location left="860" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public readonly String Name</Member>
+        <Member type="Field">public readonly Int32 Index</Member>
+        <Member type="Field">public readonly Int32 Parent</Member>
+        <Member type="Field">public readonly String[] UsingClauses</Member>
+        <Member type="Constructor">public NamespaceEntry(String name, Int32 index, String[] using_clauses, Int32 parent)</Member>
+        <Member type="Constructor">internal NamespaceEntry(MonoSymbolFile file, MyBinaryReader reader)</Member>
+        <Member type="Method">internal Void Write(MonoSymbolFile file, MyBinaryWriter bw)</Member>
+        <Member type="Method">public override String ToString()</Member>
+      </Entity>
+      <Entity type="Enum">
+        <Name>Flags</Name>
+        <Access>Public</Access>
+        <Location left="648" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>IsAspxSource = 1</Value>
+        <Value>WindowsFileNames = 2</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>Type</Name>
+        <Access>Public</Access>
+        <Location left="436" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Lexical = 1</Value>
+        <Value>CompilerGenerated = 2</Value>
+        <Value>IteratorBody = 3</Value>
+        <Value>IteratorDispatcher = 4</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>CapturedKind</Name>
+        <Access>Public</Access>
+        <Location left="224" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Local = 0</Value>
+        <Value>Parameter = 1</Value>
+        <Value>This = 2</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>Flags</Name>
+        <Access>Public</Access>
+        <Location left="12" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>LocalNamesAmbiguous = 1</Value>
+        <Value>ColumnsInfoIncluded = 2</Value>
+        <Value>EndInfoIncluded = 4</Value>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Nesting" first="8" second="26">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="25" second="27">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="25" second="28">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="7" second="34">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="9" second="35">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="30" second="36">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="14" second="37">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="11" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="18" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="18" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="19" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="27" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="28" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="6" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>ot</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="6" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>reader</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="34">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>FileFlags</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="8" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>Null</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="9" second="35">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>BlockType</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="6">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>file</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="12">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>source</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="12" second="6">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>file</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="13" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>_line_numbers</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="14" second="37">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>flags</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="14" second="11">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>CompileUnit</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="14" second="29">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>locals</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="14" second="9">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>code_blocks</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="14" second="32">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>scope_vars</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="14" second="13">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>lnt</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="14" second="6">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>SymbolFile</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="15" second="6">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>file</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="15" second="16">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>current_method</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="16" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>_comp_unit</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="16" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>method</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="17" second="15">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>msw</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="18" second="11">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>comp_unit</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="22" second="6">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>symbol_file</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="25" second="15">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>writer</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="26" second="26">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>Default</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="27" second="11">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>compilation_unit</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="27" second="12">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>entry</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="30" second="36">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>Kind</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

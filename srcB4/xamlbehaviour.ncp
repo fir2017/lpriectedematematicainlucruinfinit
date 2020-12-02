@@ -1,0 +1,1973 @@
+<Project>
+  <Name>Untitled</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Microsoft.Xaml.Behaviors.dll</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>IAttachedObject</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="4041" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">DependencyObject AssociatedObject { get; }</Member>
+        <Member type="Method">Void Attach(DependencyObject dependencyObject)</Member>
+        <Member type="Method">Void Detach()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ITickTimer</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="4041" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">TimeSpan Interval { get; set; }</Member>
+        <Member type="Event">event EventHandler Tick</Member>
+        <Member type="Method">Void Start()</Member>
+        <Member type="Method">Void Stop()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ICondition</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="4041" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">Boolean Evaluate()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>ThisAssembly</Name>
+        <Access>Internal</Access>
+        <Location left="860" top="4041" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal const String AssemblyVersion = 1.1.0.0</Member>
+        <Member type="Field">internal const String AssemblyFileVersion = 1.1.3.43761</Member>
+        <Member type="Field">internal const String AssemblyInformationalVersion = 1.1.3+f1aa06daa9</Member>
+        <Member type="Field">internal const String AssemblyName = Microsoft.Xaml.Behaviors</Member>
+        <Member type="Field">internal const String AssemblyTitle = Microsoft.Xaml.Behaviors</Member>
+        <Member type="Field">internal const String AssemblyConfiguration = Release</Member>
+        <Member type="Field">internal const String GitCommitId = f1aa06daa9c42169d728d6172cd59986ab4a04a8</Member>
+        <Member type="Field">internal const String PublicKey = 002400000480000094000000060200000024000052534131000400000100010007d1fa57c4aed9f0a32e84aa0faefd0de9e8fd6aec8f87fb03766c834c99921eb23be79ad9d5dcc1dd9ad236132102900b723cf980957fc4e177108fc607774f29e8320e92ea05ece4e821c0a5efe8f1645c4c0c93c1ab99285d622caa652c1dfad63d745d6f2de5f17e5eaf0fc4963d261c8a12436518206dc093344d5ad293</Member>
+        <Member type="Field">internal const String PublicKeyToken = b03f5f7f11d50a3a</Member>
+        <Member type="Field">internal const String RootNamespace = Microsoft.Xaml.Behaviors</Member>
+        <Member type="Constructor">private ThisAssembly()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AttachableCollection&lt;T&gt;</Name>
+        <Access>Public</Access>
+        <Location left="648" top="4041" />
+        <Size width="162" height="315" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Collection&lt;T&gt; snapshot</Member>
+        <Member type="Field">private DependencyObject associatedObject</Member>
+        <Member type="Property">protected DependencyObject AssociatedObject { get; }</Member>
+        <Member type="Property">DependencyObject Microsoft.Xaml.Behaviors.IAttachedObject.AssociatedObject { get; }</Member>
+        <Member type="Constructor">internal AttachableCollection()</Member>
+        <Member type="Method">protected abstract Void OnAttached()</Member>
+        <Member type="Method">protected abstract Void OnDetaching()</Member>
+        <Member type="Method">internal abstract Void ItemAdded(T item)</Member>
+        <Member type="Method">internal abstract Void ItemRemoved(T item)</Member>
+        <Member type="Method">private Void VerifySnapshotIntegrity()</Member>
+        <Member type="Method">private Void VerifyAdd(T item)</Member>
+        <Member type="Method">private Void OnCollectionChanged(Object sender, NotifyCollectionChangedEventArgs e)</Member>
+        <Member type="Method">public Void Attach(DependencyObject dependencyObject)</Member>
+        <Member type="Method">public Void Detach()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Behavior&lt;T&gt;</Name>
+        <Access>Public</Access>
+        <Location left="436" top="4041" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">protected T AssociatedObject { get; }</Member>
+        <Member type="Constructor">protected Behavior()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Behavior</Name>
+        <Access>Public</Access>
+        <Location left="224" top="4041" />
+        <Size width="162" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Type associatedType</Member>
+        <Member type="Field">private DependencyObject associatedObject</Member>
+        <Member type="Property">protected Type AssociatedType { get; }</Member>
+        <Member type="Property">protected DependencyObject AssociatedObject { get; }</Member>
+        <Member type="Property">DependencyObject Microsoft.Xaml.Behaviors.IAttachedObject.AssociatedObject { get; }</Member>
+        <Member type="Event">internal event EventHandler AssociatedObjectChanged</Member>
+        <Member type="Constructor">internal Behavior(Type associatedType)</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Member type="Method">private Void OnAssociatedObjectChanged()</Member>
+        <Member type="Method">public Void Attach(DependencyObject dependencyObject)</Member>
+        <Member type="Method">public Void Detach()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BehaviorCollection</Name>
+        <Access>Public</Access>
+        <Location left="12" top="4041" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">internal BehaviorCollection()</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">internal virtual Void ItemAdded(Behavior item)</Member>
+        <Member type="Method">internal virtual Void ItemRemoved(Behavior item)</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ComparisonLogic</Name>
+        <Access>Internal</Access>
+        <Location left="2768" top="3285" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">internal static Boolean EvaluateImpl(Object leftOperand, ComparisonConditionType operatorType, Object rightOperand)</Member>
+        <Member type="Method">private static Boolean EvaluateComparable(IComparable leftOperand, ComparisonConditionType operatorType, IComparable rightOperand)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CustomPropertyValueEditorAttribute</Name>
+        <Access>Public</Access>
+        <Location left="2556" top="3285" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public CustomPropertyValueEditor CustomPropertyValueEditor { get; private set; }</Member>
+        <Member type="Constructor">public CustomPropertyValueEditorAttribute(CustomPropertyValueEditor customPropertyValueEditor)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataBindingHelper</Name>
+        <Access>Internal</Access>
+        <Location left="2344" top="3285" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static Dictionary&lt;Type, IList&lt;DependencyProperty&gt;&gt; DependenciesPropertyCache</Member>
+        <Member type="Constructor">static DataBindingHelper()</Member>
+        <Member type="Method">public static Void EnsureDataBindingUpToDateOnMembers(DependencyObject dpObject)</Member>
+        <Member type="Method">public static Void EnsureDataBindingOnActionsUpToDate(TriggerBase&lt;DependencyObject&gt; trigger)</Member>
+        <Member type="Method">public static Void EnsureBindingUpToDate(DependencyObject target, DependencyProperty dp)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DefaultTriggerAttribute</Name>
+        <Access>Public</Access>
+        <Location left="2132" top="3285" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Type targetType</Member>
+        <Member type="Field">private Type triggerType</Member>
+        <Member type="Field">private Object[] parameters</Member>
+        <Member type="Property">public Type TargetType { get; }</Member>
+        <Member type="Property">public Type TriggerType { get; }</Member>
+        <Member type="Property">public IEnumerable Parameters { get; }</Member>
+        <Member type="Constructor">public DefaultTriggerAttribute(Type targetType, Type triggerType, Object parameter)</Member>
+        <Member type="Constructor">public DefaultTriggerAttribute(Type targetType, Type triggerType, params Object[] parameters)</Member>
+        <Member type="Method">public TriggerBase Instantiate()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DependencyObjectHelper</Name>
+        <Access>Public</Access>
+        <Location left="1920" top="3285" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public static IEnumerable&lt;DependencyObject&gt; GetSelfAndAncestors(DependencyObject dependencyObject)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EventObserver</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="3285" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private EventInfo eventInfo</Member>
+        <Member type="Field">private Object target</Member>
+        <Member type="Field">private Delegate handler</Member>
+        <Member type="Constructor">public EventObserver(EventInfo eventInfo, Object target, Delegate handler)</Member>
+        <Member type="Method">public Void Dispose()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EventTrigger</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="3285" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty EventNameProperty</Member>
+        <Member type="Property">public String EventName { get; set; }</Member>
+        <Member type="Constructor">public EventTrigger()</Member>
+        <Member type="Constructor">public EventTrigger(String eventName)</Member>
+        <Member type="Constructor">static EventTrigger()</Member>
+        <Member type="Method">protected virtual String GetEventName()</Member>
+        <Member type="Method">private static Void OnEventNameChanged(Object sender, DependencyPropertyChangedEventArgs args)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EventTriggerBase&lt;T&gt;</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="3285" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public new T Source { get; }</Member>
+        <Member type="Constructor">protected EventTriggerBase()</Member>
+        <Member type="Method">internal Void OnSourceChangedImpl(Object oldSource, Object newSource)</Member>
+        <Member type="Method">protected virtual Void OnSourceChanged(T oldSource, T newSource)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EventTriggerBase</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="3285" />
+        <Size width="162" height="706" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Type sourceTypeConstraint</Member>
+        <Member type="Field">private Boolean isSourceChangedRegistered</Member>
+        <Member type="Field">private NameResolver sourceNameResolver</Member>
+        <Member type="Field">private MethodInfo eventHandlerMethodInfo</Member>
+        <Member type="Field">public DependencyProperty SourceObjectProperty</Member>
+        <Member type="Field">public DependencyProperty SourceNameProperty</Member>
+        <Member type="Property">protected Type AssociatedObjectTypeConstraint { get; }</Member>
+        <Member type="Property">protected Type SourceTypeConstraint { get; }</Member>
+        <Member type="Property">public Object SourceObject { get; set; }</Member>
+        <Member type="Property">public String SourceName { get; set; }</Member>
+        <Member type="Property">public Object Source { get; }</Member>
+        <Member type="Property">private NameResolver SourceNameResolver { get; }</Member>
+        <Member type="Property">private Boolean IsSourceChangedRegistered { get; set; }</Member>
+        <Member type="Property">private Boolean IsSourceNameSet { get; }</Member>
+        <Member type="Property">private Boolean IsLoadedRegistered { get; set; }</Member>
+        <Member type="Constructor">internal EventTriggerBase(Type sourceTypeConstraint)</Member>
+        <Member type="Constructor">static EventTriggerBase()</Member>
+        <Member type="Method">protected abstract String GetEventName()</Member>
+        <Member type="Method">protected virtual Void OnEvent(EventArgs eventArgs)</Member>
+        <Member type="Method">private Void OnSourceChanged(Object oldSource, Object newSource)</Member>
+        <Member type="Method">internal virtual Void OnSourceChangedImpl(Object oldSource, Object newSource)</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">private Void OnBehaviorHostChanged(Object sender, EventArgs e)</Member>
+        <Member type="Method">private static Void OnSourceObjectChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private static Void OnSourceNameChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private Void RegisterSourceChanged()</Member>
+        <Member type="Method">private Void UnregisterSourceChanged()</Member>
+        <Member type="Method">private Void OnSourceNameResolverElementChanged(Object sender, NameResolvedEventArgs e)</Member>
+        <Member type="Method">private Void RegisterLoaded(FrameworkElement associatedElement)</Member>
+        <Member type="Method">private Void UnregisterLoaded(FrameworkElement associatedElement)</Member>
+        <Member type="Method">private Void RegisterEvent(Object obj, String eventName)</Member>
+        <Member type="Method">private static Boolean IsValidEvent(EventInfo eventInfo)</Member>
+        <Member type="Method">private Void UnregisterEvent(Object obj, String eventName)</Member>
+        <Member type="Method">private Void UnregisterEventImpl(Object obj, String eventName)</Member>
+        <Member type="Method">private Void OnEventImpl(Object sender, EventArgs eventArgs)</Member>
+        <Member type="Method">internal Void OnEventNameChanged(String oldEventName, String newEventName)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Interaction</Name>
+        <Access>Public</Access>
+        <Location left="860" top="3285" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private DependencyProperty TriggersProperty</Member>
+        <Member type="Field">private DependencyProperty BehaviorsProperty</Member>
+        <Member type="Property">internal static Boolean ShouldRunInDesignMode { get; set; }</Member>
+        <Member type="Constructor">static Interaction()</Member>
+        <Member type="Method">public static TriggerCollection GetTriggers(DependencyObject obj)</Member>
+        <Member type="Method">public static BehaviorCollection GetBehaviors(DependencyObject obj)</Member>
+        <Member type="Method">private static Void OnBehaviorsChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private static Void OnTriggersChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">internal static Boolean IsElementLoaded(FrameworkElement element)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>InteractionContext</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="3285" />
+        <Size width="162" height="706" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static Assembly runtimeAssembly</Member>
+        <Member type="Field">private static Object playerContextInstance</Member>
+        <Member type="Field">private static Object activeNavigationViewModelObject</Member>
+        <Member type="Field">private static PropertyInfo libraryNamePropertyInfo</Member>
+        <Member type="Field">private static PropertyInfo activeNavigationViewModelPropertyInfo</Member>
+        <Member type="Field">private static PropertyInfo canGoBackPropertyInfo</Member>
+        <Member type="Field">private static PropertyInfo canGoForwardPropertyInfo</Member>
+        <Member type="Field">private static PropertyInfo sketchFlowAnimationPlayerPropertyInfo</Member>
+        <Member type="Field">private static MethodInfo goBackMethodInfo</Member>
+        <Member type="Field">private static MethodInfo goForwardMethodInfo</Member>
+        <Member type="Field">private static MethodInfo navigateToScreenMethodInfo</Member>
+        <Member type="Field">private static MethodInfo invokeStateChangeMethodInfo</Member>
+        <Member type="Field">private static MethodInfo playSketchFlowAnimationMethodInfo</Member>
+        <Member type="Field">private static NavigationService navigationService</Member>
+        <Member type="Field">private String LibraryName</Member>
+        <Member type="Field">private Dictionary&lt;String, Data&gt; NavigationData</Member>
+        <Member type="Property">public static Object ActiveNavigationViewModelObject { get; internal set; }</Member>
+        <Member type="Property">private static Boolean IsPrototypingRuntimeLoaded { get; }</Member>
+        <Member type="Property">private static Boolean CanGoBack { get; }</Member>
+        <Member type="Property">private static Boolean CanGoForward { get; }</Member>
+        <Member type="Property">private static Boolean PlatformCanGoBack { get; }</Member>
+        <Member type="Property">private static Boolean PlatformCanGoForward { get; }</Member>
+        <Member type="Constructor">static InteractionContext()</Member>
+        <Member type="Method">public static Void GoBack()</Member>
+        <Member type="Method">public static Void GoForward()</Member>
+        <Member type="Method">public static Boolean IsScreen(String screenName)</Member>
+        <Member type="Method">public static Void GoToScreen(String screenName, Assembly assembly)</Member>
+        <Member type="Method">public static Void GoToState(String screen, String state)</Member>
+        <Member type="Method">public static Void PlaySketchFlowAnimation(String sketchFlowAnimation, String owningScreen)</Member>
+        <Member type="Method">private static Void InitializeRuntimeNavigation()</Member>
+        <Member type="Method">private static Data LoadNavigationData(String assemblyName)</Member>
+        <Member type="Method">private static String GetScreenClassName(String screenName)</Member>
+        <Member type="Method">private static Void InitalizePlatformNavigation()</Member>
+        <Member type="Method">private static Assembly FindPlatformRuntimeAssembly()</Member>
+        <Member type="Method">public static Void PlatformGoBack()</Member>
+        <Member type="Method">public static Void PlatformGoForward()</Member>
+        <Member type="Method">public static Void PlatformGoToScreen(String assemblyName, String screen)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>InvokeCommandAction</Name>
+        <Access>Public</Access>
+        <Location left="436" top="3285" />
+        <Size width="162" height="383" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String commandName</Member>
+        <Member type="Field">public DependencyProperty CommandProperty</Member>
+        <Member type="Field">public DependencyProperty CommandParameterProperty</Member>
+        <Member type="Field">public DependencyProperty EventArgsConverterProperty</Member>
+        <Member type="Field">public DependencyProperty EventArgsConverterParameterProperty</Member>
+        <Member type="Field">public DependencyProperty EventArgsParameterPathProperty</Member>
+        <Member type="Property">public String CommandName { get; set; }</Member>
+        <Member type="Property">public ICommand Command { get; set; }</Member>
+        <Member type="Property">public Object CommandParameter { get; set; }</Member>
+        <Member type="Property">public IValueConverter EventArgsConverter { get; set; }</Member>
+        <Member type="Property">public Object EventArgsConverterParameter { get; set; }</Member>
+        <Member type="Property">public String EventArgsParameterPath { get; set; }</Member>
+        <Member type="Property">public Boolean PassEventArgsToCommand { get; set; }</Member>
+        <Member type="Constructor">public InvokeCommandAction()</Member>
+        <Member type="Constructor">static InvokeCommandAction()</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Member type="Method">private Object GetEventArgsPropertyPathValue(Object parameter)</Member>
+        <Member type="Method">private ICommand ResolveCommand()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NameResolvedEventArgs</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="3285" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Object oldObject</Member>
+        <Member type="Field">private Object newObject</Member>
+        <Member type="Property">public Object OldObject { get; }</Member>
+        <Member type="Property">public Object NewObject { get; }</Member>
+        <Member type="Constructor">public NameResolvedEventArgs(Object oldObject, Object newObject)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NameResolver</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="3285" />
+        <Size width="162" height="366" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String name</Member>
+        <Member type="Field">private FrameworkElement nameScopeReferenceElement</Member>
+        <Member type="Property">public String Name { get; set; }</Member>
+        <Member type="Property">public DependencyObject Object { get; }</Member>
+        <Member type="Property">public FrameworkElement NameScopeReferenceElement { get; set; }</Member>
+        <Member type="Property">private FrameworkElement ActualNameScopeReferenceElement { get; }</Member>
+        <Member type="Property">private DependencyObject ResolvedObject { get; set; }</Member>
+        <Member type="Property">private Boolean PendingReferenceElementLoad { get; set; }</Member>
+        <Member type="Property">private Boolean HasAttempedResolve { get; set; }</Member>
+        <Member type="Event">public event EventHandler&lt;NameResolvedEventArgs&gt; ResolvedElementChanged</Member>
+        <Member type="Constructor">public NameResolver()</Member>
+        <Member type="Method">private Void OnNameScopeReferenceElementChanged(FrameworkElement oldNameScopeReference)</Member>
+        <Member type="Method">private Void UpdateObjectFromName(DependencyObject oldObject)</Member>
+        <Member type="Method">private Void OnObjectChanged(DependencyObject oldTarget, DependencyObject newTarget)</Member>
+        <Member type="Method">private FrameworkElement GetActualNameScopeReference(FrameworkElement initialReferenceElement)</Member>
+        <Member type="Method">private Boolean IsNameScope(FrameworkElement frameworkElement)</Member>
+        <Member type="Method">private Void OnNameScopeReferenceLoaded(Object sender, RoutedEventArgs e)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Serializer</Name>
+        <Access>Internal</Access>
+        <Location left="2768" top="2750" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">private Serializer()</Member>
+        <Member type="Method">public static Color HexStringToColor(String value)</Member>
+        <Member type="Method">public static String ColorToHexString(Color color)</Member>
+        <Member type="Method">public static Void Serialize(Data data, Stream stream)</Member>
+        <Member type="Method">public static Data Deserialize(String filePath)</Member>
+        <Member type="Method">public static Data Deserialize(Stream stream)</Member>
+        <Member type="Method">public static Int32? GetSchemaVersion(String filePath)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TargetedTriggerAction&lt;T&gt;</Name>
+        <Access>Public</Access>
+        <Location left="2556" top="2750" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">protected T Target { get; }</Member>
+        <Member type="Constructor">protected TargetedTriggerAction()</Member>
+        <Member type="Method">internal Void OnTargetChangedImpl(Object oldTarget, Object newTarget)</Member>
+        <Member type="Method">protected virtual Void OnTargetChanged(T oldTarget, T newTarget)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TargetedTriggerAction</Name>
+        <Access>Public</Access>
+        <Location left="2344" top="2750" />
+        <Size width="162" height="485" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Type targetTypeConstraint</Member>
+        <Member type="Field">private Boolean isTargetChangedRegistered</Member>
+        <Member type="Field">private NameResolver targetResolver</Member>
+        <Member type="Field">public DependencyProperty TargetObjectProperty</Member>
+        <Member type="Field">public DependencyProperty TargetNameProperty</Member>
+        <Member type="Property">public Object TargetObject { get; set; }</Member>
+        <Member type="Property">public String TargetName { get; set; }</Member>
+        <Member type="Property">protected Object Target { get; }</Member>
+        <Member type="Property">protected Type AssociatedObjectTypeConstraint { get; }</Member>
+        <Member type="Property">protected Type TargetTypeConstraint { get; }</Member>
+        <Member type="Property">private Boolean IsTargetNameSet { get; }</Member>
+        <Member type="Property">private NameResolver TargetResolver { get; }</Member>
+        <Member type="Property">private Boolean IsTargetChangedRegistered { get; set; }</Member>
+        <Member type="Constructor">internal TargetedTriggerAction(Type targetTypeConstraint)</Member>
+        <Member type="Constructor">static TargetedTriggerAction()</Member>
+        <Member type="Method">internal virtual Void OnTargetChangedImpl(Object oldTarget, Object newTarget)</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">private Void OnBehaviorHostChanged(Object sender, EventArgs e)</Member>
+        <Member type="Method">private Void RegisterTargetChanged()</Member>
+        <Member type="Method">private Void UnregisterTargetChanged()</Member>
+        <Member type="Method">private static Void OnTargetObjectChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private static Void OnTargetNameChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private Void OnTargetChanged(Object sender, NameResolvedEventArgs e)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TriggerAction&lt;T&gt;</Name>
+        <Access>Public</Access>
+        <Location left="2132" top="2750" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">protected T AssociatedObject { get; }</Member>
+        <Member type="Property">protected Type AssociatedObjectTypeConstraint { get; }</Member>
+        <Member type="Constructor">protected TriggerAction()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TriggerAction</Name>
+        <Access>Public</Access>
+        <Location left="1920" top="2750" />
+        <Size width="162" height="383" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Boolean isHosted</Member>
+        <Member type="Field">private DependencyObject associatedObject</Member>
+        <Member type="Field">private Type associatedObjectTypeConstraint</Member>
+        <Member type="Field">public DependencyProperty IsEnabledProperty</Member>
+        <Member type="Property">public Boolean IsEnabled { get; set; }</Member>
+        <Member type="Property">protected DependencyObject AssociatedObject { get; }</Member>
+        <Member type="Property">protected virtual Type AssociatedObjectTypeConstraint { get; }</Member>
+        <Member type="Property">internal Boolean IsHosted { get; set; }</Member>
+        <Member type="Property">DependencyObject Microsoft.Xaml.Behaviors.IAttachedObject.AssociatedObject { get; }</Member>
+        <Member type="Constructor">internal TriggerAction(Type associatedObjectTypeConstraint)</Member>
+        <Member type="Constructor">static TriggerAction()</Member>
+        <Member type="Method">internal Void CallInvoke(Object parameter)</Member>
+        <Member type="Method">protected abstract Void Invoke(Object parameter)</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Member type="Method">public Void Attach(DependencyObject dependencyObject)</Member>
+        <Member type="Method">public Void Detach()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TriggerActionCollection</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="2750" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">internal TriggerActionCollection()</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">internal virtual Void ItemAdded(TriggerAction item)</Member>
+        <Member type="Method">internal virtual Void ItemRemoved(TriggerAction item)</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TriggerBase&lt;T&gt;</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="2750" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">protected T AssociatedObject { get; }</Member>
+        <Member type="Property">protected Type AssociatedObjectTypeConstraint { get; }</Member>
+        <Member type="Constructor">protected TriggerBase()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PreviewInvokeEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="2750" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public Boolean Cancelling { get; set; }</Member>
+        <Member type="Constructor">public PreviewInvokeEventArgs()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TriggerBase</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="2750" />
+        <Size width="162" height="366" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private DependencyObject associatedObject</Member>
+        <Member type="Field">private Type associatedObjectTypeConstraint</Member>
+        <Member type="Field">private DependencyPropertyKey ActionsPropertyKey</Member>
+        <Member type="Field">public DependencyProperty ActionsProperty</Member>
+        <Member type="Property">protected DependencyObject AssociatedObject { get; }</Member>
+        <Member type="Property">protected virtual Type AssociatedObjectTypeConstraint { get; }</Member>
+        <Member type="Property">public TriggerActionCollection Actions { get; }</Member>
+        <Member type="Property">DependencyObject Microsoft.Xaml.Behaviors.IAttachedObject.AssociatedObject { get; }</Member>
+        <Member type="Event">public event EventHandler&lt;PreviewInvokeEventArgs&gt; PreviewInvoke</Member>
+        <Member type="Constructor">internal TriggerBase(Type associatedObjectTypeConstraint)</Member>
+        <Member type="Constructor">static TriggerBase()</Member>
+        <Member type="Method">protected Void InvokeActions(Object parameter)</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Member type="Method">public Void Attach(DependencyObject dependencyObject)</Member>
+        <Member type="Method">public Void Detach()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TriggerCollection</Name>
+        <Access>Public</Access>
+        <Location left="860" top="2750" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">internal TriggerCollection()</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">internal virtual Void ItemAdded(TriggerBase item)</Member>
+        <Member type="Method">internal virtual Void ItemRemoved(TriggerBase item)</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TypeConstraintAttribute</Name>
+        <Access>Public</Access>
+        <Location left="648" top="2750" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public Type Constraint { get; private set; }</Member>
+        <Member type="Constructor">public TypeConstraintAttribute(Type constraint)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TypeConverterHelper</Name>
+        <Access>Internal</Access>
+        <Location left="436" top="2750" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">internal static Object DoConversionFrom(TypeConverter converter, Object value)</Member>
+        <Member type="Method">private static Boolean ShouldEatException(Exception e)</Member>
+        <Member type="Method">internal static TypeConverter GetTypeConverter(Type type)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>VisualStateUtilities</Name>
+        <Access>Public</Access>
+        <Location left="224" top="2750" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public static Boolean GoToState(FrameworkElement element, String stateName, Boolean useTransitions)</Member>
+        <Member type="Method">public static IList GetVisualStateGroups(FrameworkElement targetObject)</Member>
+        <Member type="Method">public static Boolean TryFindNearestStatefulControl(FrameworkElement contextElement, out FrameworkElement resolvedControl)</Member>
+        <Member type="Method">private static Boolean HasVisualStateGroupsDefined(FrameworkElement frameworkElement)</Member>
+        <Member type="Method">internal static FrameworkElement FindNearestStatefulControl(FrameworkElement contextElement)</Member>
+        <Member type="Method">private static Boolean ShouldContinueTreeWalk(FrameworkElement element)</Member>
+        <Member type="Method">private static FrameworkElement FindTemplatedParent(FrameworkElement parent)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PlaySoundAction</Name>
+        <Access>Public</Access>
+        <Location left="12" top="2750" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty SourceProperty</Member>
+        <Member type="Field">public DependencyProperty VolumeProperty</Member>
+        <Member type="Property">public Uri Source { get; set; }</Member>
+        <Member type="Property">public Double Volume { get; set; }</Member>
+        <Member type="Constructor">public PlaySoundAction()</Member>
+        <Member type="Constructor">static PlaySoundAction()</Member>
+        <Member type="Method">protected virtual Void SetMediaElementProperties(MediaElement mediaElement)</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StoryboardAction</Name>
+        <Access>Public</Access>
+        <Location left="2768" top="1926" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty StoryboardProperty</Member>
+        <Member type="Property">public Storyboard Storyboard { get; set; }</Member>
+        <Member type="Constructor">protected StoryboardAction()</Member>
+        <Member type="Constructor">static StoryboardAction()</Member>
+        <Member type="Method">private static Void OnStoryboardChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">protected virtual Void OnStoryboardChanged(DependencyPropertyChangedEventArgs args)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ControlStoryboardAction</Name>
+        <Access>Public</Access>
+        <Location left="2556" top="1926" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty ControlStoryboardProperty</Member>
+        <Member type="Property">public ControlStoryboardOption ControlStoryboardOption { get; set; }</Member>
+        <Member type="Constructor">public ControlStoryboardAction()</Member>
+        <Member type="Constructor">static ControlStoryboardAction()</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StoryboardTrigger</Name>
+        <Access>Public</Access>
+        <Location left="2344" top="1926" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty StoryboardProperty</Member>
+        <Member type="Property">public Storyboard Storyboard { get; set; }</Member>
+        <Member type="Constructor">protected StoryboardTrigger()</Member>
+        <Member type="Constructor">static StoryboardTrigger()</Member>
+        <Member type="Method">private static Void OnStoryboardChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">protected virtual Void OnStoryboardChanged(DependencyPropertyChangedEventArgs args)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StoryboardCompletedTrigger</Name>
+        <Access>Public</Access>
+        <Location left="2132" top="1926" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public StoryboardCompletedTrigger()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">protected virtual Void OnStoryboardChanged(DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private Void Storyboard_Completed(Object sender, EventArgs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TransitionEffect</Name>
+        <Access>Public</Access>
+        <Location left="1920" top="1926" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty InputProperty</Member>
+        <Member type="Field">public DependencyProperty OldImageProperty</Member>
+        <Member type="Field">public DependencyProperty ProgressProperty</Member>
+        <Member type="Property">public Brush Input { get; set; }</Member>
+        <Member type="Property">public Brush OldImage { get; set; }</Member>
+        <Member type="Property">public Double Progress { get; set; }</Member>
+        <Member type="Constructor">protected TransitionEffect()</Member>
+        <Member type="Constructor">static TransitionEffect()</Member>
+        <Member type="Method">public new TransitionEffect CloneCurrentValue()</Member>
+        <Member type="Method">protected abstract TransitionEffect DeepCopy()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FluidMoveBehaviorBase</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="1926" />
+        <Size width="162" height="519" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty AppliesToProperty</Member>
+        <Member type="Field">public DependencyProperty IsActiveProperty</Member>
+        <Member type="Field">public DependencyProperty TagProperty</Member>
+        <Member type="Field">public DependencyProperty TagPathProperty</Member>
+        <Member type="Field">protected DependencyProperty IdentityTagProperty</Member>
+        <Member type="Field">internal static Dictionary&lt;Object, TagData&gt; TagDictionary</Member>
+        <Member type="Field">private static DateTime nextToLastPurgeTick</Member>
+        <Member type="Field">private static DateTime lastPurgeTick</Member>
+        <Member type="Field">private static TimeSpan minTickDelta</Member>
+        <Member type="Property">public FluidMoveScope AppliesTo { get; set; }</Member>
+        <Member type="Property">public Boolean IsActive { get; set; }</Member>
+        <Member type="Property">public TagType Tag { get; set; }</Member>
+        <Member type="Property">public String TagPath { get; set; }</Member>
+        <Member type="Property">protected virtual Boolean ShouldSkipInitialLayout { get; }</Member>
+        <Member type="Constructor">protected FluidMoveBehaviorBase()</Member>
+        <Member type="Constructor">static FluidMoveBehaviorBase()</Member>
+        <Member type="Method">protected static Object GetIdentityTag(DependencyObject obj)</Member>
+        <Member type="Method">protected static Void SetIdentityTag(DependencyObject obj, Object value)</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">private Void AssociatedObject_LayoutUpdated(Object sender, EventArgs e)</Member>
+        <Member type="Method">private Void UpdateLayoutTransition(FrameworkElement child)</Member>
+        <Member type="Method">internal abstract Void UpdateLayoutTransitionCore(FrameworkElement child, FrameworkElement root, Object tag, TagData newTagData)</Member>
+        <Member type="Method">protected virtual Void EnsureTags(FrameworkElement child)</Member>
+        <Member type="Method">private static FrameworkElement GetVisualRoot(FrameworkElement child)</Member>
+        <Member type="Method">internal static Rect TranslateRect(Rect rect, FrameworkElement from, FrameworkElement to)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FluidMoveSetTagBehavior</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="1926" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FluidMoveSetTagBehavior()</Member>
+        <Member type="Method">internal virtual Void UpdateLayoutTransitionCore(FrameworkElement child, FrameworkElement root, Object tag, TagData newTagData)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FluidMoveBehavior</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="1926" />
+        <Size width="162" height="706" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty DurationProperty</Member>
+        <Member type="Field">public DependencyProperty InitialTagProperty</Member>
+        <Member type="Field">public DependencyProperty InitialTagPathProperty</Member>
+        <Member type="Field">private DependencyProperty initialIdentityTagProperty</Member>
+        <Member type="Field">public DependencyProperty FloatAboveProperty</Member>
+        <Member type="Field">public DependencyProperty EaseXProperty</Member>
+        <Member type="Field">public DependencyProperty EaseYProperty</Member>
+        <Member type="Field">private DependencyProperty overlayProperty</Member>
+        <Member type="Field">private DependencyProperty cacheDuringOverlayProperty</Member>
+        <Member type="Field">private DependencyProperty hasTransformWrapperProperty</Member>
+        <Member type="Field">private static Dictionary&lt;Object, Storyboard&gt; transitionStoryboardDictionary</Member>
+        <Member type="Property">public Duration Duration { get; set; }</Member>
+        <Member type="Property">public TagType InitialTag { get; set; }</Member>
+        <Member type="Property">public String InitialTagPath { get; set; }</Member>
+        <Member type="Property">public Boolean FloatAbove { get; set; }</Member>
+        <Member type="Property">public IEasingFunction EaseX { get; set; }</Member>
+        <Member type="Property">public IEasingFunction EaseY { get; set; }</Member>
+        <Member type="Property">protected virtual Boolean ShouldSkipInitialLayout { get; }</Member>
+        <Member type="Constructor">public FluidMoveBehavior()</Member>
+        <Member type="Constructor">static FluidMoveBehavior()</Member>
+        <Member type="Method">private static Object GetInitialIdentityTag(DependencyObject obj)</Member>
+        <Member type="Method">private static Void SetInitialIdentityTag(DependencyObject obj, Object value)</Member>
+        <Member type="Method">private static Object GetOverlay(DependencyObject obj)</Member>
+        <Member type="Method">private static Void SetOverlay(DependencyObject obj, Object value)</Member>
+        <Member type="Method">private static Object GetCacheDuringOverlay(DependencyObject obj)</Member>
+        <Member type="Method">private static Void SetCacheDuringOverlay(DependencyObject obj, Object value)</Member>
+        <Member type="Method">private static Boolean GetHasTransformWrapper(DependencyObject obj)</Member>
+        <Member type="Method">private static Void SetHasTransformWrapper(DependencyObject obj, Boolean value)</Member>
+        <Member type="Method">protected virtual Void EnsureTags(FrameworkElement child)</Member>
+        <Member type="Method">internal virtual Void UpdateLayoutTransitionCore(FrameworkElement child, FrameworkElement root, Object tag, TagData newTagData)</Member>
+        <Member type="Method">private Storyboard CreateTransitionStoryboard(FrameworkElement child, Boolean usingBeforeLoaded, ref Rect layoutRect, ref Rect currentRect)</Member>
+        <Member type="Method">private static Void AddTransform(FrameworkElement child, Transform transform)</Member>
+        <Member type="Method">private static Transform GetTransform(FrameworkElement child)</Member>
+        <Member type="Method">private static Void RemoveTransform(FrameworkElement child)</Member>
+        <Member type="Method">private static Void TransferLocalValue(FrameworkElement element, DependencyProperty source, DependencyProperty dest)</Member>
+        <Member type="Method">private static Boolean IsClose(Double a, Double b)</Member>
+        <Member type="Method">private static Boolean IsEmptyRect(Rect rect)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AdornerContainer</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="1926" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private UIElement child</Member>
+        <Member type="Property">public UIElement Child { get; set; }</Member>
+        <Member type="Property">protected virtual Int32 VisualChildrenCount { get; }</Member>
+        <Member type="Constructor">public AdornerContainer(UIElement adornedElement)</Member>
+        <Member type="Method">protected virtual Size ArrangeOverride(Size finalSize)</Member>
+        <Member type="Method">protected virtual Visual GetVisualChild(Int32 index)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MouseDragElementBehavior</Name>
+        <Access>Public</Access>
+        <Location left="860" top="1926" />
+        <Size width="162" height="740" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Boolean settingPosition</Member>
+        <Member type="Field">private Point relativePosition</Member>
+        <Member type="Field">private Transform cachedRenderTransform</Member>
+        <Member type="Field">public DependencyProperty XProperty</Member>
+        <Member type="Field">public DependencyProperty YProperty</Member>
+        <Member type="Field">public DependencyProperty ConstrainToParentBoundsProperty</Member>
+        <Member type="Property">public Double X { get; set; }</Member>
+        <Member type="Property">public Double Y { get; set; }</Member>
+        <Member type="Property">public Boolean ConstrainToParentBounds { get; set; }</Member>
+        <Member type="Property">private Point ActualPosition { get; }</Member>
+        <Member type="Property">private Rect ElementBounds { get; }</Member>
+        <Member type="Property">private FrameworkElement ParentElement { get; }</Member>
+        <Member type="Property">private UIElement RootElement { get; }</Member>
+        <Member type="Property">private Transform RenderTransform { get; set; }</Member>
+        <Member type="Event">public event MouseEventHandler DragBegun</Member>
+        <Member type="Event">public event MouseEventHandler Dragging</Member>
+        <Member type="Event">public event MouseEventHandler DragFinished</Member>
+        <Member type="Constructor">public MouseDragElementBehavior()</Member>
+        <Member type="Constructor">static MouseDragElementBehavior()</Member>
+        <Member type="Method">private static Void OnXChanged(Object sender, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private static Void OnYChanged(Object sender, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private static Void OnConstrainToParentBoundsChanged(Object sender, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private Void UpdatePosition(Point point)</Member>
+        <Member type="Method">private Void ApplyTranslation(Double x, Double y)</Member>
+        <Member type="Method">internal Void ApplyTranslationTransform(Double x, Double y)</Member>
+        <Member type="Method">internal static Transform CloneTransform(Transform transform)</Member>
+        <Member type="Method">private Void UpdatePosition()</Member>
+        <Member type="Method">internal Void StartDrag(Point positionInElementCoordinates)</Member>
+        <Member type="Method">internal Void HandleDrag(Point newPositionInElementCoordinates)</Member>
+        <Member type="Method">internal Void EndDrag()</Member>
+        <Member type="Method">private Void OnMouseLeftButtonDown(Object sender, MouseButtonEventArgs e)</Member>
+        <Member type="Method">private Void OnLostMouseCapture(Object sender, MouseEventArgs e)</Member>
+        <Member type="Method">private Void OnMouseLeftButtonUp(Object sender, MouseButtonEventArgs e)</Member>
+        <Member type="Method">private Void OnMouseMove(Object sender, MouseEventArgs e)</Member>
+        <Member type="Method">private static Boolean RectContainsRect(Rect rect1, Rect rect2)</Member>
+        <Member type="Method">private static Point TransformAsVector(GeneralTransform transform, Double x, Double y)</Member>
+        <Member type="Method">private static Point GetTransformOffset(GeneralTransform transform)</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>KeyTrigger</Name>
+        <Access>Public</Access>
+        <Location left="648" top="1926" />
+        <Size width="162" height="366" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private UIElement targetElement</Member>
+        <Member type="Field">public DependencyProperty KeyProperty</Member>
+        <Member type="Field">public DependencyProperty ModifiersProperty</Member>
+        <Member type="Field">public DependencyProperty ActiveOnFocusProperty</Member>
+        <Member type="Field">public DependencyProperty FiredOnProperty</Member>
+        <Member type="Property">public Key Key { get; set; }</Member>
+        <Member type="Property">public ModifierKeys Modifiers { get; set; }</Member>
+        <Member type="Property">public Boolean ActiveOnFocus { get; set; }</Member>
+        <Member type="Property">public KeyTriggerFiredOn FiredOn { get; set; }</Member>
+        <Member type="Constructor">public KeyTrigger()</Member>
+        <Member type="Constructor">static KeyTrigger()</Member>
+        <Member type="Method">protected virtual String GetEventName()</Member>
+        <Member type="Method">private Void OnKeyPress(Object sender, KeyEventArgs e)</Member>
+        <Member type="Method">private static ModifierKeys GetActualModifiers(Key key, ModifierKeys modifiers)</Member>
+        <Member type="Method">protected virtual Void OnEvent(EventArgs eventArgs)</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">private static UIElement GetRoot(DependencyObject current)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TranslateZoomRotateBehavior</Name>
+        <Access>Public</Access>
+        <Location left="436" top="1926" />
+        <Size width="162" height="774" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Transform cachedRenderTransform</Member>
+        <Member type="Field">private Boolean isDragging</Member>
+        <Member type="Field">private Boolean isAdjustingTransform</Member>
+        <Member type="Field">private Point lastMousePoint</Member>
+        <Member type="Field">private Double lastScaleX</Member>
+        <Member type="Field">private Double lastScaleY</Member>
+        <Member type="Field">public DependencyProperty SupportedGesturesProperty</Member>
+        <Member type="Field">public DependencyProperty TranslateFrictionProperty</Member>
+        <Member type="Field">public DependencyProperty RotationalFrictionProperty</Member>
+        <Member type="Field">public DependencyProperty ConstrainToParentBoundsProperty</Member>
+        <Member type="Field">public DependencyProperty MinimumScaleProperty</Member>
+        <Member type="Field">public DependencyProperty MaximumScaleProperty</Member>
+        <Member type="Field">private const Double HardMinimumScale = 1E-06</Member>
+        <Member type="Property">public ManipulationModes SupportedGestures { get; set; }</Member>
+        <Member type="Property">public Double TranslateFriction { get; set; }</Member>
+        <Member type="Property">public Double RotationalFriction { get; set; }</Member>
+        <Member type="Property">public Boolean ConstrainToParentBounds { get; set; }</Member>
+        <Member type="Property">public Double MinimumScale { get; set; }</Member>
+        <Member type="Property">public Double MaximumScale { get; set; }</Member>
+        <Member type="Property">private Transform RenderTransform { get; set; }</Member>
+        <Member type="Property">private Point RenderTransformOriginInElementCoordinates { get; }</Member>
+        <Member type="Property">private Matrix FullTransformValue { get; }</Member>
+        <Member type="Property">private MatrixTransform MatrixTransform { get; }</Member>
+        <Member type="Property">private FrameworkElement ParentElement { get; }</Member>
+        <Member type="Constructor">public TranslateZoomRotateBehavior()</Member>
+        <Member type="Constructor">static TranslateZoomRotateBehavior()</Member>
+        <Member type="Method">private static Void frictionChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)</Member>
+        <Member type="Method">private static Object coerceFriction(DependencyObject sender, Object value)</Member>
+        <Member type="Method">internal Void EnsureTransform()</Member>
+        <Member type="Method">internal Void ApplyRotationTransform(Double angle, Point rotationPoint)</Member>
+        <Member type="Method">internal Void ApplyScaleTransform(Double scaleX, Double scaleY, Point scalePoint)</Member>
+        <Member type="Method">internal Void ApplyTranslateTransform(Double x, Double y)</Member>
+        <Member type="Method">private Void ManipulationStarting(Object sender, ManipulationStartingEventArgs e)</Member>
+        <Member type="Method">private Void ManipulationInertiaStarting(Object sender, ManipulationInertiaStartingEventArgs e)</Member>
+        <Member type="Method">private Void ManipulationDelta(Object sender, ManipulationDeltaEventArgs e)</Member>
+        <Member type="Method">private Void MouseLeftButtonDown(Object sender, MouseButtonEventArgs e)</Member>
+        <Member type="Method">private Void MouseLeftButtonUp(Object sender, MouseButtonEventArgs e)</Member>
+        <Member type="Method">private Void AssociatedObject_LostMouseCapture(Object sender, MouseEventArgs e)</Member>
+        <Member type="Method">private Void AssociatedObject_MouseMove(Object sender, MouseEventArgs e)</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ActionCommand</Name>
+        <Access>Public</Access>
+        <Location left="224" top="1926" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Action action</Member>
+        <Member type="Field">private Action&lt;Object&gt; objectAction</Member>
+        <Member type="Event">private event EventHandler CanExecuteChanged</Member>
+        <Member type="Event">event EventHandler System.Windows.Input.ICommand.CanExecuteChanged</Member>
+        <Member type="Constructor">public ActionCommand(Action action)</Member>
+        <Member type="Constructor">public ActionCommand(Action&lt;Object&gt; objectAction)</Member>
+        <Member type="Method">Boolean System.Windows.Input.ICommand.CanExecute(Object parameter)</Member>
+        <Member type="Method">public Void Execute(Object parameter)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CallMethodAction</Name>
+        <Access>Public</Access>
+        <Location left="12" top="1926" />
+        <Size width="162" height="366" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;MethodDescriptor&gt; methodDescriptors</Member>
+        <Member type="Field">public DependencyProperty TargetObjectProperty</Member>
+        <Member type="Field">public DependencyProperty MethodNameProperty</Member>
+        <Member type="Property">public Object TargetObject { get; set; }</Member>
+        <Member type="Property">public String MethodName { get; set; }</Member>
+        <Member type="Property">private Object Target { get; }</Member>
+        <Member type="Constructor">public CallMethodAction()</Member>
+        <Member type="Constructor">static CallMethodAction()</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">private MethodDescriptor FindBestMethod(Object parameter)</Member>
+        <Member type="Method">private Void UpdateMethodInfo()</Member>
+        <Member type="Method">private Boolean IsMethodValid(MethodInfo method)</Member>
+        <Member type="Method">private static Boolean AreMethodParamsValid(ParameterInfo[] methodParams)</Member>
+        <Member type="Method">private static Void OnMethodNameChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private static Void OnTargetObjectChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ChangePropertyAction</Name>
+        <Access>Public</Access>
+        <Location left="2768" top="677" />
+        <Size width="162" height="434" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty PropertyNameProperty</Member>
+        <Member type="Field">public DependencyProperty ValueProperty</Member>
+        <Member type="Field">public DependencyProperty DurationProperty</Member>
+        <Member type="Field">public DependencyProperty IncrementProperty</Member>
+        <Member type="Property">public String PropertyName { get; set; }</Member>
+        <Member type="Property">public Object Value { get; set; }</Member>
+        <Member type="Property">public Duration Duration { get; set; }</Member>
+        <Member type="Property">public Boolean Increment { get; set; }</Member>
+        <Member type="Constructor">public ChangePropertyAction()</Member>
+        <Member type="Constructor">static ChangePropertyAction()</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Member type="Method">private Void AnimatePropertyChange(PropertyInfo propertyInfo, Object fromValue, Object newValue)</Member>
+        <Member type="Method">private static Object GetCurrentPropertyValue(Object target, PropertyInfo propertyInfo)</Member>
+        <Member type="Method">private Void ValidateAnimationPossible(Type targetType)</Member>
+        <Member type="Method">private Timeline CreateKeyFrameAnimation(Object newValue, Object fromValue)</Member>
+        <Member type="Method">private Timeline CreatePointAnimation(Point fromValue, Point newValue)</Member>
+        <Member type="Method">private Timeline CreateColorAnimation(Color fromValue, Color newValue)</Member>
+        <Member type="Method">private Timeline CreateDoubleAnimation(Double fromValue, Double newValue)</Member>
+        <Member type="Method">private Void ValidateProperty(PropertyInfo propertyInfo)</Member>
+        <Member type="Method">private Object IncrementCurrentValue(PropertyInfo propertyInfo)</Member>
+        <Member type="Method">private static Object TryAddition(Object currentValue, Object value)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ComparisonCondition</Name>
+        <Access>Public</Access>
+        <Location left="2556" top="677" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty LeftOperandProperty</Member>
+        <Member type="Field">public DependencyProperty OperatorProperty</Member>
+        <Member type="Field">public DependencyProperty RightOperandProperty</Member>
+        <Member type="Property">public Object LeftOperand { get; set; }</Member>
+        <Member type="Property">public Object RightOperand { get; set; }</Member>
+        <Member type="Property">public ComparisonConditionType Operator { get; set; }</Member>
+        <Member type="Constructor">public ComparisonCondition()</Member>
+        <Member type="Constructor">static ComparisonCondition()</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Member type="Method">public Boolean Evaluate()</Member>
+        <Member type="Method">private Void EnsureBindingUpToDate()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConditionalExpression</Name>
+        <Access>Public</Access>
+        <Location left="2344" top="677" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty ConditionsProperty</Member>
+        <Member type="Field">public DependencyProperty ForwardChainingProperty</Member>
+        <Member type="Property">public ForwardChaining ForwardChaining { get; set; }</Member>
+        <Member type="Property">public ConditionCollection Conditions { get; }</Member>
+        <Member type="Constructor">public ConditionalExpression()</Member>
+        <Member type="Constructor">static ConditionalExpression()</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Member type="Method">public Boolean Evaluate()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConditionBehavior</Name>
+        <Access>Public</Access>
+        <Location left="2132" top="677" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty ConditionProperty</Member>
+        <Member type="Property">public ICondition Condition { get; set; }</Member>
+        <Member type="Constructor">public ConditionBehavior()</Member>
+        <Member type="Constructor">static ConditionBehavior()</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">private Void OnPreviewInvoke(Object sender, PreviewInvokeEventArgs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConditionCollection</Name>
+        <Access>Public</Access>
+        <Location left="1920" top="677" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ConditionCollection()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataStateBehavior</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="677" />
+        <Size width="162" height="451" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty BindingProperty</Member>
+        <Member type="Field">public DependencyProperty ValueProperty</Member>
+        <Member type="Field">public DependencyProperty TrueStateProperty</Member>
+        <Member type="Field">public DependencyProperty FalseStateProperty</Member>
+        <Member type="Property">public Object Binding { get; set; }</Member>
+        <Member type="Property">public Object Value { get; set; }</Member>
+        <Member type="Property">public String TrueState { get; set; }</Member>
+        <Member type="Property">public String FalseState { get; set; }</Member>
+        <Member type="Property">private FrameworkElement TargetObject { get; }</Member>
+        <Member type="Property">private IEnumerable&lt;VisualState&gt; TargetedVisualStates { get; }</Member>
+        <Member type="Constructor">public DataStateBehavior()</Member>
+        <Member type="Constructor">static DataStateBehavior()</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">private Void ValidateStateNamesDeferred()</Member>
+        <Member type="Method">internal static Boolean IsElementLoaded(FrameworkElement element)</Member>
+        <Member type="Method">private Void ValidateStateNames()</Member>
+        <Member type="Method">private Void ValidateStateName(String stateName)</Member>
+        <Member type="Method">private static Void OnBindingChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private static Void OnValueChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private static Void OnTrueStateChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private static Void OnFalseStateChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private Void Evaluate()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataStoreChangedTrigger</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="677" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DataStoreChangedTrigger()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataTrigger</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="677" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty ValueProperty</Member>
+        <Member type="Field">public DependencyProperty ComparisonProperty</Member>
+        <Member type="Property">public Object Value { get; set; }</Member>
+        <Member type="Property">public ComparisonConditionType Comparison { get; set; }</Member>
+        <Member type="Constructor">public DataTrigger()</Member>
+        <Member type="Constructor">static DataTrigger()</Member>
+        <Member type="Method">protected virtual Void EvaluateBindingChange(Object args)</Member>
+        <Member type="Method">private static Void OnValueChanged(Object sender, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private static Void OnComparisonChanged(Object sender, DependencyPropertyChangedEventArgs args)</Member>
+        <Member type="Method">private Boolean Compare()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ExtendedVisualStateManager</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="677" />
+        <Size width="162" height="1199" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Boolean changingState</Member>
+        <Member type="Field">public DependencyProperty UseFluidLayoutProperty</Member>
+        <Member type="Field">public DependencyProperty RuntimeVisibilityPropertyProperty</Member>
+        <Member type="Field">internal DependencyProperty OriginalLayoutValuesProperty</Member>
+        <Member type="Field">internal DependencyProperty LayoutStoryboardProperty</Member>
+        <Member type="Field">internal DependencyProperty CurrentStateProperty</Member>
+        <Member type="Field">public DependencyProperty TransitionEffectProperty</Member>
+        <Member type="Field">internal DependencyProperty TransitionEffectStoryboardProperty</Member>
+        <Member type="Field">internal DependencyProperty DidCacheBackgroundProperty</Member>
+        <Member type="Field">internal DependencyProperty CachedBackgroundProperty</Member>
+        <Member type="Field">internal DependencyProperty CachedEffectProperty</Member>
+        <Member type="Field">private static List&lt;FrameworkElement&gt; MovingElements</Member>
+        <Member type="Field">private static Storyboard LayoutTransitionStoryboard</Member>
+        <Member type="Field">private static List&lt;DependencyProperty&gt; LayoutProperties</Member>
+        <Member type="Field">private static List&lt;DependencyProperty&gt; ChildAffectingLayoutProperties</Member>
+        <Member type="Property">public static Boolean IsRunningFluidLayoutTransition { get; }</Member>
+        <Member type="Constructor">public ExtendedVisualStateManager()</Member>
+        <Member type="Constructor">static ExtendedVisualStateManager()</Member>
+        <Member type="Method">public static Boolean GetUseFluidLayout(DependencyObject obj)</Member>
+        <Member type="Method">public static Void SetUseFluidLayout(DependencyObject obj, Boolean value)</Member>
+        <Member type="Method">public static DependencyProperty GetRuntimeVisibilityProperty(DependencyObject obj)</Member>
+        <Member type="Method">public static Void SetRuntimeVisibilityProperty(DependencyObject obj, DependencyProperty value)</Member>
+        <Member type="Method">internal static List&lt;OriginalLayoutValueRecord&gt; GetOriginalLayoutValues(DependencyObject obj)</Member>
+        <Member type="Method">internal static Void SetOriginalLayoutValues(DependencyObject obj, List&lt;OriginalLayoutValueRecord&gt; value)</Member>
+        <Member type="Method">internal static Storyboard GetLayoutStoryboard(DependencyObject obj)</Member>
+        <Member type="Method">internal static Void SetLayoutStoryboard(DependencyObject obj, Storyboard value)</Member>
+        <Member type="Method">internal static VisualState GetCurrentState(DependencyObject obj)</Member>
+        <Member type="Method">internal static Void SetCurrentState(DependencyObject obj, VisualState value)</Member>
+        <Member type="Method">public static TransitionEffect GetTransitionEffect(DependencyObject obj)</Member>
+        <Member type="Method">public static Void SetTransitionEffect(DependencyObject obj, TransitionEffect value)</Member>
+        <Member type="Method">internal static Storyboard GetTransitionEffectStoryboard(DependencyObject obj)</Member>
+        <Member type="Method">internal static Void SetTransitionEffectStoryboard(DependencyObject obj, Storyboard value)</Member>
+        <Member type="Method">internal static Boolean GetDidCacheBackground(DependencyObject obj)</Member>
+        <Member type="Method">internal static Void SetDidCacheBackground(DependencyObject obj, Boolean value)</Member>
+        <Member type="Method">internal static Object GetCachedBackground(DependencyObject obj)</Member>
+        <Member type="Method">internal static Void SetCachedBackground(DependencyObject obj, Object value)</Member>
+        <Member type="Method">internal static Effect GetCachedEffect(DependencyObject obj)</Member>
+        <Member type="Method">internal static Void SetCachedEffect(DependencyObject obj, Effect value)</Member>
+        <Member type="Method">private static Boolean IsVisibilityProperty(DependencyProperty property)</Member>
+        <Member type="Method">private static DependencyProperty LayoutPropertyFromTimeline(Timeline timeline, Boolean forceRuntimeProperty)</Member>
+        <Member type="Method">protected virtual Boolean GoToStateCore(FrameworkElement control, FrameworkElement stateGroupsRoot, String stateName, VisualStateGroup group, VisualState state, Boolean useTransitions)</Member>
+        <Member type="Method">private static Void control_LayoutUpdated(Object sender, EventArgs e)</Member>
+        <Member type="Method">private static Void StopAnimations()</Member>
+        <Member type="Method">private static Boolean PrepareTransitionEffectImage(FrameworkElement stateGroupsRoot, Boolean useTransitions, VisualTransition transition)</Member>
+        <Member type="Method">private Boolean TransitionEffectAwareGoToStateCore(FrameworkElement control, FrameworkElement stateGroupsRoot, String stateName, VisualStateGroup group, VisualState state, Boolean useTransitions, VisualTransition transition, Boolean animateWithTransitionEffect, VisualState previousState)</Member>
+        <Member type="Method">private static Boolean FinishesWithZeroOpacity(FrameworkElement control, FrameworkElement stateGroupsRoot, VisualState state, VisualState previousState)</Member>
+        <Member type="Method">private static Boolean TimelineIsAnimatingRootOpacity(Timeline timeline, FrameworkElement control, FrameworkElement stateGroupsRoot)</Member>
+        <Member type="Method">private static Void AnimateTransitionEffect(FrameworkElement stateGroupsRoot, VisualTransition transition)</Member>
+        <Member type="Method">private static Void FinishTransitionEffectAnimation(FrameworkElement stateGroupsRoot)</Member>
+        <Member type="Method">private static VisualTransition FindTransition(VisualStateGroup group, VisualState previousState, VisualState state)</Member>
+        <Member type="Method">private static Storyboard ExtractLayoutStoryboard(VisualState state)</Member>
+        <Member type="Method">private static List&lt;FrameworkElement&gt; FindTargetElements(FrameworkElement control, FrameworkElement templateRoot, Storyboard layoutStoryboard, List&lt;OriginalLayoutValueRecord&gt; originalValueRecords, List&lt;FrameworkElement&gt; movingElements)</Member>
+        <Member type="Method">private static Object GetTimelineTarget(FrameworkElement control, FrameworkElement templateRoot, Timeline timeline)</Member>
+        <Member type="Method">private static Dictionary&lt;FrameworkElement, Rect&gt; GetRectsOfTargets(List&lt;FrameworkElement&gt; targets, List&lt;FrameworkElement&gt; movingElements)</Member>
+        <Member type="Method">internal static Rect GetLayoutRect(FrameworkElement element)</Member>
+        <Member type="Method">private static Dictionary&lt;FrameworkElement, Double&gt; GetOldOpacities(FrameworkElement control, FrameworkElement templateRoot, Storyboard layoutStoryboard, List&lt;OriginalLayoutValueRecord&gt; originalValueRecords, List&lt;FrameworkElement&gt; movingElements)</Member>
+        <Member type="Method">private static Void SetLayoutStoryboardProperties(FrameworkElement control, FrameworkElement templateRoot, Storyboard layoutStoryboard, List&lt;OriginalLayoutValueRecord&gt; originalValueRecords)</Member>
+        <Member type="Method">private static Object GetValueFromTimeline(Timeline timeline, out Boolean gotValue)</Member>
+        <Member type="Method">private static Void WrapMovingElementsInCanvases(List&lt;FrameworkElement&gt; movingElements, Dictionary&lt;FrameworkElement, Rect&gt; oldRects, Dictionary&lt;FrameworkElement, Rect&gt; newRects)</Member>
+        <Member type="Method">private static Void UnwrapMovingElementsFromCanvases(List&lt;FrameworkElement&gt; movingElements)</Member>
+        <Member type="Method">private static Void CopyLayoutProperties(FrameworkElement source, FrameworkElement target, Boolean restoring)</Member>
+        <Member type="Method">private static Storyboard CreateLayoutTransitionStoryboard(VisualTransition transition, List&lt;FrameworkElement&gt; movingElements, Dictionary&lt;FrameworkElement, Double&gt; oldOpacities)</Member>
+        <Member type="Method">private static Void TransferLocalValue(FrameworkElement element, DependencyProperty sourceProperty, DependencyProperty destProperty)</Member>
+        <Member type="Method">private static Object CacheLocalValueHelper(DependencyObject dependencyObject, DependencyProperty property)</Member>
+        <Member type="Method">private static Void ReplaceCachedLocalValueHelper(FrameworkElement element, DependencyProperty property, Object value)</Member>
+        <Member type="Method">private static Boolean IsClose(Double a, Double b)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GoToStateAction</Name>
+        <Access>Public</Access>
+        <Location left="860" top="677" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty UseTransitionsProperty</Member>
+        <Member type="Field">public DependencyProperty StateNameProperty</Member>
+        <Member type="Property">public Boolean UseTransitions { get; set; }</Member>
+        <Member type="Property">public String StateName { get; set; }</Member>
+        <Member type="Property">private FrameworkElement StateTarget { get; set; }</Member>
+        <Member type="Property">private Boolean IsTargetObjectSet { get; }</Member>
+        <Member type="Constructor">public GoToStateAction()</Member>
+        <Member type="Constructor">static GoToStateAction()</Member>
+        <Member type="Method">protected virtual Void OnTargetChanged(FrameworkElement oldTarget, FrameworkElement newTarget)</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Member type="Method">internal Void InvokeImpl(FrameworkElement stateTarget)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LaunchUriOrFileAction</Name>
+        <Access>Public</Access>
+        <Location left="648" top="677" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty PathProperty</Member>
+        <Member type="Property">public String Path { get; set; }</Member>
+        <Member type="Constructor">public LaunchUriOrFileAction()</Member>
+        <Member type="Constructor">static LaunchUriOrFileAction()</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PropertyChangedTrigger</Name>
+        <Access>Public</Access>
+        <Location left="436" top="677" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty BindingProperty</Member>
+        <Member type="Property">public Object Binding { get; set; }</Member>
+        <Member type="Constructor">public PropertyChangedTrigger()</Member>
+        <Member type="Constructor">static PropertyChangedTrigger()</Member>
+        <Member type="Method">protected virtual Void EvaluateBindingChange(Object args)</Member>
+        <Member type="Method">protected virtual Void OnAttached()</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">private Void OnPreviewInvoke(Object sender, PreviewInvokeEventArgs e)</Member>
+        <Member type="Method">private static Void OnBindingChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PrototypingActionBase</Name>
+        <Access>Public</Access>
+        <Location left="224" top="677" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">protected PrototypingActionBase()</Member>
+        <Member type="Method">internal Void TestInvoke(Object parameter)</Member>
+        <Member type="Method">protected UserControl GetContainingScreen()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ActivateStateAction</Name>
+        <Access>Public</Access>
+        <Location left="12" top="677" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty TargetScreenProperty</Member>
+        <Member type="Field">public DependencyProperty TargetStateProperty</Member>
+        <Member type="Property">public String TargetScreen { get; set; }</Member>
+        <Member type="Property">public String TargetState { get; set; }</Member>
+        <Member type="Constructor">public ActivateStateAction()</Member>
+        <Member type="Constructor">static ActivateStateAction()</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NavigateToScreenAction</Name>
+        <Access>Public</Access>
+        <Location left="2768" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty TargetScreenProperty</Member>
+        <Member type="Property">public String TargetScreen { get; set; }</Member>
+        <Member type="Constructor">public NavigateToScreenAction()</Member>
+        <Member type="Constructor">static NavigateToScreenAction()</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NavigateBackAction</Name>
+        <Access>Public</Access>
+        <Location left="2556" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public NavigateBackAction()</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NavigateForwardAction</Name>
+        <Access>Public</Access>
+        <Location left="2344" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public NavigateForwardAction()</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PlaySketchFlowAnimationAction</Name>
+        <Access>Public</Access>
+        <Location left="2132" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty TargetScreenProperty</Member>
+        <Member type="Field">public DependencyProperty SketchFlowAnimationProperty</Member>
+        <Member type="Property">public String TargetScreen { get; set; }</Member>
+        <Member type="Property">public String SketchFlowAnimation { get; set; }</Member>
+        <Member type="Constructor">public PlaySketchFlowAnimationAction()</Member>
+        <Member type="Constructor">static PlaySketchFlowAnimationAction()</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NavigationMenuAction</Name>
+        <Access>Public</Access>
+        <Location left="1920" top="278" />
+        <Size width="162" height="315" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty InactiveStateProperty</Member>
+        <Member type="Field">public DependencyProperty TargetScreenProperty</Member>
+        <Member type="Field">public DependencyProperty ActiveStateProperty</Member>
+        <Member type="Property">public String TargetScreen { get; set; }</Member>
+        <Member type="Property">public String ActiveState { get; set; }</Member>
+        <Member type="Property">public String InactiveState { get; set; }</Member>
+        <Member type="Property">private Boolean IsTargetObjectSet { get; }</Member>
+        <Member type="Property">private FrameworkElement StateTarget { get; set; }</Member>
+        <Member type="Constructor">public NavigationMenuAction()</Member>
+        <Member type="Constructor">static NavigationMenuAction()</Member>
+        <Member type="Method">protected virtual Void OnTargetChanged(FrameworkElement oldTarget, FrameworkElement newTarget)</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Member type="Method">internal Void InvokeImpl(FrameworkElement stateTarget)</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RemoveItemInListBoxAction</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">private ListBoxItem ItemContainer { get; }</Member>
+        <Member type="Property">private ItemsControl ItemsControl { get; }</Member>
+        <Member type="Constructor">public RemoveItemInListBoxAction()</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RemoveElementAction</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RemoveElementAction()</Member>
+        <Member type="Method">protected virtual Void Invoke(Object parameter)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SetDataStoreValueAction</Name>
+        <Access>Public</Access>
+        <Location left="1284" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SetDataStoreValueAction()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TimerTrigger</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="278" />
+        <Size width="162" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ITickTimer timer</Member>
+        <Member type="Field">private EventArgs eventArgs</Member>
+        <Member type="Field">private Int32 tickCount</Member>
+        <Member type="Field">public DependencyProperty MillisecondsPerTickProperty</Member>
+        <Member type="Field">public DependencyProperty TotalTicksProperty</Member>
+        <Member type="Property">public Double MillisecondsPerTick { get; set; }</Member>
+        <Member type="Property">public Int32 TotalTicks { get; set; }</Member>
+        <Member type="Constructor">public TimerTrigger()</Member>
+        <Member type="Constructor">internal TimerTrigger(ITickTimer timer)</Member>
+        <Member type="Constructor">static TimerTrigger()</Member>
+        <Member type="Method">protected virtual Void OnEvent(EventArgs eventArgs)</Member>
+        <Member type="Method">protected virtual Void OnDetaching()</Member>
+        <Member type="Method">internal Void StartTimer()</Member>
+        <Member type="Method">internal Void StopTimer()</Member>
+        <Member type="Method">private Void OnTimerTick(Object sender, EventArgs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Data</Name>
+        <Access>Public</Access>
+        <Location left="860" top="278" />
+        <Size width="162" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Int32 CurrentSchemaVersion</Member>
+        <Member type="Field">public Int32 DefaultSchemaVersion</Member>
+        <Member type="Field">public Int32 MinValidSchemaVersion</Member>
+        <Member type="Property">public Int32 SchemaVersion { get; set; }</Member>
+        <Member type="Property">public Guid SketchFlowGuid { get; set; }</Member>
+        <Member type="Property">public String StartScreen { get; set; }</Member>
+        <Member type="Property">public List&lt;Screen&gt; Screens { get; set; }</Member>
+        <Member type="Property">public String SharePointDocumentLibrary { get; set; }</Member>
+        <Member type="Property">public String SharePointProjectName { get; set; }</Member>
+        <Member type="Property">public Int32 PrototypeRevision { get; set; }</Member>
+        <Member type="Property">public String BrandingText { get; set; }</Member>
+        <Member type="Property">public RuntimeOptionsData RuntimeOptions { get; set; }</Member>
+        <Member type="Property">public List&lt;VisualTag&gt; VisualTags { get; set; }</Member>
+        <Member type="Property">public ViewStateData ViewState { get; set; }</Member>
+        <Member type="Constructor">public Data()</Member>
+        <Member type="Constructor">static Data()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TagData</Name>
+        <Access>Internal</Access>
+        <Location left="648" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public FrameworkElement Child { get; set; }</Member>
+        <Member type="Property">public FrameworkElement Parent { get; set; }</Member>
+        <Member type="Property">public Rect ParentRect { get; set; }</Member>
+        <Member type="Property">public Rect AppRect { get; set; }</Member>
+        <Member type="Property">public DateTime Timestamp { get; set; }</Member>
+        <Member type="Property">public Object InitialTag { get; set; }</Member>
+        <Member type="Constructor">public TagData()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MethodDescriptor</Name>
+        <Access>Public</Access>
+        <Location left="436" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public MethodInfo MethodInfo { get; private set; }</Member>
+        <Member type="Property">public Boolean HasParameters { get; }</Member>
+        <Member type="Property">public Int32 ParameterCount { get; }</Member>
+        <Member type="Property">public ParameterInfo[] Parameters { get; private set; }</Member>
+        <Member type="Property">public Type SecondParameterType { get; }</Member>
+        <Member type="Constructor">public MethodDescriptor(MethodInfo methodInfo, ParameterInfo[] methodParams)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WrapperCanvas</Name>
+        <Access>Internal</Access>
+        <Location left="224" top="278" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal DependencyProperty SimulationProgressProperty</Member>
+        <Member type="Property">public Rect OldRect { get; set; }</Member>
+        <Member type="Property">public Rect NewRect { get; set; }</Member>
+        <Member type="Property">public Dictionary&lt;DependencyProperty, Object&gt; LocalValueCache { get; set; }</Member>
+        <Member type="Property">public Visibility DestinationVisibilityCache { get; set; }</Member>
+        <Member type="Property">public Double SimulationProgress { get; set; }</Member>
+        <Member type="Constructor">public WrapperCanvas()</Member>
+        <Member type="Constructor">static WrapperCanvas()</Member>
+        <Member type="Method">private static Void SimulationProgressChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OriginalLayoutValueRecord</Name>
+        <Access>Internal</Access>
+        <Location left="12" top="278" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public FrameworkElement Element { get; set; }</Member>
+        <Member type="Property">public DependencyProperty Property { get; set; }</Member>
+        <Member type="Property">public Object Value { get; set; }</Member>
+        <Member type="Constructor">public OriginalLayoutValueRecord()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DummyEasingFunction</Name>
+        <Access>Public</Access>
+        <Location left="2768" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public DependencyProperty DummyValueProperty</Member>
+        <Member type="Property">public Double DummyValue { get; set; }</Member>
+        <Member type="Constructor">public DummyEasingFunction()</Member>
+        <Member type="Constructor">static DummyEasingFunction()</Member>
+        <Member type="Method">protected virtual Freezable CreateInstanceCore()</Member>
+        <Member type="Method">protected virtual Double EaseInCore(Double normalizedTime)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DispatcherTickTimer</Name>
+        <Access>Internal</Access>
+        <Location left="2556" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private DispatcherTimer dispatcherTimer</Member>
+        <Member type="Property">public TimeSpan Interval { get; set; }</Member>
+        <Member type="Event">public event EventHandler Tick</Member>
+        <Member type="Constructor">public DispatcherTickTimer()</Member>
+        <Member type="Method">public Void Start()</Member>
+        <Member type="Method">public Void Stop()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RuntimeOptionsData</Name>
+        <Access>Public</Access>
+        <Location left="2344" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public Boolean HideNavigation { get; set; }</Member>
+        <Member type="Property">public Boolean HideAnnotationAndInk { get; set; }</Member>
+        <Member type="Property">public Boolean DisableInking { get; set; }</Member>
+        <Member type="Property">public Boolean HideDesignTimeAnnotations { get; set; }</Member>
+        <Member type="Property">public Boolean ShowDesignTimeAnnotationsAtStart { get; set; }</Member>
+        <Member type="Constructor">public RuntimeOptionsData()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ViewStateData</Name>
+        <Access>Public</Access>
+        <Location left="2132" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public Double Zoom { get; set; }</Member>
+        <Member type="Property">public Point? Center { get; set; }</Member>
+        <Member type="Constructor">public ViewStateData()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Screen</Name>
+        <Access>Public</Access>
+        <Location left="1920" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public ScreenType Type { get; set; }</Member>
+        <Member type="Property">public String ClassName { get; set; }</Member>
+        <Member type="Property">public String DisplayName { get; set; }</Member>
+        <Member type="Property">public String FileName { get; set; }</Member>
+        <Member type="Property">public List&lt;Annotation&gt; Annotations { get; set; }</Member>
+        <Member type="Property">public Point Position { get; set; }</Member>
+        <Member type="Property">public Int32? VisualTag { get; set; }</Member>
+        <Member type="Constructor">public Screen()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>VisualTag</Name>
+        <Access>Public</Access>
+        <Location left="1708" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Name { get; set; }</Member>
+        <Member type="Property">public String Color { get; set; }</Member>
+        <Member type="Constructor">public VisualTag()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>CustomPropertyValueEditor</Name>
+        <Access>Public</Access>
+        <Location left="1496" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Element = 0</Value>
+        <Value>Storyboard = 1</Value>
+        <Value>StateName = 2</Value>
+        <Value>ElementBinding = 3</Value>
+        <Value>PropertyBinding = 4</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>ScreenType</Name>
+        <Access>Internal</Access>
+        <Location left="1284" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>None = 0</Value>
+        <Value>Navigation = 1</Value>
+        <Value>Composition = 2</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>ControlStoryboardOption</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Play = 0</Value>
+        <Value>Stop = 1</Value>
+        <Value>TogglePlayPause = 2</Value>
+        <Value>Pause = 3</Value>
+        <Value>Resume = 4</Value>
+        <Value>SkipToFill = 5</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>FluidMoveScope</Name>
+        <Access>Public</Access>
+        <Location left="860" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Self = 0</Value>
+        <Value>Children = 1</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>TagType</Name>
+        <Access>Public</Access>
+        <Location left="648" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Element = 0</Value>
+        <Value>DataContext = 1</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>KeyTriggerFiredOn</Name>
+        <Access>Public</Access>
+        <Location left="436" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>KeyDown = 0</Value>
+        <Value>KeyUp = 1</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>ComparisonConditionType</Name>
+        <Access>Public</Access>
+        <Location left="224" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Equal = 0</Value>
+        <Value>NotEqual = 1</Value>
+        <Value>LessThan = 2</Value>
+        <Value>LessThanOrEqual = 3</Value>
+        <Value>GreaterThan = 4</Value>
+        <Value>GreaterThanOrEqual = 5</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>ForwardChaining</Name>
+        <Access>Public</Access>
+        <Location left="12" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>And = 0</Value>
+        <Value>Or = 1</Value>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Nesting" first="22" second="73">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="41" second="74">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="49" second="75">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="58" second="76">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="58" second="77">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="58" second="78">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="72" second="79">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="73" second="80">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="73" second="81">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="73" second="82">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Nesting" first="73" second="83">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="5" second="6">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="15" second="16">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="16" second="30">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="23" second="24">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="24" second="26">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="25" second="26">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="28" second="30">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="37" second="36">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="39" second="38">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="42" second="41">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="43" second="41">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="56" second="61">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="57" second="61">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="63" second="62">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="64" second="62">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="65" second="62">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="66" second="62">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="67" second="62">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="71" second="50">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="72" second="14">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="4" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="5" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="6" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="7" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="14" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="15" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="16" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="19" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="23" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="24" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="25" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="26" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="27" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="28" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="30" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="31" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="35" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="36" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="37" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="38" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="39" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="41" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="42" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="43" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="45" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="46" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="47" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="49" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="50" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="52" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="53" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="55" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="56" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="57" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="59" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="60" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="61" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="62" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="63" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="64" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="65" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="66" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="67" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="68" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="69" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="70" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="71" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="72" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="79" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="16" second="21">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>sourceNameResolver</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="24" second="21">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>targetResolver</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="72" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>timer</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
