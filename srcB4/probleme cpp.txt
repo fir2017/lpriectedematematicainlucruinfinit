@@ -1278,7 +1278,7 @@ return val;
 
 void deriveazapol(float p[], int n , float pd[], int &nd)
 {
-int i '
+int i ;
 if(n==0){
 nd = 0;
 pd[0] = 0;
@@ -1329,7 +1329,263 @@ cout<<"aprox este " << setprecision(5)<<xcrt;
 //dim media a pieselor din fiecare clasade lungime
 //nr de rebuturi si lungimile bare rebute
 
-pag 31...
+#include <stdio.h>
+#include <conio.h>
+#define MAX_N 10
+#define MAX_P 10
+
+int main(void){
+int n, p ;
+float bare[maxn], lmin[maxp], lmax[maxp];
+int categ[maxn];
+int nrpiese[maxp];
+float lungime[maxp];
+int rebuturi;
+int i,j;
+cout << "n"; cin>>n;
+for(i=0;i<n;i++){
+cout<<i;cin>>bare[i];
+categ[i]=-1;
+}
+cout <<"p"; cin >>p;
+for(i=0;i<p;i++){
+cout << i; cin>>lmin[i];
+cout << i; cin>>lmax[i];
+nrpiese[i]=0;
+lungime[i]=0;
+}
+rebuturi=n;
+for(i=0;i<n;i++)
+for(j=0;j<p;j++)
+if(bare[i]>=lmin[j] && bare[i] <=lmax[j]){
+categ[i]=j;
+nrpiese[j]++;
+lungime[j]+=bare[i];
+rebuturi--;
+break;
+}
+for(i=0;i<p;i++){
+float medie = lungime[i]/nrpiese[i];
+cout<< i << nrpiese[i]<<medie;
+}
+cout << rebuturi;
+for(i=0;i<n;i++)
+ if(categ[i]==-1)
+ cout << bare[i];
+return 0;
+}
+
+
+
+//prog 3.6
+//vector x si y cu n si m elem distince reale n,m <= 10
+//reunit de x si y
+
+void citestevector(float *v, int *n){
+int i ;
+cout << " nr ele:"; cin >> n;
+for(I=0;i<*n;i++){
+ cout<<i;cinv[i];
+}
+}
+
+void reunit(float *x, int n , float *y, int m , float *z, int *k)
+{
+int i , j , elemente;
+int gasit;
+elemente = 0;
+for(i=0;i<n;i++)
+z[elemente++]=x[i];
+for(i=0;i<m;i++){
+gasit = 0;
+for(j=0lj<n;j++)
+if(x[j]==y[i])
+{
+gasit  = 1;
+break;
+}
+if(!gasit)
+z[elemente++]=y[i];
+}
+*k = elemente;
+}
+
+void afisare )float *z, int k){
+int i = 0;
+cout << "[";
+for(i=0;i<k;i++)
+ cout << z[i];
+cout <<"]";
+}
+
+int main(void){
+float x[10], y[10],z[20];
+int n , m , k;
+citestevector(x,&n);
+citestevector(y,&m);
+reuniune(x,n,y,m,z,&k);
+afisare(z,k);
+return 0;
+}
+
+
+
+
+//prog 3.7
+//read n <=100 nr reale x,y ale unor puncte
+//creaza doua tablouri x si y
+//afiseaza tripletele de puncte coliniare
+//afiseaza pct i,j,k pt care aria triunghi det este maxim
+
+//aria det de pct i,j,k  este s = 1/2 x1 y1 1 , xj yj 1, xk yk 1
+//daca sunt coliniare atunci s = 0
+#define maxn 100
+float arie(float x1, float y1, float x2, float y2, float x3, float y3)
+{
+return (x1*y2+x2*y3+x3*y1-x3*y2-y3*x1-y1*x2)/2;
+}
+
+int main(void){
+int n;
+float x[maxn], y[maxn];
+int , i , j , k;
+float ariemax = -1,a;
+cout <<"n";
+cin >> n;
+for(i=0;i<n;i++){
+cout << i; cin >> x[i];
+cout << i; cin >> y[i];
+}
+cout <<" triplete coliniare ";
+for(i=0;i<n;i++)
+ for(j=i+1;j<n;j++)
+  for(k=j+1;k<n;k++){
+ a = arie(x[i],y[i],x[j],y[j],x[k],y[k]);
+cout << x[i] << y[i]<<x[j]<<y[j]<<x[k]<<y[k];
+else if (ariemax < a)
+ariemax =a;
+}
+cout << "tringhi de arie max";
+for(i=0;i<n;i++)
+ for(k=j+1;k<n;k++){
+  a = arie(x[i],y[i],x[j],y[j],x[k],y[k]);
+if(a==ariemax)
+cout << x[i] << y[i]<<x[j]<<y[j]<<x[k]<<y[k];
+}
+return 0;
+}
+
+
+
+//prob 3.8
+//cauta x in array
+//count nr cifre vector
+//sterge elementul de pe pozitia p si compacteaza vectorul
+//main citeste vectorul a si b di ret diferenta a-b
+
+#define nmax 30
+int creeazavector(int vect[]){
+int x, n ;
+n = 0;
+cout << "introd ele";
+do
+{
+cout << "elem nou";
+cin >> x;
+if(x!=-1)
+vect[n++] = x;
+}while(x!=-1);
+return n;
+}
+
+int cauta(int y, int n , int x[]){
+int i;
+for(i=0; i<n; i++)
+ if(x[i] == y) return 1;
+return 0;
+}
+
+void elimina(int p, int x[], int &n){
+int j;
+for(j=p;j<n-1;j++)
+ x[j] = x[j+1];
+n--;
+}
+
+void main()
+{
+
+int a[nmax], b[nmax];
+int na,nb;
+int i ;
+cout << " creaza vector a si b";
+na = creeazavector(a);
+nb = creeazavector(b);
+i=0;
+while(i<na)
+if(cauta(a[i],nb,b)) limina(i,a,na);
+else i++;
+cout <<"vect dif ";
+if(na ==0) cout << "vector ";
+else 
+for(i=0;i<na;i++)
+cout << a[i];
+}
+
+
+
+//prob 3.9
+//det poz elem minim in vector x de n eleme starting cu poz i
+//interschimba x[p] si x[q]
+//ordoneaza asc vectorul a cu n elem 
+//sortare prin metoda selectiei 
+//subvector 
+
+
+int gasestemin(float x[],int n , int i){
+float min;
+int k , pozmin;
+min = x[i];
+pozmin = i;
+for(k=i+1;k<n;k++)
+if(min > x[k]){
+min = x[k];
+pozmin = k;
+}
+return pozmin;
+}
+
+void interschimba(float x[], int p , int q){
+float aux;
+aux = x[p];
+x[p] = x[q];
+x[q] = aux;
+}
+
+void main(void){
+float a[20];
+int n , i , poz;
+cout << " nr elem"; cin >> n;
+cout << " introd elem in vector ";
+for(i=0;i<n;i++){
+cout << i ; cin >> a[i];
+}
+for(i=0;i<n-1;i++){
+pox = gasestemin(a,n,i);
+interschimba(a,i,poz);
+}
+cout<<"vector sortat";
+for(i=0;i<n;i++){
+cout << a[i] ;
+}
+
+
+
+
+//prog 3.10
+//ordona asc vectorul n cu metoda contorizarii inversarii 
+//metoda bulelor
+//page 34
 
 
 
