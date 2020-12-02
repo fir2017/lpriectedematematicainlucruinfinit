@@ -1,0 +1,59 @@
+<Project>
+  <Name>facturiProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>facturi</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>client</Name>
+        <Access>Public</Access>
+        <Location left="75" top="35" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string codcl</Member>
+        <Member type="Field">string decli</Member>
+        <Member type="Field">string adresa</Member>
+        <Member type="Field">string codpostal</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>factem</Name>
+        <Access>Public</Access>
+        <Location left="254" top="36" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string nrfact</Member>
+        <Member type="Field">string codcl</Member>
+        <Member type="Field">string datafact</Member>
+        <Member type="Field">string valoare</Member>
+        <Member type="Field">string valtva</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>facturi</Name>
+        <Access>Public</Access>
+        <Location left="446" top="35" />
+        <Size width="162" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt;client&gt; clienti</Member>
+        <Member type="Field">List &lt;factem&gt; facturiemise</Member>
+        <Member type="Method">public void navigate()</Member>
+        <Member type="Method">public void add()</Member>
+        <Member type="Method">public void del()</Member>
+        <Member type="Method">public void brow()</Member>
+        <Member type="Method">public void list()</Member>
+        <Member type="Method">public void search()</Member>
+        <Member type="Method">public void sort()</Member>
+        <Member type="Method">public void calculate()</Member>
+        <Member type="Method">public void print()</Member>
+        <Member type="Method">public void report()</Member>
+        <Member type="Method">public void select()</Member>
+        <Member type="Method">public void selectall()</Member>
+        <Member type="Method">public void find()</Member>
+        <Member type="Method">public void NewMethod()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

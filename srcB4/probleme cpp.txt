@@ -1073,7 +1073,70 @@ cout << a << b<< intf2;
 }
 
 //pagina 25
-//prob 2.13
+//cmmdc a n nr din lista de intregi
+
+int cmmdc(int a, int b)
+{
+if(a>b) return cmmdc(a-b,b);
+if(a<b) return cmmdc(a,b-a);
+return a;
+}
+
+void main(void){
+int lista[30], n;
+int result;
+cout << "n"; cin >> n;
+for(int i = 0 ; i<n;i++)
+{
+cout <<i+1; cin >> lista[i];
+}
+result = cmmdc(lista[0],lista[1]);
+for(i=2;i<n;i++)
+result = cmmdc(result, lista[i]);
+cout << result;
+}
+
+//prob 2.14
+//nr prim cel mai apropriat de x sau ambele prime
+int prim(int k)
+{
+for(int i = 2; i< k/2; i++)
+if(k%i==0) return 0;
+return 1;
+}
+
+void main(void)
+{
+int lista[30], n;
+cin << n;
+for(int i = 0; i<n;i++){
+cout << i+1; cin >> lista[i];
+}
+for(i=0;i<n;i++)
+{
+cout << lista[i];
+index = 0;
+while(!prim(lista[i]-index) && !prim(lista[i] + index))
+{
+index += 1;
+if(prim(lista[i]+index))
+cout << lista[i]+ index;
+if(prim(lista[i]-index);
+}
+if(!index)
+cout << lista[i];
+cout << "\n";
+}
+}
+
+
+//pag 26
+//prob propuse p2.1 to 2.9
+
+
+//pag 27
+//array vector si pointeri
+
 
 
 
