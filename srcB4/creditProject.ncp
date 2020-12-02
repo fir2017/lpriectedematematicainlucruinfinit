@@ -1,0 +1,586 @@
+<Project>
+  <Name>creditProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>credit</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>document</Name>
+        <Access>Public</Access>
+        <Location left="19" top="46" />
+        <Size width="162" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string denumire</Member>
+        <Member type="Field">string autor</Member>
+        <Member type="Field">DateTime data</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>cereredecredit</Name>
+        <Access>Public</Access>
+        <Location left="204" top="20" />
+        <Size width="258" height="400" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int nrdepagini</Member>
+        <Member type="Field">List &lt;fila&gt; file</Member>
+        <Member type="Field">dateDocument dateleDocumentului</Member>
+        <Member type="Field">informatiiGenerale informatiileGenerale</Member>
+        <Member type="Field">List &lt;datePersonale &gt; datelePersonale</Member>
+        <Member type="Field">List &lt;dateAngajator&gt; dateleAngajatorului</Member>
+        <Member type="Field">List &lt;dateVenit&gt; dateVenituri</Member>
+        <Member type="Field">informatiiCredit informatiileCredit</Member>
+        <Member type="Field">List &lt;dateOcupatie&gt; dateleOcupatiei</Member>
+        <Member type="Field">List &lt;document&gt; documenteleFurnizate</Member>
+        <Member type="Field">informatiiBanca informatileBancii</Member>
+        <Member type="Field">List &lt; termen &gt; termenii</Member>
+        <Member type="Field">List &lt;conditie&gt; conditiile</Member>
+        <Member type="Field">listaSemnaturi semnaturi</Member>
+        <Member type="Field">List &lt;garant&gt; garanti</Member>
+        <Member type="Field">List &lt;optiuniproduseservicii&gt; produsesiservicii</Member>
+        <Member type="Field">DateTime daaincheierecontract</Member>
+        <Member type="Field">listacudocumenteleFurnizate listacudocumenteFurnizate</Member>
+        <Member type="Field">destinatiacreditului destinatiecredit</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>fila</Name>
+        <Access>Public</Access>
+        <Location left="19" top="220" />
+        <Size width="162" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int numar</Member>
+        <Member type="Field">List &lt; element &gt; continut</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>dateDocument</Name>
+        <Access>Public</Access>
+        <Location left="1422" top="36" />
+        <Size width="295" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string numarDocument</Member>
+        <Member type="Field">string codsursa</Member>
+        <Member type="Field">string codfm</Member>
+        <Member type="Field">string codreprezentantvanzari</Member>
+        <Member type="Field">string numarprelucraredatecucaracterpersonal</Member>
+        <Member type="Field">string coddsa</Member>
+        <Member type="Field">bifa creditindividual</Member>
+        <Member type="Field">bifa creditcomun</Member>
+        <Member type="Field">bifa dobandafixa</Member>
+        <Member type="Field">bifa suplimentareindividuala</Member>
+        <Member type="Field">bifa suplimentarecomuna</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>informatiiGenerale</Name>
+        <Access>Public</Access>
+        <Location left="1111" top="36" />
+        <Size width="247" height="451" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">intrebare AflareDespreCredit</Member>
+        <Member type="Field">bifaspecificatie ziar</Member>
+        <Member type="Field">bifaspecificatie revista</Member>
+        <Member type="Field">bifaspecificatie concurs</Member>
+        <Member type="Field">bifaspecificatie tv</Member>
+        <Member type="Field">bifaspecificatie radio</Member>
+        <Member type="Field">bifaspecificatie evenimentlocal</Member>
+        <Member type="Field">bifaspecificatie altele</Member>
+        <Member type="Field">bifa scrisoarepersonalizata</Member>
+        <Member type="Field">bifa recomandaunprieten</Member>
+        <Member type="Field">bifa recomandaunprietennonclient</Member>
+        <Member type="Field">bifa referinte</Member>
+        <Member type="Field">incercuire coleg</Member>
+        <Member type="Field">incercuire prieten</Member>
+        <Member type="Field">incercuire etc</Member>
+        <Member type="Field">bifa panoupublicitar</Member>
+        <Member type="Field">bifa internet</Member>
+        <Member type="Field">bifa afise</Member>
+        <Member type="Field">bifa fluturasiprimiti</Member>
+        <Member type="Field">bifa incasutapostala</Member>
+        <Member type="Field">bifa inoras</Member>
+        <Member type="Field">bifa delareprezentantciifinancial</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>datePersonale</Name>
+        <Access>Public</Access>
+        <Location left="1068" top="1144" />
+        <Size width="396" height="944" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string nume</Member>
+        <Member type="Field">string prenume</Member>
+        <Member type="Field">bifa sex</Member>
+        <Member type="Field">bifa m</Member>
+        <Member type="Field">bifa f</Member>
+        <Member type="Field">string pseudonim</Member>
+        <Member type="Field">string numeinaintedecasatorie</Member>
+        <Member type="Field">string numelemameiinaintedecasatorie</Member>
+        <Member type="Field">string loculnasterii</Member>
+        <Member type="Field">DateTime datanasterii</Member>
+        <Member type="Field">string cnp</Member>
+        <Member type="Field">string serieCIBI</Member>
+        <Member type="Field">string numarCIBI</Member>
+        <Member type="Field">DateTime dataexpirarii</Member>
+        <Member type="Field">bifa starecivila</Member>
+        <Member type="Field">bifa necasatorit</Member>
+        <Member type="Field">bifa casatorit</Member>
+        <Member type="Field">bifa divortat</Member>
+        <Member type="Field">bifa vaduva</Member>
+        <Member type="Field">int nrpersoaneinintretinere</Member>
+        <Member type="Field">bifa cetatenie</Member>
+        <Member type="Field">bifa ro</Member>
+        <Member type="Field">bifaspecificatie dubla</Member>
+        <Member type="Field">bifa studii</Member>
+        <Member type="Field">bifa elementare</Member>
+        <Member type="Field">bifa medii</Member>
+        <Member type="Field">bifa superioare</Member>
+        <Member type="Field">bifa inprezentlocuiesc</Member>
+        <Member type="Field">bifa inlocuintaproprietatepersonala</Member>
+        <Member type="Field">incercuire ipotecata</Member>
+        <Member type="Field">incercuire neipotecata</Member>
+        <Member type="Field">bifa cuchirie</Member>
+        <Member type="Field">bifa cuparintii</Member>
+        <Member type="Field">bifaspecificatie altele</Member>
+        <Member type="Field">int vechimelaadresaactuala</Member>
+        <Member type="Field">adresa adresaactualadacadiferadeadresapermanenta</Member>
+        <Member type="Field">adresa adresapermanentadinCIBI</Member>
+        <Member type="Field">string nrtelefonmobil</Member>
+        <Member type="Field">bifa abonamentnumepropriu</Member>
+        <Member type="Field">bifa abonamentpenumefirma</Member>
+        <Member type="Field">bifa cartelareincarcabila</Member>
+        <Member type="Field">bifa adresadecorespondenta</Member>
+        <Member type="Field">bifa actuala</Member>
+        <Member type="Field">bifa serviciu</Member>
+        <Member type="Field">intrebara detinetiautoturismproprietatepersonala</Member>
+        <Member type="Field">bifa da</Member>
+        <Member type="Field">bifa nu</Member>
+        <Member type="Field">declaratiefinanciarapersonala declaratiafinanciarapersonala</Member>
+        <Member type="Field">creditdeconsum creditedeconsum</Member>
+        <Member type="Field">creditpentruinvestitiiimobiliare creditepentruinvestitiiimobiliare</Member>
+        <Member type="Field">altangajamentdeplata aletangajamentedeplata</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>dateAngajator</Name>
+        <Access>Public</Access>
+        <Location left="461" top="46" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string denumireangajator</Member>
+        <Member type="Field">string domeniulprincipaldeactivitate</Member>
+        <Member type="Field">adresa adresaangajator</Member>
+        <Member type="Field">string nrtelefonangajator</Member>
+        <Member type="Field">string functia</Member>
+        <Member type="Field">string incadrarea</Member>
+        <Member type="Field">string nrdetelefondirectdelabirou</Member>
+        <Member type="Field">ocupatie ocupatia</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>dateOcupatie</Name>
+        <Access>Public</Access>
+        <Location left="485" top="367" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">incercuire practician</Member>
+        <Member type="Field">incercuire pfa</Member>
+        <Member type="Field">bifa medic</Member>
+        <Member type="Field">bifa arhitect</Member>
+        <Member type="Field">bifa contabil</Member>
+        <Member type="Field">bifa notar</Member>
+        <Member type="Field">bifaspecificatie altele</Member>
+        <Member type="Field">string durataangajarii</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>informatiiCredit</Name>
+        <Access>Public</Access>
+        <Location left="1541" top="786" />
+        <Size width="306" height="604" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string sumanetasolicitata</Member>
+        <Member type="Field">string sumaminimaacceptata</Member>
+        <Member type="Field">string suplimentarenetasolicitata</Member>
+        <Member type="Field">string suplimentarenetaminimaacceptata</Member>
+        <Member type="Field">bifa termen</Member>
+        <Member type="Field">bifa _6</Member>
+        <Member type="Field">bifa _12</Member>
+        <Member type="Field">bifa _18</Member>
+        <Member type="Field">bifa _24</Member>
+        <Member type="Field">bifa _36</Member>
+        <Member type="Field">bifa _48</Member>
+        <Member type="Field">bifa _60</Member>
+        <Member type="Field">bifa _72</Member>
+        <Member type="Field">bifa _84</Member>
+        <Member type="Field">string termenmaximacceptat</Member>
+        <Member type="Field">string ratacredit</Member>
+        <Member type="Field">string dobndaanualalasold</Member>
+        <Member type="Field">string comisionacordarecredit</Member>
+        <Member type="Field">string comisionlunardeadministrarecredit</Member>
+        <Member type="Field">string ratacreditcucomisiondeasigurareinclus</Member>
+        <Member type="Field">string dobandaanualaefectivadae</Member>
+        <Member type="Field">string ratalunaraderambursare</Member>
+        <Member type="Field">string comisiondeasigurare</Member>
+        <Member type="Field">string dobanda</Member>
+        <Member type="Field">string termen</Member>
+        <Member type="Field">string sumanetapluscomisionacordare</Member>
+        <Member type="Field">intrebare doritasigurare</Member>
+        <Member type="Field">bifa da</Member>
+        <Member type="Field">bifa nu</Member>
+        <Member type="Field">bifa individuala</Member>
+        <Member type="Field">bifa comuna</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>informatiiBanca</Name>
+        <Access>Public</Access>
+        <Location left="1439" top="341" />
+        <Size width="267" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string denumireUnitateBancara</Member>
+        <Member type="Field">string denumireBanca</Member>
+        <Member type="Field">string adresa</Member>
+        <Member type="Field">string strada</Member>
+        <Member type="Field">string sectorul</Member>
+        <Member type="Field">string judetul</Member>
+        <Member type="Field">string orasul</Member>
+        <Member type="Field">string codpostal</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>termen</Name>
+        <Access>Public</Access>
+        <Location left="1111" top="584" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">paragraf textul</Member>
+        <Member type="Field">string titlul</Member>
+        <Member type="Field">string capitol</Member>
+        <Member type="Field">string subcapitol</Member>
+        <Member type="Field">string domeniu</Member>
+        <Member type="Field">string subdomeniu</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>conditie</Name>
+        <Access>Public</Access>
+        <Location left="1111" top="813" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>semnatura</Name>
+        <Access>Public</Access>
+        <Location left="808" top="299" />
+        <Size width="162" height="158" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string denumiresemnatura</Member>
+        <Member type="Field">int codsemnatura</Member>
+        <Member type="Field">SVG semnatura</Member>
+        <Member type="Field">persoana semnatar</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>sectiune</Name>
+        <Access>Public</Access>
+        <Location left="19" top="474" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>bifa</Name>
+        <Access>Public</Access>
+        <Location left="19" top="574" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool value</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>intrebare</Name>
+        <Access>Public</Access>
+        <Location left="17" top="690" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string value</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>bifaspecificatie</Name>
+        <Access>Public</Access>
+        <Location left="17" top="811" />
+        <Size width="162" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bifa bifati</Member>
+        <Member type="Field">string specificatia</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>incercuire</Name>
+        <Access>Public</Access>
+        <Location left="17" top="946" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool esteincercuit</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>element</Name>
+        <Access>Public</Access>
+        <Location left="19" top="367" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>adresa</Name>
+        <Access>Public</Access>
+        <Location left="204" top="448" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string strada</Member>
+        <Member type="Field">string nr</Member>
+        <Member type="Field">string bloc</Member>
+        <Member type="Field">string scara</Member>
+        <Member type="Field">string etaj</Member>
+        <Member type="Field">string ap</Member>
+        <Member type="Field">string sector</Member>
+        <Member type="Field">string localitate</Member>
+        <Member type="Field">string judet</Member>
+        <Member type="Field">string telefonfix</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>declaratiefinanciarapersonala</Name>
+        <Access>Public</Access>
+        <Location left="757" top="858" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">afirmatie amangajamentedeplatalunareproveninddin</Member>
+        <Member type="Field">bifa chirie</Member>
+        <Member type="Field">bifa intretinere</Member>
+        <Member type="Field">bifa utilitati</Member>
+        <Member type="Field">string valoare</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>creditdeconsum</Name>
+        <Access>Public</Access>
+        <Location left="757" top="1089" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bifavaloare achizitiedebunuricuplatainrate</Member>
+        <Member type="Field">bifavaloare creditpentruauto</Member>
+        <Member type="Field">bifavaloare altecreditedeconsum</Member>
+        <Member type="Field">bifavaloare altecredite</Member>
+        <Member type="Field">bifavaloare limitacardcredit</Member>
+        <Member type="Field">bifavaloare leasinfinanciardestinatiementionata</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>creditpentruinvestitiiimobiliare</Name>
+        <Access>Public</Access>
+        <Location left="570" top="1144" />
+        <Size width="162" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bifavaloare creditipotecar</Member>
+        <Member type="Field">bifavaloare altecreditepentruinvestitiiimobiliare</Member>
+        <Member type="Field">bifavaloare leasingfinanciardestinatiementionata</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>afirmatie</Name>
+        <Access>Public</Access>
+        <Location left="17" top="1069" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string valoare</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>bifavaloare</Name>
+        <Access>Public</Access>
+        <Location left="570" top="982" />
+        <Size width="162" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool estebifat</Member>
+        <Member type="Field">string valoare</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>altangajamentdeplata</Name>
+        <Access>Public</Access>
+        <Location left="389" top="994" />
+        <Size width="162" height="400" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">intrebare alteagajamentedeplata</Member>
+        <Member type="Field">incercuire pernsiealimentara</Member>
+        <Member type="Field">incercuire intretinere</Member>
+        <Member type="Field">incercuire rentaviagera</Member>
+        <Member type="Field">bifa nu</Member>
+        <Member type="Field">bifavaloare da</Member>
+        <Member type="Field">bifa suntetigarant</Member>
+        <Member type="Field">bifa codebitor</Member>
+        <Member type="Field">bifa pentruoricetipdecreditsaucontract</Member>
+        <Member type="Field">bifa nu2</Member>
+        <Member type="Field">bifavaloare da2</Member>
+        <Member type="Field">intrebare suntetiimplicatinlitigiu</Member>
+        <Member type="Field">bifa nu3</Member>
+        <Member type="Field">bifavaloare da3</Member>
+        <Member type="Field">string precizatimotivele</Member>
+        <Member type="Field">string avemurmatoarelelangajamentedeplatalscadenta</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>garant</Name>
+        <Access>Public</Access>
+        <Location left="808" top="58" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string nume</Member>
+        <Member type="Field">string prenume</Member>
+        <Member type="Field">DateTime datanasterii</Member>
+        <Member type="Field">adresa adresagarant</Member>
+        <Member type="Field">string ocupatie</Member>
+        <Member type="Field">string loculdemunca</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>persoana</Name>
+        <Access>Public</Access>
+        <Location left="927" top="470" />
+        <Size width="162" height="519" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string nume</Member>
+        <Member type="Field">string prenume</Member>
+        <Member type="Field">DateTime datanasterii</Member>
+        <Member type="Field">string CIBIserie</Member>
+        <Member type="Field">string CIBInumar</Member>
+        <Member type="Field">adresa adresaCIBI</Member>
+        <Member type="Field">persoana tatal</Member>
+        <Member type="Field">persoana mama</Member>
+        <Member type="Field">sex sexul</Member>
+        <Member type="Field">string inaltime</Member>
+        <Member type="Field">string greutate</Member>
+        <Member type="Field">color culoarepiele</Member>
+        <Member type="Field">color culoareochi</Member>
+        <Member type="Field">string loculnasterii</Member>
+        <Member type="Field">string cetatenie</Member>
+        <Member type="Field">string nationalitate</Member>
+        <Member type="Field">string cnp</Member>
+        <Member type="Field">DateTime dataemitereCIBI</Member>
+        <Member type="Field">string CIBI</Member>
+        <Member type="Field">DateTime dataexpirariiCIBI</Member>
+        <Member type="Field">DateTime datadecesului</Member>
+        <Member type="Field">string telefon</Member>
+        <Member type="Field">string email</Member>
+        <Member type="Field">string adresaweb</Member>
+        <Member type="Field">adresa adresaactuala</Member>
+        <Member type="Field">string studii</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>dateVenit</Name>
+        <Access>Public</Access>
+        <Location left="636" top="36" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string salatiulnetlunar</Member>
+        <Member type="Field">string venitanualnet</Member>
+        <Member type="Field">incercuire practician</Member>
+        <Member type="Field">incercuire persoanafizicaautorizata</Member>
+        <Member type="Field">string alteveniturilunare</Member>
+        <Member type="Field">bifa surse</Member>
+        <Member type="Field">bifa contarcteprestariservicii</Member>
+        <Member type="Field">bifa pensie</Member>
+        <Member type="Field">bifaspecificatie altele</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>optiuniproduseservicii</Name>
+        <Access>Public</Access>
+        <Location left="570" top="690" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bifa solicitant</Member>
+        <Member type="Field">bifa nudorectsaprimescinformatii1</Member>
+        <Member type="Field">incercuire cosolicitant</Member>
+        <Member type="Field">incercuire cosemnatar</Member>
+        <Member type="Field">incercuire mandatar</Member>
+        <Member type="Field">bifa nudorescsaprimescinformatii2</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>listaSemnaturi</Name>
+        <Access>Public</Access>
+        <Location left="389" top="690" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">semnatura solicitant</Member>
+        <Member type="Field">semnatura semnaturasotsotiecodebitor</Member>
+        <Member type="Field">semnatura semnaturanecosolicitant</Member>
+        <Member type="Field">semnatura agentbanca</Member>
+        <Member type="Field">semnatura autorizatebanca</Member>
+        <Member type="Field">semnatura vip</Member>
+        <Member type="Field">semnatura debitor</Member>
+        <Member type="Field">semnatura garant</Member>
+        <Member type="Field">semnatura sotsotiecodebitor</Member>
+        <Member type="Field">semnatura luatlacunostintanuecodebitor</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>listacudocumenteleFurnizate</Name>
+        <Access>Public</Access>
+        <Location left="1541" top="1405" />
+        <Size width="352" height="451" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bifa cereredecredit</Member>
+        <Member type="Field">bifa actdeproprietate</Member>
+        <Member type="Field">bifa contractdeinchiriere</Member>
+        <Member type="Field">bifa facturautilitati</Member>
+        <Member type="Field">bifa telefon</Member>
+        <Member type="Field">bifa electricitate</Member>
+        <Member type="Field">bifa intretinere</Member>
+        <Member type="Field">bifa etc</Member>
+        <Member type="Field">bifa atestaredomiciliuactul</Member>
+        <Member type="Field">bifa cartedemunca</Member>
+        <Member type="Field">bifa deciziedepensionare</Member>
+        <Member type="Field">bifaspecificatie altele</Member>
+        <Member type="Field">bifa adeverintadevenitangajator</Member>
+        <Member type="Field">bifa cupondepensie</Member>
+        <Member type="Field">bifa deciziefinaladeimpunere</Member>
+        <Member type="Field">bifa cesiuneadrepturilorsalariale</Member>
+        <Member type="Field">bifa extrasedecont</Member>
+        <Member type="Field">bifa copieactidentitate</Member>
+        <Member type="Field">bifa cibisolicitant</Member>
+        <Member type="Field">bifa cibisot</Member>
+        <Member type="Field">bifa cibisotie</Member>
+        <Member type="Field">bifaspecificatie altedocumente</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>legal</Name>
+        <Access>Public</Access>
+        <Location left="1111" top="904" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>destinatiacreditului</Name>
+        <Access>Public</Access>
+        <Location left="204" top="719" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bifa tratamentemedicale</Member>
+        <Member type="Field">string nevoipersonalenespecificate</Member>
+        <Member type="Field">string achizitiedebunuri</Member>
+        <Member type="Field">string deces</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

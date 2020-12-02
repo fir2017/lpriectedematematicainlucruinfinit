@@ -1,0 +1,671 @@
+
+//prob 1.1 grade 2 radiani
+
+grad = gfr = (rad*180)/pi
+minute = minfr = (gfr - grade ) * 60
+secunde =(minfr - minute) * 60;
+
+
+//prog 1.2
+//cronometru
+
+int orastart, minstart, secstart;
+int ore, minute, secunde;
+int orasosire, minsosire, secsosire;
+
+secsosire = secstart + secunde;
+minsosire= minstart + minute;
+orasosire = orastart + ore;
+
+minsosire += secsosire / 60;
+orasosire += minsosire / 60;
+
+secsosire %= 60;
+minsosire %= 60;
+orasosire %= 24;
+
+//prog 3.1
+//sistem de ecuatii 
+//ax + by = c 
+//mx + ny = p 
+
+double a, b , c , m , n , p , x , y;
+const double eps = 0.001;
+
+if(abs(m*b-n*a)<eps){
+ if(abs(m*c-a*p)>eps)
+  printf("y nu poate fi calculat \n");
+  else 
+  printf (" avem o infinitate de solutii pentru y \n");
+  if(abs(b*p-n*c>eps)
+   printf(" x nu poate fi calculat \n");
+   else printf("avem o infinitate de solutii pentru x \n");
+   }
+   else
+   {
+   y = (m*c - a*p)/(m*b-n*a);
+   x = (b*p - n*c)/(m*b - n*a);
+   printf(" solutii sunt " , x , y);
+   }
+   
+   
+   
+   //prob 1.3
+   //ec de gr 2
+   //axx + bx + c = 0
+   
+   double a,b,c,x1,x2,delta;
+   const double eps = 0.001;
+   if(abs(a)<eps)
+   {
+   if(abs(b) < eps)
+   if(abs(c) < eps)
+   printf ("ec are o infinitate de sol ");
+   else 
+   printf (" ec nu are sol ");
+   else 
+   {
+    printf("ec de gr intai, radacina este ,-c/b ");
+	}
+	}
+	else
+	{
+	delta = b*b - 4 * a * c;
+	if(delta < -0.0)
+	{
+	print ("x1=%lf+i*(%lf)\n");
+	print (-b/(2*a), sqrt(-delta/(2*a)));
+	print ("x2=%lf-i*(%lf)\n");
+	print (-b/(2*a), sqrt(-delta/(2*a)));
+	}
+	else 
+	{
+	print ("x1=%lf\n");
+	print (-b/(2*a)+ sqrt(delta/(2*a)));
+	print ("x2=%lf\n");
+	print (-b/(2*a)- sqrt(delta/(2*a)));
+	}
+	}
+	
+	
+	
+	//prog 1.5
+	//cadrane pozitia unui punct 
+	
+	double x,y;
+	if(x>=0) {
+	if((x==0)&&(y==0)){
+	printf("pct introd este originea.");
+	}
+	if(y>=0)
+	{
+		if(x==0)
+		printf("pct se afla in cadranele 1-2");
+		if(y==0)
+		printf("pct se afla in cadranele 1-4");
+		if((x>0) && (y>0))
+		printf("pct se afla in cadranul 1");
+	}
+	else 
+	{
+	if(x==0)
+	printf("3-4");
+	else 
+	printf("4");
+	}
+	}else 
+	{
+	if(y==0)
+	 cout<<"2-3";
+	 if(y<0)
+	 cout <<3";
+	 if(y>0)
+	 cout<<"2";
+	 }
+	 }
+	 
+	 
+	 
+	 //prob 1.6 calculati suma [(1,n), (-1^i )* i]
+	
+	
+	int n , suma = 0;
+	for(int i = 1; i<=n ;i++)
+	{
+	 if(i%2)
+	 suma -=i;
+	 else 
+	 suma +=i;
+	 }
+	 cout <<suma;
+	 
+	 
+	 //prob 1.7
+	 //abaterea medie patratica a rez dat experim 
+	 //sigma = sqrt(*N*suma(xi*xi) - suma(xi)^2)/n*n-1))
+	 
+	 int n = 26;
+	 double x;
+	 double s = 0 , sp = 0;
+	 double sigma;
+	 int [] n;
+	 for(int i = 0; i< N.length ; i++)
+	 {
+		cout << "determinarea , i+1";
+		cin >>x;
+		s +=x;
+		sp+=x*x;
+	}
+		if(n>1)
+	{
+		sigma = sqrt((n*sp - s*s) / (n*(n-1)));
+		cout << sigma;
+	}
+		
+	 }
+	
+
+//prob 1.8 det max si min din sir 
+int n ,a;
+int min = maxint , max = -maxint ;
+cout << "introduceti n:; cin >> n;
+for(int i = 0;i<n;i++)
+{
+cout << i+1;
+cin >> a;
+if(min > a)
+min = a;
+if(max < a)
+max=  a;
+}
+cout << " maxim " << max;
+cout << " min " <<min;
+
+
+//prob 1.9
+//note studeti pe grupe ;a examen
+//nr de studenti 
+//det grupa integralista si procentajul de note de 8,9 si 10
+
+int nrstudenti , nota, notebune = 0, integralista = 1;
+	
+	cout << " introd nr de stdu " ; 
+	cin >> nrstudenti;
+	for(int i = 0; i< nrstudenti; i++)
+	{
+	cout << "nota stud "<< i+1;
+	cin >> nota;
+	if(nota < 5)
+	integralista = 0;
+	if(nota >=8)
+	integralista +=1;
+	}
+	
+	if(integralista)
+	cout<<"grupare integralista";
+	else 
+	cout <<" grupa nu integralista";
+	cout <<procentaj de note bune este de " << (double) notebune . (double) nrstudenti;
+	
+	
+	
+	//pub 1.10
+//f(x) = ln(2xx +1)
+//tabelare pe intervalul [-10,10]
+// 0.1 pt mod x <= 10
+//0.5 pt 1.0 < mod x <= 5.0
+//1.0 pt 5.0 < mod x <= 10
+
+double x = -10, eps = 0.001;
+cout << val functie sunt ";
+while(x<=10){
+cout << x << log(2*x*x+1);
+if(fabs(x) <= 1.0 && fabs (x-1.0)>eps)
+x+=0.1;
+else 
+if(fabs(x) <= 5.0 && fabs(x-0.5) > eps)
+x+=0.5;
+else x+=1.0;
+
+
+
+//prob 1.11
+//val integrala IK(x) = integrala(x,0), u^k* y^u *du	
+
+double s, x , t , xk;
+int n , p , k;
+cout << "n=";
+cin >> n;
+cout<<"x=";
+cin >> x;
+cout<< n;
+xk = 1.0;
+
+for(k=1;k<=n;k++)
+{
+xk *= x;
+s = t = xk;
+for(p = 1; p<= k ; p++)
+{
+t +=-(k-p+1)/x;
+s+=t;
+}
+s*=exp(x);
+cout << k << x << s ;
+
+
+//prob 1.12 
+//sirurile un si vn gen cu rel de recurenta 
+//un  = *un-1+vn-1)/2 
+//vn = sqrt(un-1*vn-1)
+//u0 = 1/mod a 
+//v0 1/ mod b; 
+//a dif 0
+//b dif 0
+//i = 2/pi * integrala [0,pi.2] dx / //(sqrt(a*a*cosx*cosx+b * b * sinx * sinx))
+//mod un = vn < eps 
+
+double a, b , eps, u , v , aux; 
+cout << "a" ;cin >> a;
+cout << "b" ;cin >> b;
+cout << "eps " ; cin >> eps;
+u = 1/ fabs(a);
+v = 1/fabs(b);
+while(fabs(u=v) > eps)
+{
+aux = u;
+u = (u+v)/2;
+v = sqrt(aux*v);
+}
+
+cout << u;
+
+//prob 1.13
+//sir de nr nenule terminale cu o val nula 
+//formeaza
+//sir strict crescator 
+//sir cresator
+//sir strict descrescator
+//fir descrescator
+//sunt identice
+//nu sunt ordonate 
+int 
+scresc = 6,
+cresc = 5,
+sdescresc = 2,
+descresc = 3,
+const = 4,
+neordonat = 1;
+
+int n = 0, crt, prec, mic = 0, egal = 0, mare = 0, tip;
+
+cout << "introd "; cin >> crt;
+if(crt !=0)
+{
+n++;
+prec =crt;
+cout << " introd nr 2";
+cin >> crt;
+if(crt==0)
+{
+cout << " sir are un sg element";
+exit(1);
+}
+else 
+n++;
+}
+else 
+{
+cout<<"sir vid";
+exit(1);
+}
+while(crt !=0){
+if(prec < crt)
+mic++;
+else 
+if(prec > crt)
+mare++;
+else 
+egale++;
+prec = crt ;
+cout <<"introd un nr "; cin >> crt; 
+n++;
+};
+
+n--;
+if(mic == n-1) tip = scresc;
+if(mare== n-1) tip = sdescresc;
+if(egal == n-1) tip = const;
+if(mare == 0 && mic && egal) tip = cresc ;
+if(mic == 0 && mare && egal) tip = descresc;
+if*mic && mare) tip = neordonat;
+switch(tip)
+case scresc : cout << " strict cresator"; break;
+case cresc : cout << " cresator"; break;
+case sdescresc : cout << " strict descresator"; break;
+case descresc : cout << "  descresator"; break;
+case const : cout << " constant"; break;
+case neordonat : cout << " neordonat "; break;
+
+
+
+
+//prob 1.14
+//fibonaci termenul nth fn , randul n 
+//formula de recurenta f = fp-1 + fp+2 pt p>2 si f0 = 1 si f1  =1
+int n , i , f, f1, f2;
+cout <<"n";
+cin >> n;
+f = f1 = f2 = 1;
+for(i= 2; i<=n ;i++)
+{
+f= f1+f2;
+f2= f1;
+f1= f;
+}
+cout <<n << f;
+
+
+
+//prob 1.15
+//suma a/b;
+int n , i;
+double s, p1, p2;
+cout <<"n"; cin >> n;
+p1 = 1.0; p2= 2.0;
+s = p1/p2;
+for(i=2; i<= n ; i++)
+{
+p1 *= (2 * n -1);
+[2 *= (2*n);
+s +=(p1/p2);
+}
+cout<< n << s;
+
+
+
+//prob 1.16
+//nr perfect 
+//nr egal cu suma divizorilor sai intre 1 si <n;
+//gasiti toate nr perfecte mai mici sau egale cu un nr dat 
+//afisati fiecare nr det urmat de suma divizorilro sai 
+
+
+int k ;
+int sumadiv;
+int d;
+cout << "k"; cin >> k; 
+for(int x = 1; x < = k; x++)
+{
+sumadiv = 1;
+for(d=2; d<= x/2;d++)
+if(x&d==0)
+sumadiv +=d;
+if(sumadiv==x)
+{
+cout << x ;
+for(d= 2; d<= x/2 ; d++)
+if(x%d==0)
+cout << d;
+cout <<"\n";
+}
+}
+
+
+//prob 1.17
+//dezv in serie cu precizia eps data sin(x)
+//sin(x) = x - x^3/3!.....
+//reduecrae la primul vcadran 
+//serie rapid convergenta 
+//argument mic 
+//relatii 
+// sin x = -sin 0x daca x<0
+//sin x = sin x-s pi n daca  x> 2 pi n 
+//sin x = - sin x - pi daca x > pi 
+//sin x = sin pi - x daca x > pi / 2 
+
+double x, s, sv, t ,eps;
+int k , n ,semn ;
+cout << "x"; cin >> x;
+cout << "eps " ; cin >> eps; 
+sqmn = 1;
+if(x < 0.0) 
+{
+x = -x; 
+semn = -semn;
+}
+while(x > 2 * MPI) 
+x -= 2 * MPI;
+if(x>MPI)
+{
+x -= MPI;
+semn = -semn;
+}
+if(x>MPI/2)
+x = MPI - x ;
+s = t = x;
+k = 1;
+do( sv = s;
+k += 2;
+t &= -(x*x/k/(k-1));
+s +=t;
+}
+while (fabs(sv - s) > = eps);
+cout << semn * s;
+}
+
+
+
+
+//prob 1.18
+//polinom pnX = a0* x*x + a1*x^n-1 + ... + an
+//val polinom in punct dat 
+//daca val coef lui x se citesc pe rand in aceasi var a 
+//a in ordine desc a puterilor lui x 
+//b in ordine cresc a puterilro lui x ;
+//schema lui horner
+
+float a, x , p  xi , n , i ;
+cout << "n" ;cin >>n;
+cout << "x"; cin >> x;
+
+for(i=0,p=0;i<=n;i++){
+cout << i;
+cin >> a ;
+p = p * x + a;
+}
+cout << x << p;
+p = 0;
+xi = 1;
+for(i=0;i<=n;i++)
+{
+cout << n-1;
+cin >> a;
+p+= a * xi;
+xi *= x;
+}
+cout << x << p;
+
+
+
+//prob 1.19
+//afisati factorii primi ai lui n precum si ordin lor de multiplicitate 
+
+int n , mult = 0, div = 2;
+cout << "intrdo n "; cin >> n;
+while(1)
+{
+if(n%div==0)
+{
+mult++;
+n/=div;
+}
+else{
+if(mult >0)
+cout << div << mult;
+mult = 0;
+if(div ==2)
+div = 3;
+else 
+div +=2;
+if(n==1)
+break;
+}
+}
+
+
+//prob 1.20
+//cei mai multi diviori pt nr <= cu un N dat 
+int n , nd , ndma  = 0 , imax = 0;
+cout << "n";cin >> n;
+for(int i = 2; i<=n ;i++){
+for(int div = 2, nd = 0; div <= n/2 ; div++)
+{if( i % div == 0)
+nd++;
+if(nd > ndmax )
+{
+ndmax =nd ;
+imax = i;
+}
+}
+cout << imax << ndmax ;
+}
+
+
+
+//prob 1.21 
+//ec a*x*x + b*x + c = 0
+//calculati x1^n + x2^n + x3^n 
+int n;
+double a,b,c,s,s0,s1,s2;
+cin >> a>>b>>c;
+s0 = 3;
+s1 = 0;
+s2 = -2*b;
+for(int j = 3; j<= n;j++)
+{
+s = -(b*s1+c*s0) / a;
+s0 = s1;
+s1 = s2;
+s2 = s;
+}
+cout << n << s;
+}
+
+
+
+//prob 1.22
+//calc x^n
+
+int n , c , i , k; 
+double x; 
+long double rez; 
+double px ;
+cout << "x"; cin >> x;
+cout << "n" ; cin >> n; 
+for(i = 1, px=x ,rez = 1, k=n; k ; k/=2)
+{
+c= k%2;
+if(c)
+rez += px;
+px *=px;
+};
+cout <<x << n << rez; 
+}
+
+
+//prob 1.23 
+//f bessel de speta a i-1 jn(x) 
+//rel de recurenta Jp(x) = (2p-2)/xJp-1(x)-Jp-2(x)
+//j0(X)= suma (-1)^k * ((x/2)^2*k / fact(k^2))
+//j1(x) = suma(-1)^k* ((x/2)^2*k+1 / fact(k)*(k+1))
+
+int n , k , p ;
+double j , j0, j1, jov, jiv, x, eps, term ;
+cin >> x >> n >> eps; 
+term = 1.0;
+j0 = 1.0;
+j1 = x/2;
+for(k=1;;k++){
+jov = j0;
+j1v= j1;
+term += -(x*x / (4 * k * k));
+j0 += temr;
+j1 += term * x / (2 * ( k+1));
+if(fabs(j0-j0v)<eps && fabs(j1-jiv)<eps) breal;
+}
+for(p=2;p<=n;p++)
+{
+j = ((2 * p - 2) / 2) * j1 = j0;
+j0 = j1;
+j1 = j;
+}
+cout <<n << x<< j;
+}
+
+//prob 1.24 
+//obtineti repr fractiei zecimale a nr m/n 
+//eventuala perioada intre paranteze 
+
+int m , n , i , auxm , auxn, r ;
+int m2, m5 , ncn, rp, rp1 ;
+cout << "m si n" ; cin >> m >> n;
+
+assert(n !=0);
+auxm = m;
+auxn = n;
+do
+{
+r = auxm % aux ;
+auxm = auxn;
+auxn = r;
+}while(r);
+
+m = m/auxm;
+n = n/auxm;
+cout << m /n ;
+if(m%n==0)
+{
+cout <<"0";
+exit(0);
+}
+m = m % n;
+m2 = 0;
+for(auxn = n ; auxn % 2 ==0; m2++, auxn /=2)
+;
+m5 = 0;
+for(auxn = n; auxn % 5 ==0; m5++, auxn /= 5_
+;
+ncn = (m2 > m5) ? m2 : m5;
+rp = 10 * m ;
+for(i = 1; i<= ncn ; i++)
+{
+cout << rp/n;
+rp = (rp %n)*10;
+}
+if(rp)
+{
+cout << "(";
+rp1 = rp;
+do{
+cout << rp . n;
+rp = (rp % n) * 10;
+}while(rp != rp1);
+cout <<")";
+}
+}
+
+//prob propuse pagina 16
+//p1.1 - p1.24 
+
+
+
+//pagina 18 functii
+
+
+	
+	
+	
+	
+	
+	
