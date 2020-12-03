@@ -1,0 +1,34 @@
+<Project>
+  <Name>bitprezentcifraProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>bitprezentacifra</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>BITPREZENTACIFRA</Name>
+        <Access>Public</Access>
+        <Location left="38" top="18" />
+        <Size width="162" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">char [] numar</Member>
+        <Member type="Field">char [] biti</Member>
+        <Member type="Field">int lungime</Member>
+        <Member type="Method">public void setbit()</Member>
+        <Member type="Method">public void getbit()</Member>
+        <Member type="Method">public void find()</Member>
+        <Member type="Method">public void exista()</Member>
+        <Member type="Method">public void adauga()</Member>
+        <Member type="Method">public void del()</Member>
+        <Member type="Method">public void atrib()</Member>
+        <Member type="Method">public void mult()</Member>
+        <Member type="Method">public void add()</Member>
+        <Member type="Method">public void intersectie()</Member>
+        <Member type="Method">public void reiuniune()</Member>
+        <Member type="Method">public void writeoctet()</Member>
+        <Member type="Method">public void readoctet()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

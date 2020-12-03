@@ -1,0 +1,31 @@
+<Project>
+  <Name>calendarProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Calendar</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>CALENDAR</Name>
+        <Access>Public</Access>
+        <Location left="26" top="9" />
+        <Size width="162" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int an</Member>
+        <Member type="Field">int luna</Member>
+        <Member type="Field">int zi</Member>
+        <Member type="Field">STRING numezi</Member>
+        <Member type="Constructor">public CALENDAR()</Member>
+        <Member type="Method">public void datacurenta()</Member>
+        <Member type="Method">public void setdata()</Member>
+        <Member type="Method">public void inc()</Member>
+        <Member type="Method">public void dec()</Member>
+        <Member type="Method">public void toString()</Member>
+        <Member type="Method">public void getdata()</Member>
+        <Member type="Method">public void anterior()</Member>
+        <Member type="Method">public void interval()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

@@ -1,0 +1,42 @@
+<Project>
+  <Name>matricProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Matrice</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>MATRICE</Name>
+        <Access>Public</Access>
+        <Location left="54" top="23" />
+        <Size width="162" height="485" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float a</Member>
+        <Member type="Field">int l</Member>
+        <Member type="Field">int c</Member>
+        <Member type="Field">List &lt;List &lt; ELEMENT&gt; &gt; matricea</Member>
+        <Member type="Constructor">public MATRICE()</Member>
+        <Member type="Constructor">public MATRICE(MATRICE x)</Member>
+        <Member type="Constructor">public MATRICE(int l1 = 1, int c1 = 1, float vi = 0)</Member>
+        <Member type="Method">public void egal()</Member>
+        <Member type="Method">public void val()</Member>
+        <Member type="Method">public void linii()</Member>
+        <Member type="Method">public void coloane()</Member>
+        <Member type="Method">public void setl()</Member>
+        <Member type="Method">public void setc()</Member>
+        <Member type="Method">public void add()</Member>
+        <Member type="Method">public void mult()</Member>
+        <Member type="Method">public void egal()</Member>
+        <Member type="Method">public void toString()</Member>
+        <Member type="Method">public void fromString()</Member>
+        <Member type="Constructor">public MATRICE(int l, int c)</Member>
+        <Member type="Destructor">~MATRICE()</Member>
+        <Member type="Method">public void dimensiune()</Member>
+        <Member type="Method">public void determinant()</Member>
+        <Member type="Method">public void dif()</Member>
+        <Member type="Method">public void inversa()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

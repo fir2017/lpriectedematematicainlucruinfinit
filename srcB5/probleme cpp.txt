@@ -1,0 +1,2581 @@
+
+//cap 1 math
+//prob 1.1 grade 2 radiani
+
+grad = gfr = (rad*180)/pi
+minute = minfr = (gfr - grade ) * 60
+secunde =(minfr - minute) * 60;
+
+
+//prog 1.2
+//cronometru
+
+int orastart, minstart, secstart;
+int ore, minute, secunde;
+int orasosire, minsosire, secsosire;
+
+secsosire = secstart + secunde;
+minsosire= minstart + minute;
+orasosire = orastart + ore;
+
+minsosire += secsosire / 60;
+orasosire += minsosire / 60;
+
+secsosire %= 60;
+minsosire %= 60;
+orasosire %= 24;
+
+//prog 3.1
+//sistem de ecuatii 
+//ax + by = c 
+//mx + ny = p 
+
+double a, b , c , m , n , p , x , y;
+const double eps = 0.001;
+
+if(abs(m*b-n*a)<eps){
+ if(abs(m*c-a*p)>eps)
+  printf("y nu poate fi calculat \n");
+  else 
+  printf (" avem o infinitate de solutii pentru y \n");
+  if(abs(b*p-n*c>eps)
+   printf(" x nu poate fi calculat \n");
+   else printf("avem o infinitate de solutii pentru x \n");
+   }
+   else
+   {
+   y = (m*c - a*p)/(m*b-n*a);
+   x = (b*p - n*c)/(m*b - n*a);
+   printf(" solutii sunt " , x , y);
+   }
+   
+   
+   
+   //prob 1.3
+   //ec de gr 2
+   //axx + bx + c = 0
+   
+   double a,b,c,x1,x2,delta;
+   const double eps = 0.001;
+   if(abs(a)<eps)
+   {
+   if(abs(b) < eps)
+   if(abs(c) < eps)
+   printf ("ec are o infinitate de sol ");
+   else 
+   printf (" ec nu are sol ");
+   else 
+   {
+    printf("ec de gr intai, radacina este ,-c/b ");
+	}
+	}
+	else
+	{
+	delta = b*b - 4 * a * c;
+	if(delta < -0.0)
+	{
+	print ("x1=%lf+i*(%lf)\n");
+	print (-b/(2*a), sqrt(-delta/(2*a)));
+	print ("x2=%lf-i*(%lf)\n");
+	print (-b/(2*a), sqrt(-delta/(2*a)));
+	}
+	else 
+	{
+	print ("x1=%lf\n");
+	print (-b/(2*a)+ sqrt(delta/(2*a)));
+	print ("x2=%lf\n");
+	print (-b/(2*a)- sqrt(delta/(2*a)));
+	}
+	}
+	
+	
+	
+	//prog 1.5
+	//cadrane pozitia unui punct 
+	
+	double x,y;
+	if(x>=0) {
+	if((x==0)&&(y==0)){
+	printf("pct introd este originea.");
+	}
+	if(y>=0)
+	{
+		if(x==0)
+		printf("pct se afla in cadranele 1-2");
+		if(y==0)
+		printf("pct se afla in cadranele 1-4");
+		if((x>0) && (y>0))
+		printf("pct se afla in cadranul 1");
+	}
+	else 
+	{
+	if(x==0)
+	printf("3-4");
+	else 
+	printf("4");
+	}
+	}else 
+	{
+	if(y==0)
+	 cout<<"2-3";
+	 if(y<0)
+	 cout <<3";
+	 if(y>0)
+	 cout<<"2";
+	 }
+	 }
+	 
+	 
+	 
+	 //prob 1.6 calculati suma [(1,n), (-1^i )* i]
+	
+	
+	int n , suma = 0;
+	for(int i = 1; i<=n ;i++)
+	{
+	 if(i%2)
+	 suma -=i;
+	 else 
+	 suma +=i;
+	 }
+	 cout <<suma;
+	 
+	 
+	 //prob 1.7
+	 //abaterea medie patratica a rez dat experim 
+	 //sigma = sqrt(*N*suma(xi*xi) - suma(xi)^2)/n*n-1))
+	 
+	 int n = 26;
+	 double x;
+	 double s = 0 , sp = 0;
+	 double sigma;
+	 int [] n;
+	 for(int i = 0; i< N.length ; i++)
+	 {
+		cout << "determinarea , i+1";
+		cin >>x;
+		s +=x;
+		sp+=x*x;
+	}
+		if(n>1)
+	{
+		sigma = sqrt((n*sp - s*s) / (n*(n-1)));
+		cout << sigma;
+	}
+		
+	 }
+	
+
+//prob 1.8 det max si min din sir 
+int n ,a;
+int min = maxint , max = -maxint ;
+cout << "introduceti n:; cin >> n;
+for(int i = 0;i<n;i++)
+{
+cout << i+1;
+cin >> a;
+if(min > a)
+min = a;
+if(max < a)
+max=  a;
+}
+cout << " maxim " << max;
+cout << " min " <<min;
+
+
+//prob 1.9
+//note studeti pe grupe ;a examen
+//nr de studenti 
+//det grupa integralista si procentajul de note de 8,9 si 10
+
+int nrstudenti , nota, notebune = 0, integralista = 1;
+	
+	cout << " introd nr de stdu " ; 
+	cin >> nrstudenti;
+	for(int i = 0; i< nrstudenti; i++)
+	{
+	cout << "nota stud "<< i+1;
+	cin >> nota;
+	if(nota < 5)
+	integralista = 0;
+	if(nota >=8)
+	integralista +=1;
+	}
+	
+	if(integralista)
+	cout<<"grupare integralista";
+	else 
+	cout <<" grupa nu integralista";
+	cout <<procentaj de note bune este de " << (double) notebune . (double) nrstudenti;
+	
+	
+	
+	//pub 1.10
+//f(x) = ln(2xx +1)
+//tabelare pe intervalul [-10,10]
+// 0.1 pt mod x <= 10
+//0.5 pt 1.0 < mod x <= 5.0
+//1.0 pt 5.0 < mod x <= 10
+
+double x = -10, eps = 0.001;
+cout << val functie sunt ";
+while(x<=10){
+cout << x << log(2*x*x+1);
+if(fabs(x) <= 1.0 && fabs (x-1.0)>eps)
+x+=0.1;
+else 
+if(fabs(x) <= 5.0 && fabs(x-0.5) > eps)
+x+=0.5;
+else x+=1.0;
+
+
+
+//prob 1.11
+//val integrala IK(x) = integrala(x,0), u^k* y^u *du	
+
+double s, x , t , xk;
+int n , p , k;
+cout << "n=";
+cin >> n;
+cout<<"x=";
+cin >> x;
+cout<< n;
+xk = 1.0;
+
+for(k=1;k<=n;k++)
+{
+xk *= x;
+s = t = xk;
+for(p = 1; p<= k ; p++)
+{
+t +=-(k-p+1)/x;
+s+=t;
+}
+s*=exp(x);
+cout << k << x << s ;
+
+
+//prob 1.12 
+//sirurile un si vn gen cu rel de recurenta 
+//un  = *un-1+vn-1)/2 
+//vn = sqrt(un-1*vn-1)
+//u0 = 1/mod a 
+//v0 1/ mod b; 
+//a dif 0
+//b dif 0
+//i = 2/pi * integrala [0,pi.2] dx / //(sqrt(a*a*cosx*cosx+b * b * sinx * sinx))
+//mod un = vn < eps 
+
+double a, b , eps, u , v , aux; 
+cout << "a" ;cin >> a;
+cout << "b" ;cin >> b;
+cout << "eps " ; cin >> eps;
+u = 1/ fabs(a);
+v = 1/fabs(b);
+while(fabs(u=v) > eps)
+{
+aux = u;
+u = (u+v)/2;
+v = sqrt(aux*v);
+}
+
+cout << u;
+
+//prob 1.13
+//sir de nr nenule terminale cu o val nula 
+//formeaza
+//sir strict crescator 
+//sir cresator
+//sir strict descrescator
+//fir descrescator
+//sunt identice
+//nu sunt ordonate 
+int 
+scresc = 6,
+cresc = 5,
+sdescresc = 2,
+descresc = 3,
+const = 4,
+neordonat = 1;
+
+int n = 0, crt, prec, mic = 0, egal = 0, mare = 0, tip;
+
+cout << "introd "; cin >> crt;
+if(crt !=0)
+{
+n++;
+prec =crt;
+cout << " introd nr 2";
+cin >> crt;
+if(crt==0)
+{
+cout << " sir are un sg element";
+exit(1);
+}
+else 
+n++;
+}
+else 
+{
+cout<<"sir vid";
+exit(1);
+}
+while(crt !=0){
+if(prec < crt)
+mic++;
+else 
+if(prec > crt)
+mare++;
+else 
+egale++;
+prec = crt ;
+cout <<"introd un nr "; cin >> crt; 
+n++;
+};
+
+n--;
+if(mic == n-1) tip = scresc;
+if(mare== n-1) tip = sdescresc;
+if(egal == n-1) tip = const;
+if(mare == 0 && mic && egal) tip = cresc ;
+if(mic == 0 && mare && egal) tip = descresc;
+if*mic && mare) tip = neordonat;
+switch(tip)
+case scresc : cout << " strict cresator"; break;
+case cresc : cout << " cresator"; break;
+case sdescresc : cout << " strict descresator"; break;
+case descresc : cout << "  descresator"; break;
+case const : cout << " constant"; break;
+case neordonat : cout << " neordonat "; break;
+
+
+
+
+//prob 1.14
+//fibonaci termenul nth fn , randul n 
+//formula de recurenta f = fp-1 + fp+2 pt p>2 si f0 = 1 si f1  =1
+int n , i , f, f1, f2;
+cout <<"n";
+cin >> n;
+f = f1 = f2 = 1;
+for(i= 2; i<=n ;i++)
+{
+f= f1+f2;
+f2= f1;
+f1= f;
+}
+cout <<n << f;
+
+
+
+//prob 1.15
+//suma a/b;
+int n , i;
+double s, p1, p2;
+cout <<"n"; cin >> n;
+p1 = 1.0; p2= 2.0;
+s = p1/p2;
+for(i=2; i<= n ; i++)
+{
+p1 *= (2 * n -1);
+[2 *= (2*n);
+s +=(p1/p2);
+}
+cout<< n << s;
+
+
+
+//prob 1.16
+//nr perfect 
+//nr egal cu suma divizorilor sai intre 1 si <n;
+//gasiti toate nr perfecte mai mici sau egale cu un nr dat 
+//afisati fiecare nr det urmat de suma divizorilro sai 
+
+
+int k ;
+int sumadiv;
+int d;
+cout << "k"; cin >> k; 
+for(int x = 1; x < = k; x++)
+{
+sumadiv = 1;
+for(d=2; d<= x/2;d++)
+if(x&d==0)
+sumadiv +=d;
+if(sumadiv==x)
+{
+cout << x ;
+for(d= 2; d<= x/2 ; d++)
+if(x%d==0)
+cout << d;
+cout <<"\n";
+}
+}
+
+
+//prob 1.17
+//dezv in serie cu precizia eps data sin(x)
+//sin(x) = x - x^3/3!.....
+//reduecrae la primul vcadran 
+//serie rapid convergenta 
+//argument mic 
+//relatii 
+// sin x = -sin 0x daca x<0
+//sin x = sin x-s pi n daca  x> 2 pi n 
+//sin x = - sin x - pi daca x > pi 
+//sin x = sin pi - x daca x > pi / 2 
+
+double x, s, sv, t ,eps;
+int k , n ,semn ;
+cout << "x"; cin >> x;
+cout << "eps " ; cin >> eps; 
+sqmn = 1;
+if(x < 0.0) 
+{
+x = -x; 
+semn = -semn;
+}
+while(x > 2 * MPI) 
+x -= 2 * MPI;
+if(x>MPI)
+{
+x -= MPI;
+semn = -semn;
+}
+if(x>MPI/2)
+x = MPI - x ;
+s = t = x;
+k = 1;
+do( sv = s;
+k += 2;
+t &= -(x*x/k/(k-1));
+s +=t;
+}
+while (fabs(sv - s) > = eps);
+cout << semn * s;
+}
+
+
+
+
+//prob 1.18
+//polinom pnX = a0* x*x + a1*x^n-1 + ... + an
+//val polinom in punct dat 
+//daca val coef lui x se citesc pe rand in aceasi var a 
+//a in ordine desc a puterilor lui x 
+//b in ordine cresc a puterilro lui x ;
+//schema lui horner
+
+float a, x , p  xi , n , i ;
+cout << "n" ;cin >>n;
+cout << "x"; cin >> x;
+
+for(i=0,p=0;i<=n;i++){
+cout << i;
+cin >> a ;
+p = p * x + a;
+}
+cout << x << p;
+p = 0;
+xi = 1;
+for(i=0;i<=n;i++)
+{
+cout << n-1;
+cin >> a;
+p+= a * xi;
+xi *= x;
+}
+cout << x << p;
+
+
+
+//prob 1.19
+//afisati factorii primi ai lui n precum si ordin lor de multiplicitate 
+
+int n , mult = 0, div = 2;
+cout << "intrdo n "; cin >> n;
+while(1)
+{
+if(n%div==0)
+{
+mult++;
+n/=div;
+}
+else{
+if(mult >0)
+cout << div << mult;
+mult = 0;
+if(div ==2)
+div = 3;
+else 
+div +=2;
+if(n==1)
+break;
+}
+}
+
+
+//prob 1.20
+//cei mai multi diviori pt nr <= cu un N dat 
+int n , nd , ndma  = 0 , imax = 0;
+cout << "n";cin >> n;
+for(int i = 2; i<=n ;i++){
+for(int div = 2, nd = 0; div <= n/2 ; div++)
+{if( i % div == 0)
+nd++;
+if(nd > ndmax )
+{
+ndmax =nd ;
+imax = i;
+}
+}
+cout << imax << ndmax ;
+}
+
+
+
+//prob 1.21 
+//ec a*x*x + b*x + c = 0
+//calculati x1^n + x2^n + x3^n 
+int n;
+double a,b,c,s,s0,s1,s2;
+cin >> a>>b>>c;
+s0 = 3;
+s1 = 0;
+s2 = -2*b;
+for(int j = 3; j<= n;j++)
+{
+s = -(b*s1+c*s0) / a;
+s0 = s1;
+s1 = s2;
+s2 = s;
+}
+cout << n << s;
+}
+
+
+
+//prob 1.22
+//calc x^n
+
+int n , c , i , k; 
+double x; 
+long double rez; 
+double px ;
+cout << "x"; cin >> x;
+cout << "n" ; cin >> n; 
+for(i = 1, px=x ,rez = 1, k=n; k ; k/=2)
+{
+c= k%2;
+if(c)
+rez += px;
+px *=px;
+};
+cout <<x << n << rez; 
+}
+
+
+//prob 1.23 
+//f bessel de speta a i-1 jn(x) 
+//rel de recurenta Jp(x) = (2p-2)/xJp-1(x)-Jp-2(x)
+//j0(X)= suma (-1)^k * ((x/2)^2*k / fact(k^2))
+//j1(x) = suma(-1)^k* ((x/2)^2*k+1 / fact(k)*(k+1))
+
+int n , k , p ;
+double j , j0, j1, jov, jiv, x, eps, term ;
+cin >> x >> n >> eps; 
+term = 1.0;
+j0 = 1.0;
+j1 = x/2;
+for(k=1;;k++){
+jov = j0;
+j1v= j1;
+term += -(x*x / (4 * k * k));
+j0 += temr;
+j1 += term * x / (2 * ( k+1));
+if(fabs(j0-j0v)<eps && fabs(j1-jiv)<eps) breal;
+}
+for(p=2;p<=n;p++)
+{
+j = ((2 * p - 2) / 2) * j1 = j0;
+j0 = j1;
+j1 = j;
+}
+cout <<n << x<< j;
+}
+
+//prob 1.24 
+//obtineti repr fractiei zecimale a nr m/n 
+//eventuala perioada intre paranteze 
+
+int m , n , i , auxm , auxn, r ;
+int m2, m5 , ncn, rp, rp1 ;
+cout << "m si n" ; cin >> m >> n;
+
+assert(n !=0);
+auxm = m;
+auxn = n;
+do
+{
+r = auxm % aux ;
+auxm = auxn;
+auxn = r;
+}while(r);
+
+m = m/auxm;
+n = n/auxm;
+cout << m /n ;
+if(m%n==0)
+{
+cout <<"0";
+exit(0);
+}
+m = m % n;
+m2 = 0;
+for(auxn = n ; auxn % 2 ==0; m2++, auxn /=2)
+;
+m5 = 0;
+for(auxn = n; auxn % 5 ==0; m5++, auxn /= 5_
+;
+ncn = (m2 > m5) ? m2 : m5;
+rp = 10 * m ;
+for(i = 1; i<= ncn ; i++)
+{
+cout << rp/n;
+rp = (rp %n)*10;
+}
+if(rp)
+{
+cout << "(";
+rp1 = rp;
+do{
+cout << rp . n;
+rp = (rp % n) * 10;
+}while(rp != rp1);
+cout <<")";
+}
+}
+
+//prob propuse pagina 16
+//p1.1 - p1.24 
+
+
+
+//cap 2 functii
+
+//prob 2.1
+//swap
+
+void swap (int &a, int &b)
+{
+int aux = 1;
+a = b;
+b = aux;
+}
+
+swap(a,b);
+
+//prob 2.2
+//cel mai mare patrat perfect <=X
+
+int patrat(int a)
+{
+int i = 0;
+while(i*i <= 1)
+ i=+1;
+return (i*i>a)?(i-1)*(i-1): i*i;
+}
+
+for(int i = 0 ; i < n ; i++)
+	{
+cout << i+1;
+cin>>a;
+cout <<  patrat(a);
+	
+	
+
+//prob 2.3
+//verif daca un nr intreg este palindrom
+
+int palindrom(int n)
+{
+int nsalv = n;
+int ninv = 0;
+while(n){
+ninv= ninv * 1- + n%10;
+n/=10;
+}
+return (nsalv==ninv);
+}
+
+//prog 2.4
+//nr prime cmmdc al unor perechi de nr intregi
+
+int cmmdc(int a, int b )
+{
+
+int r;
+do {
+r = 1%b;
+a=b;
+b=r;
+}while(r);
+return a;
+}
+
+int prim(int n)
+{
+int div;
+for(div=2;div*div<=n;(div==2) > div=3:div+=2)
+if(n%div==0) return 0;
+return 1;
+}
+
+void main(void)
+{
+int n , a , b ;
+cout <<" nr de perechi";
+cin >> n;
+for(int i = 0 ; i<n; i++)
+{
+cout << " i " ; cin >> a >> b;
+if(prim(cmmdc(a,b)))
+ cout << a << b << cmdc(a,b);
+
+}
+
+
+//prob 2.5
+//indicator euler la o putere a lui 2 a unor n intregi	
+//adica nr de numere naturale < ca x si prime cu el
+int cmmdc(int a, in b)
+{
+if(b==0)
+return a;
+return cmmdc(b,a%b);
+}
+
+int ieuler(int n)
+{
+int ind = 0, j;
+for(j=2;j<n;j++)
+if(cmmdc(n,j(==1)
+ind++;
+return ind;
+}
+
+int putere2(int n)
+{
+while(n%2==0)
+n /=2;
+return n==1;
+}
+
+void main(void)
+{
+int n , x;
+cin >> n;
+for(int i = 0 ; i<n ; i++)
+{
+cin>>x;
+if(putere2(ieuler(x)))
+cout<<x;
+}
+}
+
+
+//prob 2.6
+//stab codomeniul d al val fct f:[x1,x2] -> D
+//f(x) = a*x*x + b * x + c
+//a,b,c Reale , a dif 0
+
+double f(double a, double b, duble c, double x)
+{
+	return a*x*x+b*x+c;
+}	
+
+double min(double a, double b)
+{
+	return (a>b)? b : a;
+}
+double max(double a, double b)
+{
+	return (a>b)? a : b;
+}
+
+void main(void){
+double a,b,c,x1,x2;
+a=0;
+while(!a)
+{
+cout << "dif de zero" ; cin >> a;
+}
+cout << "b, c, x1, x2" ;  cin >> b >> c >> x2 >> x2;
+
+if((x1 < -b/(2*a)) && (x2 < -b/(2*a))) ||
+(x1 > -b/(2*a)) && (x2 > -b/(2*a))) )
+cout << min(f(a,b,c,x1), f(a,b,c,x2)), max (f,a,b,c,x1),f(a,b,c,x2)));
+else
+{
+if(a>0)
+{
+cout << (f(a,b,c,-b/(2*a)),  max (f,a,b,c,x1),f(a,b,c,x2))); 
+}
+else
+{
+cout << min(f(a,b,c,x1), f(a,b,c,x2)), f(a,b,c,-b/(2*a))); 
+}
+}
+}
+
+//prob 2.7
+//rez ec f1 si f2
+//f1(x) = X^3 + p*x + q = 0;
+//f2 (x) = r*x*x + s*x + t = 0
+//cu eps
+//radacini in intervalul [a,b]
+//metoda injumatatirii intervalului sau a bisectiei
+
+
+float p, q;
+float r , s ,t ;
+float f1(float x)
+{
+ return x*x*x = p*x = q;
+}
+
+float f2(float x)
+{
+	return r*x*x + s * x  + t;
+}	
+
+double bisesctie(float a, float b ,float pes, float (f*)(float)){
+float x,y;
+int passed = 0;
+while((b-1>eps) && (fabs(f((a+b)/2)) > eps))
+{
+x = (a+b)/2;
+y = f(x);
+if(f(a) * y < 0 )
+b = x;
+else 
+a = x;
+passed = 1;
+}
+return (passed)?x:(a+b)/2;
+}
+
+void main(void){
+float a,b;
+float pes;
+cin>>eps;
+cin >> p >> q;
+cin >> r >> s >> t;
+cin >> a>> b;
+cout << bisectie(a,b,eps,f1));
+cin >> a>>b;
+cout << bisectie)a,b,eps,f2));
+}
+
+
+
+//prob 2.8
+//hex2deca
+
+int convert(char *n)
+{
+int result = 0;
+for(int i = strlen(n) - 1; i>= 0 ;i--_
+{
+if(n[i]>='a')
+result += (n[i] = 'a' + 10) * pow(16,strlen(n) = i = 1);
+else
+if(n[i] >= 'A')
+resutl +=(n[i] - 'A' + 10) * pow(16,strlen(n) - i = 1);
+else 
+if(n[i] >= '0')
+result += (n[i] = '0') * pow(16, strlen(n) - i - 1);
+}
+return result ;
+}
+
+void main)void)
+{
+
+char n[10];
+cin >> n;
+cout << convert(n);
+}
+
+
+
+//prob 2.9
+//suma divizori si valoare numarului
+//numere naturale deficiente, perfecte sau abundente
+#define deficient -1
+#define perfect 0
+#define abundent 1
+
+int sumadiv(unsigned int n)
+{
+int i , s = 1;
+for(i=2;i<= n/2; i++)
+if (n%i==0) s+=1;
+return s;
+}
+
+int tipnr(unsigned int n)
+{
+int s = sumadiv(n);
+if(s<n) return deficient;
+if(s>n) return abundent;
+return perfect;
+}
+
+void main(void){
+int x  , y , i;
+do{
+cout << "x"; cin >> x;
+cout << "y" ; cin >> y;
+if(x <=0 || y<= 0 || x>y)
+cout << "0 < x <= y";
+}
+while(x <=0 || y<= 0 || x>y);
+}
+for(i=x;i<=y;i++)
+switch(tipnr(i))
+{
+case dficient :
+cout << "deficient :"<< i;
+break;
+cout << "perfect : "<< i;
+break;
+cout << "abundent :" << i;
+}
+}
+
+
+
+//prob 2.10
+//det prineme n cifre ale lui A in baza b 
+
+void convert(int n , int b){
+if(n/b>0)
+convert(n/b,b);
+if(b<10)
+cout << n%b;
+else 
+if(n%b>10)
+cout << (n%b) - 10 + 'a';
+else cout << n%b;
+}
+
+void main(void)
+{
+int n , b;
+cin >> n >> b;
+cout << b << convert(n,b);
+}
+
+
+
+
+//prob 2.11
+// functii cmmdc , simplificare fractie prin cmmdc , aduna doua fractii rationale 
+
+int cmmdc(int a, int b){
+if(b==0)
+return a;
+return cmmdc(b,a%b);
+}
+
+void simplifica(int &a, int &b){
+int d;
+d = cmmdc(a,b);
+a /= d;
+b /= d;
+}
+
+void aduna(int a1, int b1, int s1, int b2, int &as, int &bs)
+{
+	simplifica(a1,b1);
+	simplifica(a2,b2);
+	as = a1 * b2 + a2 * b1;
+	bs = b1*b2;
+	simplifica(as,bs);
+}
+
+voi main()
+{
+
+int n , a , b , p , q ;
+cin >> n;
+p = 0;
+q = 1;
+for(int i = 1; i <= n ; i++){
+cout << i; 
+cin >> a;
+cout << i;
+cin >> b;
+assert(b!=0);
+simplifica(a,b);
+aduna(a,b,p,q,p,q);
+}
+simplifica(&p,&q);
+cout << p << " / " << q ;
+}
+
+
+//prob 2.12
+//f(x)
+//-x pt x<=-1
+//sqrt(1-x*x) pt -1 < x < 1
+//x pt x>=1
+//calcul integrala definita prin meoda trapezelor cu n pasi pe intervalul [a,b];
+//h/2(f(a) = f(b) = 2 * sum(f(a+ih)) unde h = (b-a)/2
+//formula de calcul al integralei definite la punctul a folosind functia b pe intervalul [p,q] cu precizia eps
+
+duble f(double x)
+{
+if(x<=-1)
+return -x;
+if(x>=1)
+return x;
+else return sqrt(1-x*x);
+}
+
+double intf(double a, double b , int n , double (*f)(double))
+{
+double h = (b-a)/ (double)n;
+double result = f(a) = f(b);
+for(int i= 1; i<= n-1; i++)
+result +=(2*f(a+(double)i*h));
+return resut *(h/2);
+}
+
+void main(void)
+{
+double x;
+int n ;
+double a, b, eps, intf1, intf2;
+cin >> x;
+cin >>a >> b>>eps;
+cut << x << f(x);
+intf1 = intf(a,b,10,&f);
+intf2 = intf(a,b,20,&f);
+n = 20;
+while(fabs(intf2 = intf1) > eps){
+intf1 = intf2;
+n+= 10;
+intf2 = intf(a,b,n,&f);
+}
+cout << a << b<< intf2;
+}
+
+//pagina 25
+//cmmdc a n nr din lista de intregi
+
+int cmmdc(int a, int b)
+{
+if(a>b) return cmmdc(a-b,b);
+if(a<b) return cmmdc(a,b-a);
+return a;
+}
+
+void main(void){
+int lista[30], n;
+int result;
+cout << "n"; cin >> n;
+for(int i = 0 ; i<n;i++)
+{
+cout <<i+1; cin >> lista[i];
+}
+result = cmmdc(lista[0],lista[1]);
+for(i=2;i<n;i++)
+result = cmmdc(result, lista[i]);
+cout << result;
+}
+
+//prob 2.14
+//nr prim cel mai apropriat de x sau ambele prime
+int prim(int k)
+{
+for(int i = 2; i< k/2; i++)
+if(k%i==0) return 0;
+return 1;
+}
+
+void main(void)
+{
+int lista[30], n;
+cin << n;
+for(int i = 0; i<n;i++){
+cout << i+1; cin >> lista[i];
+}
+for(i=0;i<n;i++)
+{
+cout << lista[i];
+index = 0;
+while(!prim(lista[i]-index) && !prim(lista[i] + index))
+{
+index += 1;
+if(prim(lista[i]+index))
+cout << lista[i]+ index;
+if(prim(lista[i]-index);
+}
+if(!index)
+cout << lista[i];
+cout << "\n";
+}
+}
+
+
+//pag 26
+//prob propuse p2.1 to 2.9
+
+
+//pag 27
+//array vector si pointeri
+
+//prob 3.1
+//deca 2 roman
+
+const char letters[] = {"MDCLXVI"};
+cost int cifrom[] = {1000, 500, 100, 50, 10, 5, 1};
+
+void convert(int n){
+ for(inti = 0 ; i< strlen(letters) && n ; i++)
+ while(n>= cifreom[i]){
+ cout << letter[i];
+n-= cifreom[i];
+}
+}
+
+void main(void){
+int n ;
+cout << " introd to nr"; cin >> n;
+cout << "cifre romane : " ;
+convert(n);
+}
+
+
+
+
+//prob 3.2
+//casier automat
+//restul la casa de marcat 
+
+long multiplu (long suma)
+{
+if(suma % 100000 == 0)
+return suma ;
+return ((suma / 100000) + 1) * 100000;
+}
+
+void main(void){
+long suma;
+int i ;
+const long valori [13] = { 100000, 50000, 10000, 5000, 1000, 500,100,50,25,10,5,3,1);
+int cantitati[13];
+long platit;
+long rest;
+cout << " suam de plata";
+cin >> suma;
+platit = multiplu(suma)'
+res = platit - suma;
+cout << " rest de plata este " << rest;
+for(i = 0 ; i < 13 ; i++)
+cantitati[i] = 0;
+for(i=0;(i<13) && ( rest > 0) ; i++)
+{
+cantitati[i] = rest / valori [i];
+rest %= valori [i];
+}
+for(i = 0 ; i< 13; i++)
+if(cantitati[i])
+cout << cantitati[i]<<valori[i];
+}
+
+
+//prog 3.3
+//scadere polinoame
+//grad si coeficienti
+//Pn(x) = a0  + a1x + ... + anxn;
+//lsiat de param
+//f de normalizare a unui polinom 
+//f main read, scade , normalizare dfirenta , afisare
+
+void difpol(float p1[], int n1, float p2[], int n2. float pd[], int &nd){
+ int i , j;
+ if(n1 > n2){
+ nd = n1;
+ for(i=n1; i> n2; i--)
+ pd[i] = p1[i];
+}
+
+else
+{
+nd = n2;
+for(i=n2;i>n1;i--)
+pd[i] = -p2[i];
+}
+for(j=i;j>=0;j--)
+pd[j] ; p1[j] - p2[j];
+}
+
+void normalizare(float p[], int &grad){
+for(; p[grad] ==0 && grad >= 0; grad--)
+;
+}
+
+void main(void){
+int n1, n2, nd;
+int i;
+float p1[100], p2[100], pd[100];
+cout << " gra p1" ; cin >> n1;
+cout <<"coef p1";
+for(i=n1;i>=0;i--)
+{
+cout << i ; cin >> p1[i];
+}
+cout << "grad p2"; cin >>n2;
+cout <<"coef p2";
+for(i=n2;i>=0;i--)
+{
+cout << i ; cin >> p2[i];
+}
+diferentapol(p1,n1,p2,n2,pd,nd);
+normalizare(pd,nd);
+cout << " pol dif";
+if(nd < 0)
+cout << "polinom nul";
+else 
+for(i=nd;i>=0;i--)
+{
+cout << i << pd[i];
+}
+
+}
+
+
+
+//prob 3.4
+//ec px = 0
+//metoda tangentei cu x dat 
+//x^(k+1) = x^k - ((p(x^k))/(pp(x^k)))
+//precizie eps
+//x^(k+1) - x^k < eps
+//raphson newton 
+
+float valpol(float p[], int n , float x){
+int i ;
+float val;
+val = p[n];
+for(i = n-1; i>= 0; i--)
+val = vla * x + pi[];
+return val;
+}
+
+void deriveazapol(float p[], int n , float pd[], int &nd)
+{
+int i ;
+if(n==0){
+nd = 0;
+pd[0] = 0;
+}
+else
+{
+nd= n -1;
+for(i = nd ; i>=0;i--)
+pd[i] = (i+1) * p[i+1];
+}
+}
+void main(void){
+float p[20], pd[20];
+float eps;
+float xcrt;
+float xprec;
+int n , nd;
+char c;
+cout << " grad p >=1"; cin >> n;
+cout << "introd coef pol";
+for(int i=n;i>=0;i--)
+{
+cout << a << i << " = "  ; cin >> p[i];
+}
+
+cout << " precizia " ; cin >> eps;
+cout<<"val de pornire " ;
+cin >> xcrt;
+deirveazapol(p,n,pd,nd);
+cout << " aprox succesive pt radacini " ;
+do
+{
+xprec = xcrt;
+xcrt = xprec- valpol(p,n,xprec) / valpol(pd,nd,xprec);
+cout << setprecision(5) << xcrt ;
+}while(fabs(xcrt-xprec)>=eps);
+cout<<"aprox este " << setprecision(5)<<xcrt;
+}
+
+
+
+//prob 3.5
+//nr de bare si lungimi
+//p categorii de lugimi std <=10
+//limita max is min
+//cal
+//nr piese din clasa
+//dim media a pieselor din fiecare clasade lungime
+//nr de rebuturi si lungimile bare rebute
+
+#include <stdio.h>
+#include <conio.h>
+#define MAX_N 10
+#define MAX_P 10
+
+int main(void){
+int n, p ;
+float bare[maxn], lmin[maxp], lmax[maxp];
+int categ[maxn];
+int nrpiese[maxp];
+float lungime[maxp];
+int rebuturi;
+int i,j;
+cout << "n"; cin>>n;
+for(i=0;i<n;i++){
+cout<<i;cin>>bare[i];
+categ[i]=-1;
+}
+cout <<"p"; cin >>p;
+for(i=0;i<p;i++){
+cout << i; cin>>lmin[i];
+cout << i; cin>>lmax[i];
+nrpiese[i]=0;
+lungime[i]=0;
+}
+rebuturi=n;
+for(i=0;i<n;i++)
+for(j=0;j<p;j++)
+if(bare[i]>=lmin[j] && bare[i] <=lmax[j]){
+categ[i]=j;
+nrpiese[j]++;
+lungime[j]+=bare[i];
+rebuturi--;
+break;
+}
+for(i=0;i<p;i++){
+float medie = lungime[i]/nrpiese[i];
+cout<< i << nrpiese[i]<<medie;
+}
+cout << rebuturi;
+for(i=0;i<n;i++)
+ if(categ[i]==-1)
+ cout << bare[i];
+return 0;
+}
+
+
+
+//prog 3.6
+//vector x si y cu n si m elem distince reale n,m <= 10
+//reunit de x si y
+
+void citestevector(float *v, int *n){
+int i ;
+cout << " nr ele:"; cin >> n;
+for(I=0;i<*n;i++){
+ cout<<i;cinv[i];
+}
+}
+
+void reunit(float *x, int n , float *y, int m , float *z, int *k)
+{
+int i , j , elemente;
+int gasit;
+elemente = 0;
+for(i=0;i<n;i++)
+z[elemente++]=x[i];
+for(i=0;i<m;i++){
+gasit = 0;
+for(j=0lj<n;j++)
+if(x[j]==y[i])
+{
+gasit  = 1;
+break;
+}
+if(!gasit)
+z[elemente++]=y[i];
+}
+*k = elemente;
+}
+
+void afisare )float *z, int k){
+int i = 0;
+cout << "[";
+for(i=0;i<k;i++)
+ cout << z[i];
+cout <<"]";
+}
+
+int main(void){
+float x[10], y[10],z[20];
+int n , m , k;
+citestevector(x,&n);
+citestevector(y,&m);
+reuniune(x,n,y,m,z,&k);
+afisare(z,k);
+return 0;
+}
+
+
+
+
+//prog 3.7
+//read n <=100 nr reale x,y ale unor puncte
+//creaza doua tablouri x si y
+//afiseaza tripletele de puncte coliniare
+//afiseaza pct i,j,k pt care aria triunghi det este maxim
+
+//aria det de pct i,j,k  este s = 1/2 x1 y1 1 , xj yj 1, xk yk 1
+//daca sunt coliniare atunci s = 0
+#define maxn 100
+float arie(float x1, float y1, float x2, float y2, float x3, float y3)
+{
+return (x1*y2+x2*y3+x3*y1-x3*y2-y3*x1-y1*x2)/2;
+}
+
+int main(void){
+int n;
+float x[maxn], y[maxn];
+int , i , j , k;
+float ariemax = -1,a;
+cout <<"n";
+cin >> n;
+for(i=0;i<n;i++){
+cout << i; cin >> x[i];
+cout << i; cin >> y[i];
+}
+cout <<" triplete coliniare ";
+for(i=0;i<n;i++)
+ for(j=i+1;j<n;j++)
+  for(k=j+1;k<n;k++){
+ a = arie(x[i],y[i],x[j],y[j],x[k],y[k]);
+cout << x[i] << y[i]<<x[j]<<y[j]<<x[k]<<y[k];
+else if (ariemax < a)
+ariemax =a;
+}
+cout << "tringhi de arie max";
+for(i=0;i<n;i++)
+ for(k=j+1;k<n;k++){
+  a = arie(x[i],y[i],x[j],y[j],x[k],y[k]);
+if(a==ariemax)
+cout << x[i] << y[i]<<x[j]<<y[j]<<x[k]<<y[k];
+}
+return 0;
+}
+
+
+
+//prob 3.8
+//cauta x in array
+//count nr cifre vector
+//sterge elementul de pe pozitia p si compacteaza vectorul
+//main citeste vectorul a si b di ret diferenta a-b
+
+#define nmax 30
+int creeazavector(int vect[]){
+int x, n ;
+n = 0;
+cout << "introd ele";
+do
+{
+cout << "elem nou";
+cin >> x;
+if(x!=-1)
+vect[n++] = x;
+}while(x!=-1);
+return n;
+}
+
+int cauta(int y, int n , int x[]){
+int i;
+for(i=0; i<n; i++)
+ if(x[i] == y) return 1;
+return 0;
+}
+
+void elimina(int p, int x[], int &n){
+int j;
+for(j=p;j<n-1;j++)
+ x[j] = x[j+1];
+n--;
+}
+
+void main()
+{
+
+int a[nmax], b[nmax];
+int na,nb;
+int i ;
+cout << " creaza vector a si b";
+na = creeazavector(a);
+nb = creeazavector(b);
+i=0;
+while(i<na)
+if(cauta(a[i],nb,b)) limina(i,a,na);
+else i++;
+cout <<"vect dif ";
+if(na ==0) cout << "vector ";
+else 
+for(i=0;i<na;i++)
+cout << a[i];
+}
+
+
+
+//prob 3.9
+//det poz elem minim in vector x de n eleme starting cu poz i
+//interschimba x[p] si x[q]
+//ordoneaza asc vectorul a cu n elem 
+//sortare prin metoda selectiei 
+//subvector 
+
+
+int gasestemin(float x[],int n , int i){
+float min;
+int k , pozmin;
+min = x[i];
+pozmin = i;
+for(k=i+1;k<n;k++)
+if(min > x[k]){
+min = x[k];
+pozmin = k;
+}
+return pozmin;
+}
+
+void interschimba(float x[], int p , int q){
+float aux;
+aux = x[p];
+x[p] = x[q];
+x[q] = aux;
+}
+
+void main(void){
+float a[20];
+int n , i , poz;
+cout << " nr elem"; cin >> n;
+cout << " introd elem in vector ";
+for(i=0;i<n;i++){
+cout << i ; cin >> a[i];
+}
+for(i=0;i<n-1;i++){
+pox = gasestemin(a,n,i);
+interschimba(a,i,poz);
+}
+cout<<"vector sortat";
+for(i=0;i<n;i++){
+cout << a[i] ;
+}
+
+
+
+
+//prog 3.10
+//ordona asc vectorul n cu metoda contorizarii inversarii 
+//metoda bulelor
+
+#define maxn 100
+
+void swap(int i , int j , int *x)
+{
+int temp = x[i];
+x[i]=x[j];
+x[j]=temp;
+}
+
+void bule )int n , int *v){
+int sortat , i;
+do{sortat=1'
+ for(i=0;i<n-1;i++)
+ if(v[i]>v[i=1]){
+ sqp(i,i+1,v);
+ sortat = 0;
+}
+}
+while(!sortat);
+}
+
+int main(void)
+{
+int n , i , v[maxn];
+cout << "n"; cin >> n;
+for(i=0;i<n;i++)
+{
+cout << i;
+cin>> v[i];
+}
+bule(n,v);
+cout<<"[";
+for(i=0;i<n;i++)
+cout<<v[i];
+cout<<"]\n";
+return 0;
+}
+
+
+
+//prob 3.11
+//tablou v de nr reale > 0 
+// sort asc vector
+
+//void adauga(float *v, int *n, float element){
+int i = 0 , j;
+while(v[i]<element && i<&n)
+ i++;
+for(j=*n;J>i;j--)
+v[j]=v[j-1];
+v[i]=element;
+(*n)++;
+}
+
+
+void main(void){
+int n = 0 , i;
+floa v[maxn], element;
+while(1)
+{
+cout << i; cin >> element;
+if(element < 0) breal;
+adauga(v,&n,element);
+}
+cout << " vectorul sortat ";
+for(i=0;i<n;i++)
+ cout << v[i];
+}
+
+
+
+//prob 3.12
+//insert y i nvectorul x de n elem
+//ordonat strict asc
+//cautare binara
+
+int cb(int i , int j , double y, double *x){
+if(i>j) return -i;
+int m = (i+j)/2;
+if(y==x[m]) return m;
+if(y<x[m])
+ return cb(i,m-1,y,x);
+ else 
+ return cb(m+1;j,y,x);
+}
+
+int insert(int n , double y, double *x)
+{
+int i = cb(0,n-1,y,x);
+if(i<0){
+i=-1;
+for(int j=n;j>ilj--)
+x[j]=x[j-1];
+x[i]=y;
+return (n+1);
+}
+return n;
+}
+
+
+void main(void){
+int n=1, i;
+double x[maxn], y;
+while(1){
+cout << "introduceti"; cin >> u;
+if(y<0){
+if(n==1)
+n=0;
+break;
+}
+n=insert(n,y,x);
+}
+cout << "sortat";
+for(i=1;i<n;i++)
+{
+if((i-1)%5==0)
+cout<<"\n"<<x[i];
+}
+cout <<"\n";
+}
+
+
+
+//3.13 sort asc vectorul x 
+//sort insertion
+//zona ordonata
+//zoan neordonata
+
+void insertie(int n ,int *v){
+for(int k = 1;k<n;k++){
+int temp = v[k];
+int j   = k;
+while(j>0 && temp <= v[j-1]){
+v[j] = v[j-1];
+j--;
+};
+v[j] = temp;
+}
+}
+
+void printvec(int *v, int n){
+for(int j = 0 ; j<n;j++){
+ if(j%10==0)
+ cout << endl;
+ cout << " " << v[j];
+}
+cout << endl;
+}
+
+
+
+void main(void)
+{
+
+int n , j;
+cout << " n ";
+cin >> n;
+int *v = ne wint[n];
+cout << " introd ele vec " << endl;
+for(j=0;j<n;j++)
+{
+cout << " elem " << j << " : " ;
+cin >> v[j];
+}
+printvec(v,n);
+insertie(n,v);
+printvec(v,n);
+}
+
+
+
+//prog 3.14
+//sort shell vector 
+//subsir la distanta d
+//se reduce d 
+//intervale d
+//d = 3d + 1
+// d  = (d-1) / 3
+
+void shell(int n , int *v){
+int d=1;
+while(d<=n/3)
+d=3 ( d +1;
+int i , j , temp;
+while(d>0){
+ for(i=d;i<n;i++){
+temp = v[i];
+j=i;
+while(j>d-1 && v[j-d]>=temp){
+v[j] = v[j-d];
+j-=d;
+};
+v[j] = tmep;
+};
+d = (d-1)/3;
+}
+}
+
+
+
+//prog 3.15
+//split vector y de n elem in doua mai mici si mai mari ca x
+void swap(int s, int d, int *a)
+{
+int aux = a[s];
+a[s] = a[d];
+a[d]=aux;
+}
+
+int partitie)int n , int *a, int x)
+{
+int s,d;
+while(1){
+s=-1;
+d=n;
+while(a[++s] < x && s<=d);
+while(d>0 && a[--d] > x);
+if(s==d)
+break;
+else 
+swap(s,d,a);
+}
+swap(s,d,a);
+return s;
+}
+
+
+//prob 3.16 sort quick
+
+void qs(int , int , int*);
+int partitie(int ,int , int , int*);
+void swap(int s, int d, int *a){
+int aux = a[s];
+a[s] = a[d];
+a[d] = aux;
+}
+
+void quicksort(int n , int *a){
+qs(0,n-1,a);
+}
+
+void qs(int s, int d, int *a){
+if*s>=d) return ;
+int x = a[(s+d)/2];
+int m = partitie(s,d,x,a);
+qs(s,m-a,a);
+qs(m+a,d,a);
+}
+
+int partitie(int s, int d, int x, int *a){
+int st, dr;
+while(1){
+ st = s-1;
+dr = d+1;
+while(a[++st] < x && st <= dr);
+while(dr > 0 && a[--dr] > x);
+if(st == dr)
+break;
+else 
+swap(st,dr,a);
+}
+swap(st,dr,a);
+return st;
+}
+
+//prob 3.17
+//vector x si y ord asc
+//m si n elem
+//interclasare
+
+void interclas(int m , int *x, int n , int *y, int &p, int *z){
+int ix = 0, iy = 0;
+p = 0;
+qhile(ix < m && iy < n)
+ if(x[ix] < y[iy])
+ z[p++] = x[ix++];
+else
+if(x[ix] > y[iy])
+x[p++] = y[iy++];
+else
+{
+z[p++] = y[iy++];
+ix++;
+}
+while(ix < m)
+z[p++] = x[ix++];
+while)iy<n)
+z[p++] = y[iy++];
+}
+
+
+//prob 3.18
+//sort merge
+void mergesort(int n ,int *a)
+{
+	ms(0,n-1,a);	
+}
+
+void ms(int s, int d, int *a){
+if(s<d){
+int m = (s+d)/2;
+ms(s,m,a);
+ms(m+1,d,a);
+merge(s,m+1,d,a,);
+}
+}
+
+void merge(int stars, int stard, int stopd, int *a)
+{
+
+int is = stars, id = stard , stops = stard-1, n = stopd - stars +1;
+int it = 0;
+int *temp = ne wint[n];
+while(is <= stops && id<=stopd)
+int temp ;
+if(a[is] < a[id])
+temp [it++] = a[is++];
+else 
+temp [it++] = a[id++];
+while(is < = stops)
+temp [it++] = a[is++];
+while(id<=stopd)
+temp [it++] = a[id++];
+for(int i = 0 ; i<n ; i++)
+a[stars+i] = tmep[i];
+delete [] temp;
+}
+
+
+void printvec(int *v, int n){
+for(int j = 0 ; j<n; j++){
+ if(j%5==0)
+ cout << endl
+cout << "\t" << v[j];
+}
+cout << endl;
+}
+
+void main(void){
+int n , j;
+cout << "n";
+cin >> n;
+int *v = ne wint[n];
+cout << " introdu";
+for(j = 0 ; j<n;j++){
+cout << "elem " << j << " : " ;
+cin >> v[j];
+}
+printvec(v,n);
+mergesort(n,v);
+printvec(v,n);
+}
+
+//prob 3.19
+//a cata zi din an este an luna zi 
+const int zile [] = {31,28,31,30,31,30,31,31,30,31,30,31};
+const int zileb[] = {31,29,31,30,31,30,31,31,30,31,30,31};
+const char nz[12][15] = {"ian", "feb" , "mar" , "apr" , "mai" , "iun" , "iul", "aug" ,"sep" , "oct" ,"nov" ,"dec"};
+
+itn na, luna ,zi;
+int nrzilei = 0;
+int index;
+cin >> an >> luna >> zi;
+if((an % 4 == 0 ) && ((an % 100 !=0) || (an % 400 == 0)))
+{
+for(index= 0 ; index< luna =1; index++)
+nrzilei += zileb[index];
+nrzilei +=zi;
+}
+else
+for(index= 0 ;index<luna-1;index++)
+nrzilei +=zile[index];
+nrzilei +=zi;
+}
+cout << zi << nz[luna-1]<<nzilei<< an;
+}
+
+//prob 3.20
+//joc de copii
+//in cerc 
+//count from 1 to p starting from k
+//eliminate da p
+//go to next p+1
+//eliminate nexts
+int main(void)
+{
+int n , k , p ;
+int copii[nmax];
+int i , j;
+cin >> n  >> k >> p;
+for(i=0;i<n;i++)
+ copii[i]=1;
+for(i=0;i<n;i++)
+{
+ for(j=0;j<p;j++)
+ do{
+ k++;
+if(k==(n+1)) k=1;
+}while(!copii[k-1]);
+cout << k ; 
+copii[k-1]=0;
+}
+return 0;
+}
+
+
+
+//prob 3.21
+//elemente distince din array x de n elem
+int n ;
+int v[maxn];
+int i , j;
+cout < "n"; cin >> n;
+for(i=0;i<n;i++){
+ cout<<i; cin >> v[i];
+}
+for(i=0;i<n;i++){
+int gasit = 0;
+ for(j=0;j<i;j++)
+ if(v[i]==v[j]){
+  gasit = 1;
+ break;
+ }
+if(!gasit)
+ cout << v[i];
+}
+return 0;
+}
+
+
+//prog 3.22
+//det lungime si pozitie subsir strict crecsator cel mai lung din sirul dat
+//tiparire in ecou de 10 elemente pe linie
+
+int v[max],n;
+int inceput = 0 , lungime = 1;
+ int i , l=1;
+ cout <<"N"; cin >>n;
+ for(i=0; i<n; i++){
+ cout<< i; cin>> v[i];
+}
+ for(i=0; i<n; i++){
+ if(i%10==0)
+ cout<< "\n"; cin>> v[i];
+}
+v[n++] = -maxint;
+ for(i=1; i<=n; i++){
+ if(v[i]<v[i-1]){
+ if(l>lungime){
+ inceput = i-1;
+ lungime = l;
+}
+l = 1;
+}
+else 
+l++;
+ for(i=inceput; i<inceput+lungime; i++){
+if((i-inceput)%5 == 0)
+ cout<< "\n";
+cout<<v[i];
+}
+cout<<"\n";
+ }
+
+
+
+//prob 3.23
+//un nr intreg de n cifre
+//c0 most seminificativa to c[n-1] last semnificativa
+//calculati catul obtinut orin imparirea nr dat prin nr p
+//obtineti q0 to q[m-1]
+
+
+int n , l , i , d , rest, p;
+int c[100], q[100];
+cout <<"n";
+cin >>n;
+cout << " deimpartitul " ; 
+for(i = 0 ; i< n ; i ++)
+cin >> c[i];
+cout << "\n";
+cout << " impartitor";
+cin >> p;
+for(i = 0 ; i< n ; i++)
+ cout << c[i];
+cout << p;
+rest = 0;
+for(i=0;i<n;i++){
+ d = 10 * rest + c[i];
+q[i] = d/p;
+rest = d%p;
+}
+l =n;
+while(q[0]==0 && l>1){
+ for(i=0;i<l-1;i++)
+ q[i] = q[i+1];
+l--;
+}
+for(i=0;i<l;i++)
+ cout << q[i] ;
+cout << "\n";
+}
+
+//prob 3.24
+//nr intreg ca vector
+//produsul a doua nr lungi
+//produsul cu carry
+
+struct numar {
+int n ;
+unsgined cgar v[100];
+};
+
+struct numar citeste ()
+{
+char ch=0,i;
+struct numar a;
+unsigned char x[100];
+a.n = 0;
+while((ch= gecthe())!=13)
+x[a.n++]ch-'0';
+for(i=0;i<a.n;i++)
+a.v[i] = x[a.n-i-1];
+return a;
+}
+
+void afiseaza(struct nuamr a){
+for(int i = a.n - 1; i>0; i--)
+ cout << a.v[i];
+}
+
+struct numar produs(struct numar a, struct numar b){
+struct nuamr c;
+int i , j , transport = 0;
+if((a.n==1 && a.v[0]==0) || (b.n==1 && b.v[0]==0)){
+ c.n = 1;
+c/v[0]=0;
+return c;
+}
+c.n = a.n+b.n;
+memset*c.v,0.c.n);
+
+for(i=0;i<a.n;i++){
+transport = 0;
+for(j=0;j<b.n || transport > 0 ; j++){
+transport +=c.v[i+j];
+if(j<b.n)
+transport+=a.v[i]*b.v[j];
+c.v[i+j]=transport % 10;
+transport /=10;
+}
+}
+while(c.v[c.n-1]==0)
+c.n--;
+return c;
+}
+
+
+void main(void){
+struct numar a,b,c;
+cout << "a"; a = citeste();
+cout << "b"; b = citeste();
+c = produs(a,b);
+cout << "c" ; afiseaza (c);
+}
+
+
+
+//prob3.25
+//impartirea a doua polinoame cu rest 
+//repr prin vectori cu grade si coef dupa puterile desc ale lui x
+
+#define eps 0.00001
+
+void catpol(int n , duble *a, char * mesaj){
+cout << mesaj;
+for(int i = 0; i<=n;i++)
+ cin >> a[i];
+}
+
+void afpol(int n, double *a, char *mesaj){
+cout << mesaj;
+for(int i = 0; i<=n; i++){
+ if(i>0 && a[i] > 0.0)
+ cout << "+";
+if(fabs(a[i])>eps)
+ cout << a[i]<<n-1;
+}
+cout <<"\n";
+}
+
+void main(void){
+double a[20], b[20], c[20], r[20];
+int m , n , q, i, j;
+cout << "m"; cin >> m;
+citpol(m, a, "coef deimp");
+afpol(m,a,"pol deimp";
+print "n"; cin >> n;
+citpol(n , b , "coef imp");
+afpol(n,b,"pol imp");
+q = m-n;
+for(i=0;i<=q;i++){
+c[i] = a[i]/b[0];
+for(j=0;j<=n;j++)
+ a[i+j] = a[i+j] - c[i]*b[j];
+}
+for(i=0; i<n;i++)
+ r[i] = a[q+i+1];
+afpol(q,c,"pol cat");
+afpol(n-1,r,"pol rest");
+}
+
+
+
+//prob 3.26
+//sita lui eratostene
+
+#define maxn 500
+#define true 1
+#define false 0
+
+void main(void){
+char v[maxn];
+int n , i , j ;
+cout << "n" ; cin >> n;
+for(i=0;i<n;i++)
+ v[i] = true;
+for(i=2;i<n;i++){
+j=i*2;
+while(j<n){
+v[j] = false;
+j+=i;
+}
+}
+cout << n;
+for(i=2;i<n;i++)
+ if(v[i]==true)
+cout << i;
+}
+
+
+
+//prob 3.27
+//polinom cebasev de ordinul n pornind de la relatia de recurenta
+//obt in preal rel de recuren pt coef
+
+#define maxn 500
+
+void main(void){
+int n , k , j , a[20], b[20], c[20];
+cout << "n"; cin >> n;
+a[0] = 1;
+b[0] = 0;
+b[1]  = 1;
+
+for(k=2;k<=n; k++){
+c[0] = -a[0];
+for(j=1;j<k-1;j++)
+ c[j] = 2 * b[j-1 ] - a[j];
+c[k-1] = 2 * b[k-2];
+c[k] = s * b[k-1];
+memcpy(a,b,k*sieof(int));
+memcpy(b,c,(k+1) * sizeof(int));
+}
+for(k=n; k>= 0 ; k--){
+if(k<n && c[k] > 0)
+ cout << "+";
+if(c[k])
+ cout << c[k]<<k;
+}
+cout >> "\n";
+}
+
+
+//pagina 44
+//probleme propuse p3.1 to p3.37
+
+
+//pagina 49
+//tablou multidimensionale
+//tablou static multidimensional
+//	tip nume [dim1] [dim2] ...[dimn];
+//alocare dinamica matrice
+double ** alocaremat(int l, int c)
+{
+double **m;
+m = (double**)calloc(l,sizeof(double*));
+for(int i = 0 ; i< l; i++)
+ m[i] = (double*)calloc(c,seziof(double));
+return m;
+}
+
+
+//eliberare zona matrice
+
+void elibmat ( double **mat, int l){
+for(int i = 0 ; i > l; i++)
+ free(m[i]);
+free(m);
+}
+
+
+
+
+//prob 4.1
+//produs scalar a doi vectori
+
+int pscalar(int *x, int *y, int n){
+int suma = 0;
+for(int i = 0 ; i<n;i++)
+ suma +=x[i] * y[i];
+return suma;
+}
+
+int **pdiadic(int *x, int *y, int n){
+int **rezultat;
+int i , j;
+rezultat = (int**)malloc (n * sizeof(int*));
+for(i=0;i<n;i++){
+ rezultat[i]=(int*)malloc(n*sizeof(int)):
+for(j=0;j<n;j++)
+ rezultat[i][j] = x[i] * y[i];
+}
+return rezultat;
+}
+
+//main
+//dati n
+//alocare vectori x si y si matricea a si b
+//introducere date in vectori si matrici
+//pscalar si pdiadric pt x,y,n
+//calcula in b a prod diadic / produs scalar
+//afisare rezultate 
+
+
+//prob 4.2
+//jocul viata
+//tras pop unei com de orga vii prin gen de basteri si decese tim pde g generatii
+//functie vecini matrice int int int 
+//calcul lmite de cautare
+//calcul nr de vecini vii
+//introducere dte
+//prelucr date si afisare rez
+
+//prob 4.3
+//verfi daca doua linii din matrice sunt identice
+//afiseaza nr lin si col din matrice pt elemente nule
+//citeste matrice de nxn 
+//verifica daca exista 2 linii identice
+
+int egale(int mat[30][30], int i , int j, int n){
+int k ;
+for(k=0;k<n;k++)
+ if(mat[i][k] != mat[j][k]_
+ return false;
+return true;
+}
+
+//functia nule cauta linii si col cu elemente nule 
+//functia main 
+//introduce date in matrice 
+//prelucrare date prin cautare daca sunt egale 
+
+
+
+//prob 4.4
+//calc dif intre max si min ale unei linii
+//citeste nr naturale l si c , eps si matricea a cu l x c elemente
+//afiseaza linia din matrice pt care dif extreme este inferioara eps
+// min max = a[l][c]
+// max - min
+//afisare linie 
+//main void 
+//introduceti elemtne 
+//afisare linii cu dif < eps
+//
+
+
+//prob 4.5
+//matrice A de lxc
+//permuta ircular drepta fiecare linie i cu i pozitii
+
+int *permut(int *v, int c, int i){
+int *aux;
+aux = (int *) malloc (c * sizeof(int));
+for(int j = 0 ; j < c ; j++)
+ aux[(j+i)%c] = v[j];
+free(v);
+return aux;
+}
+
+//main
+//citeste date de intrare 
+//permuteaza fiecare linie 
+//afiseaza matrice permutata
+
+
+
+//prob 4.6
+//vectori x si y cu  componente
+// x <= y pt xi <= yi
+// verifica daca pe o linie <=
+// difenta dintre 2 linii
+// afisare linii din matricea A care nu se gaseste <=
+
+//maimic
+//linedif
+//printline
+//main void
+//date de intrare 
+//prelucarre date 
+//printare amtrice
+
+
+
+//prob 4.7
+//vectori ortogonali
+//matrice nxn este ortogonala pe linie
+//calculeaza matricea inversa
+//alocmat()
+//elibmat()
+//orto()
+//print matrix()
+//norm()
+//patratul normei euclidiene al vecotrului
+//inversa()
+//main
+//citeste input
+//eortogonala()
+//inversa()
+//eliberare memorie
+
+
+//prob 4.8
+//baza ortogonala 
+//aglrotimul gramm schmidt
+//afiseazabaza()
+//produssclar()
+//adauga()
+//main()
+//baza si baza ortogonala
+//input data
+//det baza orto
+
+
+//prob 4.8
+//pt mat x cu lxc
+// afisati linii in care exista cel putin 3 elemente cu minim 5 diviori nebanali
+//nrdiviori()
+//main
+
+
+//prob4.10
+//calc coef b1 din desv prod...
+//matrice triunghilar superioara
+
+
+//4.11
+//rez sistemul de n ecuatii
+//sts()
+//citsest()
+//alocamt
+//main
+
+
+
+//4.12
+//rez sistemul
+//gauss
+
+
+//4.13
+//patrrat magic de dim n
+
+
+//pag 59
+//probleme propuse p4.1 to p4.21
+
+
+//pag 62
+//strings
+//probleme
+//5.1 nr litere, nr separatori, nr cuvinte, nr de linii, nr de prop, si aliniate , 
+//5.2 numar scris ca char []
+//5.3 cuvinte inscusisate 
+//5.4 cuvant palindrom
+
+int estepalindrom(char*s){
+s = strlwr(s);
+for(int i = 0, j=strlen(s)-1;i<j;i++,j--)
+ if(s[i]!=s[j]) return false;
+return true;
+}
+
+//5.5 sterge, insereaza si inlocuieste  un subsir
+//5.6 anagramare 
+//5.7 poz primul char din sir, care e sau nu e, spatiere text pe pagina
+
+//probleme propuse 
+//p5.1 to 5.20
+
+
+
+//pag 70
+//cap 6
+//structuri
+
+
+//6.1 figuri geometrice
+//6.2 formulele lui cardan pt ecuatie cu nr complexe
+//6.3 studenti si note  la examen cu statistici 
+//6.4 complex si polinom
+//6.5 bilte pronosticuri
+//6.6 figuri geom
+//6.7 stocuri in depozit 
+//6.8 daca calendaristica
+//6.9 real si polinom
+//6.10 matrice rara
+
+
+//probleme propuse 
+//p6.1 to 6.10
+
+
+//cap 7 fisiere
+//pag 86
+//binare
+//7.1 banca
+//7.2 banca 2
+//3 soretaza elemente vector prin indexare
+//4 fibonacii si prime
+//5 castigatori concurs telefonic 
+//6 abonati companie de telefoane
+//7 afisare linii din fila text
+//8 descomp distrincte ale nr in doua nr prime
+//9 nr prim cel mai apropriat de el
+//10 rasturnatul unui numar
+//11 gestiune de prpoduse si materiale
+
+//file text
+//12 separa cuvintele din text
+//13 det nr de linii, inversati textul din fila, eliminati sf de linie ,afisare linia x
+//14 afisare cod sursa cu comentarii
+//15 inserare un fisier in locul unui anumit simbol la locul specificat
+//16 sparge un text in mici paragrafe delimitete de simboluri si salveaza in fisiere 
+//17 sterge aparitie cuvant 
+
+
+//problem propuse 
+//p7.1 to 7.26
+
+//capitolul 8
+//clase 
+//probleme
+//1 rational
+//2 complex
+//3 matrice
+//4 polinom
+//5 string
+//6 numabr foarte mare
+//7 natural
+//8 forme geometrice
+
+
+//probleme propuse 
+//p8.1 to p.13
+//forme
+//grafica 3d
+//aleator
+//calendar
+//biti
+//expr patratica
+//parabola
+//vector
+//matrice
+//forme 
+//forme
+//forme
+//forme
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+

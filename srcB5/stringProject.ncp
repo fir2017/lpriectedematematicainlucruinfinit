@@ -1,0 +1,40 @@
+<Project>
+  <Name>stringProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>String</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>STRING</Name>
+        <Access>Public</Access>
+        <Location left="43" top="16" />
+        <Size width="162" height="451" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int N</Member>
+        <Member type="Field">char data</Member>
+        <Member type="Constructor">public STRING()</Member>
+        <Member type="Constructor">public STRING(ref char c)</Member>
+        <Member type="Constructor">public STRING(STRING s)</Member>
+        <Member type="Destructor">~STRING()</Member>
+        <Member type="Method">public void resize()</Member>
+        <Member type="Method">public void size()</Member>
+        <Member type="Method">public void isempty()</Member>
+        <Member type="Method">public void find()</Member>
+        <Member type="Method">public void findfirstof()</Member>
+        <Member type="Method">public void findfirstnotof()</Member>
+        <Member type="Method">public void substr()</Member>
+        <Member type="Method">public void insert()</Member>
+        <Member type="Method">public void remove()</Member>
+        <Member type="Method">public void replace()</Member>
+        <Member type="Method">public void array()</Member>
+        <Member type="Method">public void egal()</Member>
+        <Member type="Method">public void add()</Member>
+        <Member type="Method">public void egalitate()</Member>
+        <Member type="Method">public void toString()</Member>
+        <Member type="Method">public void fromString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

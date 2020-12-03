@@ -1,0 +1,63 @@
+<Project>
+  <Name>multimeProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>multime</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>MULTIME</Name>
+        <Access>Public</Access>
+        <Location left="40" top="12" />
+        <Size width="162" height="672" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; ELEMENT&gt; elementele</Member>
+        <Member type="Constructor">public MULTIME()</Member>
+        <Member type="Destructor">~MULTIME()</Member>
+        <Member type="Method">public void apartine()</Member>
+        <Member type="Method">public void adauga()</Member>
+        <Member type="Method">public void del()</Member>
+        <Member type="Method">public void modif()</Member>
+        <Member type="Method">public void copy()</Member>
+        <Member type="Method">public void cut()</Member>
+        <Member type="Method">public void paste()</Member>
+        <Member type="Method">public void select()</Member>
+        <Member type="Method">public void selectall()</Member>
+        <Member type="Method">public void mark()</Member>
+        <Member type="Method">public void markall()</Member>
+        <Member type="Method">public void atrib()</Member>
+        <Member type="Method">public void mult()</Member>
+        <Member type="Method">public void add()</Member>
+        <Member type="Method">public void dif()</Member>
+        <Member type="Method">public void div()</Member>
+        <Member type="Method">public void intersectie()</Member>
+        <Member type="Method">public void apartine()</Member>
+        <Member type="Method">public void incluziune()</Member>
+        <Member type="Method">public void reuniune()</Member>
+        <Member type="Method">public void apartenenta()</Member>
+        <Member type="Method">public void produscartezian()</Member>
+        <Member type="Method">public void zero()</Member>
+        <Member type="Method">public void strictpozitive()</Member>
+        <Member type="Method">public void par()</Member>
+        <Member type="Method">public void impar()</Member>
+        <Member type="Method">public void count()</Member>
+        <Member type="Method">public void sum()</Member>
+        <Member type="Method">public void product()</Member>
+        <Member type="Method">public void prime()</Member>
+        <Member type="Method">public void cmmdc()</Member>
+        <Member type="Method">public void cmmmc()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ELEMENT</Name>
+        <Access>Public</Access>
+        <Location left="226" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">STRING valoare</Member>
+        <Member type="Field">STRING format</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

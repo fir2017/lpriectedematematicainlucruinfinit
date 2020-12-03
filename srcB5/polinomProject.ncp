@@ -1,0 +1,38 @@
+<Project>
+  <Name>polinomProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Polinom</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>POLINOM</Name>
+        <Access>Public</Access>
+        <Location left="23" top="16" />
+        <Size width="162" height="417" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int n</Member>
+        <Member type="Field">float data</Member>
+        <Member type="Constructor">public POLINOM(POLINOM p)</Member>
+        <Member type="Constructor">public POLINOM(int n1 = 0)</Member>
+        <Member type="Constructor">public POLINOM(int n1, float data1)</Member>
+        <Member type="Destructor">~POLINOM()</Member>
+        <Member type="Method">public void setn()</Member>
+        <Member type="Method">public void egal()</Member>
+        <Member type="Method">public void size()</Member>
+        <Member type="Method">public void resize()</Member>
+        <Member type="Method">public void normalize()</Member>
+        <Member type="Method">public void array()</Member>
+        <Member type="Method">public void add()</Member>
+        <Member type="Method">public void maimare()</Member>
+        <Member type="Method">public void aduna()</Member>
+        <Member type="Method">public void div()</Member>
+        <Member type="Method">public void rest()</Member>
+        <Member type="Method">public POLINOM cmmdc()</Member>
+        <Member type="Method">public void toString()</Member>
+        <Member type="Method">public void fromString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

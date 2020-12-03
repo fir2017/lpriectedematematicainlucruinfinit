@@ -1,0 +1,244 @@
+<Project>
+  <Name>formeProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>FormeGeometrice</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>PUNCT</Name>
+        <Access>Public</Access>
+        <Location left="31" top="30" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float x</Member>
+        <Member type="Field">float y</Member>
+        <Member type="Constructor">public PUNCT()</Member>
+        <Member type="Method">public void x()</Member>
+        <Member type="Method">public void y()</Member>
+        <Member type="Method">public void egal()</Member>
+        <Member type="Method">public void mult()</Member>
+        <Member type="Method">public void toString()</Member>
+        <Member type="Method">public void fromString()</Member>
+        <Member type="Method">public void punctdeintersectie()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FORMA</Name>
+        <Access>Public</Access>
+        <Location left="208" top="30" />
+        <Size width="162" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">POZITIE pozitie</Member>
+        <Member type="Method">public void perimetru()</Member>
+        <Member type="Method">public void arie()</Member>
+        <Member type="Method">public void intersectie()</Member>
+        <Member type="Method">public void convex()</Member>
+        <Member type="Method">public void concav()</Member>
+        <Member type="Method">public void lungime()</Member>
+        <Member type="Method">public void latime()</Member>
+        <Member type="Method">public void setlungime()</Member>
+        <Member type="Method">public void setlatime()</Member>
+        <Member type="Method">public void getlatime()</Member>
+        <Member type="Method">public void getlungime()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SEGMENT</Name>
+        <Access>Public</Access>
+        <Location left="235" top="127" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TRIUNGHI</Name>
+        <Access>Public</Access>
+        <Location left="272" top="183" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PATRULATER</Name>
+        <Access>Public</Access>
+        <Location left="323" top="234" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TRIUNGHI</Name>
+        <Access>Public</Access>
+        <Location left="518" top="131" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PUNCT3F</Name>
+        <Access>Public</Access>
+        <Location left="51" top="268" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int z</Member>
+        <Member type="Method">public void rotireX()</Member>
+        <Member type="Method">public void rotireY()</Member>
+        <Member type="Method">public void rotireZ()</Member>
+        <Member type="Method">public void distanta()</Member>
+        <Member type="Method">public void egal()</Member>
+        <Member type="Method">public void coordonate()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CERC</Name>
+        <Access>Public</Access>
+        <Location left="308" top="416" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">double raza</Member>
+        <Member type="Constructor">public CERC()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PARALELIPIPED</Name>
+        <Access>Public</Access>
+        <Location left="264" top="482" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DREPTUNGHI</Name>
+        <Access>Public</Access>
+        <Location left="245" top="568" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PATRAT</Name>
+        <Access>Public</Access>
+        <Location left="238" top="533" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TRAPEZ</Name>
+        <Access>Public</Access>
+        <Location left="208" top="685" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">LINIE bazaadoua</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ROMB</Name>
+        <Access>Public</Access>
+        <Location left="182" top="742" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">PUNCT coltulopus</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LINIE</Name>
+        <Access>Public</Access>
+        <Location left="53" top="562" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void paralel()</Member>
+        <Member type="Method">public void perpendicular()</Member>
+        <Member type="Method">public void secant()</Member>
+        <Member type="Method">public void intersectat()</Member>
+        <Member type="Method">public void concurente()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TRIUNGHI</Name>
+        <Access>Public</Access>
+        <Location left="508" top="593" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DREPTUNGHIC</Name>
+        <Access>Public</Access>
+        <Location left="546" top="650" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ISOSCEL</Name>
+        <Access>Public</Access>
+        <Location left="578" top="700" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DREPTUNGHICISOSCEL</Name>
+        <Access>Public</Access>
+        <Location left="595" top="773" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ECHILATERAL</Name>
+        <Access>Public</Access>
+        <Location left="623" top="861" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>GeometrieAnalitica</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>EXPRESIEPATRATICA</Name>
+        <Access>Public</Access>
+        <Location left="296" top="42" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">real a</Member>
+        <Member type="Field">real b</Member>
+        <Member type="Field">real c</Member>
+        <Member type="Field">real x</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EXPRESIE</Name>
+        <Access>Public</Access>
+        <Location left="242" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">SIR expr</Member>
+        <Member type="Field">List &lt; char&gt; operatori</Member>
+        <Member type="Field">List &lt; NUMBER &gt; operanzi</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PARABOLA</Name>
+        <Access>Public</Access>
+        <Location left="10" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">EXPRESIE expresia</Member>
+        <Member type="Method">public void changecoef()</Member>
+        <Member type="Method">public void evalexpresiepatratica()</Member>
+        <Member type="Method">public void determinarenrradacinireale()</Member>
+        <Member type="Method">public void add()</Member>
+        <Member type="Method">public void mult()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

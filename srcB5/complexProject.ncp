@@ -1,0 +1,38 @@
+<Project>
+  <Name>complexProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Complex</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>COMPLEX</Name>
+        <Access>Public</Access>
+        <Location left="16" top="17" />
+        <Size width="162" height="417" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">double re</Member>
+        <Member type="Field">double im</Member>
+        <Member type="Method">public void real()</Member>
+        <Member type="Method">public void imag()</Member>
+        <Member type="Constructor">public COMPLEX()</Member>
+        <Member type="Constructor">public COMPLEX(COMPLEX z)</Member>
+        <Member type="Method">public void setreal()</Member>
+        <Member type="Method">public void setimag()</Member>
+        <Member type="Method">public void add()</Member>
+        <Member type="Method">public void dif()</Member>
+        <Member type="Method">public void mult()</Member>
+        <Member type="Method">public void div()</Member>
+        <Member type="Method">public void mod()</Member>
+        <Member type="Method">public void arg()</Member>
+        <Member type="Method">public void toString()</Member>
+        <Member type="Method">public void fromString()</Member>
+        <Member type="Method">public void egal()</Member>
+        <Member type="Method">public void diferit()</Member>
+        <Member type="Method">public void inc()</Member>
+        <Member type="Method">public void dec()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

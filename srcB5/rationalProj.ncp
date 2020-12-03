@@ -1,0 +1,36 @@
+<Project>
+  <Name>rationalProj</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>rational</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>RATIONAL</Name>
+        <Access>Public</Access>
+        <Location left="23" top="14" />
+        <Size width="162" height="383" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int ns</Member>
+        <Member type="Field">int nj</Member>
+        <Member type="Method">public void cmmdc()</Member>
+        <Member type="Constructor">public RATIONAL()</Member>
+        <Member type="Constructor">public RATIONAL(RATIONAL r)</Member>
+        <Member type="Method">public void sus()</Member>
+        <Member type="Method">public void jos()</Member>
+        <Member type="Method">public void setsus()</Member>
+        <Member type="Method">public void setjos()</Member>
+        <Member type="Method">public void plus()</Member>
+        <Member type="Method">public void minus()</Member>
+        <Member type="Method">public void mult()</Member>
+        <Member type="Method">public void NewMethod()</Member>
+        <Member type="Method">public void egal()</Member>
+        <Member type="Method">public void toString()</Member>
+        <Member type="Method">public void fromString()</Member>
+        <Member type="Method">public void simplifica()</Member>
+        <Member type="Method">public void amplifica()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

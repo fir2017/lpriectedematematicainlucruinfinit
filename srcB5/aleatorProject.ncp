@@ -1,0 +1,27 @@
+<Project>
+  <Name>aleatorProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Aleator</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>ALEATOR</Name>
+        <Access>Public</Access>
+        <Location left="49" top="0" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int samanta</Member>
+        <Member type="Field">int inmultitor</Member>
+        <Member type="Field">int increment</Member>
+        <Member type="Field">int modul</Member>
+        <Member type="Method">public void metodacongruenteiliniare()</Member>
+        <Member type="Method">public void genereaza()</Member>
+        <Member type="Constructor">public ALEATOR()</Member>
+        <Member type="Method">public void schimbaresamanta()</Member>
+        <Member type="Method">public void genereazaurmatorulnumardinsecventaaleatoare()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
