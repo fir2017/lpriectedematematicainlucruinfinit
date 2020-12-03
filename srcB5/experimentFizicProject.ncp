@@ -1,0 +1,25 @@
+<Project>
+  <Name>experimentFizicProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>ExperimentFizic</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>EXPERIMENTFIZIC</Name>
+        <Access>Public</Access>
+        <Location left="23" top="10" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int NUMARDEDETERMINARI</Member>
+        <Member type="Field">int NUMARDEVALORIMASURATE</Member>
+        <Member type="Method">public void MEDIAARITMETICAAMASURATORILOR()</Member>
+        <Member type="Method">public void NUMARDEDETERMINARI()</Member>
+        <Member type="Method">public void VALOARILEDETERMINARILOR()</Member>
+        <Member type="Method">public void CREAZAINREGISTRARECUDETERMINARI()</Member>
+        <Member type="Method">public void CALCULEAZAABATEREASTANDARDADETERMINARILOR()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

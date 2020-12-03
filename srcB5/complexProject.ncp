@@ -8,7 +8,7 @@
         <Name>COMPLEX</Name>
         <Access>Public</Access>
         <Location left="16" top="17" />
-        <Size width="162" height="417" />
+        <Size width="162" height="570" />
         <Collapsed>False</Collapsed>
         <Member type="Field">double re</Member>
         <Member type="Field">double im</Member>
@@ -30,6 +30,13 @@
         <Member type="Method">public void diferit()</Member>
         <Member type="Method">public void inc()</Member>
         <Member type="Method">public void dec()</Member>
+        <Member type="Method">public void formueleleluiCardan()</Member>
+        <Member type="Method">public void substitutie()</Member>
+        <Member type="Method">public void aducerelaformacanonica()</Member>
+        <Member type="Method">public void aflarediscriminatecuatiecanonica()</Member>
+        <Member type="Method">public void radacinileecuatieicanonice()</Member>
+        <Member type="Method">public void substitutieinsensinvers()</Member>
+        <Member type="Method">public void rad3()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>

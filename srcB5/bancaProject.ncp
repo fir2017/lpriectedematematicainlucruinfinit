@@ -1,0 +1,65 @@
+<Project>
+  <Name>bancaProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Banca</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>DEPUNERE</Name>
+        <Access>Public</Access>
+        <Location left="20" top="17" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">CLIENT CLIENTUL</Member>
+        <Member type="Field">DATETIME DATAPLATII</Member>
+        <Member type="Field">currency SUMADEPUSA</Member>
+        <Member type="Field">currency DOBANDALADATACURENTA</Member>
+        <Member type="Field">PROCENT RATADOBANZIIANUALE</Member>
+        <Member type="Field">DATETIME DATADEPUNERII</Member>
+        <Member type="Field">DATETIME DATACURENTA</Member>
+        <Member type="Field">int SUMAMAXIMADEPUSA</Member>
+        <Member type="Method">public void NRDEZILEINTRE()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CONT</Name>
+        <Access>Public</Access>
+        <Location left="195" top="21" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; DEPUNERE&gt; LISTADEPUNERI</Member>
+        <Member type="Field">CLIENT CLIENTUL</Member>
+        <Member type="Field">List &lt; RESTITUIRE&gt; LISTARESTITUIRI</Member>
+        <Member type="Field">currency sold</Member>
+        <Member type="Method">public void NRDEDEPUNERIPEZI()</Member>
+        <Member type="Method">public void SUMATOTALADEPUSAPEZI()</Member>
+        <Member type="Method">public void calculeazasumadepusa()</Member>
+        <Member type="Method">public void sortafterdate()</Member>
+        <Member type="Method">public void listaredepuneri()</Member>
+        <Member type="Method">public void existasolicitant()</Member>
+        <Member type="Method">public void sumasolicitatadepasestesoldul()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BANCA</Name>
+        <Access>Public</Access>
+        <Location left="363" top="21" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; Cont&gt; CONTURI</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RESTITUIRE</Name>
+        <Access>Public</Access>
+        <Location left="96" top="89" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string NUME</Member>
+        <Member type="Field">currency SUMA</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

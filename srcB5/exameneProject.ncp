@@ -1,0 +1,96 @@
+<Project>
+  <Name>exameneProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Examen</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>STUDENT</Name>
+        <Access>Public</Access>
+        <Location left="12" top="14" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; NOTA&gt; NOTE</Member>
+        <Member type="Field">string NUME</Member>
+        <Member type="Field">SIUATIE SITUATIE</Member>
+        <Member type="Method">public void REPARTITIENOTE()</Member>
+        <Member type="Method">public void STATISTICA()</Member>
+        <Member type="Method">public void NOTELADISCIPLINA()</Member>
+        <Member type="Method">public void NOTAFINALA()</Member>
+        <Member type="Method">public void NOTASEMESTRIALA()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EXAMEN</Name>
+        <Access>Public</Access>
+        <Location left="182" top="13" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; STUDENT&gt; LISTASTUDENTIINSCRISILAEXAMEN</Member>
+        <Member type="Field">string DENUMIREEXAMEN</Member>
+        <Member type="Field">DATETIME DATAEXAMEN</Member>
+        <Member type="Field">List &lt; STUDENT&gt; LISTAABSENTI</Member>
+        <Member type="Field">List &lt; PROFESOR&gt; PROFESORI</Member>
+        <Member type="Method">public void REPARTITIANOTELOR()</Member>
+        <Member type="Method">public void AFISARELISTADESTUDNETICUNOTEDIFERITE()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>UNITATEDEINVATAMANT</Name>
+        <Access>Public</Access>
+        <Location left="336" top="13" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; STUDENT&gt; LISTACUSTUDENTI</Member>
+        <Member type="Method">public void listastudntipromovati()</Member>
+        <Member type="Method">public void listastudentipremianti()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GRUPA</Name>
+        <Access>Public</Access>
+        <Location left="12" top="158" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NOTA</Name>
+        <Access>Public</Access>
+        <Location left="182" top="392" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">STUDENT STUDENTUL</Member>
+        <Member type="Field">DATETIME DATA</Member>
+        <Member type="Field">float NOTA</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PROFESOR</Name>
+        <Access>Public</Access>
+        <Location left="363" top="192" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DISCIPLINA</Name>
+        <Access>Public</Access>
+        <Location left="376" top="268" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SITUATIE</Name>
+        <Access>Public</Access>
+        <Location left="12" top="392" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; NOTE&gt; LISTANOTELORSICALIFICAIVELOR</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

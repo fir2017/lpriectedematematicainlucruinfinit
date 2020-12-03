@@ -1,0 +1,53 @@
+<Project>
+  <Name>abonatiProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Abonati</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>ABONAT</Name>
+        <Access>Public</Access>
+        <Location left="16" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string nume</Member>
+        <Member type="Field">string adresa</Member>
+        <Member type="Field">DATETIME dataexpirarii</Member>
+        <Member type="Field">string telefon</Member>
+        <Member type="Field">List &lt;PLATA&gt; plati</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LISTADEABONATI</Name>
+        <Access>Public</Access>
+        <Location left="190" top="13" />
+        <Size width="162" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;ABONAT&gt; LISTA</Member>
+        <Member type="Method">public void UPDATE()</Member>
+        <Member type="Method">public void ADD()</Member>
+        <Member type="Method">public void DEL()</Member>
+        <Member type="Method">public void EXPIRE()</Member>
+        <Member type="Method">public void COMPARA()</Member>
+        <Member type="Method">public void ORDONA()</Member>
+        <Member type="Method">public void CAUTARE()</Member>
+        <Member type="Method">public void APLATIT()</Member>
+        <Member type="Method">public void PLATI()</Member>
+        <Member type="Method">public void PRINT()</Member>
+        <Member type="Method">public void RESTANTIERI()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PLATA</Name>
+        <Access>Public</Access>
+        <Location left="57" top="183" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string nrtelefon</Member>
+        <Member type="Field">real sumaplatitia</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

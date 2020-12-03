@@ -8,7 +8,7 @@
         <Name>NATURAL</Name>
         <Access>Public</Access>
         <Location left="39" top="20" />
-        <Size width="162" height="230" />
+        <Size width="162" height="332" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int n</Member>
         <Member type="Field">char data</Member>
@@ -19,6 +19,38 @@
         <Member type="Method">public void length()</Member>
         <Member type="Method">public void resize()</Member>
         <Member type="Method">public void add()</Member>
+        <Member type="Method">public void DIVIZORI()</Member>
+        <Member type="Method">public void MULTIPLICITATE()</Member>
+        <Member type="Method">public void NRDEDIVIZORIPRIMIDISTINCTI()</Member>
+        <Member type="Method">public void DIVIZORI()</Member>
+        <Member type="Method">public void CMMDC()</Member>
+        <Member type="Method">public void CMMMC()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>INTREG</Name>
+        <Access>Public</Access>
+        <Location left="210" top="20" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RATIONAL</Name>
+        <Access>Public</Access>
+        <Location left="253" top="83" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FRACTIERATIONALA</Name>
+        <Access>Public</Access>
+        <Location left="287" top="140" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void ADD()</Member>
+        <Member type="Method">public void SUMAN()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>

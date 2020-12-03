@@ -8,7 +8,7 @@
         <Name>MATRICE</Name>
         <Access>Public</Access>
         <Location left="54" top="23" />
-        <Size width="162" height="485" />
+        <Size width="162" height="553" />
         <Collapsed>False</Collapsed>
         <Member type="Field">float a</Member>
         <Member type="Field">int l</Member>
@@ -34,6 +34,22 @@
         <Member type="Method">public void determinant()</Member>
         <Member type="Method">public void dif()</Member>
         <Member type="Method">public void inversa()</Member>
+        <Member type="Method">public void COMPARAMATRICE()</Member>
+        <Member type="Method">public void INITIALIZEAZAMATRICE()</Member>
+        <Member type="Method">public void CITESTEDOUAMATRICI()</Member>
+        <Member type="Method">public void EMATRICEINVERSABILA()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MATRICERARA</Name>
+        <Access>Public</Access>
+        <Location left="227" top="22" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void VECTORIZAREPELINII()</Member>
+        <Member type="Method">public void AFISAREMATRICERARA()</Member>
+        <Member type="Method">public void ADD()</Member>
+        <Member type="Method">public void MULT()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>

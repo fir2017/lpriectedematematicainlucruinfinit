@@ -1,0 +1,80 @@
+<Project>
+  <Name>pronosportProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Pronosport</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>BILETPRONOSPORT</Name>
+        <Access>Public</Access>
+        <Location left="17" top="11" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">JUCATOR JUCATORUL</Member>
+        <Member type="Field">List &lt; MECI&gt; LISTADEMECIURISIPRONOSTICURI</Member>
+        <Member type="Method">public void NRDEREZULTATECORECTE()</Member>
+        <Member type="Method">public void ECORECT()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>JUCATOR</Name>
+        <Access>Public</Access>
+        <Location left="187" top="13" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string NUME</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MECI</Name>
+        <Access>Public</Access>
+        <Location left="227" top="109" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string GAZDA</Member>
+        <Member type="Field">string OASPETE</Member>
+        <Member type="Field">DATETIME DATAMECI</Member>
+        <Member type="Field">string COMPETITIA</Member>
+        <Member type="Field">REZULTAT REZULTATUL</Member>
+        <Member type="Field">PRONOSTIC PRONOSTICUL</Member>
+        <Member type="Field">string ALTEINFO</Member>
+        <Member type="Field">DATETIME DATAADAUGARIIREZULTATULUI</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PRONOSTIC</Name>
+        <Access>Public</Access>
+        <Location left="328" top="379" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool EGAL</Member>
+        <Member type="Field">bool VICTORIE</Member>
+        <Member type="Field">bool INFRANGERE</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>REZULTAT</Name>
+        <Access>Public</Access>
+        <Location left="265" top="292" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int GOLGAZDA</Member>
+        <Member type="Field">int GOLOASPETE</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PRONOSPORT</Name>
+        <Access>Public</Access>
+        <Location left="40" top="134" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; BILETPRONOSPORT&gt; BILETELEDEPRONOSTICURI</Member>
+        <Member type="Method">public void LISTEAZAJUCATORII()</Member>
+        <Member type="Method">public void LISTEAZAJUCATORIICASTIGATORI()</Member>
+        <Member type="Method">public void ORDONEAZALISTAJUCATORILOR()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

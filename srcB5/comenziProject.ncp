@@ -1,0 +1,125 @@
+<Project>
+  <Name>comenziProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>comenzi</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>CLIENT</Name>
+        <Access>Public</Access>
+        <Location left="12" top="15" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PRODUS</Name>
+        <Access>Public</Access>
+        <Location left="186" top="15" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string numeprodus</Member>
+        <Member type="Field">currency pretunitar</Member>
+        <Member type="Field">float cantitatestocata</Member>
+        <Member type="Field">string codprodus</Member>
+        <Member type="Field">FURNIZOR furnizorul</Member>
+        <Member type="Field">float stocminimdesiguranta</Member>
+        <Member type="Method">public void actualizarestoc()</Member>
+        <Member type="Method">public void getstoc()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>COMANDARECORD</Name>
+        <Access>Public</Access>
+        <Location left="357" top="14" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string nume</Member>
+        <Member type="Field">PRODUS produsul</Member>
+        <Member type="Field">real cantitate</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FURNIZOR</Name>
+        <Access>Public</Access>
+        <Location left="357" top="248" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FIRMA</Name>
+        <Access>Public</Access>
+        <Location left="12" top="248" />
+        <Size width="162" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; COMAND&gt; COMENZI</Member>
+        <Member type="Field">CATALOGDEPRODUSE CATALOGULDEPRODUSE</Member>
+        <Member type="Field">List &lt;CLIENT&gt; agendaclienti</Member>
+        <Member type="Field">List &lt; PRECOMANDA&gt; listaprecomenzi</Member>
+        <Member type="Method">public void raspunsprecomanda()</Member>
+        <Member type="Method">public void cautareprodusindepozit()</Member>
+        <Member type="Method">public void calculcosttotal()</Member>
+        <Member type="Method">public void listeazacomenzineonoratedatoritasuculuiinsuficient()</Member>
+        <Member type="Method">public void listeazacomenzilordeproduseinexistenteindepozit()</Member>
+        <Member type="Method">public void EXECUTACOMANDA()</Member>
+        <Member type="Method">public void COMASARECOMENZI()</Member>
+        <Member type="Method">public void ANULARECOMANDA()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SERVICIU</Name>
+        <Access>Public</Access>
+        <Location left="181" top="248" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CATALOGDEPRODUSE</Name>
+        <Access>Public</Access>
+        <Location left="357" top="480" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt;PRODUS&gt; inregistrari</Member>
+        <Member type="Method">public bool nuesteinstoc()</Member>
+        <Member type="Method">public void add()</Member>
+        <Member type="Method">public void view()</Member>
+        <Member type="Method">public void brow()</Member>
+        <Member type="Method">public void search()</Member>
+        <Member type="Method">public void del()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>COMANDA</Name>
+        <Access>Public</Access>
+        <Location left="428" top="64" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; COMANDARECORD&gt; COMENZILE</Member>
+        <Member type="Field">bool EINCURS</Member>
+        <Member type="Field">bool EINVIGOARE</Member>
+        <Member type="Field">bool AFOSTANULATA</Member>
+        <Member type="Method">public void COMPARACOMENZILE()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PRECOMANDA</Name>
+        <Access>Public</Access>
+        <Location left="178" top="475" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MAGAZIN</Name>
+        <Access>Public</Access>
+        <Location left="507" top="324" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

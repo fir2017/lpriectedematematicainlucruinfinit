@@ -1,0 +1,38 @@
+<Project>
+  <Name>agentieMatrimonialaProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>agentieMatrimoniala</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>AgentieMatrimoniala</Name>
+        <Access>Public</Access>
+        <Location left="10" top="10" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt;CANDIDAT&gt; listacandidati</Member>
+        <Member type="Method">public void sortcandidatidupavenitascendent()</Member>
+        <Member type="Method">public void cautareperechepotrivita()</Member>
+        <Member type="Method">public void afisarerezultatecautarecandidat()</Member>
+        <Member type="Method">public void afisareperechepotrivita()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CANDIDAT</Name>
+        <Access>Public</Access>
+        <Location left="184" top="10" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">char sex</Member>
+        <Member type="Field">int virsta</Member>
+        <Member type="Field">real inaltime</Member>
+        <Member type="Field">string profesie</Member>
+        <Member type="Field">cur venit</Member>
+        <Member type="Field">string nume</Member>
+        <Member type="Field">string adresa</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

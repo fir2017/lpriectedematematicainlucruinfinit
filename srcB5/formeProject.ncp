@@ -26,7 +26,7 @@
         <Name>FORMA</Name>
         <Access>Public</Access>
         <Location left="208" top="30" />
-        <Size width="162" height="281" />
+        <Size width="162" height="332" />
         <Collapsed>False</Collapsed>
         <Member type="Field">POZITIE pozitie</Member>
         <Member type="Method">public void perimetru()</Member>
@@ -40,6 +40,9 @@
         <Member type="Method">public void setlatime()</Member>
         <Member type="Method">public void getlatime()</Member>
         <Member type="Method">public void getlungime()</Member>
+        <Member type="Method">public void creazapatrulaterconvex()</Member>
+        <Member type="Method">public void SUNTCOLINIARE()</Member>
+        <Member type="Method">public void AFISEAZANUMERELEDETRIPLETEDETREIPUNCTE()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -87,6 +90,7 @@
         <Member type="Method">public void distanta()</Member>
         <Member type="Method">public void egal()</Member>
         <Member type="Method">public void coordonate()</Member>
+        <Member type="Method">public void ininterior(forma f)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -160,6 +164,8 @@
         <Location left="508" top="593" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
+        <Member type="Method">public void ESTEPUNCTINTERIOR()</Member>
+        <Member type="Method">public void ESTEPUNCTEXTERIOR()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -192,6 +198,16 @@
         <Location left="623" top="861" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NOR</Name>
+        <Access>Public</Access>
+        <Location left="41" top="705" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int nr</Member>
+        <Member type="Field">List &lt;PUNCT&gt; puncte</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>

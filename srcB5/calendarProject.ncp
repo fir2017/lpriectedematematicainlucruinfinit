@@ -8,7 +8,7 @@
         <Name>CALENDAR</Name>
         <Access>Public</Access>
         <Location left="26" top="9" />
-        <Size width="162" height="298" />
+        <Size width="162" height="349" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int an</Member>
         <Member type="Field">int luna</Member>
@@ -23,6 +23,9 @@
         <Member type="Method">public void getdata()</Member>
         <Member type="Method">public void anterior()</Member>
         <Member type="Method">public void interval()</Member>
+        <Member type="Method">public void egale()</Member>
+        <Member type="Method">public void valideaza()</Member>
+        <Member type="Method">public void listeazainsuccesiune()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>

@@ -8,7 +8,7 @@
         <Name>POLINOM</Name>
         <Access>Public</Access>
         <Location left="23" top="16" />
-        <Size width="162" height="417" />
+        <Size width="162" height="536" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int n</Member>
         <Member type="Field">float data</Member>
@@ -30,6 +30,21 @@
         <Member type="Method">public POLINOM cmmdc()</Member>
         <Member type="Method">public void toString()</Member>
         <Member type="Method">public void fromString()</Member>
+        <Member type="Method">public void calculpolinomderivat()</Member>
+        <Member type="Method">public void calculvaloarepolinomcomplex()</Member>
+        <Member type="Method">public void afisare()</Member>
+        <Member type="Method">public void citire()</Member>
+        <Member type="Method">public void radacinilepolinomului()</Member>
+        <Member type="Method">public void multiplicitatearadacinilor()</Member>
+        <Member type="Method">public void SUMACOEFICIENTILOR()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>POLINOMRAR</Name>
+        <Access>Public</Access>
+        <Location left="195" top="21" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>

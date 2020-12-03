@@ -1,0 +1,64 @@
+<Project>
+  <Name>filetextProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>filetext</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>FILETEXT</Name>
+        <Access>Public</Access>
+        <Location left="70" top="21" />
+        <Size width="162" height="859" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void repace()</Member>
+        <Member type="Method">public void readline()</Member>
+        <Member type="Method">public void line2record()</Member>
+        <Member type="Method">public void spatiere()</Member>
+        <Member type="Method">public void despartire()</Member>
+        <Member type="Method">public void delete()</Member>
+        <Member type="Method">public void deletelines()</Member>
+        <Member type="Method">public void deleteline()</Member>
+        <Member type="Method">public void find()</Member>
+        <Member type="Method">public void extract()</Member>
+        <Member type="Method">public void afisarecodsursa()</Member>
+        <Member type="Method">public void cautareelemente()</Member>
+        <Member type="Method">public void palindrom()</Member>
+        <Member type="Method">public void readcsv()</Member>
+        <Member type="Method">public void writecsv()</Member>
+        <Member type="Method">public void tags()</Member>
+        <Member type="Method">public void toFile()</Member>
+        <Member type="Method">public void readpalindrom()</Member>
+        <Member type="Method">public void ordonaascendent()</Member>
+        <Member type="Method">public void ordonadescendent()</Member>
+        <Member type="Method">public void stergetoateaparitiilecuvantului()</Member>
+        <Member type="Method">public void tag2file()</Member>
+        <Member type="Method">public void include()</Member>
+        <Member type="Method">public void copyfila()</Member>
+        <Member type="Method">public void countlines()</Member>
+        <Member type="Method">public void reverse()</Member>
+        <Member type="Method">public void removeEOLchars()</Member>
+        <Member type="Method">public void printLine()</Member>
+        <Member type="Method">public void findallwords()</Member>
+        <Member type="Method">public void copyword()</Member>
+        <Member type="Method">public void saveword2newfile()</Member>
+        <Member type="Method">public void raaturnatulunuinumar()</Member>
+        <Member type="Method">public void overwriteline()</Member>
+        <Member type="Method">public void readrecord()</Member>
+        <Member type="Method">public void writerecord()</Member>
+        <Member type="Method">public void findprime()</Member>
+        <Member type="Method">public void findprevprime()</Member>
+        <Member type="Method">public void findnextprime()</Member>
+        <Member type="Method">public void findprimesbeforeandafter()</Member>
+        <Member type="Method">public void findclosestprimenumber()</Member>
+        <Member type="Method">public void isodd()</Member>
+        <Member type="Method">public void descumpuneredistinctunnumarcaprodusdenumeeprime()</Member>
+        <Member type="Method">public void listeazaliniile()</Member>
+        <Member type="Method">public void fibonacci()</Member>
+        <Member type="Method">public void indexare()</Member>
+        <Member type="Method">public void sortareprinindexare()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

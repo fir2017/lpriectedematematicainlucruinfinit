@@ -1,0 +1,45 @@
+<Project>
+  <Name>concursTelefonicProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>concursTelefonic</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>ConcursTelefonic</Name>
+        <Access>Public</Access>
+        <Location left="10" top="11" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; COnCURENT&gt; listaconcurenti</Member>
+        <Member type="Field">List &lt;PREMIU&gt; listapremii</Member>
+        <Member type="Method">public void afiseazacastigatori()</Member>
+        <Member type="Method">public void afiseazavaloareapremiilor()</Member>
+        <Member type="Method">public void valoaretotalacastiguri()</Member>
+        <Member type="Method">public void premiulmaxim()</Member>
+        <Member type="Method">public void numelecastigatorilor()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CONCURENT</Name>
+        <Access>Public</Access>
+        <Location left="179" top="11" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string NUME</Member>
+        <Member type="Field">string TELEFON</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PREMIU</Name>
+        <Access>Public</Access>
+        <Location left="230" top="75" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string TELEFON</Member>
+        <Member type="Field">real PREMIUL</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
