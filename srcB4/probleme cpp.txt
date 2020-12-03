@@ -1964,7 +1964,615 @@ cout << zi << nz[luna-1]<<nzilei<< an;
 }
 
 //prob 3.20
-//pagina 40
+//joc de copii
+//in cerc 
+//count from 1 to p starting from k
+//eliminate da p
+//go to next p+1
+//eliminate nexts
+int main(void)
+{
+int n , k , p ;
+int copii[nmax];
+int i , j;
+cin >> n  >> k >> p;
+for(i=0;i<n;i++)
+ copii[i]=1;
+for(i=0;i<n;i++)
+{
+ for(j=0;j<p;j++)
+ do{
+ k++;
+if(k==(n+1)) k=1;
+}while(!copii[k-1]);
+cout << k ; 
+copii[k-1]=0;
+}
+return 0;
+}
+
+
+
+//prob 3.21
+//elemente distince din array x de n elem
+int n ;
+int v[maxn];
+int i , j;
+cout < "n"; cin >> n;
+for(i=0;i<n;i++){
+ cout<<i; cin >> v[i];
+}
+for(i=0;i<n;i++){
+int gasit = 0;
+ for(j=0;j<i;j++)
+ if(v[i]==v[j]){
+  gasit = 1;
+ break;
+ }
+if(!gasit)
+ cout << v[i];
+}
+return 0;
+}
+
+
+//prog 3.22
+//det lungime si pozitie subsir strict crecsator cel mai lung din sirul dat
+//tiparire in ecou de 10 elemente pe linie
+
+int v[max],n;
+int inceput = 0 , lungime = 1;
+ int i , l=1;
+ cout <<"N"; cin >>n;
+ for(i=0; i<n; i++){
+ cout<< i; cin>> v[i];
+}
+ for(i=0; i<n; i++){
+ if(i%10==0)
+ cout<< "\n"; cin>> v[i];
+}
+v[n++] = -maxint;
+ for(i=1; i<=n; i++){
+ if(v[i]<v[i-1]){
+ if(l>lungime){
+ inceput = i-1;
+ lungime = l;
+}
+l = 1;
+}
+else 
+l++;
+ for(i=inceput; i<inceput+lungime; i++){
+if((i-inceput)%5 == 0)
+ cout<< "\n";
+cout<<v[i];
+}
+cout<<"\n";
+ }
+
+
+
+//prob 3.23
+//un nr intreg de n cifre
+//c0 most seminificativa to c[n-1] last semnificativa
+//calculati catul obtinut orin imparirea nr dat prin nr p
+//obtineti q0 to q[m-1]
+
+
+int n , l , i , d , rest, p;
+int c[100], q[100];
+cout <<"n";
+cin >>n;
+cout << " deimpartitul " ; 
+for(i = 0 ; i< n ; i ++)
+cin >> c[i];
+cout << "\n";
+cout << " impartitor";
+cin >> p;
+for(i = 0 ; i< n ; i++)
+ cout << c[i];
+cout << p;
+rest = 0;
+for(i=0;i<n;i++){
+ d = 10 * rest + c[i];
+q[i] = d/p;
+rest = d%p;
+}
+l =n;
+while(q[0]==0 && l>1){
+ for(i=0;i<l-1;i++)
+ q[i] = q[i+1];
+l--;
+}
+for(i=0;i<l;i++)
+ cout << q[i] ;
+cout << "\n";
+}
+
+//prob 3.24
+//nr intreg ca vector
+//produsul a doua nr lungi
+//produsul cu carry
+
+struct numar {
+int n ;
+unsgined cgar v[100];
+};
+
+struct numar citeste ()
+{
+char ch=0,i;
+struct numar a;
+unsigned char x[100];
+a.n = 0;
+while((ch= gecthe())!=13)
+x[a.n++]ch-'0';
+for(i=0;i<a.n;i++)
+a.v[i] = x[a.n-i-1];
+return a;
+}
+
+void afiseaza(struct nuamr a){
+for(int i = a.n - 1; i>0; i--)
+ cout << a.v[i];
+}
+
+struct numar produs(struct numar a, struct numar b){
+struct nuamr c;
+int i , j , transport = 0;
+if((a.n==1 && a.v[0]==0) || (b.n==1 && b.v[0]==0)){
+ c.n = 1;
+c/v[0]=0;
+return c;
+}
+c.n = a.n+b.n;
+memset*c.v,0.c.n);
+
+for(i=0;i<a.n;i++){
+transport = 0;
+for(j=0;j<b.n || transport > 0 ; j++){
+transport +=c.v[i+j];
+if(j<b.n)
+transport+=a.v[i]*b.v[j];
+c.v[i+j]=transport % 10;
+transport /=10;
+}
+}
+while(c.v[c.n-1]==0)
+c.n--;
+return c;
+}
+
+
+void main(void){
+struct numar a,b,c;
+cout << "a"; a = citeste();
+cout << "b"; b = citeste();
+c = produs(a,b);
+cout << "c" ; afiseaza (c);
+}
+
+
+
+//prob3.25
+//impartirea a doua polinoame cu rest 
+//repr prin vectori cu grade si coef dupa puterile desc ale lui x
+
+#define eps 0.00001
+
+void catpol(int n , duble *a, char * mesaj){
+cout << mesaj;
+for(int i = 0; i<=n;i++)
+ cin >> a[i];
+}
+
+void afpol(int n, double *a, char *mesaj){
+cout << mesaj;
+for(int i = 0; i<=n; i++){
+ if(i>0 && a[i] > 0.0)
+ cout << "+";
+if(fabs(a[i])>eps)
+ cout << a[i]<<n-1;
+}
+cout <<"\n";
+}
+
+void main(void){
+double a[20], b[20], c[20], r[20];
+int m , n , q, i, j;
+cout << "m"; cin >> m;
+citpol(m, a, "coef deimp");
+afpol(m,a,"pol deimp";
+print "n"; cin >> n;
+citpol(n , b , "coef imp");
+afpol(n,b,"pol imp");
+q = m-n;
+for(i=0;i<=q;i++){
+c[i] = a[i]/b[0];
+for(j=0;j<=n;j++)
+ a[i+j] = a[i+j] - c[i]*b[j];
+}
+for(i=0; i<n;i++)
+ r[i] = a[q+i+1];
+afpol(q,c,"pol cat");
+afpol(n-1,r,"pol rest");
+}
+
+
+
+//prob 3.26
+//sita lui eratostene
+
+#define maxn 500
+#define true 1
+#define false 0
+
+void main(void){
+char v[maxn];
+int n , i , j ;
+cout << "n" ; cin >> n;
+for(i=0;i<n;i++)
+ v[i] = true;
+for(i=2;i<n;i++){
+j=i*2;
+while(j<n){
+v[j] = false;
+j+=i;
+}
+}
+cout << n;
+for(i=2;i<n;i++)
+ if(v[i]==true)
+cout << i;
+}
+
+
+
+//prob 3.27
+//polinom cebasev de ordinul n pornind de la relatia de recurenta
+//obt in preal rel de recuren pt coef
+
+#define maxn 500
+
+void main(void){
+int n , k , j , a[20], b[20], c[20];
+cout << "n"; cin >> n;
+a[0] = 1;
+b[0] = 0;
+b[1]  = 1;
+
+for(k=2;k<=n; k++){
+c[0] = -a[0];
+for(j=1;j<k-1;j++)
+ c[j] = 2 * b[j-1 ] - a[j];
+c[k-1] = 2 * b[k-2];
+c[k] = s * b[k-1];
+memcpy(a,b,k*sieof(int));
+memcpy(b,c,(k+1) * sizeof(int));
+}
+for(k=n; k>= 0 ; k--){
+if(k<n && c[k] > 0)
+ cout << "+";
+if(c[k])
+ cout << c[k]<<k;
+}
+cout >> "\n";
+}
+
+
+//pagina 44
+//probleme propuse p3.1 to p3.37
+
+
+//pagina 49
+//tablou multidimensionale
+//tablou static multidimensional
+//	tip nume [dim1] [dim2] ...[dimn];
+//alocare dinamica matrice
+double ** alocaremat(int l, int c)
+{
+double **m;
+m = (double**)calloc(l,sizeof(double*));
+for(int i = 0 ; i< l; i++)
+ m[i] = (double*)calloc(c,seziof(double));
+return m;
+}
+
+
+//eliberare zona matrice
+
+void elibmat ( double **mat, int l){
+for(int i = 0 ; i > l; i++)
+ free(m[i]);
+free(m);
+}
+
+
+
+
+//prob 4.1
+//produs scalar a doi vectori
+
+int pscalar(int *x, int *y, int n){
+int suma = 0;
+for(int i = 0 ; i<n;i++)
+ suma +=x[i] * y[i];
+return suma;
+}
+
+int **pdiadic(int *x, int *y, int n){
+int **rezultat;
+int i , j;
+rezultat = (int**)malloc (n * sizeof(int*));
+for(i=0;i<n;i++){
+ rezultat[i]=(int*)malloc(n*sizeof(int)):
+for(j=0;j<n;j++)
+ rezultat[i][j] = x[i] * y[i];
+}
+return rezultat;
+}
+
+//main
+//dati n
+//alocare vectori x si y si matricea a si b
+//introducere date in vectori si matrici
+//pscalar si pdiadric pt x,y,n
+//calcula in b a prod diadic / produs scalar
+//afisare rezultate 
+
+
+//prob 4.2
+//jocul viata
+//tras pop unei com de orga vii prin gen de basteri si decese tim pde g generatii
+//functie vecini matrice int int int 
+//calcul lmite de cautare
+//calcul nr de vecini vii
+//introducere dte
+//prelucr date si afisare rez
+
+//prob 4.3
+//verfi daca doua linii din matrice sunt identice
+//afiseaza nr lin si col din matrice pt elemente nule
+//citeste matrice de nxn 
+//verifica daca exista 2 linii identice
+
+int egale(int mat[30][30], int i , int j, int n){
+int k ;
+for(k=0;k<n;k++)
+ if(mat[i][k] != mat[j][k]_
+ return false;
+return true;
+}
+
+//functia nule cauta linii si col cu elemente nule 
+//functia main 
+//introduce date in matrice 
+//prelucrare date prin cautare daca sunt egale 
+
+
+
+//prob 4.4
+//calc dif intre max si min ale unei linii
+//citeste nr naturale l si c , eps si matricea a cu l x c elemente
+//afiseaza linia din matrice pt care dif extreme este inferioara eps
+// min max = a[l][c]
+// max - min
+//afisare linie 
+//main void 
+//introduceti elemtne 
+//afisare linii cu dif < eps
+//
+
+
+//prob 4.5
+//matrice A de lxc
+//permuta ircular drepta fiecare linie i cu i pozitii
+
+int *permut(int *v, int c, int i){
+int *aux;
+aux = (int *) malloc (c * sizeof(int));
+for(int j = 0 ; j < c ; j++)
+ aux[(j+i)%c] = v[j];
+free(v);
+return aux;
+}
+
+//main
+//citeste date de intrare 
+//permuteaza fiecare linie 
+//afiseaza matrice permutata
+
+
+
+//prob 4.6
+//vectori x si y cu  componente
+// x <= y pt xi <= yi
+// verifica daca pe o linie <=
+// difenta dintre 2 linii
+// afisare linii din matricea A care nu se gaseste <=
+
+//maimic
+//linedif
+//printline
+//main void
+//date de intrare 
+//prelucarre date 
+//printare amtrice
+
+
+
+//prob 4.7
+//vectori ortogonali
+//matrice nxn este ortogonala pe linie
+//calculeaza matricea inversa
+//alocmat()
+//elibmat()
+//orto()
+//print matrix()
+//norm()
+//patratul normei euclidiene al vecotrului
+//inversa()
+//main
+//citeste input
+//eortogonala()
+//inversa()
+//eliberare memorie
+
+
+//prob 4.8
+//baza ortogonala 
+//aglrotimul gramm schmidt
+//afiseazabaza()
+//produssclar()
+//adauga()
+//main()
+//baza si baza ortogonala
+//input data
+//det baza orto
+
+
+//prob 4.8
+//pt mat x cu lxc
+// afisati linii in care exista cel putin 3 elemente cu minim 5 diviori nebanali
+//nrdiviori()
+//main
+
+
+//prob4.10
+//calc coef b1 din desv prod...
+//matrice triunghilar superioara
+
+
+//4.11
+//rez sistemul de n ecuatii
+//sts()
+//citsest()
+//alocamt
+//main
+
+
+
+//4.12
+//rez sistemul
+//gauss
+
+
+//4.13
+//patrrat magic de dim n
+
+
+//pag 59
+//probleme propuse p4.1 to p4.21
+
+
+//pag 62
+//strings
+//probleme
+//5.1 nr litere, nr separatori, nr cuvinte, nr de linii, nr de prop, si aliniate , 
+//5.2 numar scris ca char []
+//5.3 cuvinte inscusisate 
+//5.4 cuvant palindrom
+
+int estepalindrom(char*s){
+s = strlwr(s);
+for(int i = 0, j=strlen(s)-1;i<j;i++,j--)
+ if(s[i]!=s[j]) return false;
+return true;
+}
+
+//5.5 sterge, insereaza si inlocuieste  un subsir
+//5.6 anagramare 
+//5.7 poz primul char din sir, care e sau nu e, spatiere text pe pagina
+
+//probleme propuse 
+//p5.1 to 5.20
+
+
+
+//pag 70
+//cap 6
+//structuri
+
+
+//6.1 figuri geometrice
+//6.2 formulele lui cardan pt ecuatie cu nr complexe
+//6.3 studenti si note  la examen cu statistici 
+//6.4 complex si polinom
+//6.5 bilte pronosticuri
+//6.6 figuri geom
+//6.7 stocuri in depozit 
+//6.8 daca calendaristica
+//6.9 real si polinom
+//6.10 matrice rara
+
+
+//probleme propuse 
+//p6.1 to 6.10
+
+
+//cap 7 fisiere
+//pag 86
+//binare
+//7.1 banca
+//7.2 banca 2
+//3 soretaza elemente vector prin indexare
+//4 fibonacii si prime
+//5 castigatori concurs telefonic 
+//6 abonati companie de telefoane
+//7 afisare linii din fila text
+//8 descomp distrincte ale nr in doua nr prime
+//9 nr prim cel mai apropriat de el
+//10 rasturnatul unui numar
+//11 gestiune de prpoduse si materiale
+
+//file text
+//12 separa cuvintele din text
+//13 det nr de linii, inversati textul din fila, eliminati sf de linie ,afisare linia x
+//14 afisare cod sursa cu comentarii
+//15 inserare un fisier in locul unui anumit simbol la locul specificat
+//16 sparge un text in mici paragrafe delimitete de simboluri si salveaza in fisiere 
+//17 sterge aparitie cuvant 
+
+
+//problem propuse 
+//p7.1 to 7.26
+
+//capitolul 8
+//clase 
+//probleme
+//1 rational
+//2 complex
+//3 matrice
+//4 polinom
+//5 string
+//6 numabr foarte mare
+//7 natural
+//8 forme geometrice
+
+
+//probleme propuse 
+//p8.1 to p.13
+//forme
+//grafica 3d
+//aleator
+//calendar
+//biti
+//expr patratica
+//parabola
+//vector
+//matrice
+//forme 
+//forme
+//forme
+//forme
+
+
+
+
+
+
+
+ 
 
 
 
