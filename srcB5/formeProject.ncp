@@ -26,7 +26,7 @@
         <Name>FORMA</Name>
         <Access>Public</Access>
         <Location left="208" top="30" />
-        <Size width="162" height="332" />
+        <Size width="162" height="400" />
         <Collapsed>False</Collapsed>
         <Member type="Field">POZITIE pozitie</Member>
         <Member type="Method">public void perimetru()</Member>
@@ -43,6 +43,10 @@
         <Member type="Method">public void creazapatrulaterconvex()</Member>
         <Member type="Method">public void SUNTCOLINIARE()</Member>
         <Member type="Method">public void AFISEAZANUMERELEDETRIPLETEDETREIPUNCTE()</Member>
+        <Member type="Method">public COORDONATA coordonate()</Member>
+        <Member type="Method">public void abcisa()</Member>
+        <Member type="Method">public void ordonata()</Member>
+        <Member type="Method">public void draw()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">

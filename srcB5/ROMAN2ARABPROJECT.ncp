@@ -1,0 +1,80 @@
+<Project>
+  <Name>ROMAN2ARABPROJECT</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>roman2arab</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>ROMAN</Name>
+        <Access>Public</Access>
+        <Location left="18" top="9" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int N</Member>
+        <Member type="Method">public void CONVERT()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ARAB</Name>
+        <Access>Public</Access>
+        <Location left="185" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LETTER</Name>
+        <Access>Public</Access>
+        <Location left="18" top="174" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CIFRA</Name>
+        <Access>Public</Access>
+        <Location left="188" top="176" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CIFRAROMANA</Name>
+        <Access>Public</Access>
+        <Location left="18" top="234" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>LETTERS</Name>
+        <Access>Public</Access>
+        <Location left="105" top="51" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>M</Value>
+        <Value>D</Value>
+        <Value>C</Value>
+        <Value>L</Value>
+        <Value>X</Value>
+        <Value>V</Value>
+        <Value>I</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>CIFRELEROMANE</Name>
+        <Access>Public</Access>
+        <Location left="135" top="109" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>_1000</Value>
+        <Value>_500</Value>
+        <Value>_100</Value>
+        <Value>_50</Value>
+        <Value>_10</Value>
+        <Value>_5</Value>
+        <Value>_1</Value>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

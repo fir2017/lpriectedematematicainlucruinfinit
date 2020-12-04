@@ -8,11 +8,13 @@
         <Name>NLB</Name>
         <Access>Public</Access>
         <Location left="62" top="8" />
-        <Size width="162" height="366" />
+        <Size width="162" height="570" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int n</Member>
         <Member type="Field">int b</Member>
         <Member type="Field">char data</Member>
+        <Member type="Field">int baza</Member>
+        <Member type="Field">char [] numarul</Member>
         <Member type="Constructor">public NLB()</Member>
         <Member type="Constructor">public NLB(NLB x)</Member>
         <Member type="Method">public void egal()</Member>
@@ -27,6 +29,36 @@
         <Member type="Method">public void cv10B()</Member>
         <Member type="Method">public void cvB10()</Member>
         <Member type="Method">public void maimare()</Member>
+        <Member type="Method">public void corect()</Member>
+        <Member type="Method">public void catul()</Member>
+        <Member type="Method">public void restul()</Member>
+        <Member type="Method">public void esubunitar()</Member>
+        <Member type="Method">public void deinmultit()</Member>
+        <Member type="Method">public void partefractionara()</Member>
+        <Member type="Method">public void parteintreaga()</Member>
+        <Member type="Method">public void DETERMINACIFRELEUNUINUMARINBAZAB()</Member>
+        <Member type="Method">public void GENEREAZANUMARPRIM()</Member>
+        <Member type="Method">public void STALUIERATOSTENE()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Numar</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>NUMAR</Name>
+        <Access>Public</Access>
+        <Location left="53" top="16" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int n</Member>
+        <Member type="Field">char[] v</Member>
+        <Member type="Method">public void citeste()</Member>
+        <Member type="Method">public void afiseaza()</Member>
+        <Member type="Method">public void produs()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>

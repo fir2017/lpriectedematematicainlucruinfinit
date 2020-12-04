@@ -1,0 +1,51 @@
+<Project>
+  <Name>bareProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Bare</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Bara</Name>
+        <Access>Public</Access>
+        <Location left="16" top="14" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int lungime</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MultimeDeBare</Name>
+        <Access>Public</Access>
+        <Location left="189" top="16" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt;Bara&gt; Bare</Member>
+        <Member type="Field">List &lt; float &gt; listacategoriidelungimestandard</Member>
+        <Member type="Method">public void numaruldepiesedincategorie()</Member>
+        <Member type="Method">public void dimensiuneamedieapieselordingrupa()</Member>
+        <Member type="Method">public void numarderebuturi()</Member>
+        <Member type="Method">public void lungimibarerebutate()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Interval</Name>
+        <Access>Public</Access>
+        <Location left="41" top="96" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int min</Member>
+        <Member type="Field">int max</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>IntervalDisjunct</Name>
+        <Access>Public</Access>
+        <Location left="82" top="195" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

@@ -1,0 +1,29 @@
+<Project>
+  <Name>casademarcatProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>casademarcat</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>CASADEMARCAT</Name>
+        <Access>Public</Access>
+        <Location left="7" top="8" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int MULTIPLU</Member>
+        <Member type="Field">int SUMA</Member>
+        <Member type="Field">int I</Member>
+        <Member type="Field">int [] VALORI</Member>
+        <Member type="Field">int[] CANTITATI</Member>
+        <Member type="Field">int PLATIT</Member>
+        <Member type="Field">int REST</Member>
+        <Member type="Method">public void CALCULEAZAREST()</Member>
+        <Member type="Method">public void RESETCANTITATI()</Member>
+        <Member type="Method">public void CALCULEAZACANTITATIDEPLATA()</Member>
+        <Member type="Method">public void VALIDEAZAPLATA()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

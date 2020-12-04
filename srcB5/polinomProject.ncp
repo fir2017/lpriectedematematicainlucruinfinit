@@ -8,10 +8,13 @@
         <Name>POLINOM</Name>
         <Access>Public</Access>
         <Location left="23" top="16" />
-        <Size width="162" height="536" />
+        <Size width="162" height="927" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int n</Member>
         <Member type="Field">float data</Member>
+        <Member type="Field">List &lt; coeficient&gt; coeficienti</Member>
+        <Member type="Field">float grad</Member>
+        <Member type="Field">List &lt; radacina&gt; radacinile</Member>
         <Member type="Constructor">public POLINOM(POLINOM p)</Member>
         <Member type="Constructor">public POLINOM(int n1 = 0)</Member>
         <Member type="Constructor">public POLINOM(int n1, float data1)</Member>
@@ -37,6 +40,26 @@
         <Member type="Method">public void radacinilepolinomului()</Member>
         <Member type="Method">public void multiplicitatearadacinilor()</Member>
         <Member type="Method">public void SUMACOEFICIENTILOR()</Member>
+        <Member type="Method">public void grad()</Member>
+        <Member type="Method">public void impartireprinbinom()</Member>
+        <Member type="Method">public void definitieprinrelatiaderecurenta()</Member>
+        <Member type="Method">public void radacina()</Member>
+        <Member type="Method">public void intervaledeseparare()</Member>
+        <Member type="Method">public void injumatatireinterval()</Member>
+        <Member type="Method">public void bisectie()</Member>
+        <Member type="Method">public void multiplicitateradacina()</Member>
+        <Member type="Method">public void calculvaloarepolinomintrunpunct()</Member>
+        <Member type="Method">public void calculcoeficientipolinomderivat()</Member>
+        <Member type="Method">public void coeficnetiprindezvoltareaproduslui()</Member>
+        <Member type="Method">public void separaintruninterval()</Member>
+        <Member type="Method">public void injumatatireinterval()</Member>
+        <Member type="Method">public void CEBASEV()</Member>
+        <Member type="Method">public void metodatangentei()</Member>
+        <Member type="Method">public void metodaraphsonnewton()</Member>
+        <Member type="Method">public void valpolinom()</Member>
+        <Member type="Method">public void deriveazapolinom()</Member>
+        <Member type="Method">public void diferentiaza()</Member>
+        <Member type="Method">public void nomalizeaza()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">

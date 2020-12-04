@@ -49,6 +49,22 @@
         <Member type="Method">public void CALCULATICOEFICIENTIIDINDEZVOLTAREAPRODUSULUI()</Member>
         <Modifier>None</Modifier>
       </Entity>
+      <Entity type="Class">
+        <Name>SISTEMDEDOUAECUATIICUDOUANECUNOSCUTE</Name>
+        <Access>Public</Access>
+        <Location left="83" top="84" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt; parameter&gt; PARAMETRII</Member>
+        <Member type="Field">List &lt; solution&gt; SOLUTII</Member>
+        <Member type="Method">public void compatibildeterminat()</Member>
+        <Member type="Method">public void compatibilnedeterminat()</Member>
+        <Member type="Method">public fromArray incompatibil()</Member>
+        <Member type="Method">public void produsscalarvectori()</Member>
+        <Member type="Method">public void abcisa()</Member>
+        <Member type="Method">public dreaptaderegresie ordonata()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
     </Entities>
     <Relationships />
   </ProjectItem>

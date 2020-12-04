@@ -30,6 +30,19 @@
         <Member type="Method">public void amplifica()</Member>
         <Modifier>None</Modifier>
       </Entity>
+      <Entity type="Class">
+        <Name>FRACTIERATIONALA</Name>
+        <Access>Public</Access>
+        <Location left="199" top="18" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int numitor</Member>
+        <Member type="Field">int numarator</Member>
+        <Member type="Method">public void cmmdc()</Member>
+        <Member type="Method">public void simplifica()</Member>
+        <Member type="Method">public void aduna()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
     </Entities>
     <Relationships />
   </ProjectItem>

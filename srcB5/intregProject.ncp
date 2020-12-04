@@ -1,17 +1,20 @@
 <Project>
-  <Name>realProject</Name>
+  <Name>intregProject</Name>
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
-    <Name>Real</Name>
+    <Name>Intreg</Name>
     <Language>CSharp</Language>
     <Entities>
       <Entity type="Class">
-        <Name>REAL</Name>
+        <Name>INTREG</Name>
         <Access>Public</Access>
-        <Location left="31" top="7" />
+        <Location left="20" top="14" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">NUMAR NUMARUL</Member>
-        <Member type="Method">public void sumamultprodusdefractii()</Member>
+        <Member type="Field">NUMAR numarul</Member>
+        <Member type="Method">public void add()</Member>
+        <Member type="Method">public void mult()</Member>
+        <Member type="Method">public void precizie()</Member>
+        <Member type="Method">public void baza()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>

@@ -8,7 +8,7 @@
         <Name>VECTOR</Name>
         <Access>Public</Access>
         <Location left="51" top="16" />
-        <Size width="162" height="434" />
+        <Size width="162" height="1522" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public VECTOR()</Member>
         <Member type="Constructor">public VECTOR(int size)</Member>
@@ -31,6 +31,70 @@
         <Member type="Method">public void produsulscalar()</Member>
         <Member type="Method">public void PRODUSDIADIC()</Member>
         <Member type="Method">public void produsdiadic()</Member>
+        <Member type="Method">public void viete()</Member>
+        <Member type="Method">public void sortareprinmetodagrupelordemonotonie()</Member>
+        <Member type="Method">public void respectarelatia()</Member>
+        <Member type="Method">public void creazagrupademonotonienoua()</Member>
+        <Member type="Method">public void repartizareelementeingrupademonotonie()</Member>
+        <Member type="Method">public void interclasaregrup()</Member>
+        <Member type="Method">public void GASESTEPRIMULELEMENTINTRUNVECTORNERODONAT()</Member>
+        <Member type="Method">public void SCHIMBAVALORILE()</Member>
+        <Member type="Method">public void ORDONEAZASIRUL()</Member>
+        <Member type="Method">public void AFISAREVECTORORDONAT()</Member>
+        <Member type="Method">public void STABILESTENUMARULDEELEMENTESITAUTEINTROVECINATATE()</Member>
+        <Member type="Method">public void INTERVALULUNDESUNTSITUATECELEMAIMULTEVALORI()</Member>
+        <Member type="Method">public void COUNT()</Member>
+        <Member type="Method">public void COUNTALLBIGGERTHANX()</Member>
+        <Member type="Method">public void COUNTALLSMALLERTHANX()</Member>
+        <Member type="Method">public void MEDIAELEMENTELORNENULE()</Member>
+        <Member type="Method">public void INLOCUIESTECUZEROELEMENTULMAIMARESAUEGALCUMODULULLUIX()</Member>
+        <Member type="Method">public void MEDIACOMPONENTALOR()</Member>
+        <Member type="Method">public void ELIMINAELEMENTULMAIMAREDEDUBLULMEDIEI()</Member>
+        <Member type="Method">public void AFISEAZAMEDIAELEMENTELORSELECTATE()</Member>
+        <Member type="Method">public void SELECTEAZA()</Member>
+        <Member type="Method">public void SELECTEAZATOATE()</Member>
+        <Member type="Method">public void CMMMDC()</Member>
+        <Member type="Method">public void CMMMC()</Member>
+        <Member type="Method">public void FACTORIPRIMI()</Member>
+        <Member type="Method">public void FACTORIPRIMICOMUNI()</Member>
+        <Member type="Method">public void MULTIPLICITATE()</Member>
+        <Member type="Method">public void UNGHIINRADIANI()</Member>
+        <Member type="Method">public void SIRULXINTRAINVECTOR()</Member>
+        <Member type="Method">public void CAUTA()</Member>
+        <Member type="Method">public void GASESTE()</Member>
+        <Member type="Method">public void FIND()</Member>
+        <Member type="Method">public void SEARCH()</Member>
+        <Member type="Method">public void GASESTEPOZITIA()</Member>
+        <Member type="Method">public void CAUTARESECVENTIALA()</Member>
+        <Member type="Method">public void BUBBLESORT()</Member>
+        <Member type="Method">public void CALCULEAZACOEFICIENTIISUMEIFRACTIILOR()</Member>
+        <Member type="Method">public void ABATEREMEDIEPATRATICA()</Member>
+        <Member type="Method">public void MEDIA()</Member>
+        <Member type="Method">public void COUNTALLWHOAREBIGGERTHANMEDIA()</Member>
+        <Member type="Method">public void PRINTALLBIGGERTHANMEDIAINGROUPSOFY()</Member>
+        <Member type="Method">public void INTERSECTIA()</Member>
+        <Member type="Method">public void EXISTAELEMENTEDISTINCTE()</Member>
+        <Member type="Method">public void GENEREAZAVECTORUL()</Member>
+        <Member type="Method">public void MEDIAARITMETICA()</Member>
+        <Member type="Method">public void ESTEPOZITIV()</Member>
+        <Member type="Method">public void ESTENEGATIV()</Member>
+        <Member type="Method">public void lumgimemaximasubsir()</Member>
+        <Member type="Method">public void gasititoateelementeledistincte()</Member>
+        <Member type="Method">public void qs()</Member>
+        <Member type="Method">public void quicksort()</Member>
+        <Member type="Method">public void partitie()</Member>
+        <Member type="Method">public void swap()</Member>
+        <Member type="Method">public void shellsort()</Member>
+        <Member type="Method">public void insertsort()</Member>
+        <Member type="Method">public void binarysearch()</Member>
+        <Member type="Method">public void bubblesort()</Member>
+        <Member type="Method">public void gasesteminim()</Member>
+        <Member type="Method">public void interschimba()</Member>
+        <Member type="Method">public void metodaselectiei()</Member>
+        <Member type="Method">public void compactarevector()</Member>
+        <Member type="Method">public void stergeelement()</Member>
+        <Member type="Method">public void cauta()</Member>
+        <Member type="Method">public void reuniune()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
