@@ -1,0 +1,44 @@
+<Project>
+  <Name>rebusProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Rebus</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>REBUS</Name>
+        <Access>Public</Access>
+        <Location left="47" top="22" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int coloane</Member>
+        <Member type="Field">int randuri</Member>
+        <Member type="Field">List &lt;perechecuvantpozitie&gt; listadecuvinte</Member>
+        <Member type="Method">public void countwordsperline()</Member>
+        <Member type="Method">public void countwordspercollumn()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>perechecuvantpozitie</Name>
+        <Access>Public</Access>
+        <Location left="214" top="25" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string cuvant</Member>
+        <Member type="Field">pozitie pozitia</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>pozitie</Name>
+        <Access>Public</Access>
+        <Location left="253" top="67" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int x</Member>
+        <Member type="Field">int y</Member>
+        <Member type="Field">int z</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

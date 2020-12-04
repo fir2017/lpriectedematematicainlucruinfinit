@@ -7,9 +7,10 @@
       <Entity type="Class">
         <Name>FILETEXT</Name>
         <Access>Public</Access>
-        <Location left="70" top="21" />
-        <Size width="162" height="859" />
+        <Location left="55" top="10" />
+        <Size width="162" height="1845" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">char [] spatiatori</Member>
         <Member type="Method">public void repace()</Member>
         <Member type="Method">public void readline()</Member>
         <Member type="Method">public void line2record()</Member>
@@ -56,6 +57,63 @@
         <Member type="Method">public void fibonacci()</Member>
         <Member type="Method">public void indexare()</Member>
         <Member type="Method">public void sortareprinindexare()</Member>
+        <Member type="Method">public void lungimelinie()</Member>
+        <Member type="Method">public void lungimemaximacuvant()</Member>
+        <Member type="Method">public void paginare()</Member>
+        <Member type="Method">public void spatiere()</Member>
+        <Member type="Method">public void separare()</Member>
+        <Member type="Method">public void distribuire()</Member>
+        <Member type="Method">public void uniformizare()</Member>
+        <Member type="Method">public void simetrizare()</Member>
+        <Member type="Method">public void writenspaces()</Member>
+        <Member type="Method">public void replacewith()</Member>
+        <Member type="Method">public void pozitionare()</Member>
+        <Member type="Method">public void toStart()</Member>
+        <Member type="Method">public void toEnd()</Member>
+        <Member type="Method">public void toStartOfLine()</Member>
+        <Member type="Method">public void toEndOfLine()</Member>
+        <Member type="Method">public void toStartOfPage()</Member>
+        <Member type="Method">public void toEndOfPage()</Member>
+        <Member type="Method">public void toNextPage()</Member>
+        <Member type="Method">public void toPrevPage()</Member>
+        <Member type="Method">public void laLastPage()</Member>
+        <Member type="Method">public void toFirstPage()</Member>
+        <Member type="Method">public void toPageN()</Member>
+        <Member type="Method">public void toColumnN()</Member>
+        <Member type="Method">public void toLineN()</Member>
+        <Member type="Method">public void trunchierecuvant()</Member>
+        <Member type="Method">public void despartirecuvantinsilabe()</Member>
+        <Member type="Method">public void despartireLinieInMaiMulteLinii()</Member>
+        <Member type="Method">public void consoane()</Member>
+        <Member type="Method">public void silabe()</Member>
+        <Member type="Method">public void inlocuiesteComentariuCodSursa()</Member>
+        <Member type="Method">public void suprimareComentarii()</Member>
+        <Member type="Method">public void cautatiaNaaparitieaunuicuvant()</Member>
+        <Member type="Method">public void cautaaparitiesubsir()</Member>
+        <Member type="Method">public void calculeazaintregiseparatidevirgula()</Member>
+        <Member type="Method">public void nraparitiecuvantpelinie()</Member>
+        <Member type="Method">public void stergeunsirdinaltsir()</Member>
+        <Member type="Method">public void cuvantulcelmailungdinacealinie()</Member>
+        <Member type="Method">public deca2hexa gasestetoatecuvinteledistincte()</Member>
+        <Member type="Method">public void real2string()</Member>
+        <Member type="Method">public void string2real()</Member>
+        <Member type="Method">public void hexa2deca()</Member>
+        <Member type="Method">public void firstcharofstring()</Member>
+        <Member type="Method">public void cautaticaracterulcareapareinsubsir()</Member>
+        <Member type="Method">public void liniere()</Member>
+        <Member type="Method">public void anagrama()</Member>
+        <Member type="Method">public void insereaza()</Member>
+        <Member type="Method">public void epalindrom()</Member>
+        <Member type="Method">public void numaruldepropozitii()</Member>
+        <Member type="Method">public void numardealiniate()</Member>
+        <Member type="Method">public void numardeparagrafe()</Member>
+        <Member type="Method">public void numardeoperatori()</Member>
+        <Member type="Method">public void numardesimboluri()</Member>
+        <Member type="Method">public void numardespatii()</Member>
+        <Member type="Method">public void numardesemnedepunctuatie()</Member>
+        <Member type="Method">public void numardecifre()</Member>
+        <Member type="Method">public void numardelitere()</Member>
+        <Member type="Method">public void numardecitate()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>

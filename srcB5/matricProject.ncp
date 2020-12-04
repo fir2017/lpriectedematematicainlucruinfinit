@@ -8,7 +8,7 @@
         <Name>MATRICE</Name>
         <Access>Public</Access>
         <Location left="54" top="23" />
-        <Size width="162" height="553" />
+        <Size width="162" height="1624" />
         <Collapsed>False</Collapsed>
         <Member type="Field">float a</Member>
         <Member type="Field">int l</Member>
@@ -38,6 +38,69 @@
         <Member type="Method">public void INITIALIZEAZAMATRICE()</Member>
         <Member type="Method">public void CITESTEDOUAMATRICI()</Member>
         <Member type="Method">public void EMATRICEINVERSABILA()</Member>
+        <Member type="Method">public void ridicarelaputere()</Member>
+        <Member type="Method">public void transpunematriceinvector()</Member>
+        <Member type="Method">public void esteortogonala()</Member>
+        <Member type="Method">public void ordonaascedentelementelediagonaleiprincipale()</Member>
+        <Member type="Method">public void schimbaliniacucoloana()</Member>
+        <Member type="Method">public void schimbacoloanaculinia()</Member>
+        <Member type="Method">public void creazamatricecuelementenegative()</Member>
+        <Member type="Method">public void creazamatricecuelementepozitive()</Member>
+        <Member type="Method">public void extrageelementenule()</Member>
+        <Member type="Method">public void ordonasclinia()</Member>
+        <Member type="Method">public void ordonadesclinia()</Member>
+        <Member type="Method">public void ordonaasccoloana()</Member>
+        <Member type="Method">public void ordonadesccoloana()</Member>
+        <Member type="Method">public void extrageelementelezoneiX()</Member>
+        <Member type="Method">public void determinaelementelediagonalei()</Member>
+        <Member type="Method">public void calculeazamediageometrica()</Member>
+        <Member type="Method">public void procentdeelementestrictpozitive()</Member>
+        <Member type="Method">public void procentuldeelementedivizibilecuX()</Member>
+        <Member type="Method">public void existazonecomune()</Member>
+        <Member type="Method">public void poziiaelementemaximmodulo()</Member>
+        <Member type="Method">public void pozitioneazaelementelemaximepediagonalaprincipala()</Member>
+        <Member type="Method">public void schimbaliniile()</Member>
+        <Member type="Method">public void calculeazasumadefractie()</Member>
+        <Member type="Method">public void matriveimpartitacuscalar()</Member>
+        <Member type="Method">public void areliniiortogonale()</Member>
+        <Member type="Method">public void impartecoloanacupatratulnormeieuclidiene()</Member>
+        <Member type="Method">public void areprodusscalaregalcuzeropelinia()</Member>
+        <Member type="Method">public void calculnormaeuclidianapecolaoana()</Member>
+        <Member type="Method">public void comparacumatriceaunitate()</Member>
+        <Member type="Method">public void aresecventaordonataasclinia()</Member>
+        <Member type="Method">public void elementminimpelinie()</Member>
+        <Member type="Method">public void elementmaximpelinie()</Member>
+        <Member type="Method">public void estepunctdesa()</Member>
+        <Member type="Method">public void determinatipuncteleinsa()</Member>
+        <Member type="Method">public void esteinversamatriceiX()</Member>
+        <Member type="Method">public void afisatitoateculurileij()</Member>
+        <Member type="Method">public void transpunematricepatrata()</Member>
+        <Member type="Method">public void inmultestematricecureal()</Member>
+        <Member type="Method">public void produsscalarij()</Member>
+        <Member type="Method">public void gasesteliniacuelementminimdestartdimaximdefinal()</Member>
+        <Member type="Method">public void afisatiliniacucelputinNelementecucateMdivizoribanali()</Member>
+        <Member type="Method">public void divizorinebanali()</Member>
+        <Member type="Method">public void divizoribanali()</Member>
+        <Member type="Method">public void areliniiordtogonale()</Member>
+        <Member type="Method">public void print()</Member>
+        <Member type="Method">public void norm()</Member>
+        <Member type="Method">public void aloc()</Member>
+        <Member type="Method">public void dealoc()</Member>
+        <Member type="Method">public void liniileseaflainrelatiaX()</Member>
+        <Member type="Method">public void diferentaliniilor()</Member>
+        <Member type="Method">public void afiseazatoateliniilecarenuaurelatiaX()</Member>
+        <Member type="Method">public void maimic()</Member>
+        <Member type="Method">public void linedif()</Member>
+        <Member type="Method">public void printline()</Member>
+        <Member type="Method">public void permut()</Member>
+        <Member type="Method">public void permutacircularladreapta()</Member>
+        <Member type="Method">public void diferentadintremaximsiminimpelinia()</Member>
+        <Member type="Method">public void arediferentaextramainferioreps()</Member>
+        <Member type="Method">public void liniilesuntidentice()</Member>
+        <Member type="Method">public void afiseazaliniilecuelementenule()</Member>
+        <Member type="Method">public void gasesteminimNliniiidentice()</Member>
+        <Member type="Method">public void nule()</Member>
+        <Member type="Method">public void PRODUSULDIADICADOIVECTORI()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">

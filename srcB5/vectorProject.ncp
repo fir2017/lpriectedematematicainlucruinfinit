@@ -8,7 +8,7 @@
         <Name>VECTOR</Name>
         <Access>Public</Access>
         <Location left="51" top="16" />
-        <Size width="162" height="264" />
+        <Size width="162" height="434" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public VECTOR()</Member>
         <Member type="Constructor">public VECTOR(int size)</Member>
@@ -21,6 +21,16 @@
         <Member type="Method">public void fromString()</Member>
         <Member type="Method">public void egal()</Member>
         <Member type="Method">public void produsscalar()</Member>
+        <Member type="Method">public void pozitiacomponenteloregale()</Member>
+        <Member type="Method">public void SUNTORTOGONALI()</Member>
+        <Member type="Method">public void esteinversavectoruluix()</Member>
+        <Member type="Method">public void bazaortogonala()</Member>
+        <Member type="Method">public void grammschmidt()</Member>
+        <Member type="Method">public void conditiadeortogonalitate()</Member>
+        <Member type="Method">public void afisarebaza()</Member>
+        <Member type="Method">public void produsulscalar()</Member>
+        <Member type="Method">public void PRODUSDIADIC()</Member>
+        <Member type="Method">public void produsdiadic()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
