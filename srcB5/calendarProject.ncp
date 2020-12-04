@@ -8,7 +8,7 @@
         <Name>CALENDAR</Name>
         <Access>Public</Access>
         <Location left="26" top="9" />
-        <Size width="162" height="417" />
+        <Size width="162" height="604" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int an</Member>
         <Member type="Field">int luna</Member>
@@ -30,6 +30,17 @@
         <Member type="Method">public void ultimazidinlunadatei()</Member>
         <Member type="Method">public void validaredata()</Member>
         <Member type="Method">public void stabilestesuccesiuneintimp()</Member>
+        <Member type="Method">public void ultimazidinluna()</Member>
+        <Member type="Method">public void valideaza()</Member>
+        <Member type="Method">public void acatazidinaneste()</Member>
+        <Member type="Method">public void CALCULEAZAVARSTA()</Member>
+        <Member type="Method">public void CONVERTSECUNDEINZILEOREMINUTESECUNDE()</Member>
+        <Member type="Method">public void DATAREVENIREOEOAMANTAUNEIRACHETE()</Member>
+        <Member type="Method">public void MOMENTULTERMINARIICURSEI()</Member>
+        <Member type="Method">public void TIMPDESTART()</Member>
+        <Member type="Method">public void PERIOADAPARCURSA()</Member>
+        <Member type="Method">public void TIMPFINAL()</Member>
+        <Member type="Method">public void ZILELESCURSEDELASTARTULANULUI()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>

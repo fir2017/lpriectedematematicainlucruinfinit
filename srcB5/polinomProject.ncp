@@ -8,13 +8,14 @@
         <Name>POLINOM</Name>
         <Access>Public</Access>
         <Location left="23" top="16" />
-        <Size width="162" height="927" />
+        <Size width="162" height="1641" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int n</Member>
         <Member type="Field">float data</Member>
         <Member type="Field">List &lt; coeficient&gt; coeficienti</Member>
         <Member type="Field">float grad</Member>
         <Member type="Field">List &lt; radacina&gt; radacinile</Member>
+        <Member type="Field">int newField</Member>
         <Member type="Constructor">public POLINOM(POLINOM p)</Member>
         <Member type="Constructor">public POLINOM(int n1 = 0)</Member>
         <Member type="Constructor">public POLINOM(int n1, float data1)</Member>
@@ -60,6 +61,47 @@
         <Member type="Method">public void deriveazapolinom()</Member>
         <Member type="Method">public void diferentiaza()</Member>
         <Member type="Method">public void nomalizeaza()</Member>
+        <Member type="Method">public void COEFICIENTIBINOMIALI()</Member>
+        <Member type="Method">public void RELATIADERECURENTA()</Member>
+        <Member type="Method">public void FORMULALUIMOIVRE()</Member>
+        <Member type="Method">public void GENEREAZASIR()</Member>
+        <Member type="Method">public void LGINBAZADEX()</Member>
+        <Member type="Method">public void LIMITACN()</Member>
+        <Member type="Method">public void LN()</Member>
+        <Member type="Method">public void DEZVOLTAREINSERIEEXRAPIDCONVERGENTA()</Member>
+        <Member type="Method">public void SUNADERADICALDEFARCTIE()</Member>
+        <Member type="Method">public void FORMEAZATRIUNGHI()</Member>
+        <Member type="Method">public void UNGHIGRADE2RADIAN()</Member>
+        <Member type="Method">public void RADIAN2GRAD()</Member>
+        <Member type="Method">public void CALCULATIPOLINOMULINPUNCTULX()</Member>
+        <Member type="Method">public void ORDONATIDESCPUTERILELUIX()</Member>
+        <Member type="Method">public void ORDONATIASCPUTERILELUIX()</Member>
+        <Member type="Method">public void CALCULATIPRINDEZVOLTAREINSERIECUPRECIZIEEPS()</Member>
+        <Member type="Method">public void ESTENUMARPERFECT()</Member>
+        <Member type="Method">public void GASITTITOATENUMERELEPERFECT()</Member>
+        <Member type="Method">public void AFISATISUMADIVIZORILORUNUINUMARPERFECT()</Member>
+        <Member type="Method">public void SUMADEFRACTII()</Member>
+        <Member type="Method">public void TERMENULFIBONACIINTH()</Member>
+        <Member type="Method">public void FORMEAZASIRSTRICTASC()</Member>
+        <Member type="Method">public void FORMEAZASIRASC()</Member>
+        <Member type="Method">public void FORMEAZASIRDESC()</Member>
+        <Member type="Method">public void FORMEAZASIRDESC()</Member>
+        <Member type="Method">public void SUNTIDENTICE()</Member>
+        <Member type="Method">public void NUSUNTIDENTICE()</Member>
+        <Member type="Method">public void NUSUNTORDONATE()</Member>
+        <Member type="Method">public void SUNTORDONATE()</Member>
+        <Member type="Method">public void INTEGRALAUNORSIRURI()</Member>
+        <Member type="Method">public void VALORILEINTEGRALEI()</Member>
+        <Member type="Method">public void TABELAEPEINTERVAL()</Member>
+        <Member type="Method">public void MAXSIR()</Member>
+        <Member type="Method">public void MINSIR()</Member>
+        <Member type="Method">public void ABATEREMEDIEPATRATICA()</Member>
+        <Member type="Method">public void SUMADENUMARNEGATIVLAPUTERE()</Member>
+        <Member type="Method">public void COORDONATEINPLANAUNUIPUNCTAFLATINCADRAN()</Member>
+        <Member type="Method">public void ECUATIADEGRADUL2()</Member>
+        <Member type="Method">public void SISTEMDEECUATIIDEGRADUL2()</Member>
+        <Member type="Method">public void GRAD2RAD()</Member>
+        <Member type="Method">public void RAD2GRAD()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">

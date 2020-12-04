@@ -41,6 +41,7 @@
         <Member type="Method">public void cmmdc()</Member>
         <Member type="Method">public void simplifica()</Member>
         <Member type="Method">public void aduna()</Member>
+        <Member type="Method">public void INMULTIRE()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>

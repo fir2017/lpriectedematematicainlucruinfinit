@@ -53,7 +53,7 @@
         <Name>SISTEMDEDOUAECUATIICUDOUANECUNOSCUTE</Name>
         <Access>Public</Access>
         <Location left="83" top="84" />
-        <Size width="162" height="216" />
+        <Size width="162" height="230" />
         <Collapsed>False</Collapsed>
         <Member type="Field">List &lt; parameter&gt; PARAMETRII</Member>
         <Member type="Field">List &lt; solution&gt; SOLUTII</Member>
@@ -63,6 +63,43 @@
         <Member type="Method">public void produsscalarvectori()</Member>
         <Member type="Method">public void abcisa()</Member>
         <Member type="Method">public dreaptaderegresie ordonata()</Member>
+        <Member type="Method">public void metodabisectiei()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ECUATIADEGRADULICU1NECUNOSCUTA</Name>
+        <Access>Public</Access>
+        <Location left="99" top="130" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int A</Member>
+        <Member type="Field">int X</Member>
+        <Member type="Field">int B</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ECUATIADEGRADUL2</Name>
+        <Access>Public</Access>
+        <Location left="88" top="165" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SIR</Name>
+        <Access>Public</Access>
+        <Location left="56" top="308" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void GASITICELMAIAPROPRIATELEMENT()</Member>
+        <Member type="Method">public void NUMARULPRIMCELMAIAPROPRIAT()</Member>
+        <Member type="Method">public void NUMAR2DECA()</Member>
+        <Member type="Method">public void NUMAR2BAZAB()</Member>
+        <Member type="Method">public void NRPRIMEMAIMICISAUEGALECUK()</Member>
+        <Member type="Method">public void ESTEPRIM()</Member>
+        <Member type="Method">public void DIVIZIBILITATEA()</Member>
+        <Member type="Method">public void ESTENEPRIM()</Member>
+        <Member type="Method">public void NUSEDIVIDE()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>

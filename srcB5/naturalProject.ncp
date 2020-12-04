@@ -8,7 +8,7 @@
         <Name>NATURAL</Name>
         <Access>Public</Access>
         <Location left="39" top="20" />
-        <Size width="162" height="332" />
+        <Size width="162" height="978" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int n</Member>
         <Member type="Field">char data</Member>
@@ -25,6 +25,44 @@
         <Member type="Method">public void DIVIZORI()</Member>
         <Member type="Method">public void CMMDC()</Member>
         <Member type="Method">public void CMMMC()</Member>
+        <Member type="Method">public void CMMDC()</Member>
+        <Member type="Method">public void SIMPLIFICA()</Member>
+        <Member type="Method">public void ADUNA()</Member>
+        <Member type="Method">public void ESTEFRACTIE()</Member>
+        <Member type="Method">public void DETERMINANUMARULINBAZAX()</Member>
+        <Member type="Method">public void CONVERT()</Member>
+        <Member type="Method">public void SUMADIVIZORI()</Member>
+        <Member type="Method">public void EDEFICIENT()</Member>
+        <Member type="Method">public void EPERFECT()</Member>
+        <Member type="Method">public void EABUNDENT()</Member>
+        <Member type="Method">public void SUMADIVIZORI()</Member>
+        <Member type="Method">public void TIPNUMAR()</Member>
+        <Member type="Method">public void HEX2DECA()</Member>
+        <Member type="Method">public void DECA2HEX()</Member>
+        <Member type="Method">public void INDICATOEULER()</Member>
+        <Member type="Method">public void PUTERE2()</Member>
+        <Member type="Method">public void IEULER()</Member>
+        <Member type="Method">public void CMMDC()</Member>
+        <Member type="Method">public void EPRIM()</Member>
+        <Member type="Method">public void EPALINDROM()</Member>
+        <Member type="Method">public void CELMAIMAREPATRATPERFECTMAIMICSAUEGALCUX()</Member>
+        <Member type="Method">public void PATRAT()</Member>
+        <Member type="Method">public void SWAP()</Member>
+        <Member type="Method">public void SUMAi()</Member>
+        <Member type="Method">public void DIVIZORI()</Member>
+        <Member type="Method">public void DIVIZORIPRIMI()</Member>
+        <Member type="Method">public void MULTIPLICITATEADIVIZORILOR()</Member>
+        <Member type="Method">public void DIVIZORPRIMCUMULTIPLICITATEAMAXIMA()</Member>
+        <Member type="Method">public void REDUCETILAPRIMULOCTANT()</Member>
+        <Member type="Method">public void SERIATAYLOR()</Member>
+        <Member type="Method">public void FRACTIEZECIMALA()</Member>
+        <Member type="Method">public void FUNCTIABISSELDESPETAIAJN()</Member>
+        <Member type="Method">public void XPOWN()</Member>
+        <Member type="Method">public void ECUATIADEGRADUL2CU0NECUNOSCUTA()</Member>
+        <Member type="Method">public void CARESTENUMARULCUCEIMAIMULTIDIVIZORI()</Member>
+        <Member type="Method">public void FACTORIPRIMIAIUNUINUMAR()</Member>
+        <Member type="Method">public void MULTIPLICITATEA()</Member>
+        <Member type="Method">public void ORDINELE()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">

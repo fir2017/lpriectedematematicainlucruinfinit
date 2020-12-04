@@ -52,6 +52,8 @@
         <Location left="12" top="158" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
+        <Member type="Method">public void ESTEINTEGRALISTA()</Member>
+        <Member type="Method">public void PROCENTAJDENOTEFOARTEBUNE()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">

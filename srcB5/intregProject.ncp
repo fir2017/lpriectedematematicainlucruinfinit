@@ -8,13 +8,49 @@
         <Name>INTREG</Name>
         <Access>Public</Access>
         <Location left="20" top="14" />
-        <Size width="162" height="216" />
+        <Size width="162" height="434" />
         <Collapsed>False</Collapsed>
         <Member type="Field">NUMAR numarul</Member>
         <Member type="Method">public void add()</Member>
         <Member type="Method">public void mult()</Member>
         <Member type="Method">public void precizie()</Member>
         <Member type="Method">public void baza()</Member>
+        <Member type="Method">public void NUMARDEPDIVIZORINEBANALI()</Member>
+        <Member type="Method">public void COUNTALLNRCUDIVIZORINEBANALI()</Member>
+        <Member type="Method">public void GASESTETOATENUMERELECUPRINSEINTREASIBCUSUMADIVIZORILORNEBANALLIMAXIM()</Member>
+        <Member type="Method">public void SUMADIVIZORI()</Member>
+        <Member type="Method">public void CUBULCELMAIAPROPRIATDEX()</Member>
+        <Member type="Method">public void DIFERENTADINTREDOUANUMERE()</Member>
+        <Member type="Method">public void SUMACUBURILORCIFRELORLUIX()</Member>
+        <Member type="Method">public void DESCMPUNERILEUNUINUMARPARCASUMADDOUANUMEREPRIME()</Member>
+        <Member type="Method">public void ESTEPRIM()</Member>
+        <Member type="Method">public void TABELEAZAFUNCTIAPENINTERVALE()</Member>
+        <Member type="Method">public void SUNTNUMEREPRIETENE()</Member>
+        <Member type="Method">public void ESTESUMADIVIZORILORUNUIAEGALCUCELALALTNUMAR()</Member>
+        <Member type="Method">public void CELMAIAPROPRIATNUMARFATADEX()</Member>
+        <Member type="Method">public void SUNTNUMERELELADISTANTAEGALADEX()</Member>
+        <Member type="Method">public void CMMDC()</Member>
+        <Member type="Method">public void CMMMC()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>INTERVAL</Name>
+        <Access>Public</Access>
+        <Location left="215" top="23" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">INTREG MAX</Member>
+        <Member type="Field">INTREG MIN</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PERECHE</Name>
+        <Access>Public</Access>
+        <Location left="248" top="64" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">INTREG A</Member>
+        <Member type="Field">INTREG B</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>

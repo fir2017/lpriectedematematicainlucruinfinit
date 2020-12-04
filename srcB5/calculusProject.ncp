@@ -21,6 +21,8 @@
         <Member type="Method">public void INTEGRARE()</Member>
         <Member type="Method">public void METODALUIEULER()</Member>
         <Member type="Method">public void APROXIMARE()</Member>
+        <Member type="Method">public void METODATRAPEZELOR()</Member>
+        <Member type="Method">public void INTEGRAREDEFINITAINPUNCTULAPEUNINTERVALCUPRECIZIAEPS()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -43,6 +45,14 @@
         <Name>PUNCTDEDIVIZIUNE</Name>
         <Access>Public</Access>
         <Location left="289" top="227" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FUNCTIE</Name>
+        <Access>Public</Access>
+        <Location left="25" top="89" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
